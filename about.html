@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Christa van der Meer — Moving2Valencia</title>
+<meta name="description" content="Meet Christa van der Meer — former opera coordinator turned Valencia's most trusted relocation guide. Her story, her mission, her 16 years of experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--terra:#C45C3E;--terra-dark:#A3472D;--terra-light:#E8A88A;--valencia-orange:#E8913A;--cream:#FAF6F1;--warm-white:#FFFDF9;--charcoal:#2C2420;--stone:#6B5E56;--sand:#E8DDD3;--gold:#C9A84C;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--warm-white);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(26,21,18,0.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.04);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:white;text-decoration:none;}
+.nav-logo span{color:var(--terra);}
+.nav-links{display:flex;gap:36px;align-items:center;}
+.nav-links a{text-decoration:none;color:rgba(255,255,255,0.55);font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.3s;}
+.nav-links a:hover,.nav-links a.active{color:white;}
+.nav-cta{background:var(--terra)!important;color:white!important;padding:10px 26px;border-radius:30px;min-height:42px;display:inline-flex;align-items:center;}
+.nav-cta:hover{background:var(--terra-dark)!important;transform:translateY(-1px);}
+.mobile-menu-btn{display:none;font-size:22px;background:none;border:none;cursor:pointer;color:white;min-width:44px;min-height:44px;}
+.mobile-overlay{position:fixed;inset:0;background:rgba(26,21,18,0.7);z-index:999;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.mobile-overlay.active{opacity:1;pointer-events:all;}
+.mobile-menu{position:fixed;top:0;right:-100%;width:82%;max-width:340px;height:100%;background:var(--charcoal);z-index:1001;padding:80px 36px 40px;transition:right 0.4s ease;border-left:1px solid rgba(255,255,255,0.05);}
+.mobile-menu.active{right:0;}
+.mobile-menu a{display:block;font-family:'Cormorant Garamond',serif;font-size:26px;color:rgba(255,255,255,0.75);text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.mobile-menu .nav-cta{font-family:'Inter',sans-serif;font-size:14px!important;margin-top:24px;justify-content:center;width:100%;}
+.mobile-close{position:absolute;top:20px;right:20px;font-size:28px;background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.5);}
+
+/* HERO */
+.about-hero{position:relative;height:90vh;display:flex;align-items:flex-end;overflow:hidden;padding:0 0 80px;}
+.about-hero-bg{position:absolute;inset:0;background-image:url('images/cta_valencia_bg.png');background-size:cover;background-position:center;}
+.about-hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(26,21,18,1) 0%,rgba(26,21,18,0.4) 60%,rgba(26,21,18,0.1) 100%);}
+.about-hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 60px;width:100%;}
+.about-eyebrow{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--terra-light);margin-bottom:20px;}
+.about-hero-content h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,7vw,88px);font-weight:300;line-height:1.05;color:white;margin-bottom:24px;}
+.about-hero-content h1 em{font-style:italic;color:var(--terra-light);}
+.about-hero-content p{font-size:18px;line-height:1.7;color:rgba(255,255,255,0.55);max-width:560px;}
+
+/* STORY SECTION */
+.story-section{max-width:1200px;margin:0 auto;padding:100px 60px;}
+.story-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:100px;}
+.story-image{position:relative;}
+.story-image-frame{width:100%;height:580px;border-radius:20px;overflow:hidden;}
+.story-image-frame img{width:100%;height:100%;object-fit:cover;}
+.story-badge{position:absolute;bottom:-20px;right:-20px;background:var(--terra);color:white;border-radius:18px;padding:24px 28px;text-align:center;}
+.story-badge .num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;line-height:1;}
+.story-badge .lbl{font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-top:4px;opacity:0.85;}
+.story-text .section-label{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--terra-light);margin-bottom:16px;}
+.story-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,52px);font-weight:400;line-height:1.1;color:white;margin-bottom:28px;}
+.story-text h2 em{font-style:italic;color:var(--terra-light);}
+.story-text p{font-size:16px;line-height:1.85;color:rgba(255,255,255,0.55);margin-bottom:20px;}
+
+/* TIMELINE */
+.philosophy-section{background:#1a1512;padding:100px 60px;}
+.philosophy-inner{max-width:1200px;margin:0 auto;}
+.philosophy-inner .section-label{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--terra);margin-bottom:16px;}
+.philosophy-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:400;line-height:1.1;color:white;margin-bottom:60px;}
+.philosophy-inner h2 em{font-style:italic;color:var(--terra-light);}
+.journey-line{position:relative;padding-left:48px;}
+.journey-line::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--terra),var(--valencia-orange),transparent);}
+.journey-item{position:relative;margin-bottom:60px;}
+.journey-item::before{content:'';position:absolute;left:-42px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--terra);box-shadow:0 0 0 4px rgba(196,92,62,0.2);}
+.journey-year{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:8px;}
+.journey-item h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;color:white;margin-bottom:10px;}
+.journey-item p{font-size:15px;line-height:1.75;color:rgba(255,255,255,0.5);}
+
+/* CREDENTIALS */
+.creds-section{padding:100px 60px;max-width:1200px;margin:0 auto;}
+.creds-section .section-label{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--terra);margin-bottom:16px;}
+.creds-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,52px);font-weight:400;color:white;margin-bottom:56px;}
+.creds-section h2 em{font-style:italic;color:var(--terra-light);}
+.creds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.cred-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:36px 32px;transition:all 0.3s;}
+.cred-card:hover{background:rgba(196,92,62,0.05);border-color:rgba(196,92,62,0.2);transform:translateY(-4px);}
+.cred-icon{font-size:36px;margin-bottom:16px;}
+.cred-card h4{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:white;margin-bottom:10px;}
+.cred-card p{font-size:14px;line-height:1.7;color:rgba(255,255,255,0.45);}
+
+/* QUOTE */
+.quote-section{background:linear-gradient(135deg,var(--terra) 0%,var(--terra-dark) 100%);padding:80px 60px;text-align:center;}
+.quote-section blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,48px);font-weight:300;font-style:italic;line-height:1.35;color:white;max-width:900px;margin:0 auto 24px;}
+.quote-section cite{font-size:14px;color:rgba(255,255,255,0.6);letter-spacing:1px;font-style:normal;}
+
+/* CTA */
+.about-cta{padding:100px 60px;text-align:center;background:#1a1512;}
+.about-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,60px);font-weight:400;color:white;margin-bottom:20px;}
+.about-cta h2 em{font-style:italic;color:var(--terra-light);}
+.about-cta p{font-size:17px;color:rgba(255,255,255,0.45);margin-bottom:40px;line-height:1.7;}
+.about-cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-prim{background:var(--terra);color:white;padding:16px 36px;border-radius:50px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:52px;transition:all 0.3s;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+.btn-prim:hover{background:var(--terra-dark);transform:translateY(-2px);box-shadow:0 10px 32px rgba(196,92,62,0.35);}
+.btn-sec{background:transparent;color:rgba(255,255,255,0.7);padding:16px 36px;border-radius:50px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:52px;border:1px solid rgba(255,255,255,0.2);transition:all 0.3s;}
+.btn-sec:hover{border-color:var(--terra);color:var(--terra-light);}
+
+/* FOOTER */
+.footer{background:#100D0B;padding:48px 60px;border-top:1px solid rgba(255,255,255,0.04);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:white;text-decoration:none;}
+.footer-logo span{color:var(--terra-light);}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.2);}
+.footer-link{font-size:13px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.3s;}
+.footer-link:hover{color:var(--terra-light);}
+
+/* CONTACT MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(26,21,18,0.85);backdrop-filter:blur(14px);z-index:3000;display:flex;align-items:flex-start;justify-content:center;padding:80px 20px 40px;opacity:0;pointer-events:none;transition:opacity 0.35s;overflow-y:auto;}
+.modal-overlay.active{opacity:1;pointer-events:all;}
+.modal-box{background:#1E1915;border:1px solid rgba(255,255,255,0.08);border-radius:24px;max-width:660px;width:100%;position:relative;transform:translateY(24px) scale(0.97);transition:all 0.4s cubic-bezier(0.34,1.3,0.64,1);flex-shrink:0;overflow:hidden;}
+.modal-overlay.active .modal-box{transform:none;}
+.modal-close-btn{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.06);border:none;cursor:pointer;font-size:16px;color:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.modal-close-btn:hover{background:var(--terra);color:white;}
+.modal-header{padding:44px 44px 28px;background:linear-gradient(135deg,rgba(196,92,62,0.08) 0%,transparent 100%);border-bottom:1px solid rgba(255,255,255,0.06);}
+.modal-icon{font-size:40px;display:block;margin-bottom:12px;}
+.modal-header h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;color:white;line-height:1.15;margin-bottom:8px;}
+.modal-header h2 em{color:var(--terra-light);font-style:italic;}
+.modal-sub{font-size:14px;color:rgba(255,255,255,0.4);line-height:1.6;}
+.modal-body{padding:32px 44px 44px;}
+.contact-opt{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:12px;text-decoration:none;transition:all 0.25s;border:1px solid rgba(255,255,255,0.07);margin-bottom:12px;}
+.contact-opt:hover{border-color:var(--terra);background:rgba(196,92,62,0.06);transform:translateX(4px);}
+.contact-opt-icon{font-size:24px;flex-shrink:0;}
+.contact-opt strong{display:block;font-size:14px;font-weight:600;color:white;margin-bottom:2px;}
+.contact-opt span{font-size:12px;color:rgba(255,255,255,0.35);}
+.modal-divider{text-align:center;position:relative;margin:20px 0;}
+.modal-divider::before{content:'';position:absolute;top:50%;left:0;width:100%;height:1px;background:rgba(255,255,255,0.06);}
+.modal-divider span{position:relative;background:#1E1915;padding:0 14px;font-size:12px;color:rgba(255,255,255,0.28);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form-group{margin-bottom:14px;}
+.form-group label{display:block;font-size:11px;font-weight:600;color:rgba(255,255,255,0.45);margin-bottom:7px;letter-spacing:0.5px;text-transform:uppercase;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:10px;font-size:14px;font-family:'Inter',sans-serif;color:white;outline:none;transition:border-color 0.2s;-webkit-appearance:none;}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.18);}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--terra);box-shadow:0 0 0 3px rgba(196,92,62,0.1);}
+.form-group select{cursor:pointer;color:rgba(255,255,255,0.65);}
+.form-group select option{background:#2C2420;}
+.form-group textarea{resize:vertical;min-height:84px;}
+.form-submit{width:100%;padding:16px;background:var(--terra);color:white;border:none;border-radius:50px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;font-family:'Inter',sans-serif;min-height:52px;margin-top:4px;}
+.form-submit:hover{background:var(--terra-dark);transform:translateY(-2px);}
+.form-success{text-align:center;padding:28px 16px;}
+.form-success h3{font-family:'Cormorant Garamond',serif;font-size:28px;color:white;margin-bottom:10px;}
+.form-success p{color:rgba(255,255,255,0.45);font-size:14px;line-height:1.6;}
+.form-success a{color:var(--terra-light);}
+@media(max-width:600px){.form-row{grid-template-columns:1fr;}.modal-header{padding:30px 22px 22px;}.modal-body{padding:22px 22px 34px;}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 0.85s ease,transform 0.85s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav{padding:14px 24px;}
+  .nav-links{display:none;}
+  .mobile-menu-btn{display:flex;align-items:center;justify-content:center;}
+  .about-hero-content{padding:0 24px;}
+  .story-section{padding:60px 24px;}
+  .story-intro{grid-template-columns:1fr;gap:48px;}
+  .story-image-frame{height:400px;}
+  .story-badge{right:0;bottom:-12px;}
+  .philosophy-section{padding:60px 24px;}
+  .creds-section{padding:60px 24px;}
+  .creds-grid{grid-template-columns:1fr;}
+  .quote-section{padding:60px 24px;}
+  .about-cta{padding:60px 24px;}
+  .footer{padding:36px 24px;flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">moving<span>2</span>valencia</a>
+  <div class="nav-links">
+    <a href="index.html#timeline">Story</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#testimonials">Stories</a>
+    <a href="about.html" class="active">About</a>
+    <a href="#" class="nav-cta" onclick="openContact();return false;">Book a Call</a>
+  </div>
+  <button class="mobile-menu-btn" onclick="toggleMobile()" aria-label="Open menu">☰</button>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobile()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMobile()">✕</button>
+  <a href="index.html" onclick="toggleMobile()">Home</a>
+  <a href="index.html#services" onclick="toggleMobile()">Services</a>
+  <a href="index.html#pricing" onclick="toggleMobile()">Pricing</a>
+  <a href="checklist.html" onclick="toggleMobile()">Free Checklist</a>
+  <a href="#" class="nav-cta" onclick="toggleMobile();setTimeout(openContact,320);return false;">Book a Free Call</a>
+</div>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="about-hero-bg"></div>
+  <div class="about-hero-overlay"></div>
+  <div class="about-hero-content">
+    <div class="about-eyebrow">Meet Your Guide</div>
+    <h1>Christa van der Meer<br><em>From opera to Valencia</em></h1>
+    <p>Opera coordinator. Expat. Pioneer. For 16 years, the woman who made impossible productions seamless has been making impossible relocations effortless.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-section">
+  <div class="story-intro">
+    <div class="story-image reveal">
+      <div class="story-image-frame">
+        <img src="images/about_founder.png" alt="Christa van der Meer, founder of Moving2Valencia">
+      </div>
+      <div class="story-badge">
+        <div class="num">500+</div>
+        <div class="lbl">Families<br>Relocated</div>
+      </div>
+    </div>
+    <div class="story-text reveal">
+      <div class="section-label">The Beginning</div>
+      <h2>Thirty years of making the <em>complex invisible</em></h2>
+      <p>For three decades, I was a master coordinator for large-scale opera productions across Europe. Stadiums in the Netherlands, France, Belgium, Germany. Hundreds of artists, impossible logistics, zero margin for error. If something needed to happen on time, it happened.</p>
+      <p>That precision, that calm in the face of chaos — that's what I brought to Valencia when my family made the leap in 2004. And it's exactly what I now give to every family I guide.</p>
+      <p>Opera taught me one essential truth: when you remove friction from creative people's lives, remarkable things happen. The same is true for relocating families. When I clear the bureaucratic maze, families don't just arrive in Valencia — they <em>begin</em> there.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="philosophy-section">
+  <div class="philosophy-inner">
+    <div class="section-label">The Journey</div>
+    <h2>From Amsterdam to <em>Valencia</em></h2>
+    <div class="journey-line">
+
+      <div class="journey-item reveal">
+        <div class="journey-year">1974 — 2004</div>
+        <h3>30 years behind the curtain</h3>
+        <p>Born in Amsterdam. Graduated from the Amsterdam Conservatory with a focus on production management. Over three decades, I coordinated some of Europe's most ambitious opera productions — from Rotterdam's De Doelen to the Grand Théâtre de Bordeaux, the Concertgebouw, and stadiums across Germany and Belgium. Managing 200-person productions taught me that calm and precision can make anything possible.</p>
+      </div>
+
+      <div class="journey-item reveal">
+        <div class="journey-year">2004</div>
+        <h3>The leap south</h3>
+        <p>My family and I drove south with our lives in boxes. Valencia on a wing and a prayer. What awaited us was a city of extraordinary warmth, colour, and chaos. Spanish bureaucracy nearly broke us. Finding an apartment with no NIE, no local bank account, no understanding of the empadronamiento system — it was genuinely terrifying. But Valencia welcomed us completely, and we knew we were home.</p>
+      </div>
+
+      <div class="journey-item reveal">
+        <div class="journey-year">2006 — 2008</div>
+        <h3>The idea takes shape</h3>
+        <p>Three years of hard-won experience navigating every corner of Spanish bureaucracy. Three years of learning which offices to call, which forms to file, which appointments to book months in advance. And three years of watching other expat families arrive, lost and overwhelmed, making every mistake I'd already made. The decision was clear: what I'd learned the hard way, I would make effortless for others.</p>
+      </div>
+
+      <div class="journey-item reveal">
+        <div class="journey-year">2008</div>
+        <h3>Moving2Valencia is born</h3>
+        <p>I launched Moving2Valencia with a simple belief: relocating to Spain should be a joy, not a bureaucratic ordeal. The first clients were neighbours who'd heard my story at a dinner party. Word spread. By the end of the first year, I'd guided 12 families through their moves. The opera world's loss was Valencia's gain.</p>
+      </div>
+
+      <div class="journey-item reveal">
+        <div class="journey-year">2024</div>
+        <h3>500+ families and counting</h3>
+        <p>From San Francisco to Singapore, Berlin to Buenos Aires. Families arrive anxious — some with three weeks notice, some with 18-month plans, some with children who don't speak a word of Spanish. They leave with keys in hand, schools enrolled, NIE numbers confirmed, bank accounts open, and neighbours who already know their names. Every single one is a story I carry with pride.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="creds-section">
+  <div class="section-label">Why Christa</div>
+  <h2>Experience that <em>money can't buy</em></h2>
+  <div class="creds-grid">
+    <div class="cred-card reveal">
+      <div class="cred-icon">🎭</div>
+      <h4>30 Years of Logistics Mastery</h4>
+      <p>Coordinating 200-person opera productions across five countries builds a level of calm, precision, and problem-solving that no relocation challenge can unsettle.</p>
+    </div>
+    <div class="cred-card reveal">
+      <div class="cred-icon">📋</div>
+      <h4>16 Years in Valencia's System</h4>
+      <p>Since 2008, Christa has personally navigated every corner of Spanish bureaucracy — NIE, TIE, empadronamiento, Hacienda, DGT, Conselleria d'Educació. Nothing is theoretical.</p>
+    </div>
+    <div class="cred-card reveal">
+      <div class="cred-icon">🌍</div>
+      <h4>Fluent in Four Languages</h4>
+      <p>Dutch (native), Spanish (fluent), English (fluent), French (conversational). Christa reads your lease, translates your official letters, and speaks to your children's school on your behalf.</p>
+    </div>
+    <div class="cred-card reveal">
+      <div class="cred-icon">🏫</div>
+      <h4>Every School Visited Personally</h4>
+      <p>Christa has personally visited every major school in Valencia — public, concertado, British, American, German, IB. Recommendations come from lived experience, not brochures.</p>
+    </div>
+    <div class="cred-card reveal">
+      <div class="cred-icon">🤝</div>
+      <h4>16 Years of Local Relationships</h4>
+      <p>From estate agents to gestorías, school principals to NIE appointment insiders — Christa's network means your move happens faster and smoother than anyone else can offer.</p>
+    </div>
+    <div class="cred-card reveal">
+      <div class="cred-icon">⭐</div>
+      <h4>4.9/5 from 120+ Reviews</h4>
+      <p>500 families relocated. 500 stories. Every single review mentions the same thing: Christa's personal attention, her calm, and her ability to make the impossible feel simple.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <blockquote>"The greatest thing Valencia gave me was purpose. I turned my hardest years into your easiest ones. That exchange means everything to me."</blockquote>
+  <cite>— Christa van der Meer, Founder · Moving2Valencia</cite>
+</div>
+
+<!-- CTA -->
+<section class="about-cta">
+  <h2>Ready to write your <em>Valencia story?</em></h2>
+  <p>Book a free 15-minute call with Christa. No pressure, no pitch — just honest conversation about your move.</p>
+  <div class="about-cta-btns">
+    <button class="btn-prim" onclick="openContact()">📅 Book Your Free Call</button>
+    <a href="checklist.html" target="_blank" class="btn-sec">📄 Download Free Checklist</a>
+    <a href="index.html" class="btn-sec">← Back to Website</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <a href="index.html" class="footer-logo">moving<span>2</span>valencia</a>
+  <div class="footer-copy">© 2024 Moving2Valencia · Valencia, Spain</div>
+  <a href="mailto:info@moving2valencia.eu" class="footer-link">info@moving2valencia.eu</a>
+</footer>
+
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal-box">
+    <button class="modal-close-btn" onclick="closeContact()">&#x2715;</button>
+    <div class="modal-header">
+      <span class="modal-icon">📅</span>
+      <h2>Book Your <em>Free Call</em></h2>
+      <p class="modal-sub">15 minutes with Christa. Honest answers, no pressure.</p>
+    </div>
+    <div class="modal-body">
+      <a href="https://wa.me/34600000000?text=Hi%20Christa%2C%20I%27d%20love%20to%20book%20a%20free%20consultation." class="contact-opt" target="_blank" rel="noopener">
+        <span class="contact-opt-icon">💬</span>
+        <div><strong>WhatsApp</strong><span>Fastest response — typically within 2 hours</span></div>
+      </a>
+      <a href="mailto:info@moving2valencia.eu?subject=Free%20Consultation%20Request" class="contact-opt">
+        <span class="contact-opt-icon">✉️</span>
+        <div><strong>Email Christa</strong><span>info@moving2valencia.eu</span></div>
+      </a>
+      <div class="modal-divider"><span>or send a message</span></div>
+      <form id="contactForm" onsubmit="submitContact(event)">
+        <div class="form-row">
+          <div class="form-group"><label>Full Name *</label><input type="text" id="cf-name" placeholder="Jennifer Smith" required></div>
+          <div class="form-group"><label>Email *</label><input type="email" id="cf-email" placeholder="you@example.com" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Currently In</label><input type="text" id="cf-from" placeholder="e.g. Berlin, Germany"></div>
+          <div class="form-group"><label>Move Timeline</label>
+            <select id="cf-timeline">
+              <option value="">Select...</option>
+              <option>Within 3 months</option><option>3–6 months</option><option>6–12 months</option><option>1–2 years</option><option>Just exploring</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group"><label>Tell Christa about your move *</label><textarea id="cf-msg" placeholder="Family size, main concerns, services you're interested in..." required></textarea></div>
+        <button type="submit" class="form-submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('active');document.getElementById('mobileOverlay').classList.toggle('active');}
+function openContact(){document.getElementById('contactModal').classList.add('active');document.body.style.overflow='hidden';}
+function closeContact(){document.getElementById('contactModal').classList.remove('active');document.body.style.overflow='';}
+document.getElementById('contactModal').addEventListener('click',function(e){if(e.target===this)closeContact();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeContact();});
+function submitContact(e){
+  e.preventDefault();
+  var n=document.getElementById('cf-name').value,em=document.getElementById('cf-email').value,fr=document.getElementById('cf-from').value||'Not specified',tl=document.getElementById('cf-timeline').value||'Not specified',msg=document.getElementById('cf-msg').value;
+  var sub='Free Consultation \u2014 Moving2Valencia',bod='Name: '+n+'\nEmail: '+em+'\nFrom: '+fr+'\nTimeline: '+tl+'\n\nMessage:\n'+msg;
+  window.open('mailto:info@moving2valencia.eu?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(bod));
+  document.getElementById('contactForm').innerHTML='<div class="form-success"><h3>\u2713 Sent!</h3><p>Christa will be in touch within 1 business day. Or email: <a href="mailto:info@moving2valencia.eu">info@moving2valencia.eu</a></p></div>';
+}
+// Reveal
+window.addEventListener('scroll',function(){document.querySelectorAll('.reveal').forEach(function(el){if(el.getBoundingClientRect().top<window.innerHeight*0.9)el.classList.add('visible');});},{passive:true});
+document.querySelectorAll('.reveal').forEach(function(el){if(el.getBoundingClientRect().top<window.innerHeight*0.9)el.classList.add('visible');});
+</script>
+</body>
+</html>

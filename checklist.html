@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Valencia Relocation Checklist — Moving2Valencia</title>
+<meta name="description" content="Your complete, free relocation checklist for moving to Valencia, Spain. Interactive, printable, and organised by phase. Download PDF instantly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--terra:#C45C3E;--terra-dark:#A3472D;--terra-light:#E8A88A;--valencia-orange:#E8913A;--cream:#FAF6F1;--charcoal:#2C2420;--stone:#6B5E56;--sand:#E8DDD3;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:#1a1512;color:white;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+nav{position:sticky;top:0;background:rgba(26,21,18,0.95);backdrop-filter:blur(16px);padding:16px 60px;display:flex;justify-content:space-between;align-items:center;z-index:100;border-bottom:1px solid rgba(255,255,255,0.05);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:white;text-decoration:none;}
+.nav-logo span{color:var(--terra);}
+.nav-actions{display:flex;gap:12px;align-items:center;}
+.btn-print{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);padding:10px 22px;border-radius:30px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;font-family:'Inter',sans-serif;}
+.btn-print:hover{background:rgba(255,255,255,0.1);color:white;}
+.btn-book{background:var(--terra);color:white;padding:10px 22px;border-radius:30px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;font-family:'Inter',sans-serif;border:none;text-decoration:none;display:inline-flex;align-items:center;min-height:42px;}
+.btn-book:hover{background:var(--terra-dark);transform:translateY(-1px);}
+
+/* HERO */
+.checklist-hero{padding:80px 60px 60px;text-align:center;background:linear-gradient(180deg,#1a1512 0%,rgba(196,92,62,0.05) 50%,#1a1512 100%);}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--terra);margin-bottom:16px;}
+.checklist-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,72px);font-weight:400;line-height:1.1;color:white;margin-bottom:20px;}
+.checklist-hero h1 em{font-style:italic;color:var(--terra-light);}
+.checklist-hero p{font-size:17px;line-height:1.7;color:rgba(255,255,255,0.45);max-width:600px;margin:0 auto 40px;}
+.progress-bar-wrap{max-width:480px;margin:0 auto 8px;}
+.progress-label{display:flex;justify-content:space-between;margin-bottom:10px;font-size:13px;color:rgba(255,255,255,0.5);}
+.progress-track{height:6px;background:rgba(255,255,255,0.07);border-radius:4px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--terra),var(--valencia-orange));border-radius:4px;transition:width 0.5s ease;width:0%;}
+.progress-hint{font-size:12px;color:rgba(255,255,255,0.25);text-align:center;margin-top:8px;}
+
+/* MAIN LAYOUT */
+.checklist-main{max-width:960px;margin:0 auto;padding:0 60px 100px;}
+
+/* PHASE CARD */
+.phase{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:20px;margin-bottom:24px;overflow:hidden;transition:border-color 0.3s;}
+.phase:hover{border-color:rgba(196,92,62,0.2);}
+.phase-header{display:flex;align-items:center;gap:20px;padding:28px 36px;cursor:pointer;user-select:none;}
+.phase-icon{font-size:28px;flex-shrink:0;}
+.phase-info{flex:1;}
+.phase-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:white;}
+.phase-sub{font-size:13px;color:rgba(255,255,255,0.35);margin-top:3px;}
+.phase-count{font-size:13px;color:rgba(255,255,255,0.3);margin-left:auto;white-space:nowrap;}
+.phase-toggle{font-size:20px;color:rgba(255,255,255,0.3);font-weight:300;transition:transform 0.35s;margin-left:16px;}
+.phase.open .phase-toggle{transform:rotate(45deg);color:var(--terra);}
+.phase-body{max-height:0;overflow:hidden;transition:max-height 0.55s cubic-bezier(0.4,0,0.2,1);}
+.phase.open .phase-body{max-height:2000px;}
+.phase-items{padding:0 36px 28px;}
+.check-item{display:flex;align-items:flex-start;gap:16px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.04);cursor:pointer;transition:background 0.2s;border-radius:8px;}
+.check-item:last-child{border-bottom:none;}
+.check-item:hover{background:rgba(255,255,255,0.02);}
+.check-box{width:22px;height:22px;border-radius:6px;border:1.5px solid rgba(255,255,255,0.2);background:transparent;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all 0.25s;cursor:pointer;}
+.check-item.checked .check-box{background:var(--terra);border-color:var(--terra);}
+.check-box::after{content:'';display:none;width:5px;height:9px;border:2px solid white;border-top:none;border-left:none;transform:rotate(45deg);}
+.check-item.checked .check-box::after{display:block;}
+.check-text{flex:1;}
+.check-label{font-size:15px;color:rgba(255,255,255,0.8);font-weight:500;line-height:1.4;}
+.check-item.checked .check-label{text-decoration:line-through;color:rgba(255,255,255,0.3);}
+.check-note{font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;line-height:1.5;}
+.check-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:20px;margin-left:8px;vertical-align:middle;}
+.tag-urgent{background:rgba(232,145,58,0.15);color:var(--valencia-orange);border:1px solid rgba(232,145,58,0.3);}
+.tag-early{background:rgba(196,92,62,0.12);color:var(--terra-light);border:1px solid rgba(196,92,62,0.25);}
+.tag-optional{background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.08);}
+
+/* BOTTOM CTA */
+.checklist-cta{max-width:960px;margin:0 auto 80px;padding:0 60px;}
+.cta-box{background:linear-gradient(135deg,rgba(196,92,62,0.12) 0%,rgba(232,145,58,0.06) 100%);border:1px solid rgba(196,92,62,0.2);border-radius:24px;padding:52px;text-align:center;}
+.cta-box h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:400;color:white;margin-bottom:14px;}
+.cta-box h2 em{font-style:italic;color:var(--terra-light);}
+.cta-box p{font-size:15px;color:rgba(255,255,255,0.45);margin-bottom:28px;line-height:1.7;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-cta-prim{background:var(--terra);color:white;padding:15px 32px;border-radius:50px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:50px;transition:all 0.3s;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+.btn-cta-prim:hover{background:var(--terra-dark);transform:translateY(-2px);}
+.btn-cta-sec{background:transparent;color:rgba(255,255,255,0.6);padding:15px 32px;border-radius:50px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:50px;border:1px solid rgba(255,255,255,0.15);transition:all 0.3s;}
+.btn-cta-sec:hover{border-color:var(--terra);color:var(--terra-light);}
+
+/* PRINT STYLES */
+@media print{
+  nav,#progressSection,.phase-toggle,.checklist-cta,footer{display:none!important;}
+  body{background:white;color:black;}
+  .checklist-hero{padding:20px;text-align:left;}
+  .checklist-hero h1,.eyebrow{color:#2C2420;}
+  .checklist-hero p{color:#6B5E56;}
+  .phase{background:white;border:1px solid #E8DDD3;break-inside:avoid;margin-bottom:16px;}
+  .phase-body{max-height:none!important;}
+  .phase-name{color:#2C2420;}
+  .phase-sub,.phase-count{color:#6B5E56;}
+  .check-label{color:#2C2420;}
+  .check-note{color:#9B8E86;}
+  .check-box{border-color:#C45C3E;}
+  .check-item.checked .check-box{background:#C45C3E;}
+  .phase-header{padding:16px 24px;}
+  .phase-items{padding:0 24px 16px;}
+  .phase-icon{display:none;}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:14px 24px;}
+  .checklist-hero{padding:60px 24px 40px;}
+  .checklist-main{padding:0 24px 60px;}
+  .checklist-cta{padding:0 24px;}
+  .phase-header{padding:22px 24px;}
+  .phase-items{padding:0 24px 20px;}
+  .cta-box{padding:36px 28px;}
+  .cta-btns{flex-direction:column;align-items:stretch;}
+  .btn-cta-prim,.btn-cta-sec{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">moving<span>2</span>valencia</a>
+  <div class="nav-actions">
+    <button class="btn-print" onclick="window.print()">🖨 Print PDF</button>
+    <a href="index.html" class="btn-book">← Back to Site</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="checklist-hero">
+  <div class="eyebrow">Free Resource</div>
+  <h1>Your <em>Complete</em> Valencia<br>Relocation Checklist</h1>
+  <p>The exact same checklist Christa uses with every client — 60+ tasks organised by phase, with notes on timing and priority. Check off tasks as you complete them.</p>
+  <div id="progressSection" class="progress-bar-wrap">
+    <div class="progress-label">
+      <span>Progress</span>
+      <span id="progressText">0 of 63 completed</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-hint">Check tasks as you complete them — progress saves in your browser</div>
+  </div>
+</div>
+
+<!-- CHECKLIST -->
+<main class="checklist-main">
+
+  <!-- PHASE 1 -->
+  <div class="phase open" id="phase1">
+    <div class="phase-header" onclick="togglePhase('phase1')">
+      <span class="phase-icon">📋</span>
+      <div class="phase-info">
+        <div class="phase-name">Phase 1 — Decision &amp; Research</div>
+        <div class="phase-sub">12–6 months before your move</div>
+      </div>
+      <div class="phase-count" id="count-phase1">0/10</div>
+      <span class="phase-toggle">+</span>
+    </div>
+    <div class="phase-body">
+      <div class="phase-items">
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase1">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Choose your visa type <span class="check-tag tag-urgent">Urgent</span></div>
+            <div class="check-note">EU/EEA citizens: free movement. Non-EU: Digital Nomad Visa (€2,646/month income req.), Non-Lucrative Visa (€28,800/year), or Work Permit. Each has different document requirements.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase1">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Research Valencia neighbourhoods</div>
+            <div class="check-note">Ruzafa (expat hub, bars, market), El Carmen (historic, bohemian), Benimaclet (village feel), El Cabanyal (beach, €600-900/mo), Malvarrosa (seafront, quieter), Campanar (families, modern).</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase1">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Set your monthly budget <span class="check-tag tag-early">Plan Early</span></div>
+            <div class="check-note">Average 2024 costs: 1-bed apartment €700–1,100/mo, 3-bed €1,200–1,800/mo. Utilities ~€120/mo. Groceries €300–500/mo for a family. International school fees €700–1,500/mo per child.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase1">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Book a scouting trip to Valencia <span class="check-tag tag-early">Recommended</span></div>
+            <div class="check-note">Visit your preferred neighbourhoods in person. Walk the markets, eat at the restaurants, feel the pace. Nothing replaces being there.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase1">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Research school options for children</div>
+            <div class="check-note">Key schools: Caxton College (British), American School, Deutsche Schule, Colegio Alemán, Lyric (IB). Public school enrolment via Conselleria d'Educació. Concertado schools are semi-private at low cost.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase1">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Understand the NIE timeline <span class="check-tag tag-urgent">Critical</span></div>
+            <div class="check-note">The NIE (Número de Identificación de Extranjero) is required to sign a lease, open a bank account, buy a car, and more. EU citizens can self-apply; Non-EU must apply at a consulate before arriving in many cases. Process can take 4–12 weeks.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase1">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Get documents apostilled in your home country <span class="check-tag tag-early">Start Early</span></div>
+            <div class="check-note">Birth certificates, marriage certificate, criminal record, university degrees, and children's school records may all require apostilles. In the UK/US this takes 2–8 weeks and must be done before you leave.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase1">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Book a free consultation with Christa</div>
+            <div class="check-note">A 15-minute call can save months of confusion. Christa will tell you exactly what you need, what order to do it in, and what mistakes to avoid.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase1">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Notify your employer / plan remote work <span class="check-tag tag-optional">If Applicable</span></div>
+            <div class="check-note">If working remotely, confirm your company's policy on working from Spain. Tax implications apply after 183 days of Spanish residence — consult a gestoría early.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase1">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Begin Spanish language learning <span class="check-tag tag-early">Recommended</span></div>
+            <div class="check-note">Even basic Spanish transforms your daily experience. Apps: Duolingo, Babbel. In Valencia, Valencian (Catalan variant) is also spoken — some official documents are in both languages.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="phase" id="phase2">
+    <div class="phase-header" onclick="togglePhase('phase2')">
+      <span class="phase-icon">🏛</span>
+      <div class="phase-info">
+        <div class="phase-name">Phase 2 — Legal &amp; Documents</div>
+        <div class="phase-sub">6–3 months before your move</div>
+      </div>
+      <div class="phase-count" id="count-phase2">0/10</div>
+      <span class="phase-toggle">+</span>
+    </div>
+    <div class="phase-body">
+      <div class="phase-items">
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase2">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Apply for NIE at Spanish consulate (non-EU) <span class="check-tag tag-urgent">Critical</span></div>
+            <div class="check-note">Non-EU nationals must apply for an NIE at the Spanish consulate in their home country before relocating, as part of the long-stay visa application. EU nationals can apply on arrival at a Comisaría in Valencia.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase2">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Apply for long-stay visa (non-EU) <span class="check-tag tag-urgent">Critical</span></div>
+            <div class="check-note">Digital Nomad Visa, Non-Lucrative Visa, or Golden Visa — apply at your local Spanish embassy. Processing: 1–3 months. Required documents include criminal record, health insurance, proof of income/funds.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase2">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Get certified translations of key documents <span class="check-tag tag-urgent">Required</span></div>
+            <div class="check-note">All non-Spanish documents used in official processes require certified Spanish translation by a sworn translator (traductor jurado). Cost: €30–80 per document.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase2">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Arrange private health insurance <span class="check-tag tag-urgent">Required for non-EU visa</span></div>
+            <div class="check-note">Required for most Spanish visas. Providers: Adeslas, Sanitas, Cigna, Allianz. Average family cost: €80–250/mo. Must cover all risks with no geographical limitations and minimum €30,000 coverage.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase2">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Organise international money transfer</div>
+            <div class="check-note">Wise, Revolut, or local bank wire. You'll need funds in Spain for the rental deposit (typically 1–2 months) plus first month's rent before your Spanish account is open. Minimum recommend: €3,000–5,000 liquid on arrival.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase2">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Check driving licence requirements <span class="check-tag tag-urgent">6-month window</span></div>
+            <div class="check-note">Non-EU licences can be driven for 6 months after becoming Spanish resident. After that, you must exchange (UK, US, Canada) or take the full Spanish test. Book the DGT exchange appointment well in advance — slots are scarce.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase2">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Research schools and begin applications <span class="check-tag tag-early">International schools</span></div>
+            <div class="check-note">International schools often have waiting lists of 6–18 months. Contact them as early as possible. Public school enrolment via Conselleria d'Educació — application periods are typically March–April for September start.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase2">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Decide on shipping vs. buying new</div>
+            <div class="check-note">Spanish apartments are typically furnished. Shipping costs for a 40ft container from the UK: ~€3,000–5,000. From the US: €8,000–15,000. Many expats ship only irreplaceable items and buy new locally at IKEA, El Corte Inglés, or MediaMarkt.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase2">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Register with your home country's consulate <span class="check-tag tag-optional">Recommended</span></div>
+            <div class="check-note">Register as a citizen abroad with your home country's foreign ministry. Useful for emergencies, voting, and official communications.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase2">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Close or transfer accounts in home country</div>
+            <div class="check-note">Subscriptions, bank accounts, pension contributions, national insurance/social security registrations. Some accounts (like UK ISAs) must remain UK-resident. Consult a tax adviser.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="phase" id="phase3">
+    <div class="phase-header" onclick="togglePhase('phase3')">
+      <span class="phase-icon">🏠</span>
+      <div class="phase-info">
+        <div class="phase-name">Phase 3 — Home Finding</div>
+        <div class="phase-sub">3–1 months before your move</div>
+      </div>
+      <div class="phase-count" id="count-phase3">0/10</div>
+      <span class="phase-toggle">+</span>
+    </div>
+    <div class="phase-body">
+      <div class="phase-items">
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase3">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Confirm neighbourhood priority list</div>
+            <div class="check-note">Cross-reference commute (if applicable), school location, expat community, budget, and lifestyle preferences. Visiting in person during a scouting trip is strongly recommended before committing.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase3">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Set up portal alerts (Idealista, Fotocasa) <span class="check-tag tag-early">Do This Now</span></div>
+            <div class="check-note">The Valencia rental market is competitive. Good apartments in Ruzafa and El Carmen are often rented within 24–48 hours of listing. Alerts must be instant. Budget: €800–1,400/mo for a well-located 2-bed.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase3">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Prepare rental dossier <span class="check-tag tag-urgent">Required</span></div>
+            <div class="check-note">Landlords require: NIE (or application receipt), 3 months bank statements, proof of income (payslips or self-employment), passport copy. Some require an aval (guarantor) or additional deposit (up to 3 months).</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase3">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Book virtual property viewings</div>
+            <div class="check-note">Request video walkthroughs from agents. Check: natural light (north-facing flats are dark), noise level, lift if high floor, storage, heating/AC (not all Spanish flats have central heating — essential in winter), parking if needed.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase3">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Understand Spanish lease law (LAU) <span class="check-tag tag-urgent">Read Before Signing</span></div>
+            <div class="check-note">Under LAU 2019: minimum 5-year lease term for individuals (7 for companies). You can leave after 6 months with 30 days notice. Annual increases capped by CPI. Deposit: legally 1 month (though landlords often request 2).</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase3">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Review lease contract before signing <span class="check-tag tag-urgent">Critical</span></div>
+            <div class="check-note">Have a Spanish-speaking adviser review any contract before you sign. Check: who pays community fees and IBI (property tax), what's included in utilities, pet policy, and early termination clauses.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase3">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Arrange temporary accommodation for first weeks <span class="check-tag tag-early">Recommended</span></div>
+            <div class="check-note">Even if you have a flat lined up, book a backup. Lease signing often happens 24–48 hours before key handover. Airbnb, aparthotel, or extended-stay hotel for 1–2 weeks.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase3">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Research internet providers <span class="check-tag tag-optional">Plan Ahead</span></div>
+            <div class="check-note">Main providers in Valencia: Movistar, Orange, Vodafone, MásMóvil. Average cost: €30–50/mo for fibre. Installation can take 2–3 weeks — book before you arrive if your landlord allows.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase3">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Book removals / international freight</div>
+            <div class="check-note">If shipping belongings: book 6–8 weeks in advance. For smaller moves, consider a man-and-van service or shipping boxes via Eurosender/Transglobos. Customs documentation required for non-EU shipments.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase3">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Get home contents insurance quote <span class="check-tag tag-early">Recommended</span></div>
+            <div class="check-note">Spanish renters can take out their own contenido (contents) insurance separately from the landlord's continente (building) policy. Average cost: €150–300/year. Compare at AXA, Mapfre, or Línea Directa.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 4 -->
+  <div class="phase" id="phase4">
+    <div class="phase-header" onclick="togglePhase('phase4')">
+      <span class="phase-icon">✈️</span>
+      <div class="phase-info">
+        <div class="phase-name">Phase 4 — Arrival Week</div>
+        <div class="phase-sub">First 7 days in Valencia</div>
+      </div>
+      <div class="phase-count" id="count-phase4">0/12</div>
+      <span class="phase-toggle">+</span>
+    </div>
+    <div class="phase-body">
+      <div class="phase-items">
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase4">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Register for empadronamiento <span class="check-tag tag-urgent">Do First</span></div>
+            <div class="check-note">The empadronamiento (municipal registration) is done at your local Junta Municipal. Required: passport, rental contract, and in some districts, landlord's authorisation. Opens access to public services, schools, and health system. Free.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase4">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Book NIE / TIE appointment (EU citizens) <span class="check-tag tag-urgent">Do First Week</span></div>
+            <div class="check-note">EU citizens apply at the Oficina de Extranjería or Comisaría de Policía. Appointments released on ciudadaniaexterior.inclusion.gob.es — often gone within minutes of release. Use a service or Christa's team to secure one faster.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase4">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Open Spanish bank account <span class="check-tag tag-urgent">Required for rent</span></div>
+            <div class="check-note">Most landlords require rent by SEPA direct debit. BBVA and CaixaBank are expat-friendly. Sabadell has English-language services. You'll need: NIE, passport, empadronamiento. Non-residents may need a non-resident account first.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase4">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Get a Spanish SIM card</div>
+            <div class="check-note">Prepaid: Orange, Vodafone, Movistar. For contract plans requiring NIE: Pepephone, Simyo, or MásMóvil are expat-friendly. Budget €10–25/mo for an unlimited data plan.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase4">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Transfer utilities to your name (if unfurnished)</div>
+            <div class="check-note">Electricity (Iberdrola or Endesa), gas (Naturgy), and water (EMIVASA in Valencia). If furnished with utilities included — confirm this in writing in the lease.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase4">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Do a thorough property check-in inspection</div>
+            <div class="check-note">Document every defect with photos and video before unpacking. Send to landlord within 48 hours in writing (WhatsApp is legally valid). This protects your deposit.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase4">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Register children for school <span class="check-tag tag-urgent">If children</span></div>
+            <div class="check-note">For public school: contact Conselleria d'Educació with empadronamiento and vaccination records. For international school: contact admissions with passport, previous school reports, and vaccination records.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase4">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Register with a local GP (médico de cabecera) <span class="check-tag tag-optional">If using public health</span></div>
+            <div class="check-note">EU citizens with S1 form (or those paying into Spanish social security) access public healthcare. Register at your nearest Centro de Salud with empadronamiento and NIE. You'll be assigned a GP and health card (SIP card).</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase4">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Get a Tarjeta Joven (youth card) <span class="check-tag tag-optional">Under 30s</span></div>
+            <div class="check-note">Free card for under-30s offering discounts on transport, culture, and leisure across the Valencian Community. Apply at any Oficina Jove with empadronamiento and ID. Worth having.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase4">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Get your Metrovalencia transport card</div>
+            <div class="check-note">The Abono Transporte card covers metro, bus (EMT), tram (Metrovalencia), and Cercanías trains within Valencia. Purchase at any metro station kiosk. €1.50/single, €33/mo unlimited.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase4">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Explore your neighbourhood on foot</div>
+            <div class="check-note">Find your nearest mercado (Mercado Colón, Ruzafa Market, or Central Market), supermercado (Mercadona is the local favourite), pharmacy (farmacia — open late and staffed by pharmacists), and café con leche spot.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase4">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Join Valencia expat communities</div>
+            <div class="check-note">InterNations Valencia, Meetup groups, Facebook: "British Expats Valencia", "Americans in Valencia", "Valencia Expats". Invaluable for recommendations, warnings, and making friends fast.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 5 -->
+  <div class="phase" id="phase5">
+    <div class="phase-header" onclick="togglePhase('phase5')">
+      <span class="phase-icon">📅</span>
+      <div class="phase-info">
+        <div class="phase-name">Phase 5 — First 6 Months</div>
+        <div class="phase-sub">Ongoing tasks after arrival</div>
+      </div>
+      <div class="phase-count" id="count-phase5">0/11</div>
+      <span class="phase-toggle">+</span>
+    </div>
+    <div class="phase-body">
+      <div class="phase-items">
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase5">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Exchange driving licence (non-EU) <span class="check-tag tag-urgent">6-month deadline</span></div>
+            <div class="check-note">UK, US, Canadian, and many other non-EU licences can be exchanged without a new test at the DGT. Book your appointment ASAP — 6 months passes very quickly. Required: NIE, empadronamiento, driving licence, medical certificate (from any clínica de conductores, ~€60).</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase5">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Register as autónomo (self-employed) if applicable <span class="check-tag tag-urgent">If self-employed</span></div>
+            <div class="check-note">Must register with AEAT (tax authority) and TGSS (social security) within 30 days of starting activity. Monthly Social Security fee: €200–350 (reduced rate available for first 2 years: €80–200/mo). Recommend a gestoría to handle this.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase5">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Find a trusted gestoría <span class="check-tag tag-early">Strongly Recommended</span></div>
+            <div class="check-note">A gestoría is an administrative specialist who handles tax returns, autónomo registration, and bureaucratic paperwork. Essential for expats. Cost: €50–150/month for ongoing services, or per-task fees. Christa can introduce you to trusted gestores.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase5">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Declare Modelo 720 if applicable <span class="check-tag tag-urgent">Deadline: 31 March</span></div>
+            <div class="check-note">Spanish tax residents with foreign assets exceeding €50,000 (bank accounts, investments, property) must file Modelo 720 by 31 March each year. Non-compliance fines are extremely severe. Use a gestoría or tax adviser.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase5">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">File Spanish income tax (IRPF) <span class="check-tag tag-urgent">Deadline: 30 June</span></div>
+            <div class="check-note">You become a Spanish tax resident after 183 days in Spain. First return covers the year of arrival (proportional). Filing period: April–June. Use a gestoría or Hacienda's Renta Web system (Spanish only).</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase5">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Renew TIE card (non-EU residents) <span class="check-tag tag-urgent">Every 1–5 years</span></div>
+            <div class="check-note">Non-EU TIE cards must be renewed at the Oficina de Extranjería before expiry. Book your cita previa at least 2 months before the expiry date — appointments are scarce. Christa's team can monitor and book this for you.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase5">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Enrol children in after-school activities</div>
+            <div class="check-note">Valencia has excellent football academies (including Valencia CF youth programme), swimming clubs, music schools, and language academies. The best programmes fill up fast — enquire within your first month.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase5">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Attend a Spanish conversation exchange</div>
+            <div class="check-note">Free language exchange events happen every week across Valencia — cafés, community centres, and online groups. Intercambio Valencia (Facebook group) is the largest and most active.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase5">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Experience Las Fallas <span class="check-tag tag-optional">March</span></div>
+            <div class="check-note">If you arrive before March: Las Fallas (March 15–19) is Valencia's defining festival — enormous papier-mâché sculptures, fireworks, and concerts. The mascletà (midday firecrackers in the Plaza del Ayuntamiento) is unmissable. Book accommodation for Fallas week well in advance.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase5">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Discover your local mercado</div>
+            <div class="check-note">Valencia's covered markets are the heart of daily life. Mercado Central (UNESCO-listed, the largest in Europe), Mercado de Ruzafa, and Benimaclet market. Fresh produce, local cheese, jamón, and the best orange juice in the world.</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)" data-phase="phase5">
+          <div class="check-box"></div>
+          <div class="check-text">
+            <div class="check-label">Check in with Christa for year-one review</div>
+            <div class="check-note">All Moving2Valencia clients get an annual check-in call. What's working? What needs attention? TIE renewal coming up? Tax obligations? This call has saved clients thousands of euros and countless headaches.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- BOTTOM CTA -->
+<div class="checklist-cta">
+  <div class="cta-box">
+    <h2>Ready to make this <em>even easier?</em></h2>
+    <p>Christa and her team handle every item on this list — so you don't have to. One 15-minute call changes everything.</p>
+    <div class="cta-btns">
+      <button class="btn-cta-prim" onclick="alert('Contact form coming soon — email info@moving2valencia.eu')">📅 Book Free Consultation</button>
+      <button class="btn-cta-prim" onclick="window.print()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);">🖨 Print This Checklist</button>
+      <a href="index.html" class="btn-cta-sec">← Back to Website</a>
+    </div>
+  </div>
+</div>
+
+<footer style="background:#100D0B;padding:36px 60px;border-top:1px solid rgba(255,255,255,0.04);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+  <a href="index.html" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:white;text-decoration:none;">moving<span style="color:var(--terra-light);">2</span>valencia</a>
+  <div style="font-size:12px;color:rgba(255,255,255,0.2);">© 2024 Moving2Valencia · Valencia, Spain</div>
+  <a href="mailto:info@moving2valencia.eu" style="font-size:13px;color:rgba(255,255,255,0.3);text-decoration:none;">info@moving2valencia.eu</a>
+</footer>
+
+<script>
+var TOTAL = 63;
+var checked = JSON.parse(localStorage.getItem('v2checklist')||'{}');
+
+function togglePhase(id){
+  document.getElementById(id).classList.toggle('open');
+}
+
+function toggleCheck(el){
+  el.classList.toggle('checked');
+  var key = el.dataset.phase + '-' + Array.from(el.parentNode.children).indexOf(el);
+  checked[key] = el.classList.contains('checked');
+  localStorage.setItem('v2checklist', JSON.stringify(checked));
+  updateProgress();
+  updatePhaseCounts();
+}
+
+function restoreChecked(){
+  document.querySelectorAll('.check-item').forEach(function(el){
+    var key = el.dataset.phase+'-'+Array.from(el.parentNode.children).indexOf(el);
+    if(checked[key])el.classList.add('checked');
+  });
+  updateProgress();
+  updatePhaseCounts();
+}
+
+function updateProgress(){
+  var done = document.querySelectorAll('.check-item.checked').length;
+  var total = document.querySelectorAll('.check-item').length;
+  var pct = total ? Math.round((done/total)*100) : 0;
+  document.getElementById('progressFill').style.width = pct+'%';
+  document.getElementById('progressText').textContent = done+' of '+total+' completed';
+}
+
+function updatePhaseCounts(){
+  ['phase1','phase2','phase3','phase4','phase5'].forEach(function(pid){
+    var el=document.getElementById(pid);
+    if(!el)return;
+    var items=el.querySelectorAll('.check-item');
+    var done=el.querySelectorAll('.check-item.checked').length;
+    var count=document.getElementById('count-'+pid);
+    if(count)count.textContent=done+'/'+items.length;
+  });
+}
+
+restoreChecked();
+</script>
+</body>
+</html>
