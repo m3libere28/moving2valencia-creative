@@ -1,0 +1,1137 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A New Horizon</title>
+<meta name="theme-color" content="#EEE6D8">
+<meta name="description" content="Moving2Valencia: personal relocation support in Valencia, Spain. Planning, paperwork, home finding, schools and settling in.">
+
+
+<link rel="stylesheet" href="../assets/jury-fonts/478285d805eb7999.css?v=089d8958">
+<link rel="preload" as="image" href="img/malvarrosa-sky-1600.webp" type="image/webp">
+<style>
+:root{
+  /* Layout: full-bleed chapters that alternate limestone, ink and paper; an asymmetric 12-column editorial grid; one horizon line threads every chapter (sea → route → doorway → underline) */
+  --limestone:#EEE6D8;
+  --limestone-deep:#E0D3BD;
+  --paper:#F7F2E9;
+  --sea:#0F3B5C;
+  --sea-mid:#1D5C84;
+  --citrus:#E88A2E;
+  --terra:#A2462A;
+  --ink:#14191F;
+  --ink-soft:#4A4F56;
+  --mist:#AEB6BD;
+  --rule:rgba(20,25,31,.14);
+  --rule-dark:rgba(238,230,216,.16);
+  --sea-mist:#BCCAD6;
+
+  --f-display:"Bodoni Moda","Bodoni 72","Didot","Bodoni MT","Times New Roman",serif;
+  --f-text:"Instrument Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+  --t-label:.75rem;
+  --t-body:1.0625rem;
+  --t-lead:1.1875rem;
+  --t-h3:clamp(1.25rem,1.8vw,1.5rem);
+  --t-h2:clamp(2.4rem,5.4vw,4.75rem);
+  --t-h1:clamp(2.75rem,min(7vw,11vh),6.5rem);
+
+  --gutter:clamp(16px,5vw,72px);
+  --max:1320px;
+  color-scheme:light;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+html.motion-off{scroll-behavior:auto}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--limestone);color:var(--ink);font-family:var(--f-text);font-size:var(--t-body);line-height:1.65;overflow-x:clip;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:1.04;letter-spacing:-.012em;text-wrap:balance;margin:0;font-optical-sizing:auto}
+h1 em,h2 em{font-style:italic}
+h3{font-family:var(--f-text);font-weight:600;letter-spacing:-.01em;line-height:1.25}
+p,ul,ol,dl,dd,figure{margin:0}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--citrus);outline-offset:3px;border-radius:3px}
+section[id],footer[id]{scroll-margin-top:84px}
+
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.skip{position:fixed;left:16px;top:-120px;z-index:100;background:var(--ink);color:var(--paper);padding:.75rem 1.1rem;border-radius:8px;font-weight:600;text-decoration:none}
+.skip:focus{top:calc(env(safe-area-inset-top,0px) + 12px)}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.label{font-size:var(--t-label);letter-spacing:.16em;text-transform:uppercase;font-weight:600;line-height:1.4}
+.kicker{color:var(--terra)}
+.draft{font-family:var(--f-text);font-size:.62em;font-weight:600;color:var(--terra);margin-left:.08em;vertical-align:super;line-height:0;font-style:normal}
+.on-dark .draft{color:var(--citrus)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:48px;padding:0 1.35rem;border-radius:999px;font:600 .9375rem/1 var(--f-text);text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:var(--sea)}
+.btn-line{border-color:currentColor;background:transparent;color:inherit}
+.btn-line:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-citrus{background:var(--citrus);color:var(--ink)}
+.btn-citrus:hover{background:#F29A44}
+.arrow{display:inline-block;transition:transform .2s ease}
+.btn:hover .arrow{transform:translateX(3px)}
+
+/* ===== Navigation ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:calc(env(safe-area-inset-top,0px) + 12px) var(--gutter) 0;pointer-events:none}
+.nav-inner{pointer-events:auto;position:relative;max-width:var(--max);margin-inline:auto;display:flex;align-items:center;gap:.75rem;background:rgba(247,242,233,.95);color:var(--ink);border-radius:999px;padding:.35rem .35rem .35rem 1.15rem;box-shadow:0 1px 0 rgba(20,25,31,.06),0 10px 30px rgba(20,25,31,.10)}
+.wordmark{display:inline-flex;align-items:center;min-height:44px;font-family:var(--f-display);font-size:1.25rem;font-weight:500;text-decoration:none;letter-spacing:-.01em;white-space:nowrap;margin-right:auto}
+.wordmark b{color:var(--terra);font-weight:700}
+.nav-links{display:flex;gap:1.35rem;list-style:none;padding:0;margin:0}
+.nav-links a{display:inline-flex;align-items:center;min-height:44px;font-size:.8125rem;font-weight:500;text-decoration:none;border-bottom:1.5px solid transparent}
+.nav-links a:hover{border-bottom-color:var(--citrus)}
+.nav-links .menu-cta{display:none}
+.nav-actions{display:flex;gap:.35rem;align-items:center}
+.icon-btn{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;min-width:44px;justify-content:center;border-radius:999px;border:1.5px solid var(--rule);background:transparent;color:var(--ink);font:500 .8125rem var(--f-text);padding:0 .85rem;cursor:pointer}
+.motion-btn{padding:0;width:44px}
+.icon-btn:hover{border-color:var(--ink)}
+.motion-dot{width:9px;height:9px;border-radius:50%;background:var(--citrus);flex-shrink:0}
+.motion-btn[aria-pressed="false"] .motion-dot{background:transparent;box-shadow:inset 0 0 0 1.5px var(--ink-soft)}
+.menu-btn{display:none}
+.nav .btn{min-height:44px;font-size:.875rem;padding:0 1.1rem}
+@media (max-width:899.98px){
+  .nav-links{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;gap:0;background:var(--paper);border-radius:20px;padding:.5rem 1.25rem;box-shadow:0 18px 40px rgba(20,25,31,.16)}
+  .nav-links.open{display:flex}
+  .nav-links a{min-height:48px;font-size:1rem;border-bottom:1px solid var(--rule)}
+  .nav-links li:last-child a{border-bottom:0}
+  .menu-btn{display:inline-flex}
+}
+@media (max-width:560px){
+  .nav-cta{display:none}
+  .nav-links .menu-cta{display:block}
+  .wordmark{font-size:1.1rem}
+}
+
+/* ===== Chapter 1: Horizon ===== */
+.hero{position:relative;background:var(--limestone)}
+.hero-stage{--hz:84%;position:relative;height:100vh;height:100svh;min-height:600px;overflow:hidden;clip-path:inset(0% 0% 0% 0% round 0px 0px 0px 0px);background:#3A4F63;color:var(--paper)}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% 85%;transform-origin:72% 84%;filter:saturate(1.12) contrast(1.04)}
+.hero-scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,rgba(14,26,38,.66) 0%,rgba(14,26,38,.5) 45%,rgba(14,26,38,.3) 78%,rgba(14,26,38,.14) 100%),linear-gradient(0deg,rgba(14,26,38,.5) 0%,rgba(14,26,38,0) 24%)}
+.hero-copy{position:absolute;left:0;right:0;top:0;height:var(--hz);z-index:2}
+.hero-copy .wrap{height:100%;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2.4vw,40px);row-gap:1rem;align-content:end;padding-top:calc(env(safe-area-inset-top,0px) + 104px);padding-bottom:clamp(28px,6vh,64px)}
+.hero-eyebrow{grid-column:1/-1;color:#F6C68C}
+.hero h1{grid-column:1/8;font-size:var(--t-h1);line-height:.98;letter-spacing:-.02em;color:var(--paper)}
+.h1-line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.h1-line>span{display:block}
+.hero h1 em{color:#F6C68C}
+.hero-aside{grid-column:8/13;align-self:end;display:grid;gap:1.15rem;padding-bottom:.35rem}
+.hero-aside p{color:rgba(247,242,233,.92);max-width:38ch;font-size:1.0625rem;line-height:1.6}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.6rem}
+.hero .btn-line{color:var(--paper)}
+.hero .btn-line:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.hero .draft{color:#F6C68C}
+.horizon{position:absolute;left:0;right:0;top:var(--hz);height:2px;margin-top:-1px;background:linear-gradient(90deg,rgba(246,231,207,0) 0%,#F6E7CF 18%,#FFF4E2 70%,rgba(246,231,207,0) 100%);z-index:3;transform-origin:50% 50%;opacity:.95}
+.imagine{position:absolute;left:50%;top:var(--hz);z-index:4;translate:-50% -64%;transform:scale(.5);transform-origin:50% 64%;pointer-events:none;font-family:var(--f-display);font-weight:600;font-size:18vw;line-height:.8;letter-spacing:-.02em;white-space:nowrap;user-select:none;color:var(--paper);text-shadow:0 12px 48px rgba(14,26,38,.35)}
+.hero-note{position:absolute;left:var(--gutter);right:var(--gutter);bottom:clamp(12px,2.6vh,26px);z-index:3;color:rgba(247,242,233,.92);font-size:.75rem;line-height:1.5;max-width:56ch;text-shadow:0 1px 8px rgba(14,26,38,.7)}
+.door-cue{position:absolute;left:50%;bottom:9%;translate:-50% 0;z-index:5;opacity:0;color:var(--paper);white-space:nowrap;text-shadow:0 1px 8px rgba(14,26,38,.7)}
+@media (max-width:899.98px){
+  .hero-stage{height:auto;min-height:100svh}
+  .hero-photo{object-position:80% 85%;transform-origin:80% 84%}
+  .hero-scrim{background:linear-gradient(180deg,rgba(14,26,38,.72) 0%,rgba(14,26,38,.52) 58%,rgba(14,26,38,.12) 80%,rgba(14,26,38,.45) 100%)}
+  .hero-copy{position:relative;height:auto}
+  .hero-copy .wrap{grid-template-columns:minmax(0,1fr);padding-top:calc(env(safe-area-inset-top,0px) + 92px);padding-bottom:24svh;align-content:start}
+  .hero h1,.hero-aside{grid-column:1/-1}
+  .hero-aside{padding-bottom:0}
+  .imagine{font-size:19vw}
+  .hero-note{bottom:14px}
+}
+
+/* ===== Chapter heads (shared) ===== */
+.chapter{position:relative;padding-block:clamp(88px,13vh,160px)}
+.chapter-head{display:grid;gap:1.1rem;margin-bottom:clamp(48px,8vh,96px)}
+.chapter-head h2{font-size:var(--t-h2)}
+.lead{font-size:var(--t-lead);line-height:1.6;color:var(--ink-soft);max-width:52ch}
+
+/* ===== Chapter 2: A life within reach ===== */
+.life{background:var(--limestone)}
+.life .chapter-head{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2.4vw,40px)}
+.life .chapter-head>*{grid-column:1/-1}
+.life h2{grid-column:1/10;max-width:20ch}
+.life h2 em{color:var(--sea-mid)}
+.life .lead{grid-column:7/13}
+.scenes{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2.4vw,40px);row-gap:clamp(56px,9vw,128px)}
+.route-svg{position:absolute;left:0;top:-3%;width:100%;height:106%;z-index:0;overflow:visible;pointer-events:none}
+.route-svg path{fill:none;stroke:var(--citrus);stroke-width:2;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:0;stroke-linecap:round}
+.route-mob{display:none}
+.scene{position:relative;z-index:1}
+.scene-art{position:relative;overflow:hidden;background:var(--limestone-deep)}
+.scene-art img{width:100%;height:100%;object-fit:cover;scale:1.12}
+.s1{grid-column:1/8}.s1 .scene-art{aspect-ratio:4/5}
+.s2{grid-column:9/13;align-self:end}.s2 .scene-art{aspect-ratio:3/4}
+.s3{grid-column:2/7}.s3 .scene-art{aspect-ratio:1/1}
+.s4{grid-column:7/13;margin-top:22%}.s4 .scene-art{aspect-ratio:16/11}
+.scene figcaption{display:grid;gap:.3rem;margin-top:1.1rem;max-width:36ch}
+.cap-k{color:var(--sea-mid)}
+.cap-t{font-size:1.0625rem;font-weight:500;line-height:1.45}
+@media (max-width:899.98px){
+  .life .chapter-head{grid-template-columns:minmax(0,1fr)}
+  .life h2,.life .lead{grid-column:1/-1}
+  .scenes{grid-template-columns:minmax(0,1fr)}
+  .scene{grid-column:1/-1!important;width:86%;margin-top:0!important}
+  .scene:nth-child(odd of .scene){margin-left:auto}
+  .s2 .scene-art,.s4 .scene-art{aspect-ratio:4/5}
+  .route-desk{display:none}
+  .route-mob{display:block}
+}
+
+/* ===== Chapter 3: Where do we begin ===== */
+.begin{background:var(--ink);color:var(--limestone)}
+.begin-stage{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-block:clamp(96px,12vh,140px)}
+.begin h2{font-size:clamp(3rem,8.6vw,8.25rem);line-height:.94;letter-spacing:-.025em}
+.begin h2 em{color:var(--citrus)}
+.begin-intro{max-width:48ch;color:var(--mist);margin-top:1.25rem;font-size:var(--t-lead);line-height:1.6}
+.plan{position:relative;list-style:none;margin:clamp(36px,6vh,68px) 0 0;padding:0}
+.plan-spine{position:absolute;left:0;top:0;bottom:0;width:1.5px;background:var(--citrus);transform-origin:50% 0;opacity:.85}
+.plan li{display:grid;grid-template-columns:minmax(7.5rem,10rem) minmax(0,1.35fr) minmax(0,1fr);gap:.6rem 2.5rem;align-items:baseline;padding:1.35rem 0 1.35rem 1.5rem;border-top:1px solid var(--rule-dark)}
+.plan li:last-child{border-bottom:1px solid var(--rule-dark)}
+.step-k{color:var(--citrus)}
+.q{font-family:var(--f-display);font-style:italic;font-size:clamp(1.85rem,2.5vw,2.2rem);line-height:1.16;transform-origin:0 50%}
+.a{color:var(--mist);max-width:40ch}
+@media (max-width:899.98px){
+  .begin-stage{min-height:0}
+  .plan li{grid-template-columns:minmax(0,1fr);gap:.4rem}
+  .q{font-family:var(--f-text);font-style:normal;font-weight:600;font-size:1.1875rem;line-height:1.35}
+}
+
+/* ===== Chapter 4: Route to arrival ===== */
+.route{background:var(--paper)}
+.route-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(24px,5vw,96px);align-items:start}
+.route-aside{position:sticky;top:calc(env(safe-area-inset-top,0px) + 104px)}
+.arrive{position:relative;font-family:var(--f-display);font-weight:700;font-size:clamp(3.4rem,6.6vw,6.6rem);line-height:.86;letter-spacing:-.02em;margin-bottom:2rem;user-select:none;width:max-content;max-width:100%}
+.arrive span{display:block}
+.a-line{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.a-ghost{position:absolute;inset:0;color:transparent;-webkit-text-stroke:1.5px var(--citrus);transform:translate(.055em,.055em)}
+.a-fill{position:absolute;inset:0;color:var(--sea);clip-path:inset(0% 0% 0% 0%)}
+.route-map{width:100%;max-width:280px;height:auto;display:block;overflow:visible}
+.route-map .base{fill:none;stroke:var(--rule);stroke-width:2}
+.route-map .prog{fill:none;stroke:var(--citrus);stroke-width:2.5;stroke-dasharray:1;stroke-dashoffset:0;stroke-linecap:round}
+.route-map .m circle{fill:var(--paper);stroke:var(--ink);stroke-width:1.5;transition:fill .25s ease,stroke .25s ease}
+.route-map .m.is-on circle{fill:var(--citrus);stroke:var(--citrus)}
+.route-map text{font-family:var(--f-text);font-size:13px;font-weight:600;letter-spacing:.12em;fill:var(--ink)}
+.route-main h2{font-size:var(--t-h2)}
+.route-main h2 em{color:var(--sea-mid)}
+.route-main .lead{margin-top:1.1rem}
+.stages{margin-top:clamp(36px,6vh,64px)}
+.stage{padding-block:clamp(28px,4vh,44px);border-top:1px solid var(--rule)}
+.stage-k{color:var(--terra)}
+.stage h3{font-size:var(--t-h3);margin-top:.5rem}
+.outcome{margin-top:.75rem;color:var(--ink-soft);max-width:54ch}
+.svc{margin-top:.75rem;font-size:.875rem;color:var(--ink-soft)}
+.svc strong{color:var(--ink);font-weight:600}
+details.more{margin-top:1rem}
+details.more summary{display:inline-flex;align-items:center;gap:.6rem;min-height:44px;cursor:pointer;font-weight:600;font-size:.9375rem;list-style:none}
+details.more summary::-webkit-details-marker{display:none}
+.plus{position:relative;width:14px;height:14px;flex-shrink:0}
+.plus::before,.plus::after{content:"";position:absolute;left:0;top:6px;width:14px;height:2px;background:currentColor;transition:transform .25s ease}
+.plus::after{transform:rotate(90deg)}
+details[open]>summary .plus::after{transform:rotate(0)}
+details.more ul{list-style:none;padding:0;margin:.4rem 0 0;display:grid;gap:.35rem}
+details.more li{position:relative;padding-left:1.4rem;color:var(--ink-soft)}
+details.more li::before{content:"";position:absolute;left:0;top:.8em;width:.8rem;height:1.5px;background:var(--citrus)}
+.next-call{margin-top:clamp(28px,4vh,44px);background:var(--limestone);padding:clamp(22px,3vw,36px);border-radius:4px;display:grid;gap:1rem}
+.next-call h3{font-size:var(--t-h3)}
+.next-call ul{margin:0;padding-left:1.1rem;color:var(--ink-soft);display:grid;gap:.3rem}
+@media (max-width:899.98px){
+  .route-grid{grid-template-columns:minmax(0,1fr)}
+  .route-aside{position:static}
+  .route-map{display:none}
+  .arrive{font-size:clamp(3.2rem,17vw,6rem)}
+}
+
+/* Route on deep sea */
+.route{background:var(--sea);color:var(--paper)}
+.route .kicker,.route .stage-k{color:var(--citrus)}
+.route .lead,.route .outcome,.route .svc,.route details.more li,.route .next-call ul{color:var(--sea-mist)}
+.route .svc strong,.route details.more summary{color:var(--paper)}
+.route-main h2 em{color:#F6C68C}
+.route .stage{border-top-color:var(--rule-dark)}
+.route .a-line{-webkit-text-stroke-color:var(--paper)}
+.route .a-fill{color:var(--paper)}
+.route-map .base{stroke:var(--rule-dark)}
+.route-map .m circle{fill:var(--sea);stroke:var(--paper)}
+.route-map text{fill:var(--paper)}
+.route .next-call{background:rgba(247,242,233,.06);border:1px solid var(--rule-dark)}
+.route .next-call h3{color:var(--paper)}
+
+/* Interlude */
+.interlude{position:relative;background:var(--ink)}
+.interlude figure{position:relative;height:clamp(260px,62vh,640px);overflow:hidden}
+.interlude img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;scale:1.14}
+.interlude figure::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,26,38,.55) 0%,rgba(14,26,38,0) 40%)}
+.interlude figcaption{position:absolute;z-index:1;left:var(--gutter);bottom:clamp(16px,3vh,28px);color:var(--paper)}
+@media (max-width:899.98px){.interlude figure{height:44svh}}
+
+/* ===== Chapter 5: A person beside you ===== */
+.trust{background:var(--limestone)}
+.trust-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);column-gap:clamp(24px,7vw,128px);align-items:center}
+.portrait-fig{width:100%;max-width:440px}
+.portrait{position:relative;aspect-ratio:3/4;width:100%;border-radius:999px 999px 0 0;overflow:hidden;background:var(--limestone-deep)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:44% 30%}
+.portrait-cap{margin-top:1rem;color:var(--ink-soft)}
+.trust h2{font-size:var(--t-h2)}
+.trust h2 em{color:var(--sea-mid)}
+.trust-body{display:grid;gap:1.1rem;margin-top:1.4rem;max-width:56ch;color:var(--ink-soft)}
+.approach{margin-top:2.2rem;display:grid;gap:1.2rem;max-width:56ch}
+.approach div{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);gap:.25rem 1.5rem;padding-top:1.1rem;border-top:1px solid var(--rule)}
+.approach dt{font-weight:600;font-size:1.0625rem;line-height:1.35}
+.approach dd{color:var(--ink-soft)}
+.footnote{margin-top:2rem;font-size:.8125rem;color:var(--ink-soft);max-width:56ch}
+@media (max-width:899.98px){
+  .trust-grid{grid-template-columns:minmax(0,1fr);row-gap:48px}
+  .portrait-fig{max-width:340px;margin-inline:auto}
+  .approach div{grid-template-columns:minmax(0,1fr)}
+}
+
+/* ===== Chapter 6: Belong ===== */
+.belong{background:var(--paper);padding-bottom:0}
+.belong h2 em{color:var(--sea-mid)}
+.atlas{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);column-gap:clamp(24px,5vw,80px);align-items:start}
+.tabs{display:flex;flex-direction:column;gap:.25rem}
+.tab{min-height:60px;text-align:left;background:transparent;border:0;border-left:2px solid var(--rule);padding:.4rem 1.25rem;font-family:var(--f-display);font-size:clamp(2rem,2.6vw,2.35rem);line-height:1.15;color:var(--ink-soft);cursor:pointer;transition:color .2s ease,border-color .2s ease}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink);border-left-color:var(--citrus);font-style:italic}
+.atlas-note{margin-top:1.5rem;font-size:.8125rem;color:var(--ink-soft);max-width:34ch}
+.panel{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(20px,3vw,40px);align-items:start}
+.panel[hidden]{display:none!important}
+.panel.fade-in{animation:panelIn .3s ease}
+@keyframes panelIn{from{opacity:0}to{opacity:1}}
+.panel-art{aspect-ratio:4/5;overflow:hidden;background:var(--limestone-deep)}
+.panel-art img{width:100%;height:100%;object-fit:cover}
+.panel h3{font-size:var(--t-h3);margin-bottom:1rem}
+.panel ul{list-style:none;padding:0;margin:0;display:grid}
+.panel li{padding-block:.85rem;border-top:1px solid var(--rule);color:var(--ink-soft)}
+.panel li strong{display:block;color:var(--ink);font-weight:600;margin-bottom:.15rem}
+@media (max-width:899.98px){
+  .atlas{grid-template-columns:minmax(0,1fr);row-gap:28px}
+  .tabs{flex-direction:row;overflow-x:auto;gap:.5rem;padding-bottom:4px;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;border-left:0;border-bottom:2px solid var(--rule);padding:.4rem .5rem;font-family:var(--f-text);font-weight:600;font-size:1rem;min-height:48px}
+  .tab[aria-selected="true"]{font-style:normal}
+  .tab[aria-selected="true"]{border-bottom-color:var(--citrus)}
+  .panel{grid-template-columns:minmax(0,1fr)}
+  .panel-art{aspect-ratio:4/3}
+}
+
+/* Belong stage: static (default / reduced motion / phones) */
+.belong-stage{position:relative;margin-top:clamp(88px,13vh,160px)}
+.collage{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;padding-inline:var(--gutter);max-width:var(--max);margin-inline:auto}
+.tile{aspect-ratio:3/4;overflow:hidden;background:var(--limestone-deep)}
+.tile img{width:100%;height:100%;object-fit:cover}
+.belong-word{position:relative;font-family:var(--f-display);font-weight:600;font-size:clamp(4.2rem,19vw,17.5rem);line-height:.8;letter-spacing:-.03em;text-align:center;margin:.22em auto .18em;width:max-content;max-width:100%;user-select:none;pointer-events:none;color:var(--ink)}
+.door-frame{display:none}
+.belong-scene{position:relative;overflow:hidden;aspect-ratio:16/9;max-height:100vh;width:100%;background:var(--sea)}
+.belong-scene img{width:100%;height:100%;object-fit:cover}
+.belong-scene::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(20deg,rgba(14,26,38,.82) 0%,rgba(14,26,38,.4) 36%,rgba(14,26,38,0) 60%)}
+.belong-line{position:absolute;z-index:2;left:clamp(16px,5vw,80px);bottom:clamp(20px,9vh,104px);max-width:17ch;font-family:var(--f-display);font-size:clamp(1.9rem,3.8vw,3.6rem);line-height:1.06;color:var(--paper);text-wrap:balance}
+.belong-line em{color:#F6C68C}
+@media (max-width:899.98px){
+  .collage{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .belong-scene{aspect-ratio:4/5}
+  .belong-scene::before{background:linear-gradient(0deg,rgba(14,26,38,.9) 0%,rgba(14,26,38,.6) 34%,rgba(14,26,38,0) 62%)}
+  .belong-scene img{object-position:50% 50%}
+}
+
+/* Belong stage: cinematic (desktop, motion on) */
+.belong-stage.is-cine{height:100vh;height:100svh;overflow:hidden;margin-top:clamp(88px,13vh,160px)}
+.is-cine .collage{position:absolute;inset:0;display:block;max-width:none;padding:0}
+.is-cine .tile{position:absolute;left:var(--x);top:var(--y);width:var(--w);rotate:var(--r);box-shadow:0 20px 50px rgba(20,25,31,.18)}
+.is-cine .belong-word{position:absolute;left:50%;top:50%;translate:-50% -50%;margin:0;z-index:2}
+.is-cine .door-frame{display:block;position:absolute;z-index:4;left:38%;top:30%;width:24%;height:56%;border:2px solid var(--citrus);border-bottom:0;border-radius:999px 999px 0 0;opacity:0;pointer-events:none}
+.is-cine .belong-scene{position:absolute;inset:0;aspect-ratio:auto;max-height:none;z-index:3}
+
+/* ===== FAQ ===== */
+.faq{background:var(--limestone)}
+.faq-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);column-gap:clamp(24px,5vw,96px);align-items:start}
+.faq h2{font-size:clamp(2.2rem,4.4vw,3.75rem)}
+.faq h2 em{color:var(--sea-mid)}
+.faq-list details{border-top:1px solid var(--rule)}
+.faq-list details:last-child{border-bottom:1px solid var(--rule)}
+.faq-list summary{display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:64px;padding-block:.75rem;cursor:pointer;list-style:none;font-weight:600;font-size:1.0625rem;line-height:1.35}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list details p{padding-bottom:1.25rem;color:var(--ink-soft);max-width:60ch}
+@media (max-width:899.98px){.faq-grid{grid-template-columns:minmax(0,1fr);row-gap:32px}}
+
+/* ===== Chapter 7: First step ===== */
+.contact{background:var(--paper)}
+.contact h2{font-size:clamp(2.6rem,6.4vw,6rem);line-height:1;max-width:15ch}
+.contact h2 em{color:var(--sea-mid)}
+.close-line{display:block;width:min(560px,80%);height:18px;margin-top:.9rem;overflow:visible}
+.close-line path{fill:none;stroke:var(--citrus);stroke-width:2.5;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:0}
+.contact-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(24px,6vw,112px);margin-top:clamp(40px,7vh,80px);align-items:start}
+.contact-info{display:grid;gap:1.6rem}
+.contact-info .lead{max-width:44ch}
+.next{list-style:none;padding:0;margin:0;display:grid;gap:0;counter-reset:n}
+.next li{counter-increment:n;display:grid;grid-template-columns:2.4rem minmax(0,1fr);gap:.75rem;padding-block:.9rem;border-top:1px solid var(--rule);color:var(--ink-soft)}
+.next li::before{content:counter(n);font-weight:600;font-size:1.125rem;line-height:1.4;color:var(--terra)}
+.direct{display:grid;gap:.5rem;padding:1.1rem 1.25rem;background:var(--limestone);border-radius:4px}
+.direct-row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem}
+.direct-row code{font-family:var(--f-text);font-size:1rem;font-weight:600;user-select:all;word-break:break-all}
+.text-btn{min-height:44px;background:transparent;border:0;padding:0 .25rem;font:600 .875rem var(--f-text);color:var(--terra);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+form.ask{display:grid;gap:1rem}
+.form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.field{display:grid;gap:.4rem}
+.field label{font-size:.875rem;font-weight:600}
+.field .hint{font-weight:400;color:var(--ink-soft)}
+.field input,.field select,.field textarea{width:100%;min-height:50px;padding:.75rem .9rem;border:1.5px solid rgba(20,25,31,.22);border-radius:6px;background:#FFFDF8;color:var(--ink);font:400 1rem/1.4 var(--f-text);transition:border-color .2s ease}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(232,138,46,.35)}
+.field input:user-invalid,.field textarea:user-invalid{border-color:var(--terra)}
+.form-note{font-size:.8125rem;color:var(--ink-soft)}
+.form-actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+.draft-panel{display:grid;gap:1rem;padding:clamp(20px,3vw,32px);border:1.5px solid var(--ink);border-radius:6px;background:#FFFDF8}
+.draft-panel h3{font-size:var(--t-h3)}
+.draft-panel h3:focus{outline:none}
+.draft-meta{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.35rem 1rem;font-size:.9375rem}
+.draft-meta dt{color:var(--ink-soft)}
+.draft-meta dd{font-weight:600;word-break:break-word}
+.draft-panel textarea{width:100%;min-height:200px;padding:.8rem;border:1px solid var(--rule);border-radius:6px;background:var(--paper);font:400 .9375rem/1.5 var(--f-text);color:var(--ink);resize:vertical}
+.status{min-height:1.5em;font-size:.875rem;font-weight:600;color:var(--sea)}
+@media (max-width:899.98px){.contact-grid{grid-template-columns:minmax(0,1fr);row-gap:48px}}
+@media (max-width:600px){.form-row{grid-template-columns:minmax(0,1fr)}}
+
+/* ===== Footer ===== */
+.footer{position:relative;background:var(--sea);color:var(--limestone);padding-block:clamp(64px,10vh,104px) 40px}
+.footer-line{position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,rgba(246,231,207,0),#F6E7CF 20%,#E88A2E 70%,rgba(232,138,46,0));transform-origin:50% 50%}
+.footer-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,3fr) minmax(0,4fr);gap:40px}
+.footer .wordmark{font-size:2rem;display:inline-block;color:var(--paper)}
+.footer .wordmark b{color:var(--citrus)}
+.footer p{color:rgba(238,230,216,.78);max-width:42ch;margin-top:.75rem}
+.footer h3{font-family:var(--f-text);font-size:var(--t-label);letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:rgba(238,230,216,.7);margin-bottom:.75rem}
+.footer ul{list-style:none;padding:0;margin:0;display:grid}
+.footer ul a{display:inline-flex;align-items:center;min-height:40px;text-decoration:none;color:var(--paper)}
+.footer ul a:hover{text-decoration:underline;text-decoration-color:var(--citrus);text-underline-offset:4px}
+.footer-bottom{margin-top:56px;padding-top:22px;border-top:1px solid var(--rule-dark);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.8125rem;color:rgba(238,230,216,.72)}
+@media (max-width:899.98px){.footer-grid{grid-template-columns:minmax(0,1fr)}}
+
+.credits{margin-top:48px;border-top:1px solid var(--rule-dark);padding-top:12px}
+.credits summary{display:inline-flex;align-items:center;gap:.6rem;min-height:44px;cursor:pointer;font-weight:600;list-style:none}
+.credits summary::-webkit-details-marker{display:none}
+.credits ul{display:grid;gap:.4rem;margin-top:.5rem;font-size:.8125rem;color:rgba(238,230,216,.8)}
+.credits a{color:var(--paper);display:inline;min-height:0;text-decoration:underline;text-decoration-color:rgba(232,138,46,.7);text-underline-offset:3px}
+.footer .credits ul a{display:inline}
+/* ===== Motion off: complete static compositions ===== */
+.motion-off .imagine{transform:scale(.5)}
+.motion-off .hero-photo{transform:none}
+@media (prefers-reduced-motion:reduce){
+  .panel.fade-in{animation:none}
+  *{transition-duration:0s!important}
+}
+
+/* Horizon review repairs: readable static fallback and phone composition. */
+[hidden]{display:none!important}
+.imagine{opacity:0}
+.hero-stage{padding:0}
+.motion-off .imagine{opacity:0!important}
+.text-btn{min-height:44px}
+.review-return{display:inline-flex;align-items:center;min-height:44px;color:var(--paper);text-underline-offset:4px}
+@media(max-width:899.98px){
+  .hero-copy,.hero-note{opacity:1!important;transform:none!important}
+  .hero-stage{clip-path:none!important}
+  .imagine,.door-cue{display:none}
+  .tabs{flex-wrap:wrap;overflow:visible}
+  .tab{flex:1 1 auto}
+  .nav-inner{gap:.35rem;padding-left:.85rem}
+}
+@media(max-width:360px){.wordmark{font-size:.96rem}.menu-btn{padding-inline:.65rem}}
+
+</style>
+<link rel="preload" as="font" href="../assets/jury-fonts/345453b756128bd47a09.woff2" type="font/woff2" crossorigin><link rel="preload" as="font" href="../assets/jury-fonts/5114ef56c5415163cbe4.woff2" type="font/woff2" crossorigin><link rel="preload" as="font" href="../assets/jury-fonts/ec86b9d397813bef15d7.woff2" type="font/woff2" crossorigin><link rel="stylesheet" href="../jury-shell.css?v=f9cd401d"><script src="../jury-shell.js?v=11fec7eb" defer></script><meta name="robots" content="noindex,follow"><link rel="canonical" href="https://m3libere28.github.io/moving2valencia-creative/review/15-new-horizon/index.html"><link rel="icon" href="../jury-icon.svg" type="image/svg+xml"><link rel="manifest" href="../site.webmanifest"><script type="application/ld+json" id="jury-business-data">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Moving2Valencia", "url": "https://moving2valencia.eu/", "email": "info@moving2valencia.eu", "founder": {"@type": "Person", "name": "Christa Brokke"}, "foundingDate": "2008", "areaServed": {"@type": "City", "name": "Valencia"}, "description": "Personal relocation guidance: planning, home finding, schools, formalities and settling in."}</script><meta property="og:type" content="website"><meta property="og:title" content="A New Horizon · Moving2Valencia"><meta property="og:description" content="The horizon becomes a doorway"><meta property="og:image" content="https://m3libere28.github.io/moving2valencia-creative/review/assets/hero_valencia-1440.webp"><meta name="twitter:card" content="summary_large_image"><script src="../jury-audit.js?v=fc6873df" defer></script><meta name="jury-source-sha" content="76220789dd47e22085fdb1d63e6919c5ec825a23234ac159d36b93da44a0e63c"></head><body data-jury-concept="a-new-horizon">
+<a class="skip" href="#route">Skip to how it works</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="#horizon" aria-label="Moving2Valencia, back to top">moving<b>2</b>valencia</a>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="#life">Life here</a></li>
+      <li><a href="#route">How it works</a></li>
+      <li><a href="#christa">Christa</a></li>
+      <li><a href="#faq">Questions</a></li>
+      <li class="menu-cta"><a href="#contact">Request a conversation</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navMenu">Menu</button>
+      <button class="icon-btn motion-btn" id="motionBtn" type="button" aria-pressed="true"><span class="motion-dot" aria-hidden="true"></span><span class="sr">Scroll animation</span></button>
+      <a class="btn btn-ink nav-cta" href="#contact">Request a conversation</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ 1. THE HORIZON ============ -->
+<section class="hero" id="horizon" aria-labelledby="hero-title">
+  <div class="hero-stage">
+    <img class="hero-photo" src="img/malvarrosa-sky-1600.webp" srcset="img/malvarrosa-sky-800.webp 800w, img/malvarrosa-sky-1600.webp 1600w" sizes="100vw" width="1600" height="1200" fetchpriority="high" decoding="async" alt="Evening clouds over Malvarrosa beach, with fishing boats on the sand and the sea on the horizon.">
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <div class="wrap">
+          <p class="hero-eyebrow label">Relocation support · Valencia, Spain</p>
+          <h1 id="hero-title"><span class="h1-line"><span>Imagine your life</span></span><span class="h1-line"><span><em>in Valencia.</em></span></span></h1>
+          <div class="hero-aside">
+            <p>Moving2Valencia helps you plan and make the move: paperwork and appointments, finding a home, choosing a school and settling in. Christa guides you personally from the first call.</p>
+            <div class="hero-ctas">
+              <a class="btn btn-citrus" href="#contact">Request a conversation <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="btn btn-line" href="#route">How it works</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="horizon" aria-hidden="true"></div>
+    <div class="imagine" aria-hidden="true">IMAGINE</div>
+    <p class="hero-note">Relocation support by Christa Brokke · Photography credited below.</p>
+    <p class="door-cue label" aria-hidden="true">Step through ↓</p>
+  </div>
+</section>
+
+<!-- ============ 2. A LIFE WITHIN REACH ============ -->
+<section class="chapter life" id="life" aria-labelledby="life-title">
+  <div class="wrap">
+    <div class="chapter-head">
+      <p class="label kicker">Chapter 2 · A life within reach</p>
+      <h2 id="life-title">First you picture the place. <em>Then you picture your everyday.</em></h2>
+      <p class="lead">Markets in the morning, shaded streets at midday, a long green park where a river used to run, and plazas that fill again once the heat drops.</p>
+    </div>
+    <div class="scenes">
+      <svg class="route-svg route-desk" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 1.5 H34 C52 1.5 58 6 64 14 S 84 30 74 44 S 30 50 22 60 S 40 86 62 82 S 92 92 100 99"/></svg>
+      <svg class="route-svg route-mob" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 0 C4 14 96 14 96 30 S 4 46 4 62 S 96 78 96 100"/></svg>
+
+      <figure class="scene s1">
+        <div class="scene-art"><img src="img/mercado-central-800.webp" srcset="img/mercado-central-800.webp 800w, img/mercado-central-1200.webp 1200w" sizes="(max-width: 899px) 86vw, 55vw" width="1200" height="900" style="object-position:50% 55%" loading="lazy" decoding="async" alt="Stalls piled with fruit and vegetables under the iron and glass roof of the Mercado Central."></div>
+        <figcaption><span class="label cap-k">09:30 · Mercado Central</span><span class="cap-t">Fruit, vegetables and the day’s fish, from the same stalls each week.</span></figcaption>
+      </figure>
+      <figure class="scene s2">
+        <div class="scene-art"><img src="img/el-carmen-square-800.webp" srcset="img/el-carmen-square-800.webp 800w, img/el-carmen-square-1200.webp 1200w" sizes="(max-width: 899px) 86vw, 30vw" width="1200" height="900" style="object-position:45% 50%" loading="lazy" decoding="async" alt="Orange trees shading a small square beside a church in the El Carmen neighbourhood."></div>
+        <figcaption><span class="label cap-k">12:00 · El Carmen</span><span class="cap-t">Small squares under orange trees, shaded when the sun is high.</span></figcaption>
+      </figure>
+      <figure class="scene s3">
+        <div class="scene-art"><img src="img/turia-gardens-800.webp" srcset="img/turia-gardens-800.webp 800w, img/turia-gardens-1200.webp 1200w" sizes="(max-width: 899px) 86vw, 40vw" width="1200" height="900" style="object-position:40% 55%" loading="lazy" decoding="async" alt="A path through the Turia gardens beside a fountain channel, with trees and a stone bridge."></div>
+        <figcaption><span class="label cap-k">19:00 · Turia gardens</span><span class="cap-t">The old riverbed, now a park for walking, running and cycling across the city.</span></figcaption>
+      </figure>
+      <figure class="scene s4">
+        <div class="scene-art"><img src="img/plaza-virgen-800.webp" srcset="img/plaza-virgen-800.webp 800w, img/plaza-virgen-1200.webp 1200w" sizes="(max-width: 899px) 86vw, 48vw" width="1200" height="900" style="object-position:50% 60%" loading="lazy" decoding="async" alt="People crossing Plaza de la Virgen, with the basilica, the cathedral tower and the Turia fountain."></div>
+        <figcaption><span class="label cap-k">Evening · Plaza de la Virgen</span><span class="cap-t">Squares fill up again once the heat of the day has gone.</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. WHERE DO WE BEGIN ============ -->
+<section class="begin on-dark" id="begin" aria-labelledby="begin-title">
+  <div class="begin-stage">
+    <div class="wrap">
+      <p class="label" style="color:var(--citrus)">Chapter 3 · The leap</p>
+      <h2 id="begin-title" style="margin-top:1rem">Where do we <em>begin?</em></h2>
+      <p class="begin-intro">Every move raises the same handful of questions. Taken one at a time and in the right order, each one has an answer.</p>
+      <ol class="plan">
+        <li class="plan-spine" role="presentation" aria-hidden="true"></li>
+        <li><span class="label step-k">01 · Plan</span><span class="q">What has to happen, and when?</span><span class="a">A personal plan built around your dates, your family and your situation.</span></li>
+        <li><span class="label step-k">02 · Prepare</span><span class="q">Which papers, in which order?</span><span class="a">Documents and appointments arranged so each step is ready before the next one needs it.</span></li>
+        <li><span class="label step-k">03 · Arrive</span><span class="q">Where will we live, and which school?</span><span class="a">Neighbourhoods, viewings and school visits, chosen around how you want to live.</span></li>
+        <li><span class="label step-k">04 · Settle</span><span class="q">How do we start to feel at home?</span><span class="a">Local know-how, introductions, and someone to ask once you’re here.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. YOUR ROUTE TO ARRIVAL ============ -->
+<section class="chapter route on-dark" id="route" aria-labelledby="route-title">
+  <div class="wrap route-grid">
+    <div class="route-aside">
+      <div class="arrive" aria-hidden="true"><span class="a-line">ARRIVE</span><span class="a-ghost">ARRIVE</span><span class="a-fill">ARRIVE</span></div>
+      <svg class="route-map" viewBox="0 0 180 420" aria-hidden="true">
+        <path class="base" d="M30 14 C30 80 120 84 120 152 S30 222 30 284 S120 352 120 404"/>
+        <path class="prog" pathLength="1" d="M30 14 C30 80 120 84 120 152 S30 222 30 284 S120 352 120 404"/>
+        <g class="m is-on" data-m="0"><circle cx="30" cy="14" r="8"/><text x="48" y="19">PLAN</text></g>
+        <g class="m is-on" data-m="1"><circle cx="120" cy="152" r="8"/><text x="138" y="157" text-anchor="start">PREPARE</text></g>
+        <g class="m is-on" data-m="2"><circle cx="30" cy="284" r="8"/><text x="48" y="289">ARRIVE</text></g>
+        <g class="m is-on" data-m="3"><circle cx="120" cy="404" r="8"/><text x="138" y="409">SETTLE</text></g>
+      </svg>
+    </div>
+    <div class="route-main">
+      <p class="label kicker">Chapter 4 · Your route to arrival</p>
+      <h2 id="route-title" style="margin-top:1rem">Four stages, <em>planned around you.</em></h2>
+      <p class="lead">Ask for help with one stage or all four. Discuss the combination of services that fits your circumstances.</p>
+      <div class="stages">
+        <article class="stage" data-stage="0">
+          <p class="label stage-k">01 · Plan</p>
+          <h3>Before you move</h3>
+          <p class="outcome">A plan for your move that sets out what to arrange and in what order, fitted to your dates and your family.</p>
+          <p class="svc"><strong>Service:</strong> Pre-move planning</p>
+          <details class="more"><summary><span class="plus" aria-hidden="true"></span>What this includes</summary>
+            <ul><li>A document checklist, including apostilles and translations where they’re needed</li><li>A timeline with milestones for each phase</li><li>Budget planning and a cost-of-living overview</li><li>A video consultation before you arrive</li></ul>
+          </details>
+        </article>
+        <article class="stage" data-stage="1">
+          <p class="label stage-k">02 · Prepare</p>
+          <h3>Papers and appointments</h3>
+          <p class="outcome">Appointments and paperwork organised so that steps which depend on each other happen in the right order.</p>
+          <p class="svc"><strong>Service:</strong> Legal &amp; formalities support</p>
+          <details class="more"><summary><span class="plus" aria-hidden="true"></span>What this includes</summary>
+            <ul><li>Booking NIE, TIE or EU registration certificate appointments</li><li>Empadronamiento (registering with the town hall)</li><li>Opening a Spanish bank account</li><li>Setting up private health insurance</li></ul>
+          </details>
+        </article>
+        <article class="stage" data-stage="2">
+          <p class="label stage-k">03 · Arrive</p>
+          <h3>A home and a school</h3>
+          <p class="outcome">Somewhere to live and a school for your children, chosen around your daily routines.</p>
+          <p class="svc"><strong>Services:</strong> Home finding · School search</p>
+          <details class="more"><summary><span class="plus" aria-hidden="true"></span>What this includes</summary>
+            <ul><li>Talking through neighbourhoods based on how you live</li><li>Viewings in person or by video</li><li>Reviewing the lease before you sign</li><li>Setting up utilities and internet</li><li>School visits and introductions</li><li>Help with enrolment paperwork</li></ul>
+          </details>
+        </article>
+        <article class="stage" data-stage="3">
+          <p class="label stage-k">04 · Settle</p>
+          <h3>Life after the keys</h3>
+          <p class="outcome">Help with the rhythm of the city, and someone to ask once you’re living here.</p>
+          <p class="svc"><strong>Services:</strong> Intercultural coaching · Ongoing support</p>
+          <details class="more"><summary><span class="plus" aria-hidden="true"></span>What this includes</summary>
+            <ul><li>A cultural orientation session</li><li>Introductions to clubs, groups and language classes</li><li>Reminders for renewals such as the TIE</li><li>An introduction to a gestoría for tax and admin</li></ul>
+          </details>
+        </article>
+      </div>
+      <div class="next-call">
+        <h3>What the first call covers</h3>
+        <ul><li>Where you are now and when you’d like to move</li><li>Who is moving with you</li><li>Which stages you want help with</li><li>What Christa suggests doing first</li></ul>
+        <div><a class="btn btn-citrus" href="#contact">Request a conversation <span class="arrow" aria-hidden="true">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. A PERSON BESIDE YOU ============ -->
+<section class="chapter trust" id="christa" aria-labelledby="christa-title">
+  <div class="wrap trust-grid">
+    <figure class="portrait-fig">
+      <div class="portrait"><img src="img/christa-600.webp" srcset="img/christa-600.webp 600w, img/christa-1000.webp 1000w" sizes="(max-width: 899px) 340px, 440px" width="1000" height="1374" loading="lazy" decoding="async" alt="Christa, smiling with her arms crossed, standing in front of a teal mural beside an old wooden doorway."></div>
+      <figcaption class="label portrait-cap">Christa Brokke · Moving2Valencia</figcaption>
+    </figure>
+    <div>
+      <p class="label kicker">Chapter 5 · A person beside you</p>
+      <h2 id="christa-title" style="margin-top:1rem">One person who knows <em>the way through.</em></h2>
+      <div class="trust-body">
+        <p>Christa Brokke founded Moving2Valencia in 2008. She moved with her family to the Valencia region in September 2004 and brings that personal perspective to relocation support.</p>
+        <p>Before relocation work, she spent years coordinating large stage productions across Europe, keeping many moving parts on schedule.</p>
+      </div>
+      <dl class="approach">
+        <div><dt>She listens first</dt><dd>Your plans, your family and your timing shape the plan, not a standard package.</dd></div>
+        <div><dt>She explains plainly</dt><dd>What’s needed, why it’s needed, and what comes after it.</dd></div>
+        <div><dt>Settling-in questions</dt><dd>Discuss the ongoing support you would like once you have arrived.</dd></div>
+      </dl>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTERLUDE ============ -->
+<section class="interlude" aria-label="Valencia from above">
+  <figure>
+    <img src="img/rooftops-panorama-800.webp" srcset="img/rooftops-panorama-800.webp 800w, img/rooftops-panorama-1600.webp 1600w" sizes="100vw" width="1600" height="560" loading="lazy" decoding="async" alt="The rooftops, domes and bell towers of Valencia’s old town seen from above, with hills on the horizon.">
+    <figcaption class="label">Valencia from the Micalet bell tower</figcaption>
+  </figure>
+</section>
+
+<!-- ============ 6. SOMEWHERE TO BELONG ============ -->
+<section class="chapter belong" id="belong" aria-labelledby="belong-title">
+  <div class="wrap">
+    <div class="chapter-head">
+      <p class="label kicker">Chapter 6 · Somewhere to belong</p>
+      <h2 id="belong-title">Everyday Valencia, <em>three ways.</em></h2>
+      <p class="lead">General context to help you picture daily life. It isn’t a recommendation for any area; Christa talks through neighbourhoods with you based on your own priorities.</p>
+    </div>
+    <div class="atlas">
+      <div>
+        <div class="tabs" aria-orientation="vertical" role="tablist" aria-label="Ways of living in Valencia">
+          <button class="tab" role="tab" id="t-city" aria-controls="p-city" aria-selected="true" tabindex="0">City rhythm</button>
+          <button class="tab" role="tab" id="t-out" aria-controls="p-out" aria-selected="false" tabindex="-1">Outdoor life</button>
+          <button class="tab" role="tab" id="t-fam" aria-controls="p-fam" aria-selected="false" tabindex="-1">Family routines</button>
+        </div>
+        <p class="atlas-note">Use the arrow keys to move between views.</p>
+      </div>
+      <div>
+        <div class="panel" role="tabpanel" id="p-city" aria-labelledby="t-city" tabindex="0">
+          <div class="panel-art"><img src="img/falla-night-800.webp" srcset="img/falla-night-800.webp 800w, img/falla-night-1200.webp 1200w" sizes="(max-width: 899px) 92vw, 34vw" width="1200" height="900" style="object-position:55% 50%" loading="lazy" decoding="async" alt="A Falla monument lit at night, surrounded by crowds in the street."></div>
+          <div>
+            <h3>City rhythm</h3>
+            <ul>
+              <li><strong>Later days</strong>Lunch is often the main meal, and dinner tends to be later than in much of northern Europe.</li>
+              <li><strong>Las Fallas</strong>Each March the city fills with giant monuments, music and fireworks for several days.</li>
+              <li><strong>Two languages</strong>Valencian is co-official with Spanish, so you’ll see both on signs and official letters.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-out" aria-labelledby="t-out" tabindex="0" hidden>
+          <div class="panel-art"><img src="img/arts-sciences-day-800.webp" srcset="img/arts-sciences-day-800.webp 800w, img/arts-sciences-day-1200.webp 1200w" sizes="(max-width: 899px) 92vw, 34vw" width="1200" height="900" style="object-position:55% 50%" loading="lazy" decoding="async" alt="The white curves of the City of Arts and Sciences beside turquoise pools under a blue sky."></div>
+          <div>
+            <h3>Outdoor life</h3>
+            <ul>
+              <li><strong>The Turia gardens</strong>A park follows the old riverbed through the city, linking playgrounds, sports grounds and the City of Arts and Sciences.</li>
+              <li><strong>City beaches</strong>Urban beaches such as Malvarrosa sit on the edge of the city, reachable by tram or bike.</li>
+              <li><strong>The Albufera</strong>A natural park with a freshwater lagoon and rice fields lies just south of the city.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-fam" aria-labelledby="t-fam" tabindex="0" hidden>
+          <div class="panel-art"><img src="img/paella-800.webp" srcset="img/paella-800.webp 800w, img/paella-1200.webp 1200w" sizes="(max-width: 899px) 92vw, 34vw" width="1200" height="900" style="object-position:50% 50%" loading="lazy" decoding="async" alt="A finished paella of rice, chicken and green beans in a wide pan."></div>
+          <div>
+            <h3>Family routines</h3>
+            <ul>
+              <li><strong>School choices</strong>Options include public schools, concertado schools (state-funded, privately run) and private international schools.</li>
+              <li><strong>Weekends</strong>Parks, the beach and long family lunches are a big part of many weekends.</li>
+              <li><strong>Local life</strong>Many neighbourhoods have their own market, plaza and local festivities.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="belong-stage" id="belongStage">
+    <div class="collage" aria-hidden="true">
+      <figure class="tile" style="--x:5%;--y:9%;--w:14%;--r:-3deg"><img src="img/market-hall-800.webp" width="800" height="533" style="object-position:50% 50%" loading="lazy" decoding="async" alt=""></figure>
+      <figure class="tile" style="--x:24%;--y:56%;--w:12%;--r:2deg"><img src="img/el-carmen-square-800.webp" width="800" height="533" style="object-position:45% 50%" loading="lazy" decoding="async" alt=""></figure>
+      <figure class="tile" style="--x:39%;--y:5%;--w:11%;--r:1.5deg"><img src="img/turia-gardens-800.webp" width="800" height="533" style="object-position:40% 55%" loading="lazy" decoding="async" alt=""></figure>
+      <figure class="tile" style="--x:58%;--y:58%;--w:13%;--r:-2deg"><img src="img/paella-800.webp" width="800" height="533" style="object-position:50% 50%" loading="lazy" decoding="async" alt=""></figure>
+      <figure class="tile" style="--x:72%;--y:7%;--w:14%;--r:3deg"><img src="img/turia-fountain-800.webp" width="800" height="533" style="object-position:50% 50%" loading="lazy" decoding="async" alt=""></figure>
+      <figure class="tile" style="--x:84%;--y:54%;--w:11%;--r:-1deg"><img src="img/mercado-facade-800.webp" width="800" height="533" style="object-position:50% 50%" loading="lazy" decoding="async" alt=""></figure>
+    </div>
+    <div class="belong-word" aria-hidden="true">BELONG</div>
+    <div class="door-frame" aria-hidden="true"></div>
+    <figure class="belong-scene">
+      <img src="img/hemisferic-night-800.webp" srcset="img/hemisferic-night-800.webp 800w, img/hemisferic-night-1600.webp 1600w" sizes="100vw" width="1600" height="900" loading="lazy" decoding="async" alt="The Hemisfèric at the City of Arts and Sciences, lit at night and mirrored in still water.">
+      <figcaption class="belong-line">The place you imagined, <em>now a life you can see yourself living.</em></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="chapter faq" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <div>
+      <p class="label kicker">Before you write</p>
+      <h2 id="faq-title" style="margin-top:1rem">Questions people <em>ask first.</em></h2>
+    </div>
+    <div class="faq-list">
+      <details><summary>Do you give legal or immigration advice?<span class="plus" aria-hidden="true"></span></summary><p>No. Christa organises appointments, paperwork and the practical steps. Questions about visa eligibility or tax are for a qualified lawyer or gestor, and she can introduce you to one.</p></details>
+      <details><summary>Can you help before we arrive?<span class="plus" aria-hidden="true"></span></summary><p>Yes. Planning, documents, and home and school searches can start while you’re still abroad, by video call.</p></details>
+      <details><summary>Do I need to speak Spanish?<span class="plus" aria-hidden="true"></span></summary><p>No. You can talk with Christa in English, and she helps with the appointments where Spanish or Valencian is used.</p></details>
+      <details><summary>How much does it cost?<span class="plus" aria-hidden="true"></span></summary><p>It depends on which stages you need. Christa discusses your priorities, the support she can offer and the fees for your agreed scope.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. YOUR FIRST STEP ============ -->
+<section class="chapter contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <p class="label kicker">Chapter 7 · Your first step</p>
+    <h2 id="contact-title" style="margin-top:1rem">Your Valencia story starts with <em>a conversation.</em></h2>
+    <svg class="close-line" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M0 6 C 22 3, 48 3, 70 5 S 92 7, 100 5"/></svg>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="lead">Request a conversation with Christa. Tell her where you are now, when you’d like to move and what you need help with.</p>
+        <div>
+          <p class="label kicker" style="margin-bottom:.5rem">What happens next</p>
+          <ol class="next">
+            <li>You send a short note with your details, from your own email.</li>
+            <li>Christa replies to arrange a call at a time that suits you.</li>
+            <li>On the call you talk through your plans and agree where to start.</li>
+          </ol>
+        </div>
+        <div class="direct">
+          <p class="label" style="color:var(--ink-soft)">Email Christa directly</p>
+          <div class="direct-row"><code id="addr">info@moving2valencia.eu</code><button class="text-btn" type="button" id="copyAddr">Copy address</button></div>
+          <p class="status" id="addrStatus" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div>
+        <form class="ask" id="askForm" novalidate>
+          <div class="form-row">
+            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="f-email">Your email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="f-from">Where you live now <span class="hint">(optional)</span></label><input id="f-from" name="from" type="text" autocomplete="country-name"></div>
+            <div class="field"><label for="f-when">When you’d like to move <span class="hint">(optional)</span></label>
+              <select id="f-when" name="when"><option value="">Not sure yet</option><option>Within 3 months</option><option>In 3–6 months</option><option>In 6–12 months</option><option>In more than a year</option><option>Just exploring</option></select></div>
+          </div>
+          <div class="field"><label for="f-msg">What would you like help with?</label><textarea id="f-msg" name="msg" required placeholder="Who is moving, and which stages you’d like help with."></textarea></div>
+          <p class="form-note">This prepares an email for you to send from your own account. Nothing is sent from this page.</p>
+          <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+          <div class="form-actions"><button class="btn btn-ink" type="submit">Prepare my email <span class="arrow" aria-hidden="true">→</span></button></div>
+        </form>
+
+        <div class="draft-panel" id="draftPanel" hidden>
+          <h3 id="draftTitle" tabindex="-1">Your email is ready to send</h3>
+          <p style="color:var(--ink-soft)">Nothing has been sent yet. Copy the text into a new email from your own account, or try opening it in your email app.</p>
+          <dl class="draft-meta"><dt>To</dt><dd id="d-to">info@moving2valencia.eu</dd><dt>Subject</dt><dd id="d-subj"></dd></dl>
+          <label class="sr" for="d-body">Email text</label>
+          <textarea id="d-body" readonly></textarea>
+          <div class="form-actions">
+            <button class="btn btn-ink" type="button" id="copyDraft">Copy email text</button>
+            <a class="btn btn-line" id="mailLink" href="#" target="_blank" rel="noopener">Open in email app</a>
+            <button class="text-btn" type="button" id="editDraft">Edit details</button>
+          </div>
+          <p class="status" id="draftStatus" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer on-dark" id="footer">
+  <span class="footer-line" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="wordmark" href="#horizon">moving<b>2</b>valencia</a>
+        <p>Personal relocation support in Valencia, Spain: planning, paperwork, home finding, schools and settling in.</p>
+      </div>
+      <div>
+        <h3>The journey</h3>
+        <ul>
+          <li><a href="#life">Life here</a></li>
+          <li><a href="#begin">Where to begin</a></li>
+          <li><a href="#route">How it works</a></li>
+          <li><a href="#christa">Christa</a></li>
+          <li><a href="#belong">Belong</a></li>
+          <li><a href="#faq">Questions</a></li>
+          <li><a href="#contact">Request a conversation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p style="margin-top:0">info@moving2valencia.eu<br>Valencia, Spain</p>
+        <p>Personal relocation guidance with Christa Brokke. Scope, availability and fees are agreed together.</p>
+      </div>
+    </div>
+    <details class="credits" id="credits"><summary><span class="plus" aria-hidden="true"></span>Photo credits</summary><ul><li>Portrait of Christa supplied by Moving2Valencia.</li><li><a href="https://commons.wikimedia.org/w/index.php?curid=1602688" target="_blank" rel="noopener">Playa de la Malvarrosa (Valencia) 01</a> by Manuel Martín Vicente from Spain, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a>. Resized and cropped.</li><li><a href="https://commons.wikimedia.org/w/index.php?curid=34921514" target="_blank" rel="noopener">El Hemisférico, Ciudad de las Artes y las Ciencias, Valencia, España, 2014-06-29, DD 71</a> by Diego Delso, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>. Resized and cropped.</li><li><a href="https://commons.wikimedia.org/w/index.php?curid=9801954" target="_blank" rel="noopener">Valencia desde el Micalet</a> by jmerelo, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a>. Resized and cropped.</li><li><a href="https://commons.wikimedia.org/w/index.php?curid=34930578" target="_blank" rel="noopener">Mercado Central, Valencia, España, 2014-06-30, DD 115</a> by Diego Delso, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>. Resized and cropped.</li><li><a href="https://commons.wikimedia.org/w/index.php?curid=117427534" target="_blank" rel="noopener">Jardines de la derecha de la Iglesia de la Santa Cruz, barrio del Carmen, Valencia</a> by 19Tarrestnom65, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Resized and cropped.</li><li><a href="https://commons.wikimedia.org/w/index.php?curid=845688" target="_blank" rel="noopener">Jardines del Turia - 5. January 2006 -1</a> by Adelheid Bischoff, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>. Resized and cropped.</li><li><a href="https://commons.wikimedia.org/w/index.php?curid=123160427" target="_blank" rel="noopener">Plaza de la Virgen - Valencia</a> by Jorge Saturno, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Resized and cropped.</li><li><a href="https://commons.wikimedia.org/w/index.php?curid=646367" target="_blank" rel="noopener">Falla valencia 2006-03-19</a> by Rafa Castillo (rafolas), <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>. Resized and cropped.</li><li><a href="https://commons.wikimedia.org/w/index.php?curid=7617005" target="_blank" rel="noopener">La Ciudad de las Artes y las Ciencias de Valencia</a> by Emilio García from Parla, Spain, <a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" rel="noopener">CC BY-SA 2.0</a>. Resized and cropped.</li><li><a href="https://commons.wikimedia.org/w/index.php?curid=170418642" target="_blank" rel="noopener">Paella terminada haciendo el socarrat, uno de los procesos de elaboración y cocción de la paella valenciana</a> by Juan Emilio Prades Bel, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Resized and cropped.</li><li><a href="https://commons.wikimedia.org/w/index.php?curid=34930589" target="_blank" rel="noopener">Mercado Central, Valencia, España, 2014-06-30, DD 117</a> by Diego Delso, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>. Resized and cropped.</li><li><a href="https://commons.wikimedia.org/w/index.php?curid=34948174" target="_blank" rel="noopener">Fuente al Río Túria, Plaza de la Virgen, Valencia, España, 2014-06-30, DD 161</a> by Diego Delso, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Resized and cropped.</li><li><a href="https://commons.wikimedia.org/w/index.php?curid=90218235" target="_blank" rel="noopener">Mercado Central Valencia 2</a> by FriedrichFrisch, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Resized and cropped.</li></ul></details>
+    <div class="footer-bottom"><span>© 2026 Moving2Valencia</span><a class="review-return" href="../selected-review.html#a-new-horizon">Back to website selection ↗</a><span>Concept: A New Horizon · refined edition</span></div>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js?v=28033e44"></script>
+<script src="vendor/ScrollTrigger.min.js?v=ad33c2df"></script>
+<script>
+(function(){
+  "use strict";
+  var root = document.documentElement;
+  var $ = function(s, c){ return (c || document).querySelector(s); };
+  var $$ = function(s, c){ return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var rmq = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var KEY = "m2v-horizon-motion";
+  var motionOn = !rmq.matches;
+  try { var saved = localStorage.getItem(KEY); if (saved === "on" || saved === "off") motionOn = saved === "on"; } catch (e) {}
+  var hasGsap = !!(window.gsap && window.ScrollTrigger);
+  if(!hasGsap) motionOn=false;
+  if (hasGsap) { gsap.registerPlugin(ScrollTrigger); ScrollTrigger.config({ ignoreMobileResize: true }); }
+
+  /* ---------- Hero: align the drawn horizon with the photo's horizon ---------- */
+  var heroImg = $(".hero-photo"), heroStage = $(".hero-stage"), PHOTO_HZ = .842;
+  function alignHorizon(){
+    if (!heroImg || !heroStage) return;
+    var W = heroStage.clientWidth, H = heroStage.clientHeight;
+    var nw = heroImg.naturalWidth || 1600, nh = heroImg.naturalHeight || 1200;
+    var sc = Math.max(W / nw, H / nh), rh = nh * sc;
+    var py = (parseFloat((getComputedStyle(heroImg).objectPosition || "50% 85%").split(" ")[1]) || 85) / 100;
+    var y = Math.round((H - rh) * py + PHOTO_HZ * rh);
+    heroStage.style.setProperty("--hz", y + "px");
+    heroImg.style.transformOrigin = (parseFloat(getComputedStyle(heroImg).objectPosition) || 72) + "% " + y + "px";
+  }
+  if (heroImg) { if (heroImg.complete) alignHorizon(); else heroImg.addEventListener("load", alignHorizon); }
+  window.addEventListener("resize", function(){ clearTimeout(alignHorizon._t); alignHorizon._t = setTimeout(alignHorizon, 100); });
+  alignHorizon();
+
+  /* ---------- Scenes (one coordinator: gsap.matchMedia) ---------- */
+  var mm = null;
+  var vw = function(f){ return window.innerWidth * f; };
+
+  function heroScene(desk){
+    var stage = $(".hero-stage");
+    if (!desk) {
+      gsap.fromTo(".hero-photo", {scale:1.04}, {scale:1,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:.5}});
+      return;
+    }
+    var arch = function(){
+      var side = desk ? .22 : .08, top = desk ? 7 : 5;
+      var r = Math.round(stage.clientWidth * (1 - side * 2) / 2);
+      return "inset(" + top + "% " + (side * 100) + "% 0% " + (side * 100) + "% round " + r + "px " + r + "px 0px 0px)";
+    };
+    var tl = gsap.timeline({ defaults:{ ease:"none" }, scrollTrigger:{
+      trigger: ".hero", start: "top top", end: desk ? "+=130%" : "bottom 15%",
+      pin: desk ? stage : false, scrub: .5, anticipatePin: 1, invalidateOnRefresh: true } });
+    tl.fromTo(".hero-photo", { scale:1.12 }, { scale:1, duration:3 }, 0)
+      .fromTo(".horizon", { scaleX:.45 }, { scaleX:1, duration:3 }, 0)
+      .fromTo(".hero-copy", { opacity:1, y:0 }, { opacity:0, y:-36, duration:1.6 }, 3)
+      .fromTo(".imagine", { scale: desk ? .32 : .4, opacity:0 }, { scale: desk ? 1 : .92, opacity:1, duration:3 }, 3)
+      .to({}, { duration:1 }, 6)
+      .fromTo(stage, { clipPath:"inset(0% 0% 0% 0% round 0px 0px 0px 0px)" }, { clipPath: arch, duration:3 }, 7)
+      .to(".imagine", { scale: desk ? .5 : .74, duration:3 }, 7)
+      .fromTo(".hero-note", { opacity:1 }, { opacity:0, duration:1 }, 7)
+      .fromTo(".door-cue", { opacity:0 }, { opacity:1, duration:1.5 }, 8.5);
+  }
+  function lifeScene(desk){
+    var path = desk ? $(".route-desk path") : $(".route-mob path");
+    gsap.fromTo(path, { strokeDashoffset:1 }, { strokeDashoffset:0, ease:"none",
+      scrollTrigger:{ trigger:".scenes", start:"top 78%", end:"bottom 72%", scrub:.6 } });
+    $$(".scene-art img").forEach(function(img){
+      gsap.fromTo(img, { yPercent:-4 }, { yPercent:4, ease:"none",
+        scrollTrigger:{ trigger:img.parentNode, start:"top bottom", end:"bottom top", scrub:true } });
+    });
+    gsap.fromTo(".s1 .scene-art", { clipPath:"inset(0% 100% 0% 0%)" }, { clipPath:"inset(0% 0% 0% 0%)", ease:"power2.out",
+      scrollTrigger:{ trigger:".s1", start:"top 82%", end:"top 32%", scrub:.6 } });
+    $$(".scene figcaption").forEach(function(c){
+      gsap.from(c.children, { y:16, opacity:0, duration:.8, stagger:.14, ease:"power2.out",
+        scrollTrigger:{ trigger:c, start:"top 90%", toggleActions:"play none none reverse" } });
+    });
+  }
+
+  function beginScene(desk){
+    var items = $$(".plan li:not(.plan-spine)");
+    if (desk) {
+      var sc = [ {x:"34vw",y:"-4vh",r:-4,s:1.08}, {x:"6vw",y:"3vh",r:3,s:.94}, {x:"30vw",y:"4vh",r:-2,s:.92}, {x:"-2vw",y:"6vh",r:4,s:1} ];
+      var tl = gsap.timeline({ defaults:{ ease:"none" }, scrollTrigger:{
+        trigger:".begin-stage", start:"top top", end:"+=120%", pin:true, scrub:.5, anticipatePin:1, invalidateOnRefresh:true } });
+      items.forEach(function(li, i){
+        tl.fromTo($(".q", li), { x:sc[i].x, y:sc[i].y, rotation:sc[i].r, scale:sc[i].s },
+          { x:0, y:0, rotation:0, scale:1, duration:4, ease:"power1.inOut" }, 1.5);
+      });
+      tl.fromTo(".plan .step-k, .plan .a", { opacity:0 }, { opacity:1, duration:1.6, stagger:.22 }, 5.4)
+        .fromTo(".plan li:not(.plan-spine)", { borderColor:"rgba(238,230,216,0)" }, { borderColor:"rgba(238,230,216,.16)", duration:1.5 }, 5.2)
+        .fromTo(".plan-spine", { scaleY:0 }, { scaleY:1, duration:3 }, 5)
+        .to({}, { duration:2.2 }, 8);
+    } else {
+      gsap.fromTo(".plan-spine", { scaleY:0 }, { scaleY:1, ease:"none", scrollTrigger:{ trigger:".plan", start:"top 85%", end:"bottom 70%", scrub:.4 } });
+      items.forEach(function(li){
+        gsap.fromTo(li, { x:-24, opacity:.3 }, { x:0, opacity:1, ease:"none",
+          scrollTrigger:{ trigger:li, start:"top 92%", end:"top 68%", scrub:.4 } });
+      });
+    }
+  }
+
+  function routeScene(desk){
+    gsap.fromTo(".a-fill", { clipPath:"inset(100% 0% 0% 0%)" }, { clipPath:"inset(0% 0% 0% 0%)", ease:"none",
+      scrollTrigger:{ trigger:".arrive", start:"top 85%", end:"top 30%", scrub:.5 } });
+    gsap.fromTo(".a-ghost", { x:"-.05em", y:"-.05em" }, { x:0, y:0, ease:"none",
+      scrollTrigger:{ trigger:".arrive", start:"top 85%", end:"top 30%", scrub:.5 } });
+    if (!desk) return;
+    var ms = $$(".route-map .m");
+    ms.forEach(function(m, i){ if (i > 0) m.classList.remove("is-on"); });
+    gsap.fromTo(".route-map .prog", { strokeDashoffset:1 }, { strokeDashoffset:0, ease:"none",
+      scrollTrigger:{ trigger:".stages", start:"top 60%", end:"bottom 60%", scrub:.5 } });
+    $$(".stage").forEach(function(st, i){
+      if (i === 0) return;
+      ScrollTrigger.create({ trigger:st, start:"top 60%",
+        onEnter:function(){ ms[i].classList.add("is-on"); },
+        onLeaveBack:function(){ ms[i].classList.remove("is-on"); } });
+    });
+  }
+
+  function trustScene(){
+    gsap.fromTo(".portrait", { clipPath:"inset(100% 0% 0% 0%)" }, { clipPath:"inset(0% 0% 0% 0%)", ease:"power2.out",
+      scrollTrigger:{ trigger:".portrait", start:"top 88%", end:"top 42%", scrub:.6 } });
+  }
+
+  function belongScene(desk){
+    var stage = $("#belongStage");
+    if (desk) {
+      stage.classList.add("is-cine");
+      var tiles = $$(".tile", stage), fr = $(".door-frame", stage);
+      var r0 = function(){ return Math.round(stage.clientWidth * .12); };
+      var tl = gsap.timeline({ defaults:{ ease:"none" }, scrollTrigger:{
+        trigger:stage, start:"top top", end:"+=150%", pin:true, scrub:.5, anticipatePin:1, invalidateOnRefresh:true } });
+      tl.fromTo(tiles, { y:0 }, { y:-22, duration:2, stagger:.08 }, 0)
+        .to(tiles, {
+          x:function(i, el){ return stage.clientWidth / 2 - (el.offsetLeft + el.offsetWidth / 2); },
+          y:function(i, el){ return stage.clientHeight / 2 - (el.offsetTop + el.offsetHeight / 2); },
+          scale:.16, opacity:0, duration:3, stagger:.07, ease:"power2.in" }, 2)
+        .fromTo(".belong-word", { scale:.82, opacity:0 }, { scale:1, opacity:1, duration:2.6 }, 2.3)
+        .to({}, { duration:1 }, 4.9)
+        .fromTo(fr, { opacity:0, left:"38%", top:"30%", width:"24%", height:"56%", borderTopLeftRadius:r0, borderTopRightRadius:r0 },
+          { opacity:1, duration:.6 }, 5.9)
+        .to(".belong-word", { opacity:0, scale:1.04, duration:.6 }, 6.1)
+        .fromTo(".belong-scene", { opacity:0, clipPath:function(){ var r = r0(); return "inset(30% 38% 14% 38% round " + r + "px " + r + "px 0px 0px)"; } },
+          { opacity:1, duration:.3 }, 6.7)
+        .fromTo(".belong-scene", { clipPath:function(){ var r = r0(); return "inset(30% 38% 14% 38% round " + r + "px " + r + "px 0px 0px)"; } }, { clipPath:"inset(0% 0% 0% 0% round 0px 0px 0px 0px)", duration:2.2, immediateRender:false }, 7.0)
+        .to(fr, { left:"0%", top:"0%", width:"100%", height:"100%", borderTopLeftRadius:0, borderTopRightRadius:0, opacity:0, duration:2.2 }, 7.0)
+        .fromTo(".belong-line", { opacity:0, y:24 }, { opacity:1, y:0, duration:1 }, 8.8)
+        .to({}, { duration:1.3 }, 9.8);
+    } else {
+      gsap.fromTo($$(".tile", stage), { y:28, opacity:.4 }, { y:0, opacity:1, stagger:.06, ease:"none",
+        scrollTrigger:{ trigger:".collage", start:"top 92%", end:"top 55%", scrub:.4 } });
+      gsap.fromTo(".belong-word", { opacity:.15, scale:.92 }, { opacity:1, scale:1, ease:"none",
+        scrollTrigger:{ trigger:".belong-word", start:"top 90%", end:"top 50%", scrub:.4 } });
+      gsap.fromTo(".belong-scene", { clipPath:function(){ var r = Math.round(stage.clientWidth * .32); return "inset(6% 18% 0% 18% round " + r + "px " + r + "px 0px 0px)"; } },
+        { clipPath:"inset(0% 0% 0% 0% round 0px 0px 0px 0px)", ease:"none",
+          scrollTrigger:{ trigger:".belong-scene", start:"top 90%", end:"top 25%", scrub:.5, invalidateOnRefresh:true } });
+    }
+  }
+
+  function interludeScene(){
+    gsap.fromTo(".interlude img", { yPercent:-6 }, { yPercent:6, ease:"none",
+      scrollTrigger:{ trigger:".interlude", start:"top bottom", end:"bottom top", scrub:true } });
+  }
+  function closingScene(){
+    gsap.fromTo(".close-line path", { strokeDashoffset:1 }, { strokeDashoffset:0, ease:"none",
+      scrollTrigger:{ trigger:".close-line", start:"top 92%", end:"top 62%", scrub:.5 } });
+    gsap.fromTo(".footer-line", { scaleX:.2 }, { scaleX:1, ease:"none",
+      scrollTrigger:{ trigger:".footer", start:"top bottom", end:"top 60%", scrub:.5 } });
+  }
+
+  function buildScenes(){
+    alignHorizon();
+    if (!hasGsap) return;
+    if (mm) { mm.revert(); mm = null; }
+    $$(".route-map .m").forEach(function(m){ m.classList.add("is-on"); });
+    $("#belongStage").classList.remove("is-cine");
+    if (motionOn) {
+      mm = gsap.matchMedia();
+      mm.add({ desk:"(min-width: 900px)", mob:"(max-width: 899.98px)" }, function(ctx){
+        var desk = ctx.conditions.desk;
+        heroScene(desk); lifeScene(desk); beginScene(desk); routeScene(desk); trustScene(); interludeScene(); belongScene(desk); closingScene();
+        return function(){
+          $("#belongStage").classList.remove("is-cine");
+          $$(".route-map .m").forEach(function(m){ m.classList.add("is-on"); });
+        };
+      });
+    }
+    ScrollTrigger.refresh();
+  }
+
+  function entrance(){
+    if (!hasGsap || !motionOn) return;
+    gsap.from(".h1-line > span", { yPercent:108, duration:1, ease:"power3.out", stagger:.12, delay:.05 });
+    gsap.from(".hero-eyebrow, .hero-aside", { opacity:0, y:14, duration:.8, ease:"power2.out", stagger:.1, delay:.35 });
+  }
+
+  /* ---------- Motion control ---------- */
+  var mb = $("#motionBtn");
+  function applyMotion(persist){
+    root.classList.toggle("motion-off", !motionOn);
+    mb.setAttribute("aria-pressed", String(motionOn));
+    mb.setAttribute("title", motionOn ? "Turn scroll animation off" : "Turn scroll animation on");
+    if (persist) { try { localStorage.setItem(KEY, motionOn ? "on" : "off"); } catch (e) {} }
+  }
+  mb.disabled = !hasGsap;
+  mb.addEventListener("click", function(){
+    var y = window.scrollY, anchor = null;
+    motionOn = !motionOn; applyMotion(true);
+    $$("main > section").some(function(s){ var r = s.getBoundingClientRect(); if (r.bottom > 80) { anchor = s; return true; } return false; });
+    if(mm) { mm.revert(); mm=null; }
+    window.scrollTo({top:0,behavior:"instant"});
+    buildScenes();
+    if (anchor && y > 10) anchor.scrollIntoView({ behavior:"instant", block:"start" });
+    if(hasGsap) { ScrollTrigger.refresh(); ScrollTrigger.update(); }
+  });
+  if (rmq.addEventListener) rmq.addEventListener("change", function(e){
+    try { if (localStorage.getItem(KEY)) return; } catch (err) {}
+    motionOn = !e.matches; applyMotion(false); buildScenes();
+  });
+
+  /* ---------- Menu ---------- */
+  var menuBtn = $("#menuBtn"), menu = $("#navMenu");
+  function setMenu(open){ menu.classList.toggle("open", open); menuBtn.setAttribute("aria-expanded", String(open)); }
+  menuBtn.addEventListener("click", function(){ setMenu(!menu.classList.contains("open")); });
+  $$("a", menu).forEach(function(a){ a.addEventListener("click", function(){ setMenu(false); }); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && menu.classList.contains("open")) { setMenu(false); menuBtn.focus(); } });
+  document.addEventListener("click", function(e){ if (menu.classList.contains("open") && !e.target.closest(".nav-inner")) setMenu(false); });
+
+  /* ---------- Atlas tabs ---------- */
+  var tabs = $$('[role="tab"]');
+  function updateTabAxis(){ var list = $('[role="tablist"]'); if(list) list.setAttribute("aria-orientation", innerWidth < 900 ? "horizontal" : "vertical"); }
+  updateTabAxis(); window.addEventListener("resize", updateTabAxis);
+  function selectTab(tab, focus){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute("aria-selected", String(on)); t.tabIndex = on ? 0 : -1;
+      var p = document.getElementById(t.getAttribute("aria-controls"));
+      p.hidden = !on;
+      if (on) { p.classList.remove("fade-in"); void p.offsetWidth; p.classList.add("fade-in"); }
+    });
+    if (focus) tab.focus();
+    if (hasGsap) ScrollTrigger.refresh();
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener("click", function(){ selectTab(t, false); });
+    t.addEventListener("keydown", function(e){
+      var n = null;
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") n = tabs[(i + 1) % tabs.length];
+      else if (e.key === "ArrowLeft" || e.key === "ArrowUp") n = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if (e.key === "Home") n = tabs[0];
+      else if (e.key === "End") n = tabs[tabs.length - 1];
+      if (n) { e.preventDefault(); selectTab(n, true); }
+    });
+  });
+
+  /* ---------- Contact: prepares an email draft; never claims to send ---------- */
+  var TO = "info@moving2valencia.eu";
+  function copyText(text, statusEl, fallbackEl, okMsg){
+    var fail = function(){
+      if (fallbackEl) { fallbackEl.focus(); if (fallbackEl.select) fallbackEl.select(); }
+      if (!fallbackEl) {
+        var address = $("#addr"), selection = window.getSelection(), range = document.createRange();
+        range.selectNodeContents(address); selection.removeAllRanges(); selection.addRange(range);
+      }
+      statusEl.textContent = "Automatic copying is unavailable. Copy the selected text, or use your device’s text selection menu.";
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function(){ statusEl.textContent = okMsg; }, fail);
+      } else fail();
+    } catch (e) { fail(); }
+  }
+  $("#copyAddr").addEventListener("click", function(){ copyText(TO, $("#addrStatus"), null, "Address copied."); });
+
+  var form = $("#askForm"), panel = $("#draftPanel");
+  form.addEventListener("input", function(e){ if(e.target.setCustomValidity) e.target.setCustomValidity(""); });
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var st = $("#formStatus"); st.textContent = "";
+    var fields = [$("#f-name"), $("#f-msg")];
+    fields.forEach(function(field){ field.setCustomValidity(field.value.trim() ? "" : "Please fill in this field."); });
+    if (!form.checkValidity()) {
+      var bad = form.querySelector(":invalid");
+      var lbl = bad ? form.querySelector('label[for="' + bad.id + '"]') : null;
+      st.textContent = bad && bad.type === "email" && bad.value ? "Check your email address: it should look like name@example.com." : "Please fill in " + (lbl ? lbl.textContent.replace(/\(optional\)/, "").trim().toLowerCase() : "the required fields") + ".";
+      if (bad) bad.focus();
+      return;
+    }
+    var v = function(id){ return $("#" + id).value.trim(); };
+    var subj = "Consultation request: moving to Valencia";
+    var body = "Hello Christa,\n\n" + v("f-msg") + "\n\n" +
+      "Where I live now: " + (v("f-from") || "Not given") + "\n" +
+      "When I’d like to move: " + ($("#f-when").value || "Not sure yet") + "\n\n" +
+      "Best regards,\n" + v("f-name") + "\n" + v("f-email");
+    $("#d-subj").textContent = subj;
+    $("#d-body").value = body;
+    $("#mailLink").href = "mailto:" + TO + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
+    $("#draftStatus").textContent = "";
+    form.hidden = true; panel.hidden = false;
+    $("#draftTitle").focus();
+    if (hasGsap) ScrollTrigger.refresh();
+  });
+  $("#copyDraft").addEventListener("click", function(){
+    copyText("To: " + TO + "\nSubject: " + $("#d-subj").textContent + "\n\n" + $("#d-body").value, $("#draftStatus"), $("#d-body"), "Email text copied. Paste it into a new email to send it.");
+  });
+  $("#mailLink").addEventListener("click", function(){
+    $("#draftStatus").textContent = "If your email app didn’t open, copy the text instead. Nothing has been sent until you send it yourself.";
+  });
+  $("#editDraft").addEventListener("click", function(){ panel.hidden = true; form.hidden = false; $("#f-msg").focus(); if (hasGsap) ScrollTrigger.refresh(); });
+
+  $$("details").forEach(function(detail){ detail.addEventListener("toggle", function(){ if(hasGsap) ScrollTrigger.refresh(); }); });
+  /* ---------- Boot ---------- */
+  applyMotion(false);
+  try { buildScenes(); entrance(); }
+  catch(error) { if(mm) { mm.revert(); mm=null; } motionOn=false; applyMotion(false); }
+  var refresh = function(){ alignHorizon(); if (hasGsap) ScrollTrigger.refresh(); };
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
+  window.addEventListener("load", function(){
+    refresh();
+    var id = location.hash.slice(1);
+    if (id && /^[\w.~-]+$/.test(id)) { var el = document.getElementById(id); if (el) { root.style.scrollBehavior = "auto"; el.scrollIntoView({ block:"start" }); root.style.scrollBehavior = ""; } }
+  });
+})();
+</script>
+<div class="jury-review-footer"><span>A New Horizon · Refined review edition</span><a href="../jury-review.html">Review all twelve concepts ↗</a><a href="../photo-credits.html">Photography & media credits ↗</a></div></body></html>

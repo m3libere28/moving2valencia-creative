@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "new-horizon-ii",
+    "title": "A New Horizon II \u00b7 Client archive edition",
+    "path": "client-editions/new-horizon-ii/index.html",
+    "source_sha256": "d6fbc459f168c69df0a44bc02a1b0a38b89dd5d8eea4dc6417fb1d866eff2b3f",
+    "source_preserved": true,
+    "single_file_bytes": 12587666,
+    "website_zip_bytes": 7513682
+  },
+  {
+    "slug": "azahar",
+    "title": "Azahar \u00b7 Client archive edition",
+    "path": "client-editions/azahar/index.html",
+    "source_sha256": "c7cf22f37a903ff856d3065f1f550fcb11863090c53a732f534008236ee42cc4",
+    "source_preserved": true,
+    "single_file_bytes": 9595462,
+    "website_zip_bytes": 5854093
+  },
+  {
+    "slug": "new-horizon",
+    "title": "A New Horizon \u00b7 Client archive edition",
+    "path": "client-editions/new-horizon/index.html",
+    "source_sha256": "818233e907c3926afa00668d7bc66482398950c317e69be056f62cae6499779e",
+    "source_preserved": true,
+    "single_file_bytes": 6821960,
+    "website_zip_bytes": 3689158
+  }
+]

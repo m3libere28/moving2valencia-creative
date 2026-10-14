@@ -1,0 +1,755 @@
+{
+  "guide": "The Jury Matrix.pdf supplied by the user",
+  "target": 9.5,
+  "allScoresIndependentlyCertified": false,
+  "recordedEnvironment": "Local Chromium; desktop and emulated phone viewports",
+  "concepts": [
+    {
+      "id": "casa-editorial",
+      "name": "Casa Editorial",
+      "target": 9.5,
+      "independentScore": null,
+      "scoreStatus": "Awaiting independent panel and complete device/performance evidence",
+      "changes": [
+        "A personal arrival journal replaces repeated introductory sections. Chosen everyday priorities carry into an editable enquiry.",
+        "Real Micalet, market, Turia and Malvarrosa photography; a supplied Christa portrait and local fonts.",
+        "Clearer hierarchy, responsive crops, a retained checklist and a complete preview/copy/edit enquiry path."
+      ],
+      "checks": {
+        "desktop": {
+          "device": {
+            "width": 1440,
+            "height": 900
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 100,
+          "cls": 0,
+          "longTasks": [
+            70
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "a1e245a66c69235b567dff9ec853e8a6dd7799648baff33fa71406372806f796",
+          "layout": {
+            "viewport": 1440,
+            "documentWidth": 1425,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:36.427Z",
+          "consoleErrors": []
+        },
+        "mobile": {
+          "device": {
+            "width": 375,
+            "height": 812
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 148,
+          "cls": 0,
+          "longTasks": [
+            105
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "a1e245a66c69235b567dff9ec853e8a6dd7799648baff33fa71406372806f796",
+          "layout": {
+            "viewport": 375,
+            "documentWidth": 360,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:10.113Z",
+          "consoleErrors": []
+        }
+      }
+    },
+    {
+      "id": "blue-horizon",
+      "name": "Blue Horizon",
+      "target": 9.5,
+      "independentScore": null,
+      "scoreStatus": "Awaiting independent panel and complete device/performance evidence",
+      "changes": [
+        "City or sea becomes a useful choice: the cover, neighbourhood view and enquiry note respond together.",
+        "Real rooftop and Malvarrosa photographs with a coherent blue-and-gold treatment and local fonts.",
+        "Repaired narrow-screen overflow; personal service scopes replace unverified package fees."
+      ],
+      "checks": {
+        "desktop": {
+          "device": {
+            "width": 1440,
+            "height": 900
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 56,
+          "cls": 0,
+          "longTasks": [
+            64
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "482faf3d4e6a0cd8c7f9af1141f4d4b776fd313805410c93370eae409c0299df",
+          "layout": {
+            "viewport": 1440,
+            "documentWidth": 1425,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:37.204Z",
+          "consoleErrors": []
+        },
+        "mobile": {
+          "device": {
+            "width": 375,
+            "height": 812
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 80,
+          "cls": 0,
+          "longTasks": [
+            67
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "482faf3d4e6a0cd8c7f9af1141f4d4b776fd313805410c93370eae409c0299df",
+          "layout": {
+            "viewport": 375,
+            "documentWidth": 360,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:10.896Z",
+          "consoleErrors": []
+        }
+      }
+    },
+    {
+      "id": "hola-valencia",
+      "name": "Hola, Valencia",
+      "target": 9.5,
+      "independentScore": null,
+      "scoreStatus": "Awaiting independent panel and complete device/performance evidence",
+      "changes": [
+        "The tossing paella, flames, steam and slow rotation remain the signature opening, with pause and a reduced-motion alternative.",
+        "A quieter composition leads directly to a daily-life itinerary; duplicate city introductions are removed.",
+        "The portable HTML embeds the alpha animated image, so the cooking scene works without a local asset server."
+      ],
+      "checks": {
+        "desktop": {
+          "device": {
+            "width": 1440,
+            "height": 900
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 84,
+          "cls": 0,
+          "longTasks": [
+            69
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "6fa8b3069c65ea3473a68b08ae3809b409bac335c93d306235cd7a2449f2106b",
+          "layout": {
+            "viewport": 1440,
+            "documentWidth": 1425,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:37.998Z",
+          "consoleErrors": []
+        },
+        "mobile": {
+          "device": {
+            "width": 375,
+            "height": 812
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 132,
+          "cls": 0,
+          "longTasks": [
+            74
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "6fa8b3069c65ea3473a68b08ae3809b409bac335c93d306235cd7a2449f2106b",
+          "layout": {
+            "viewport": 375,
+            "documentWidth": 360,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:11.691Z",
+          "consoleErrors": []
+        }
+      }
+    },
+    {
+      "id": "valencia-plan",
+      "name": "The Valencia Plan",
+      "target": 9.5,
+      "independentScore": null,
+      "scoreStatus": "Awaiting independent panel and complete device/performance evidence",
+      "changes": [
+        "The planning workspace now follows the opening, before lifestyle sections. Priorities become an ordered starting route.",
+        "A progress rail responds to the saved checklist. Support choices produce qualitative scope, rather than an invented quote.",
+        "Real Cabanyal imagery, verified founder identity and an editable enquiry draft with retained fields."
+      ],
+      "checks": {
+        "desktop": {
+          "device": {
+            "width": 1440,
+            "height": 900
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 80,
+          "cls": 0,
+          "longTasks": [
+            66
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "65fb5ef7b1c68979638f36c3742822dc45630d7f857bc9916c6a191f6fb9678a",
+          "layout": {
+            "viewport": 1440,
+            "documentWidth": 1425,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:38.780Z",
+          "consoleErrors": []
+        },
+        "mobile": {
+          "device": {
+            "width": 375,
+            "height": 812
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 84,
+          "cls": 0,
+          "longTasks": [
+            66
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "65fb5ef7b1c68979638f36c3742822dc45630d7f857bc9916c6a191f6fb9678a",
+          "layout": {
+            "viewport": 375,
+            "documentWidth": 360,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:12.476Z",
+          "consoleErrors": []
+        }
+      }
+    },
+    {
+      "id": "editorial-journey",
+      "name": "Editorial Journey",
+      "target": 9.5,
+      "independentScore": null,
+      "scoreStatus": "Awaiting independent panel and complete device/performance evidence",
+      "changes": [
+        "A real Micalet street photograph frames the arrival story. Photo chapters and an illustrated planning route remain interactive.",
+        "The six planning areas describe questions to discuss, rather than universal legal requirements.",
+        "Preferred consultation time is a request. The form prepares a draft with copy and edit controls; readable contrast and skip navigation are repaired."
+      ],
+      "checks": {
+        "desktop": {
+          "device": {
+            "width": 1440,
+            "height": 900
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 268,
+          "cls": 0,
+          "longTasks": [
+            208,
+            153
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "260dd7c3a15157309861256300091fa149896766973f83adc7caabd62e601a09",
+          "layout": {
+            "viewport": 1440,
+            "documentWidth": 1425,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:39.867Z",
+          "consoleErrors": []
+        },
+        "mobile": {
+          "device": {
+            "width": 375,
+            "height": 812
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 292,
+          "cls": 0,
+          "longTasks": [
+            220,
+            159
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "260dd7c3a15157309861256300091fa149896766973f83adc7caabd62e601a09",
+          "layout": {
+            "viewport": 375,
+            "documentWidth": 360,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:13.571Z",
+          "consoleErrors": []
+        }
+      }
+    },
+    {
+      "id": "valencia-bento",
+      "name": "Valencia Bento",
+      "target": 9.5,
+      "independentScore": null,
+      "scoreStatus": "Awaiting independent panel and complete device/performance evidence",
+      "changes": [
+        "Neighbourhood cards and the preference matcher feed one editable, locally saved city board.",
+        "The consultation closes without residual blur or dimming; the founder uses the supplied Christa photograph.",
+        "Answer percentages are explained honestly; clearer support scopes, contrast and native feedback replace unsupported prices and promises."
+      ],
+      "checks": {
+        "desktop": {
+          "device": {
+            "width": 1440,
+            "height": 900
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 108,
+          "cls": 0,
+          "longTasks": [],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "577a8489c63c1dc7020f7fb656d47dd1fee9c988c940aac71ce383591c8ae195",
+          "layout": {
+            "viewport": 1440,
+            "documentWidth": 1425,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:40.654Z",
+          "consoleErrors": []
+        },
+        "mobile": {
+          "device": {
+            "width": 375,
+            "height": 812
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 132,
+          "cls": 0,
+          "longTasks": [
+            53
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "577a8489c63c1dc7020f7fb656d47dd1fee9c988c940aac71ce383591c8ae195",
+          "layout": {
+            "viewport": 375,
+            "documentWidth": 360,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:14.388Z",
+          "consoleErrors": []
+        }
+      }
+    },
+    {
+      "id": "immersive-valencia",
+      "name": "Immersive Valencia",
+      "target": 9.5,
+      "independentScore": null,
+      "scoreStatus": "Awaiting independent panel and complete device/performance evidence",
+      "changes": [
+        "Recorded shoreline footage replaces photograph distortion, with phone renditions, a poster, pause and offscreen playback control.",
+        "A shorter opening leads into practical support; selected household, timing and support inform a personal scope.",
+        "Readable story cards and text, keyboard-accessible horizontal browsing, and verified founder milestones."
+      ],
+      "checks": {
+        "desktop": {
+          "device": {
+            "width": 1440,
+            "height": 900
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 96,
+          "cls": 0.0018,
+          "longTasks": [
+            60
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "56714ca434ec746b1a9ac746e3b685fcefdd23deb359b6db1a583e7fba11d0ca",
+          "layout": {
+            "viewport": 1440,
+            "documentWidth": 1425,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:50.405Z",
+          "consoleErrors": []
+        },
+        "mobile": {
+          "device": {
+            "width": 375,
+            "height": 812
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 104,
+          "cls": 0,
+          "longTasks": [
+            64
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "56714ca434ec746b1a9ac746e3b685fcefdd23deb359b6db1a583e7fba11d0ca",
+          "layout": {
+            "viewport": 375,
+            "documentWidth": 360,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:23.624Z",
+          "consoleErrors": []
+        }
+      }
+    },
+    {
+      "id": "valencia-in-motion",
+      "name": "Valencia in Motion",
+      "target": 9.5,
+      "independentScore": null,
+      "scoreStatus": "Awaiting independent panel and complete device/performance evidence",
+      "changes": [
+        "A shorter city-to-sea sequence leads into a four-stop trail: picture, explore, prepare and talk.",
+        "The animated miniature and saved places connect to a local draft preview. Decorative photo notes are optional.",
+        "Native scrolling, scene controls and reduced-motion alternatives remain; generated scenery and atmospheric footage are disclosed."
+      ],
+      "checks": {
+        "desktop": {
+          "device": {
+            "width": 1440,
+            "height": 900
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 92,
+          "cls": 0,
+          "longTasks": [
+            68
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "15d325643c44143e6dc54497f7b2d70911d560308912a81c837773981e4c379c",
+          "layout": {
+            "viewport": 1440,
+            "documentWidth": 1425,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:51.196Z",
+          "consoleErrors": []
+        },
+        "mobile": {
+          "device": {
+            "width": 375,
+            "height": 812
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 116,
+          "cls": 0,
+          "longTasks": [
+            70
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "15d325643c44143e6dc54497f7b2d70911d560308912a81c837773981e4c379c",
+          "layout": {
+            "viewport": 375,
+            "documentWidth": 360,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:24.446Z",
+          "consoleErrors": []
+        }
+      }
+    },
+    {
+      "id": "valencia-3d-atlas",
+      "name": "Valencia 3D Atlas",
+      "target": 9.5,
+      "independentScore": null,
+      "scoreStatus": "Awaiting independent panel and complete device/performance evidence",
+      "changes": [
+        "The architectural miniature opens immediately, rather than repeating the cinematic Motion introduction.",
+        "The native rotating tour, tracked markers, shoreline foam and museum detail remain. Select a stop, pause or restart, then save it to your enquiry.",
+        "City/sea comparisons and photo notes are optional; the final enquiry has preview/copy/edit controls. Approximate geography is explicitly disclosed."
+      ],
+      "checks": {
+        "desktop": {
+          "device": {
+            "width": 1440,
+            "height": 900
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 72,
+          "cls": 0,
+          "longTasks": [
+            53
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "a7fb19a4257dfaa8c29641eb1c940f5fc0dea6d691405a3238bc749171194b59",
+          "layout": {
+            "viewport": 1440,
+            "documentWidth": 1425,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:51.848Z",
+          "consoleErrors": []
+        },
+        "mobile": {
+          "device": {
+            "width": 375,
+            "height": 812
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 76,
+          "cls": 0,
+          "longTasks": [
+            52
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "a7fb19a4257dfaa8c29641eb1c940f5fc0dea6d691405a3238bc749171194b59",
+          "layout": {
+            "viewport": 375,
+            "documentWidth": 360,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:25.203Z",
+          "consoleErrors": []
+        }
+      }
+    },
+    {
+      "id": "azahar",
+      "name": "Azahar",
+      "target": 9.5,
+      "independentScore": null,
+      "scoreStatus": "Awaiting independent panel and complete device/performance evidence",
+      "changes": [
+        "The daydream opening now explains relocation support and offers a direct route to the practical plan. The simulated loader is removed.",
+        "Invented testimonials, match probabilities, counters and fixed delivery timelines are replaced with useful planning content and verified 2004/2008 milestones.",
+        "Repaired document structure, unique form IDs, native consultation dialog, keyboard timeline, menu visibility, motion controls and draft preview."
+      ],
+      "checks": {
+        "desktop": {
+          "device": {
+            "width": 1440,
+            "height": 900
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 160,
+          "cls": 0,
+          "longTasks": [
+            75,
+            137
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "428c3caed6ead5e667fabc4604bd6e7047f00924afc8737ae224da43b84e0201",
+          "layout": {
+            "viewport": 1440,
+            "documentWidth": 1425,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:52.828Z",
+          "consoleErrors": []
+        },
+        "mobile": {
+          "device": {
+            "width": 375,
+            "height": 812
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 192,
+          "cls": 0,
+          "longTasks": [
+            58,
+            135
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "428c3caed6ead5e667fabc4604bd6e7047f00924afc8737ae224da43b84e0201",
+          "layout": {
+            "viewport": 375,
+            "documentWidth": 360,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:26.091Z",
+          "consoleErrors": []
+        }
+      }
+    },
+    {
+      "id": "a-new-horizon",
+      "name": "A New Horizon",
+      "target": 9.5,
+      "independentScore": null,
+      "scoreStatus": "Awaiting independent panel and complete device/performance evidence",
+      "changes": [
+        "The supplied coastal art direction, real photography and scroll choreography are preserved.",
+        "Business draft markers are resolved with verified founder information and honest service descriptions; introductory CTAs stay readable.",
+        "Responsive navigation, keyboard tabs, local animation scripts and a complete validated enquiry flow; the repaired source ZIP matches this edition."
+      ],
+      "checks": {
+        "desktop": {
+          "device": {
+            "width": 1440,
+            "height": 900
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 144,
+          "cls": 0,
+          "longTasks": [
+            103
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "76220789dd47e22085fdb1d63e6919c5ec825a23234ac159d36b93da44a0e63c",
+          "layout": {
+            "viewport": 1440,
+            "documentWidth": 1425,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:53.716Z",
+          "consoleErrors": []
+        },
+        "mobile": {
+          "device": {
+            "width": 375,
+            "height": 812
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 136,
+          "cls": 0,
+          "longTasks": [
+            95
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "76220789dd47e22085fdb1d63e6919c5ec825a23234ac159d36b93da44a0e63c",
+          "layout": {
+            "viewport": 375,
+            "documentWidth": 360,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:26.986Z",
+          "consoleErrors": []
+        }
+      }
+    },
+    {
+      "id": "valencia-arrivals",
+      "name": "Valencia Arrivals",
+      "target": 9.5,
+      "independentScore": null,
+      "scoreStatus": "Awaiting independent panel and complete device/performance evidence",
+      "changes": [
+        "A concise arrival opening leads into a four-part itinerary. The planner comes before the longer service route.",
+        "Decorative daydream chapters become optional reading paths, preserving their imagery while shortening the primary journey.",
+        "Verified Christa identity, editable route priorities, native form feedback and distinct naming separate this concept from A New Horizon."
+      ],
+      "checks": {
+        "desktop": {
+          "device": {
+            "width": 1440,
+            "height": 900
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 256,
+          "cls": 0,
+          "longTasks": [
+            62,
+            143
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "52909da7f07755279e1afbcbac2535591b6831c8cf7a36967c8c193db849a49a",
+          "layout": {
+            "viewport": 1440,
+            "documentWidth": 1425,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:54.793Z",
+          "consoleErrors": []
+        },
+        "mobile": {
+          "device": {
+            "width": 375,
+            "height": 812
+          },
+          "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+          "lcpMs": 236,
+          "cls": 0,
+          "longTasks": [
+            134
+          ],
+          "axe": {
+            "version": "4.10.3",
+            "violations": []
+          },
+          "sourceSha": "52909da7f07755279e1afbcbac2535591b6831c8cf7a36967c8c193db849a49a",
+          "layout": {
+            "viewport": 375,
+            "documentWidth": 360,
+            "overflow": false
+          },
+          "completedAt": "2026-10-14T15:43:28.031Z",
+          "consoleErrors": []
+        }
+      }
+    }
+  ]
+}

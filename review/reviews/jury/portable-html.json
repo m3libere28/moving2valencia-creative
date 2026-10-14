@@ -1,0 +1,302 @@
+[
+  {
+    "page": "Casa-Editorial.html",
+    "externalScripts": [],
+    "externalStyles": [],
+    "h1": "A new life,beautifully arranged.",
+    "imageSources": [
+      {
+        "embedded": true,
+        "loaded": true
+      },
+      {
+        "embedded": true,
+        "loaded": true
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      }
+    ],
+    "mainVisible": true,
+    "overflow": false,
+    "title": "Casa Editorial · Moving2Valencia",
+    "errors": []
+  },
+  {
+    "page": "Blue-Horizon.html",
+    "externalScripts": [],
+    "externalStyles": [],
+    "h1": "A new horizon.A life that fits.",
+    "imageSources": [
+      {
+        "embedded": true,
+        "loaded": true
+      },
+      {
+        "embedded": true,
+        "loaded": true
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      },
+      {
+        "embedded": true,
+        "loaded": true
+      }
+    ],
+    "mainVisible": true,
+    "overflow": false,
+    "title": "Blue Horizon · Moving2Valencia",
+    "errors": []
+  },
+  {
+    "page": "Hola-Valencia-Animated.html",
+    "externalScripts": [],
+    "externalStyles": [],
+    "h1": "Less paperwork.More paella.",
+    "imageSources": [
+      {
+        "embedded": true,
+        "loaded": true
+      },
+      {
+        "embedded": true,
+        "loaded": true
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      },
+      {
+        "embedded": true,
+        "loaded": true
+      }
+    ],
+    "mainVisible": true,
+    "overflow": false,
+    "title": "Hola, Valencia · Moving2Valencia",
+    "errors": []
+  },
+  {
+    "page": "The-Valencia-Plan.html",
+    "externalScripts": [],
+    "externalStyles": [],
+    "h1": "Your move.Made manageable.",
+    "imageSources": [
+      {
+        "embedded": true,
+        "loaded": true
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      },
+      {
+        "embedded": true,
+        "loaded": true
+      }
+    ],
+    "mainVisible": true,
+    "overflow": false,
+    "title": "The Valencia Plan · Moving2Valencia",
+    "errors": []
+  },
+  {
+    "page": "Editorial-Journey.html",
+    "externalScripts": [],
+    "externalStyles": [],
+    "h1": "Arrive as a neighbour, not a visitor.",
+    "imageSources": [
+      {
+        "embedded": true,
+        "loaded": true
+      }
+    ],
+    "mainVisible": true,
+    "overflow": false,
+    "title": "Moving2Valencia — Arrive as a neighbour",
+    "errors": []
+  },
+  {
+    "page": "Valencia-Bento.html",
+    "externalScripts": [],
+    "externalStyles": [],
+    "h1": "Valencia,sorted.",
+    "imageSources": [
+      {
+        "embedded": true,
+        "loaded": true
+      },
+      {
+        "embedded": true,
+        "loaded": true
+      }
+    ],
+    "mainVisible": true,
+    "overflow": false,
+    "title": "Moving2Valencia — Valencia, sorted",
+    "errors": []
+  },
+  {
+    "page": "Immersive-Valencia.html",
+    "externalScripts": [],
+    "externalStyles": [],
+    "h1": "Valencia awaits.",
+    "imageSources": [
+      {
+        "embedded": true,
+        "loaded": true
+      }
+    ],
+    "mainVisible": true,
+    "overflow": false,
+    "title": "Moving2Valencia — Valencia awaits",
+    "errors": []
+  },
+  {
+    "page": "Valencia-In-Motion.html",
+    "externalScripts": [],
+    "externalStyles": [],
+    "h1": "VALENCIA",
+    "imageSources": [
+      {
+        "embedded": true,
+        "loaded": true
+      },
+      {
+        "embedded": true,
+        "loaded": true
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      }
+    ],
+    "mainVisible": true,
+    "overflow": false,
+    "title": "Valencia in Motion · Moving2Valencia",
+    "errors": []
+  },
+  {
+    "page": "Valencia-3D-Atlas.html",
+    "externalScripts": [],
+    "externalStyles": [],
+    "h1": "Your Valencia,in miniature.",
+    "imageSources": [
+      {
+        "embedded": true,
+        "loaded": true
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      },
+      {
+        "embedded": true,
+        "loaded": true
+      },
+      {
+        "embedded": true,
+        "loaded": false
+      }
+    ],
+    "mainVisible": true,
+    "overflow": false,
+    "title": "Valencia 3D Atlas · Moving2Valencia",
+    "errors": []
+  },
+  {
+    "page": "Moving2Valencia-Azahar.html",
+    "externalScripts": [],
+    "externalStyles": [],
+    "h1": "Every move beginsas a daydream.",
+    "imageSources": [
+      {
+        "embedded": false,
+        "loaded": false
+      }
+    ],
+    "mainVisible": true,
+    "overflow": false,
+    "title": "Moving2Valencia Azahar",
+    "errors": []
+  },
+  {
+    "page": "A-New-Horizon.html",
+    "externalScripts": [],
+    "externalStyles": [],
+    "h1": "Imagine your lifein Valencia.",
+    "imageSources": [
+      {
+        "embedded": true,
+        "loaded": true
+      }
+    ],
+    "mainVisible": true,
+    "overflow": false,
+    "title": "A New Horizon",
+    "errors": []
+  },
+  {
+    "page": "Valencia-Arrivals.html",
+    "externalScripts": [],
+    "externalStyles": [],
+    "h1": "Imagine your life in VALENCIA",
+    "imageSources": [
+      {
+        "embedded": true,
+        "loaded": true
+      },
+      {
+        "embedded": true,
+        "loaded": true
+      }
+    ],
+    "mainVisible": true,
+    "overflow": false,
+    "title": "Valencia Arrivals · Moving2Valencia",
+    "errors": []
+  }
+]

@@ -1,0 +1,367 @@
+[
+  {
+    "id": "new-horizon-ii-client",
+    "slug": "new-horizon-ii",
+    "name": "A New Horizon II",
+    "tag": "New / full experience",
+    "signature": "First light, then a complete city story",
+    "family": "cinematic",
+    "description": "A first-light opening leads into a photographic journey through Valencia, with everyday comparisons, a move planner and a personal enquiry.",
+    "points": [
+      "An animated opening and a full relocation story",
+      "A day in the city, explored through photographs",
+      "Your priorities carried into an editable enquiry"
+    ],
+    "path": "client-editions/new-horizon-ii/index.html",
+    "download": "client-editions/new-horizon-ii/single-file.html",
+    "added": true,
+    "capture": "client-new-horizon-ii",
+    "zip": "client-editions/new-horizon-ii/website.zip",
+    "desktop": "assets/client-review/new-horizon-ii-client-desktop.webp",
+    "mobile": "assets/client-review/new-horizon-ii-client-mobile.webp",
+    "downloadSize": 12587666,
+    "zipSize": 7513682
+  },
+  {
+    "id": "azahar-client",
+    "slug": "azahar",
+    "name": "Azahar · alternate edition",
+    "tag": "New / alternate edition",
+    "signature": "A living photograph and seven chapters",
+    "family": "cinematic",
+    "description": "An additional edition of the seven-chapter Azahar story. Compare its depth-photo opening, neighbourhood finder and scroll pacing with the existing Azahar concept.",
+    "points": [
+      "A depth-photo opening at the City of Arts and Sciences",
+      "An illustrated route from daydream to practical planning",
+      "An alternative treatment of the neighbourhood finder"
+    ],
+    "path": "client-editions/azahar/index.html",
+    "download": "client-editions/azahar/single-file.html",
+    "added": true,
+    "capture": "client-azahar",
+    "zip": "client-editions/azahar/website.zip",
+    "desktop": "assets/client-review/azahar-client-desktop.webp",
+    "mobile": "assets/client-review/azahar-client-mobile.webp",
+    "downloadSize": 9595462,
+    "zipSize": 5854093
+  },
+  {
+    "id": "new-horizon-client",
+    "slug": "new-horizon",
+    "name": "A New Horizon · alternate edition",
+    "tag": "New / alternate edition",
+    "signature": "The horizon becomes a route into Valencia",
+    "family": "editorial",
+    "description": "Another edition of the quieter coastal story. Its horizon line becomes a route, a doorway and an invitation to imagine everyday life in Valencia.",
+    "points": [
+      "A photographic beach-at-dusk opening",
+      "Quiet editorial typography and city chapters",
+      "A complete personal enquiry path"
+    ],
+    "path": "client-editions/new-horizon/index.html",
+    "download": "client-editions/new-horizon/single-file.html",
+    "added": true,
+    "capture": "client-new-horizon",
+    "zip": "client-editions/new-horizon/website.zip",
+    "desktop": "assets/client-review/new-horizon-client-desktop.webp",
+    "mobile": "assets/client-review/new-horizon-client-mobile.webp",
+    "downloadSize": 6821960,
+    "zipSize": 3689158
+  },
+  {
+    "id": "casa-editorial",
+    "name": "Casa Editorial",
+    "path": "01-editorial.html",
+    "aliases": [],
+    "signature": "A personal arrival journal",
+    "download": "Casa-Editorial.html",
+    "added": false,
+    "tag": "Original collection",
+    "capture": "casa-editorial",
+    "family": "editorial",
+    "zip": null,
+    "desktop": "assets/client-review/casa-editorial-desktop.webp",
+    "mobile": "assets/client-review/casa-editorial-mobile.webp",
+    "description": "A calm, personal arrival journal. A classic editorial layout connects the feeling of a new life with the practical support you offer.",
+    "points": [
+      "Calm typography and real city photography",
+      "A personal arrival journal",
+      "Everyday priorities carried into an enquiry"
+    ],
+    "downloadSize": 5076424,
+    "zipSize": null
+  },
+  {
+    "id": "blue-horizon",
+    "name": "Blue Horizon",
+    "path": "02-cinematic.html",
+    "aliases": [],
+    "signature": "City or sea, carried into your plan",
+    "download": "Blue-Horizon.html",
+    "added": false,
+    "tag": "Original collection",
+    "capture": "blue-horizon",
+    "family": "cinematic",
+    "zip": null,
+    "desktop": "assets/client-review/blue-horizon-desktop.webp",
+    "mobile": "assets/client-review/blue-horizon-mobile.webp",
+    "description": "An atmospheric city-or-sea choice. Visitors explore the everyday Valencia that appeals to them, then bring those priorities into their enquiry.",
+    "points": [
+      "A useful choice between city life and sea air",
+      "Visual neighbourhood exploration",
+      "Preferences that help shape the first conversation"
+    ],
+    "downloadSize": 4353574,
+    "zipSize": null
+  },
+  {
+    "id": "hola-valencia",
+    "name": "Hola, Valencia",
+    "path": "03-playful.html",
+    "aliases": [
+      "10-hola-developed.html",
+      "Hola-Valencia-Animated.html"
+    ],
+    "signature": "Cooking becomes a daily-life itinerary",
+    "download": "Hola-Valencia-Animated.html",
+    "added": false,
+    "tag": "Original collection",
+    "capture": "hola-valencia",
+    "family": "interactive",
+    "zip": null,
+    "desktop": "assets/client-review/hola-valencia-desktop.webp",
+    "mobile": "assets/client-review/hola-valencia-mobile.webp",
+    "description": "Warm, playful and unmistakably Valencia. A cooking paella becomes the invitation to imagine the daily life waiting beyond the move.",
+    "points": [
+      "A cooking paella with flames, steam and a pause control",
+      "An inviting daily-life itinerary",
+      "Warm colours and a playful, welcoming voice"
+    ],
+    "downloadSize": 11590734,
+    "zipSize": null
+  },
+  {
+    "id": "valencia-plan",
+    "name": "The Valencia Plan",
+    "path": "04-planner.html",
+    "aliases": [],
+    "signature": "An assembled relocation workspace",
+    "download": "The-Valencia-Plan.html",
+    "added": false,
+    "tag": "Original collection",
+    "capture": "valencia-plan",
+    "family": "interactive",
+    "zip": null,
+    "desktop": "assets/client-review/valencia-plan-desktop.webp",
+    "mobile": "assets/client-review/valencia-plan-mobile.webp",
+    "description": "A practical starting point for a personal move. Visitors build a route around their household, timing and the support they want to discuss.",
+    "points": [
+      "A practical route around household and support needs",
+      "A checklist with clear progress",
+      "An editable starting plan for the conversation"
+    ],
+    "downloadSize": 4459591,
+    "zipSize": null
+  },
+  {
+    "id": "editorial-journey",
+    "name": "Editorial Journey",
+    "path": "05-proposal-editorial.html",
+    "aliases": [
+      "08-editorial-developed.html"
+    ],
+    "signature": "An illustrated route through arrival",
+    "download": "Editorial-Journey.html",
+    "added": false,
+    "tag": "Original collection",
+    "capture": "editorial-journey",
+    "family": "editorial",
+    "zip": null,
+    "desktop": "assets/client-review/editorial-journey-desktop.webp",
+    "mobile": "assets/client-review/editorial-journey-mobile.webp",
+    "description": "An illustrated route from visitor to neighbour. Real city photographs and thoughtful planning chapters lead into a conversation with you.",
+    "points": [
+      "A real Micalet street opening",
+      "An illustrated route through planning areas",
+      "A personal consultation-time request"
+    ],
+    "downloadSize": 5532123,
+    "zipSize": null
+  },
+  {
+    "id": "valencia-bento",
+    "name": "Valencia Bento",
+    "path": "06-bento-clear.html",
+    "aliases": [
+      "06-proposal-bento.html",
+      "09-bento-developed.html"
+    ],
+    "signature": "A city board with an editable shortlist",
+    "download": "Valencia-Bento.html",
+    "added": false,
+    "tag": "Original collection",
+    "capture": "valencia-bento",
+    "family": "interactive",
+    "zip": null,
+    "desktop": "assets/client-review/valencia-bento-desktop.webp",
+    "mobile": "assets/client-review/valencia-bento-mobile.webp",
+    "description": "A bright city board with a personal shortlist. Visitors explore neighbourhoods, choose their preferences and keep the places they want to discuss.",
+    "points": [
+      "A neighbourhood preference quiz",
+      "A saved city board and move-month choice",
+      "A personal enquiry built from the shortlist"
+    ],
+    "downloadSize": 4172208,
+    "zipSize": null
+  },
+  {
+    "id": "immersive-valencia",
+    "name": "Immersive Valencia",
+    "path": "07-proposal-immersive.html",
+    "aliases": [],
+    "signature": "The shoreline leads into practical support",
+    "download": "Immersive-Valencia.html",
+    "added": false,
+    "tag": "Original collection",
+    "capture": "immersive-valencia",
+    "family": "cinematic",
+    "zip": null,
+    "desktop": "assets/client-review/immersive-valencia-desktop.webp",
+    "mobile": "assets/client-review/immersive-valencia-mobile.webp",
+    "description": "A cinematic shoreline, followed by a clear practical story. The opening invites visitors to pause, then explore the support behind a new chapter.",
+    "points": [
+      "A moving shoreline with a pause control",
+      "Your story and practical support in clear chapters",
+      "Household and timing choices for a personal scope"
+    ],
+    "downloadSize": 12700405,
+    "zipSize": null
+  },
+  {
+    "id": "valencia-in-motion",
+    "name": "Valencia in Motion",
+    "path": "12-valencia-in-motion.html",
+    "aliases": [
+      "11-valencia-unfolding.html",
+      "Valencia-In-Motion.html",
+      "Valencia-Unfolding.html"
+    ],
+    "signature": "A city-to-sea narrative",
+    "download": "Valencia-In-Motion.html",
+    "added": false,
+    "tag": "Original collection",
+    "capture": "valencia-in-motion",
+    "family": "cinematic",
+    "zip": null,
+    "desktop": "assets/client-review/valencia-in-motion-desktop.webp",
+    "mobile": "assets/client-review/valencia-in-motion-mobile.webp",
+    "description": "A city-to-sea narrative with moments to explore. A turning miniature, everyday photographs and personal priorities connect atmosphere with action.",
+    "points": [
+      "A cinematic city-to-sea opening",
+      "An interactive architectural miniature",
+      "Saved places and everyday priorities for the enquiry"
+    ],
+    "downloadSize": 23827678,
+    "zipSize": null
+  },
+  {
+    "id": "valencia-3d-atlas",
+    "name": "Valencia 3D Atlas",
+    "path": "13-valencia-3d-atlas.html",
+    "aliases": [
+      "Valencia-3D-Atlas.html"
+    ],
+    "signature": "A slowly turning architectural miniature",
+    "download": "Valencia-3D-Atlas.html",
+    "added": false,
+    "tag": "Original collection",
+    "capture": "valencia-3d-atlas",
+    "family": "interactive",
+    "zip": null,
+    "desktop": "assets/client-review/valencia-3d-atlas-desktop.webp",
+    "mobile": "assets/client-review/valencia-3d-atlas-mobile.webp",
+    "description": "Valencia in miniature. Visitors move between neighbourhood stories on an architectural model, save a place and bring it into their enquiry.",
+    "points": [
+      "A slowly turning miniature and neighbourhood tour",
+      "Museum detail and shoreline motion",
+      "Favourite places carried into the enquiry"
+    ],
+    "downloadSize": 18238701,
+    "zipSize": null
+  },
+  {
+    "id": "azahar",
+    "name": "Azahar",
+    "path": "14-azahar.html",
+    "aliases": [
+      "Moving2Valencia-Azahar.html"
+    ],
+    "signature": "A daydream becomes an ordered move",
+    "download": "Moving2Valencia-Azahar.html",
+    "added": false,
+    "tag": "Original collection",
+    "capture": "azahar",
+    "family": "cinematic",
+    "zip": null,
+    "desktop": "assets/client-review/azahar-desktop.webp",
+    "mobile": "assets/client-review/azahar-mobile.webp",
+    "description": "A seven-chapter daydream with a practical destination. The living-photo opening leads into city life, neighbourhood preferences and a personal plan.",
+    "points": [
+      "A living photograph and seven story chapters",
+      "An exploratory neighbourhood finder",
+      "Practical planning around personal priorities"
+    ],
+    "downloadSize": 9254662,
+    "zipSize": null
+  },
+  {
+    "id": "a-new-horizon",
+    "name": "A New Horizon",
+    "path": "15-new-horizon/index.html",
+    "aliases": [
+      "A-New-Horizon.html"
+    ],
+    "signature": "The horizon becomes a doorway",
+    "download": "A-New-Horizon.html",
+    "added": false,
+    "tag": "Original collection",
+    "capture": "a-new-horizon",
+    "family": "editorial",
+    "zip": null,
+    "desktop": "assets/client-review/a-new-horizon-desktop.webp",
+    "mobile": "assets/client-review/a-new-horizon-mobile.webp",
+    "description": "A quieter coastal direction. The horizon becomes a doorway into city chapters, everyday possibilities and personal relocation guidance.",
+    "points": [
+      "A quiet coastal opening and editorial typography",
+      "Real city photographs and everyday possibilities",
+      "A complete route into a personal conversation"
+    ],
+    "downloadSize": 3034805,
+    "zipSize": null
+  },
+  {
+    "id": "valencia-arrivals",
+    "name": "Valencia Arrivals",
+    "path": "16-horizon-arrivals.html",
+    "aliases": [
+      "Valencia-Arrivals.html"
+    ],
+    "signature": "An arrival scene and a route assembled around you",
+    "download": "Valencia-Arrivals.html",
+    "added": false,
+    "tag": "Original collection",
+    "capture": "valencia-arrivals",
+    "family": "cinematic",
+    "zip": null,
+    "desktop": "assets/client-review/valencia-arrivals-desktop.webp",
+    "mobile": "assets/client-review/valencia-arrivals-mobile.webp",
+    "description": "A complete arrival itinerary. A concise opening leads into a practical route through services, planning and an enquiry to you.",
+    "points": [
+      "A complete arrival itinerary",
+      "A move planner and a practical service route",
+      "An enquiry shaped by the support a visitor selects"
+    ],
+    "downloadSize": 11672558,
+    "zipSize": null
+  }
+]

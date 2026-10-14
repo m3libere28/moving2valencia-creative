@@ -1,0 +1,530 @@
+[
+  {
+    "id": "casa-editorial",
+    "documentWidth": 305,
+    "overflow": false,
+    "sourceSha": "a1e245a66c69235b567dff9ec853e8a6dd7799648baff33fa71406372806f796",
+    "width": 320
+  },
+  {
+    "id": "blue-horizon",
+    "documentWidth": 305,
+    "overflow": false,
+    "sourceSha": "482faf3d4e6a0cd8c7f9af1141f4d4b776fd313805410c93370eae409c0299df",
+    "width": 320
+  },
+  {
+    "id": "hola-valencia",
+    "documentWidth": 305,
+    "overflow": false,
+    "sourceSha": "6fa8b3069c65ea3473a68b08ae3809b409bac335c93d306235cd7a2449f2106b",
+    "width": 320
+  },
+  {
+    "id": "valencia-plan",
+    "documentWidth": 305,
+    "overflow": false,
+    "sourceSha": "65fb5ef7b1c68979638f36c3742822dc45630d7f857bc9916c6a191f6fb9678a",
+    "width": 320
+  },
+  {
+    "id": "editorial-journey",
+    "documentWidth": 305,
+    "overflow": false,
+    "sourceSha": "260dd7c3a15157309861256300091fa149896766973f83adc7caabd62e601a09",
+    "width": 320
+  },
+  {
+    "id": "valencia-bento",
+    "documentWidth": 305,
+    "overflow": false,
+    "sourceSha": "577a8489c63c1dc7020f7fb656d47dd1fee9c988c940aac71ce383591c8ae195",
+    "width": 320
+  },
+  {
+    "id": "immersive-valencia",
+    "documentWidth": 305,
+    "overflow": false,
+    "sourceSha": "56714ca434ec746b1a9ac746e3b685fcefdd23deb359b6db1a583e7fba11d0ca",
+    "width": 320
+  },
+  {
+    "id": "valencia-in-motion",
+    "documentWidth": 305,
+    "overflow": false,
+    "sourceSha": "15d325643c44143e6dc54497f7b2d70911d560308912a81c837773981e4c379c",
+    "width": 320
+  },
+  {
+    "id": "valencia-3d-atlas",
+    "documentWidth": 305,
+    "overflow": false,
+    "sourceSha": "a7fb19a4257dfaa8c29641eb1c940f5fc0dea6d691405a3238bc749171194b59",
+    "width": 320
+  },
+  {
+    "id": "azahar",
+    "documentWidth": 305,
+    "overflow": false,
+    "sourceSha": "428c3caed6ead5e667fabc4604bd6e7047f00924afc8737ae224da43b84e0201",
+    "width": 320
+  },
+  {
+    "id": "a-new-horizon",
+    "documentWidth": 305,
+    "overflow": false,
+    "sourceSha": "76220789dd47e22085fdb1d63e6919c5ec825a23234ac159d36b93da44a0e63c",
+    "width": 320
+  },
+  {
+    "id": "valencia-arrivals",
+    "documentWidth": 305,
+    "overflow": false,
+    "sourceSha": "52909da7f07755279e1afbcbac2535591b6831c8cf7a36967c8c193db849a49a",
+    "width": 320
+  },
+  {
+    "id": "casa-editorial",
+    "documentWidth": 753,
+    "overflow": false,
+    "sourceSha": "a1e245a66c69235b567dff9ec853e8a6dd7799648baff33fa71406372806f796",
+    "width": 768
+  },
+  {
+    "id": "blue-horizon",
+    "documentWidth": 753,
+    "overflow": false,
+    "sourceSha": "482faf3d4e6a0cd8c7f9af1141f4d4b776fd313805410c93370eae409c0299df",
+    "width": 768
+  },
+  {
+    "id": "hola-valencia",
+    "documentWidth": 753,
+    "overflow": false,
+    "sourceSha": "6fa8b3069c65ea3473a68b08ae3809b409bac335c93d306235cd7a2449f2106b",
+    "width": 768
+  },
+  {
+    "id": "valencia-plan",
+    "documentWidth": 753,
+    "overflow": false,
+    "sourceSha": "65fb5ef7b1c68979638f36c3742822dc45630d7f857bc9916c6a191f6fb9678a",
+    "width": 768
+  },
+  {
+    "id": "editorial-journey",
+    "documentWidth": 753,
+    "overflow": false,
+    "sourceSha": "260dd7c3a15157309861256300091fa149896766973f83adc7caabd62e601a09",
+    "width": 768
+  },
+  {
+    "id": "valencia-bento",
+    "documentWidth": 753,
+    "overflow": false,
+    "sourceSha": "577a8489c63c1dc7020f7fb656d47dd1fee9c988c940aac71ce383591c8ae195",
+    "width": 768
+  },
+  {
+    "id": "immersive-valencia",
+    "documentWidth": 753,
+    "overflow": false,
+    "sourceSha": "56714ca434ec746b1a9ac746e3b685fcefdd23deb359b6db1a583e7fba11d0ca",
+    "width": 768
+  },
+  {
+    "id": "valencia-in-motion",
+    "documentWidth": 753,
+    "overflow": false,
+    "sourceSha": "15d325643c44143e6dc54497f7b2d70911d560308912a81c837773981e4c379c",
+    "width": 768
+  },
+  {
+    "id": "valencia-3d-atlas",
+    "documentWidth": 753,
+    "overflow": false,
+    "sourceSha": "a7fb19a4257dfaa8c29641eb1c940f5fc0dea6d691405a3238bc749171194b59",
+    "width": 768
+  },
+  {
+    "id": "azahar",
+    "documentWidth": 753,
+    "overflow": false,
+    "sourceSha": "428c3caed6ead5e667fabc4604bd6e7047f00924afc8737ae224da43b84e0201",
+    "width": 768
+  },
+  {
+    "id": "a-new-horizon",
+    "documentWidth": 753,
+    "overflow": false,
+    "sourceSha": "76220789dd47e22085fdb1d63e6919c5ec825a23234ac159d36b93da44a0e63c",
+    "width": 768
+  },
+  {
+    "id": "valencia-arrivals",
+    "documentWidth": 753,
+    "overflow": false,
+    "sourceSha": "52909da7f07755279e1afbcbac2535591b6831c8cf7a36967c8c193db849a49a",
+    "width": 768
+  },
+  {
+    "id": "casa-editorial",
+    "documentWidth": 1009,
+    "overflow": false,
+    "sourceSha": "a1e245a66c69235b567dff9ec853e8a6dd7799648baff33fa71406372806f796",
+    "width": 1024
+  },
+  {
+    "id": "blue-horizon",
+    "documentWidth": 1009,
+    "overflow": false,
+    "sourceSha": "482faf3d4e6a0cd8c7f9af1141f4d4b776fd313805410c93370eae409c0299df",
+    "width": 1024
+  },
+  {
+    "id": "hola-valencia",
+    "documentWidth": 1009,
+    "overflow": false,
+    "sourceSha": "6fa8b3069c65ea3473a68b08ae3809b409bac335c93d306235cd7a2449f2106b",
+    "width": 1024
+  },
+  {
+    "id": "valencia-plan",
+    "documentWidth": 1009,
+    "overflow": false,
+    "sourceSha": "65fb5ef7b1c68979638f36c3742822dc45630d7f857bc9916c6a191f6fb9678a",
+    "width": 1024
+  },
+  {
+    "id": "editorial-journey",
+    "documentWidth": 1009,
+    "overflow": false,
+    "sourceSha": "260dd7c3a15157309861256300091fa149896766973f83adc7caabd62e601a09",
+    "width": 1024
+  },
+  {
+    "id": "valencia-bento",
+    "documentWidth": 1009,
+    "overflow": false,
+    "sourceSha": "577a8489c63c1dc7020f7fb656d47dd1fee9c988c940aac71ce383591c8ae195",
+    "width": 1024
+  },
+  {
+    "id": "immersive-valencia",
+    "documentWidth": 1009,
+    "overflow": false,
+    "sourceSha": "56714ca434ec746b1a9ac746e3b685fcefdd23deb359b6db1a583e7fba11d0ca",
+    "width": 1024
+  },
+  {
+    "id": "valencia-in-motion",
+    "documentWidth": 1009,
+    "overflow": false,
+    "sourceSha": "15d325643c44143e6dc54497f7b2d70911d560308912a81c837773981e4c379c",
+    "width": 1024
+  },
+  {
+    "id": "valencia-3d-atlas",
+    "documentWidth": 1009,
+    "overflow": false,
+    "sourceSha": "a7fb19a4257dfaa8c29641eb1c940f5fc0dea6d691405a3238bc749171194b59",
+    "width": 1024
+  },
+  {
+    "id": "azahar",
+    "documentWidth": 1009,
+    "overflow": false,
+    "sourceSha": "428c3caed6ead5e667fabc4604bd6e7047f00924afc8737ae224da43b84e0201",
+    "width": 1024
+  },
+  {
+    "id": "a-new-horizon",
+    "documentWidth": 1024,
+    "overflow": false,
+    "sourceSha": "76220789dd47e22085fdb1d63e6919c5ec825a23234ac159d36b93da44a0e63c",
+    "width": 1024
+  },
+  {
+    "id": "valencia-arrivals",
+    "documentWidth": 1009,
+    "overflow": false,
+    "sourceSha": "52909da7f07755279e1afbcbac2535591b6831c8cf7a36967c8c193db849a49a",
+    "width": 1024
+  },
+  {
+    "id": "casa-editorial",
+    "documentWidth": 1905,
+    "overflow": false,
+    "sourceSha": "a1e245a66c69235b567dff9ec853e8a6dd7799648baff33fa71406372806f796",
+    "width": 1920
+  },
+  {
+    "id": "blue-horizon",
+    "documentWidth": 1905,
+    "overflow": false,
+    "sourceSha": "482faf3d4e6a0cd8c7f9af1141f4d4b776fd313805410c93370eae409c0299df",
+    "width": 1920
+  },
+  {
+    "id": "hola-valencia",
+    "documentWidth": 1905,
+    "overflow": false,
+    "sourceSha": "6fa8b3069c65ea3473a68b08ae3809b409bac335c93d306235cd7a2449f2106b",
+    "width": 1920
+  },
+  {
+    "id": "valencia-plan",
+    "documentWidth": 1905,
+    "overflow": false,
+    "sourceSha": "65fb5ef7b1c68979638f36c3742822dc45630d7f857bc9916c6a191f6fb9678a",
+    "width": 1920
+  },
+  {
+    "id": "editorial-journey",
+    "documentWidth": 1905,
+    "overflow": false,
+    "sourceSha": "260dd7c3a15157309861256300091fa149896766973f83adc7caabd62e601a09",
+    "width": 1920
+  },
+  {
+    "id": "valencia-bento",
+    "documentWidth": 1905,
+    "overflow": false,
+    "sourceSha": "577a8489c63c1dc7020f7fb656d47dd1fee9c988c940aac71ce383591c8ae195",
+    "width": 1920
+  },
+  {
+    "id": "immersive-valencia",
+    "documentWidth": 1905,
+    "overflow": false,
+    "sourceSha": "56714ca434ec746b1a9ac746e3b685fcefdd23deb359b6db1a583e7fba11d0ca",
+    "width": 1920
+  },
+  {
+    "id": "valencia-in-motion",
+    "documentWidth": 1905,
+    "overflow": false,
+    "sourceSha": "15d325643c44143e6dc54497f7b2d70911d560308912a81c837773981e4c379c",
+    "width": 1920
+  },
+  {
+    "id": "valencia-3d-atlas",
+    "documentWidth": 1905,
+    "overflow": false,
+    "sourceSha": "a7fb19a4257dfaa8c29641eb1c940f5fc0dea6d691405a3238bc749171194b59",
+    "width": 1920
+  },
+  {
+    "id": "azahar",
+    "documentWidth": 1905,
+    "overflow": false,
+    "sourceSha": "428c3caed6ead5e667fabc4604bd6e7047f00924afc8737ae224da43b84e0201",
+    "width": 1920
+  },
+  {
+    "id": "a-new-horizon",
+    "documentWidth": 1905,
+    "overflow": false,
+    "sourceSha": "76220789dd47e22085fdb1d63e6919c5ec825a23234ac159d36b93da44a0e63c",
+    "width": 1920
+  },
+  {
+    "id": "valencia-arrivals",
+    "documentWidth": 1905,
+    "overflow": false,
+    "sourceSha": "52909da7f07755279e1afbcbac2535591b6831c8cf7a36967c8c193db849a49a",
+    "width": 1920
+  },
+  {
+    "id": "casa-editorial",
+    "documentWidth": 2545,
+    "overflow": false,
+    "sourceSha": "a1e245a66c69235b567dff9ec853e8a6dd7799648baff33fa71406372806f796",
+    "width": 2560
+  },
+  {
+    "id": "blue-horizon",
+    "documentWidth": 2545,
+    "overflow": false,
+    "sourceSha": "482faf3d4e6a0cd8c7f9af1141f4d4b776fd313805410c93370eae409c0299df",
+    "width": 2560
+  },
+  {
+    "id": "hola-valencia",
+    "documentWidth": 2545,
+    "overflow": false,
+    "sourceSha": "6fa8b3069c65ea3473a68b08ae3809b409bac335c93d306235cd7a2449f2106b",
+    "width": 2560
+  },
+  {
+    "id": "valencia-plan",
+    "documentWidth": 2545,
+    "overflow": false,
+    "sourceSha": "65fb5ef7b1c68979638f36c3742822dc45630d7f857bc9916c6a191f6fb9678a",
+    "width": 2560
+  },
+  {
+    "id": "editorial-journey",
+    "documentWidth": 2545,
+    "overflow": false,
+    "sourceSha": "260dd7c3a15157309861256300091fa149896766973f83adc7caabd62e601a09",
+    "width": 2560
+  },
+  {
+    "id": "valencia-bento",
+    "documentWidth": 2545,
+    "overflow": false,
+    "sourceSha": "577a8489c63c1dc7020f7fb656d47dd1fee9c988c940aac71ce383591c8ae195",
+    "width": 2560
+  },
+  {
+    "id": "immersive-valencia",
+    "documentWidth": 2545,
+    "overflow": false,
+    "sourceSha": "56714ca434ec746b1a9ac746e3b685fcefdd23deb359b6db1a583e7fba11d0ca",
+    "width": 2560
+  },
+  {
+    "id": "valencia-in-motion",
+    "documentWidth": 2545,
+    "overflow": false,
+    "sourceSha": "15d325643c44143e6dc54497f7b2d70911d560308912a81c837773981e4c379c",
+    "width": 2560
+  },
+  {
+    "id": "valencia-3d-atlas",
+    "documentWidth": 2545,
+    "overflow": false,
+    "sourceSha": "a7fb19a4257dfaa8c29641eb1c940f5fc0dea6d691405a3238bc749171194b59",
+    "width": 2560
+  },
+  {
+    "id": "azahar",
+    "documentWidth": 2545,
+    "overflow": false,
+    "sourceSha": "428c3caed6ead5e667fabc4604bd6e7047f00924afc8737ae224da43b84e0201",
+    "width": 2560
+  },
+  {
+    "id": "a-new-horizon",
+    "documentWidth": 2545,
+    "overflow": false,
+    "sourceSha": "76220789dd47e22085fdb1d63e6919c5ec825a23234ac159d36b93da44a0e63c",
+    "width": 2560
+  },
+  {
+    "id": "valencia-arrivals",
+    "documentWidth": 2545,
+    "overflow": false,
+    "sourceSha": "52909da7f07755279e1afbcbac2535591b6831c8cf7a36967c8c193db849a49a",
+    "width": 2560
+  },
+  {
+    "id": "casa-editorial",
+    "orientation": "emulated landscape",
+    "documentWidth": 797,
+    "height": 375,
+    "overflow": false,
+    "sourceSha": "a1e245a66c69235b567dff9ec853e8a6dd7799648baff33fa71406372806f796",
+    "width": 812
+  },
+  {
+    "id": "blue-horizon",
+    "orientation": "emulated landscape",
+    "documentWidth": 797,
+    "height": 375,
+    "overflow": false,
+    "sourceSha": "482faf3d4e6a0cd8c7f9af1141f4d4b776fd313805410c93370eae409c0299df",
+    "width": 812
+  },
+  {
+    "id": "hola-valencia",
+    "orientation": "emulated landscape",
+    "documentWidth": 797,
+    "height": 375,
+    "overflow": false,
+    "sourceSha": "6fa8b3069c65ea3473a68b08ae3809b409bac335c93d306235cd7a2449f2106b",
+    "width": 812
+  },
+  {
+    "id": "valencia-plan",
+    "orientation": "emulated landscape",
+    "documentWidth": 797,
+    "height": 375,
+    "overflow": false,
+    "sourceSha": "65fb5ef7b1c68979638f36c3742822dc45630d7f857bc9916c6a191f6fb9678a",
+    "width": 812
+  },
+  {
+    "id": "editorial-journey",
+    "orientation": "emulated landscape",
+    "documentWidth": 797,
+    "height": 375,
+    "overflow": false,
+    "sourceSha": "260dd7c3a15157309861256300091fa149896766973f83adc7caabd62e601a09",
+    "width": 812
+  },
+  {
+    "id": "valencia-bento",
+    "orientation": "emulated landscape",
+    "documentWidth": 797,
+    "height": 375,
+    "overflow": false,
+    "sourceSha": "577a8489c63c1dc7020f7fb656d47dd1fee9c988c940aac71ce383591c8ae195",
+    "width": 812
+  },
+  {
+    "id": "immersive-valencia",
+    "orientation": "emulated landscape",
+    "documentWidth": 797,
+    "height": 375,
+    "overflow": false,
+    "sourceSha": "56714ca434ec746b1a9ac746e3b685fcefdd23deb359b6db1a583e7fba11d0ca",
+    "width": 812
+  },
+  {
+    "id": "valencia-in-motion",
+    "orientation": "emulated landscape",
+    "documentWidth": 797,
+    "height": 375,
+    "overflow": false,
+    "sourceSha": "15d325643c44143e6dc54497f7b2d70911d560308912a81c837773981e4c379c",
+    "width": 812
+  },
+  {
+    "id": "valencia-3d-atlas",
+    "orientation": "emulated landscape",
+    "documentWidth": 797,
+    "height": 375,
+    "overflow": false,
+    "sourceSha": "a7fb19a4257dfaa8c29641eb1c940f5fc0dea6d691405a3238bc749171194b59",
+    "width": 812
+  },
+  {
+    "id": "azahar",
+    "orientation": "emulated landscape",
+    "documentWidth": 797,
+    "height": 375,
+    "overflow": false,
+    "sourceSha": "428c3caed6ead5e667fabc4604bd6e7047f00924afc8737ae224da43b84e0201",
+    "width": 812
+  },
+  {
+    "id": "a-new-horizon",
+    "orientation": "emulated landscape",
+    "documentWidth": 797,
+    "height": 375,
+    "overflow": false,
+    "sourceSha": "76220789dd47e22085fdb1d63e6919c5ec825a23234ac159d36b93da44a0e63c",
+    "width": 812
+  },
+  {
+    "id": "valencia-arrivals",
+    "orientation": "emulated landscape",
+    "documentWidth": 797,
+    "height": 375,
+    "overflow": false,
+    "sourceSha": "52909da7f07755279e1afbcbac2535591b6831c8cf7a36967c8c193db849a49a",
+    "width": 812
+  }
+]

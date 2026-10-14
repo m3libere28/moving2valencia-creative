@@ -1,0 +1,24 @@
+{
+  "device": {
+    "width": 375,
+    "height": 812
+  },
+  "environment": "Local Chromium lab sample; not field p75 or a real-phone measurement",
+  "lcpMs": 132,
+  "cls": 0,
+  "longTasks": [
+    74
+  ],
+  "axe": {
+    "version": "4.10.3",
+    "violations": []
+  },
+  "sourceSha": "6fa8b3069c65ea3473a68b08ae3809b409bac335c93d306235cd7a2449f2106b",
+  "layout": {
+    "viewport": 375,
+    "documentWidth": 360,
+    "overflow": false
+  },
+  "completedAt": "2026-10-14T15:43:11.691Z",
+  "consoleErrors": []
+}

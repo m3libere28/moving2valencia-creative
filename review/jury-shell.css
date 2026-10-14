@@ -1,0 +1,65 @@
+[hidden]{display:none!important}
+html{scroll-padding-top:110px;scroll-padding-bottom:100px}section[id],:focus{scroll-margin-top:110px;scroll-margin-bottom:100px}
+.jury-draft{padding-top:24px;border-top:1px solid currentColor}.jury-draft h3{font-size:28px;line-height:1.2}.jury-draft p{font-size:15px;line-height:1.6;margin:14px 0}
+.jury-draft textarea{display:block;width:100%;min-height:220px;border:1px solid currentColor;border-radius:12px;background:transparent;color:inherit;font:15px/1.65 system-ui;padding:14px;resize:vertical;margin-block:20px}
+.jury-draft-actions{display:flex;flex-wrap:wrap;gap:10px}.jury-draft-actions button,.jury-draft-actions a{min-height:44px;display:inline-flex;align-items:center;padding:10px 15px;border:1px solid currentColor;border-radius:100px;background:transparent;color:inherit;font:500 14px system-ui;text-decoration:none}
+#jury-enquiry-form label{display:block;font-size:14px;margin:18px 0 7px}#jury-enquiry-form input,#jury-enquiry-form textarea{display:block;width:100%;border:1px solid currentColor;border-radius:10px;background:transparent;color:inherit;font:16px/1.6 system-ui;padding:10px 12px;min-height:46px}#jury-enquiry-form textarea{resize:vertical}#jury-enquiry-form .btn{width:100%;margin-top:16px}.jury-enquiry-note{font:13px/1.6 system-ui;margin-top:16px}
+.jury-scope-note{max-width:62ch;font:15px/1.7 system-ui;margin:24px auto;padding:16px 24px;color:#42392f}
+body[data-proposal="5"] #vmap .nb{fill:#614c3f;font-weight:600}body[data-proposal="5"] #vmap .air{fill:#59483b}
+body[data-proposal="5"] .selected-essay-visual{background:#153c32}
+body[data-proposal="5"] .selected-scene-text{background:#153c32e8;border-radius:16px;padding:22px}
+body[data-proposal="5"] .selected-scene{background:#153c32}
+body[data-proposal="5"] .selected-scene-copy{background:#153c32;border-radius:16px;padding:24px;max-width:min(520px,calc(100% - 48px))}
+body[data-proposal="5"] .selected-media-caption{background:#153c32;color:#fff;padding:6px 10px;border-radius:8px}
+body[data-proposal="5"] .selected-media-caption{font-size:12px}
+body[data-proposal="5"] .selected-essay-foot>span{color:#50594c}
+body[data-proposal="5"] .dock .main{background:#983e28;color:#fff}
+body[data-proposal="5"] .jury-scope-note{background:#f1ebdf;color:#42392f;border-radius:14px}
+body[data-proposal="6"] .t .small{color:#514a42;opacity:1}
+body[data-proposal] .amt{font-size:clamp(25px,4vw,46px)!important;line-height:1.15;max-width:14ch}
+body[data-proposal="7"] .out .amt{color:#e6c399}
+body[data-proposal="5"] .price{padding-block:40px}body[data-proposal="6"] .plan{padding-block:32px}
+body[data-proposal="6"] #book{max-height:85svh;overflow:auto}
+body[data-proposal="6"] .jury-bento-founder{width:76px;height:95px;object-fit:cover;object-position:50% 20%;border-radius:18px;flex:none}
+body[data-proposal="6"] .sea .small{color:#514a42}
+body[data-proposal="6"] .selected-district-carmen{background:#963b24}
+body[data-proposal="6"] .selected-district-carmen .selected-district-copy span,body[data-proposal="6"] .selected-district-benimaclet .selected-district-copy span{color:#fff;opacity:1;font-size:12px}
+body[data-proposal="6"] .selected-district-carmen p,body[data-proposal="6"] .selected-district-carmen button{color:#fff;opacity:1}
+body[data-proposal="6"] .selected-brief>small{color:#464e3d;font-size:12px}
+body[data-proposal="6"] .plan.hot{color:#29180e}
+body[data-proposal="7"] .cur{display:none!important}
+body[data-proposal="7"] .hero{height:145svh}
+body[data-proposal="7"] .btn.t,body[data-proposal="7"] .dock a.b{background:#ac4426;color:#fff}
+body[data-proposal="7"] .chap{opacity:1!important;scale:1!important;animation:none!important}
+body[data-proposal="7"] .voice .wd{opacity:1!important}
+body[data-proposal="7"] .shade{background:linear-gradient(180deg,#0e0b0a70,#0e0b0a99 40%,#0e0b0adc)}
+body[data-proposal="7"] .hero h1 em{color:#ffe2b6}
+@media(max-width:700px){body[data-proposal="7"] .hero{height:125svh}body[data-proposal="7"] .sc{position:relative;top:auto;min-height:420px}}
+.jury-review-footer{padding:26px 6%;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid currentColor;font:13px/1.7 system-ui;color:inherit}
+.jury-review-footer a{color:inherit;display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:4px}
+body[data-proposal="6"] .t:has(.jury-bento-founder){animation:none!important;opacity:1!important;transform:none}
+body[data-proposal="6"] .t:has(.jury-bento-founder)>div{opacity:1!important}
+body[data-jury-motion-refined="valencia-in-motion"] .begin,body[data-jury-motion-refined="valencia-3d-atlas"] .begin{background:#943e2a}
+body[data-jury-motion-refined="valencia-in-motion"] .image-note,body[data-jury-motion-refined="valencia-3d-atlas"] .image-note{color:#42483b;font-size:12px}
+body[data-jury-motion-refined="valencia-in-motion"] .guide small,body[data-jury-motion-refined="valencia-3d-atlas"] .guide small{color:#fff;font-size:12px}
+.jury-guide-portrait{margin:0;position:relative;overflow:hidden;aspect-ratio:1;background:#dbe0ce;border-radius:150px 150px 3px 3px}.jury-guide-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 18%}.jury-guide-portrait figcaption{position:absolute;bottom:20px;left:20px;right:20px;padding:8px 12px;background:#263b31e8;color:#fff;font:12px/1.5 system-ui}
+body[data-jury-concept="azahar"] .cur{display:none!important}
+body[data-jury-concept="azahar"] .fly{height:260svh}
+body[data-jury-concept="azahar"] .fly .stage{isolation:isolate}
+body[data-jury-concept="azahar"] .fly .stage::before{content:'';position:absolute;inset:-45px 0 0;z-index:-1;background:linear-gradient(transparent,#0b1430ad 25%,#0b1430c9);pointer-events:none}
+body[data-jury-concept="azahar"] .fly .eyebrow{display:inline-block;color:#fff3d7;background:#0b1430d9;padding:6px 10px;border-radius:6px;font-size:11px}
+body[data-jury-concept="azahar"] .fly h1 em{color:#ffd49b}
+@media(max-width:700px){body[data-jury-concept="azahar"] .fly{height:220svh}}
+@media(prefers-reduced-motion:reduce){body[data-jury-concept="azahar"] .fly{height:110svh}}
+body[data-jury-concept="a-new-horizon"] .hero-ctas,body[data-jury-concept="a-new-horizon"] .q-list li,body[data-jury-concept="a-new-horizon"] .belong-word{opacity:1!important}
+body[data-jury-concept="a-new-horizon"] .hero-aside,body[data-jury-concept="a-new-horizon"] .plan li,body[data-jury-concept="a-new-horizon"] .plan .step-k,body[data-jury-concept="a-new-horizon"] .plan .q,body[data-jury-concept="a-new-horizon"] .plan .a{opacity:1!important}
+body[data-jury-concept="a-new-horizon"] .plan li.plan-spine{display:block;position:absolute;inset:0 auto 0 0;width:1.5px;padding:0;border:0;pointer-events:none}
+#pre.jury-removed{display:none!important}
+body[data-jury-concept="azahar"] #pre{display:none!important}
+body[data-jury-concept="azahar"] #modal{margin:auto;width:min(560px,calc(100% - 24px));max-height:90svh;overflow:auto;inset:0;padding:0;border:0;color:#101a39;background:#f7f3ea;border-radius:24px}
+body[data-jury-concept="azahar"] #modal::backdrop{background:#0b143080}
+body[data-jury-concept="azahar"] .fmatch{font-size:13px}
+body[data-jury-concept="azahar"] .voices blockquote p{font-size:clamp(24px,3vw,40px);line-height:1.4}
+:focus-visible{outline:3px solid #007b83!important;outline-offset:4px;box-shadow:0 0 0 6px #fff}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+:where([data-jury-concept="immersive-valencia"]) .jury-hero-word{display:inline-block;white-space:nowrap}

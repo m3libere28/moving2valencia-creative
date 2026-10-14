@@ -1,0 +1,74 @@
+[
+  {
+    "id": "casa-editorial",
+    "checked": "Journal choice carries into enquiry; valid draft preview and close.",
+    "scope": "Local Chromium interaction/source checks; not a complete real-device or screen-reader protocol",
+    "sourceSha": "a1e245a66c69235b567dff9ec853e8a6dd7799648baff33fa71406372806f796"
+  },
+  {
+    "id": "blue-horizon",
+    "checked": "City/sea choice changes cover and neighbourhood; city choice carries into enquiry.",
+    "scope": "Local Chromium interaction/source checks; not a complete real-device or screen-reader protocol",
+    "sourceSha": "482faf3d4e6a0cd8c7f9af1141f4d4b776fd313805410c93370eae409c0299df"
+  },
+  {
+    "id": "hola-valencia",
+    "checked": "Pause cooking control responds; standalone animated WebP asset embedded.",
+    "scope": "Local Chromium interaction/source checks; not a complete real-device or screen-reader protocol",
+    "sourceSha": "6fa8b3069c65ea3473a68b08ae3809b409bac335c93d306235cd7a2449f2106b"
+  },
+  {
+    "id": "valencia-plan",
+    "checked": "Family and support controls update plan; checklist progress and reset respond.",
+    "scope": "Local Chromium interaction/source checks; not a complete real-device or screen-reader protocol",
+    "sourceSha": "65fb5ef7b1c68979638f36c3742822dc45630d7f857bc9916c6a191f6fb9678a"
+  },
+  {
+    "id": "editorial-journey",
+    "checked": "Preferred time request, valid email draft, edit and close respond.",
+    "scope": "Local Chromium interaction/source checks; not a complete real-device or screen-reader protocol",
+    "sourceSha": "260dd7c3a15157309861256300091fa149896766973f83adc7caabd62e601a09"
+  },
+  {
+    "id": "valencia-bento",
+    "checked": "Five-answer matcher saves result to board; enquiry carries board and month; edit/close leaves no page filter or dialog open.",
+    "scope": "Local Chromium interaction/source checks; not a complete real-device or screen-reader protocol",
+    "sourceSha": "577a8489c63c1dc7020f7fb656d47dd1fee9c988c940aac71ce383591c8ae195"
+  },
+  {
+    "id": "immersive-valencia",
+    "checked": "Household/timing/support carry to enquiry; valid draft/edit/close; visible labels activate radio controls.",
+    "scope": "Local Chromium interaction/source checks; not a complete real-device or screen-reader protocol",
+    "sourceSha": "56714ca434ec746b1a9ac746e3b685fcefdd23deb359b6db1a583e7fba11d0ca"
+  },
+  {
+    "id": "valencia-in-motion",
+    "checked": "Select Ruzafa, add to chapter, enter priorities, prepare draft and edit details all respond; actual Ruzafa market photo appears. Source hooks also checked by expert review.",
+    "scope": "Local Chromium interaction/source checks; not a complete real-device or screen-reader protocol",
+    "sourceSha": "15d325643c44143e6dc54497f7b2d70911d560308912a81c837773981e4c379c"
+  },
+  {
+    "id": "valencia-3d-atlas",
+    "checked": "Stop, save, draft, tour playback and global pause respond; direct #rhythm opens chapter; keyboard menu wraps and Escape restores opener.",
+    "scope": "Local Chromium interaction/source checks; not a complete real-device or screen-reader protocol",
+    "sourceSha": "a7fb19a4257dfaa8c29641eb1c940f5fc0dea6d691405a3238bc749171194b59"
+  },
+  {
+    "id": "azahar",
+    "checked": "Native consultation validates name/email and prepares editable draft; close restores page.",
+    "scope": "Local Chromium interaction/source checks; not a complete real-device or screen-reader protocol",
+    "sourceSha": "428c3caed6ead5e667fabc4604bd6e7047f00924afc8737ae224da43b84e0201"
+  },
+  {
+    "id": "a-new-horizon",
+    "checked": "Valid enquiry prepares draft and edit returns fields; keyboard everyday tabs respond.",
+    "scope": "Local Chromium interaction/source checks; not a complete real-device or screen-reader protocol",
+    "sourceSha": "76220789dd47e22085fdb1d63e6919c5ec825a23234ac159d36b93da44a0e63c"
+  },
+  {
+    "id": "valencia-arrivals",
+    "checked": "Route choices carry into enquiry draft; direct #everyday opens optional chapter.",
+    "scope": "Local Chromium interaction/source checks; not a complete real-device or screen-reader protocol",
+    "sourceSha": "52909da7f07755279e1afbcbac2535591b6831c8cf7a36967c8c193db849a49a"
+  }
+]

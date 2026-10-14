@@ -1,0 +1,961 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>Azahar · Client archive edition · Moving2Valencia</title>
+<script>(function(d){d.classList.add("js");d.lang="en";try{if(sessionStorage.getItem("m2vSeen"))d.classList.add("seen")}catch(e){}})(document.documentElement)</script>
+<meta name="description" content="Moving2Valencia: personal relocation support for families moving to Valencia, Spain. Christa handles the paperwork, home priorities, school questions and settling in.">
+<link rel="preload" as="image" href="img/cac-800.webp" fetchpriority="high">
+<link rel="preload" href="fonts/BodoniModa-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/BodoniModa-italic-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Manrope-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/JetBrainsMono-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#0F1B3D">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Moving2Valencia">
+<meta property="og:title" content="Every move begins as a daydream · Moving2Valencia">
+<meta property="og:description" content="Personal relocation support in Valencia, Spain: paperwork, home finding, schools and the first year, with one person to call.">
+
+<meta property="og:image" content="https://moving2valencia.eu/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Hemisfèric in Valencia at dusk with the words: Every move begins as a daydream.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<style>
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:400 600;font-display:swap;src:url("fonts/BodoniModa-normal-400-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:400 600;font-display:swap;src:url("fonts/BodoniModa-normal-400-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:400 500;font-display:swap;src:url("fonts/BodoniModa-italic-400-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:400 500;font-display:swap;src:url("fonts/BodoniModa-italic-400-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:400 700;font-display:swap;src:url("fonts/Manrope-normal-400-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:400 700;font-display:swap;src:url("fonts/Manrope-normal-400-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400 500;font-display:swap;src:url("fonts/JetBrainsMono-normal-400-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400 500;font-display:swap;src:url("fonts/JetBrainsMono-normal-400-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+
+/* Layout: full-bleed chapters joined by wave seams; a city that wakes from night (indigo) to day (azahar white) as you scroll */
+:root{
+  --night:#0F1B3D; --deep:#16285A; --tile:#2D4FA8; --orange:#F2862E; --azahar:#F7F3EA; --sea:#5FB7C9; --ink:#0B1430; --mist:#A9B5D6;
+  --display:'Bodoni Moda',Didot,'Times New Roman',serif;
+  --body:'Manrope',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--azahar);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.02}
+em{font-style:italic;color:var(--orange)}
+.paper,.faq,.brief{--orange:#B3510E}
+.paper .fpanel,.paper .chips{--orange:#F2862E}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--sea)}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:clamp(16px,5vw,56px)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;border:1px solid currentColor;background:transparent;color:inherit;font:600 14px var(--body);letter-spacing:.04em;cursor:pointer;text-decoration:none;position:relative;overflow:hidden;transition:color .4s}
+.btn::before{content:"";position:absolute;inset:0;background:var(--orange);transform:translateY(101%);transition:transform .45s cubic-bezier(.7,0,.2,1);z-index:-1}
+.btn:hover{color:var(--ink);border-color:var(--orange)}
+.btn:hover::before{transform:none}
+.btn.solid{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+.btn.solid::before{background:var(--azahar)}
+
+/* preloader */
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* nav */
+nav.top{position:fixed;top:0;left:0;right:0;z-index:50;padding:calc(14px + env(safe-area-inset-top,0px)) clamp(16px,4vw,40px) 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .4s,backdrop-filter .4s}
+nav.top.solid{background:rgba(15,27,61,.72);backdrop-filter:blur(14px)}
+.logo{font-family:var(--display);font-size:22px;text-decoration:none}
+.logo b{color:var(--orange);font-style:italic;font-weight:500}
+.navr{display:flex;gap:10px;align-items:center}
+.navr .btn{min-height:44px;padding:0 20px;font-size:13px}
+#menuBtn{width:44px;height:44px;border-radius:50%;border:1px solid rgba(247,243,234,.35);background:none;color:inherit;cursor:pointer;display:grid;place-items:center}
+#menuBtn span{display:block;width:16px;height:1.5px;background:currentColor;box-shadow:0 5px 0 currentColor,0 -5px 0 currentColor}
+#menu{position:fixed;inset:0;z-index:60;background:var(--tile);clip-path:circle(0 at calc(100% - 40px) 36px);transition:clip-path .8s cubic-bezier(.8,0,.2,1);display:flex;flex-direction:column;justify-content:center;padding:clamp(24px,6vw,80px)}
+#menu{visibility:hidden;transition:clip-path .8s cubic-bezier(.8,0,.2,1),visibility 0s linear .8s}
+#menu.open{clip-path:circle(150% at calc(100% - 40px) 36px);visibility:visible;transition:clip-path .8s cubic-bezier(.8,0,.2,1)}
+#menu a{font-family:var(--display);font-size:clamp(36px,7vw,72px);text-decoration:none;line-height:1.15;display:flex;gap:18px;align-items:baseline;opacity:.85;transition:opacity .3s,transform .3s}
+#menu a:hover{opacity:1;transform:translateX(12px);color:var(--azahar)}
+#menu a small{font-family:var(--mono);font-size:12px;color:var(--azahar);opacity:.8}
+#menuClose{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:clamp(16px,4vw,40px);width:44px;height:44px;border-radius:50%;border:1px solid var(--azahar);background:none;color:var(--azahar);font-size:18px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;min-height:min(100svh,920px);display:flex;align-items:flex-end;overflow:hidden}
+#sky{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;z-index:2;padding-block:120px 72px;width:100%}
+.hero h1{font-size:clamp(48px,10.5vw,148px);letter-spacing:-.02em}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln>span{display:inline-block;transform:translateY(105%);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.ready .hero h1 .ln>span{transform:none}
+.ready .hero h1 .ln:nth-child(2)>span{transition-delay:.12s}
+
+.hero-meta p{margin:0;color:var(--mist);max-width:42ch}
+.hero-meta .stat b{display:block;font-family:var(--display);font-size:44px;font-weight:400;line-height:1}
+.hero-meta .stat span{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sea)}
+.scrollcue{position:absolute;right:clamp(16px,4vw,40px);bottom:28px;z-index:2;font-family:var(--mono);font-size:12px;letter-spacing:.2em;writing-mode:vertical-rl;color:var(--mist)}
+
+/* 3D flight hero */
+.fly{position:relative;height:260vh;background:#1a1030}
+.fly-stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+#gl{position:absolute;inset:0;width:100%;height:100%;display:block}
+.fly-grain{position:absolute;inset:0;pointer-events:none;opacity:.12;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.stage{position:absolute;left:0;right:0;bottom:0;padding:0 clamp(16px,5vw,56px) clamp(72px,10vh,110px);opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1);pointer-events:none;text-shadow:0 2px 40px rgba(20,10,40,.5)}
+.stage.on{opacity:1;transform:none;pointer-events:auto}
+.mega{font-size:clamp(54px,12vw,184px);letter-spacing:-.03em;line-height:.92}
+.mega .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.mega .ln>span{display:inline-block;transform:translateY(105%);transition:transform 1.3s cubic-bezier(.2,.8,.2,1)}
+.ready .mega .ln>span{transform:none}
+.ready .mega .ln:nth-child(2)>span{transition-delay:.15s}
+.mega2{font-size:clamp(40px,7.5vw,112px);letter-spacing:-.02em;line-height:.98}
+.flybar{position:absolute;right:clamp(16px,4vw,40px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:12px;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.flybar span{writing-mode:vertical-rl;color:var(--azahar)}
+.flybar i{width:2px;height:120px;background:rgba(247,243,234,.2);position:relative}
+.flybar b{position:absolute;left:0;top:0;width:100%;height:0;background:var(--orange)}
+.hero-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;margin-top:28px;align-items:end;max-width:900px}
+.hero-meta p{margin:0;color:var(--azahar);max-width:40ch}
+.hero-meta .stat b{display:block;font-family:var(--display);font-size:44px;font-weight:400;line-height:1}
+.hero-meta .stat span{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sea)}
+@media (max-width:640px){.flybar{display:none}}
+
+/* typography art */
+.typo{position:relative;min-height:110vh;background:radial-gradient(ellipse at 50% 40%,#22357a,var(--night) 70%);overflow:hidden;display:grid;place-items:center;perspective:1100px;padding-block:80px}
+.extrude{display:flex;flex-wrap:nowrap;justify-content:center;transform-style:preserve-3d;font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(64px,17vw,260px);line-height:1;position:relative;z-index:2;max-width:100%}
+.extrude .L{display:inline-block;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1);color:var(--azahar);position:relative}
+.extrude .L i{position:absolute;inset:0;font-style:inherit;color:var(--orange);pointer-events:none}
+.extrude .L:hover{color:var(--orange)}
+.ring-wrap{position:absolute;inset:0;display:grid;place-items:center;perspective:900px;pointer-events:none}
+.ring{position:relative;width:1px;height:1px;transform-style:preserve-3d}
+.ring span{position:absolute;left:0;top:0;white-space:nowrap;font-family:var(--mono);font-size:clamp(12px,1.6vw,18px);letter-spacing:.3em;text-transform:uppercase;color:var(--sea);backface-visibility:hidden;transform-origin:0 0}
+.typo-cap{position:absolute;bottom:32px;left:0;right:0;text-align:center}
+
+
+/* postcards: sticky horizontal arc of photos */
+.post{position:relative;height:420vh;background:var(--night)}
+.post-stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;perspective:1400px}
+.post-head h2{font-size:clamp(36px,6vw,84px);margin-top:8px}
+.post-track{display:flex;gap:clamp(20px,4vw,60px);padding:40px max(16px,10vw) 0;will-change:transform;transform-style:preserve-3d}
+.pc{margin:0;flex:0 0 min(62vw,560px);transform-style:preserve-3d;transition:transform .2s linear}
+.pc-img{position:relative;aspect-ratio:4/3;max-width:100%;overflow:hidden;border-radius:6px;box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.pc-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.25);will-change:transform;filter:saturate(1.05) contrast(1.03)}
+.pc-sheen{position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(255,220,180,.35) 50%,transparent 60%);background-size:250% 100%;mix-blend-mode:screen;transition:background-position 1s}
+.pc:hover .pc-sheen{background-position:-100% 0}
+.pc figcaption{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin-top:18px}
+.pc-n{grid-row:span 3;font-family:var(--display);font-style:italic;font-size:48px;line-height:1;color:var(--orange)}
+.pc b{font-family:var(--display);font-weight:400;font-size:26px}
+.pc figcaption span:not(.pc-n){color:var(--mist);font-size:14px}
+.pc code{font-family:var(--mono);font-size:12px;color:var(--sea);letter-spacing:.1em}
+.hood-photo{aspect-ratio:16/10;max-width:100%;overflow:hidden;border-radius:4px;margin-bottom:20px;position:relative}
+.hood-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .5s,transform 1.2s}
+.hood-photo img.swap{opacity:0;transform:scale(1.08)}
+@media (max-width:640px){.pc{flex-basis:78vw}}
+/* seams */
+.seam{display:block;width:100%;height:clamp(40px,7vw,90px);margin-top:-1px}
+
+/* prologue */
+.prologue{background:var(--deep);padding-block:80px 120px;position:relative}
+.prologue blockquote{margin:28px 0 0;font-family:var(--display);font-size:clamp(28px,4.6vw,58px);line-height:1.15;max-width:22ch}
+.prologue blockquote .w{opacity:.15;transition:opacity .4s}
+.prologue blockquote .w.on{opacity:1}
+.prologue .sig{margin-top:32px;font-family:var(--mono);font-size:13px;color:var(--mist)}
+
+/* azulejo band */
+.tiles{height:64px;background-color:var(--tile);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='none' stroke='%23F7F3EA' stroke-width='1.5' opacity='.55'%3E%3Ccircle cx='32' cy='32' r='12'/%3E%3Cpath d='M32 0v20M32 44v20M0 32h20M44 32h20'/%3E%3Cpath d='M0 0l20 20M64 0L44 20M0 64l20-20M64 64L44 44'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='4' fill='%23F2862E'/%3E%3C/svg%3E");animation:tileslide 30s linear infinite}
+@keyframes tileslide{to{background-position:640px 0}}
+
+/* neighbourhood map */
+.map-sec{background:var(--azahar);color:var(--ink);padding-block:100px}
+.map-sec h2{font-size:clamp(40px,6vw,84px)}
+.map-sec .eyebrow{color:var(--tile)}
+.mapgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px;margin-top:48px;align-items:start}
+.mapbox{position:relative;border-radius:4px;background:#EDE6D6;overflow:hidden}
+.mapbox svg{display:block;width:100%;height:auto}
+.hood{cursor:pointer;transition:fill .3s}
+.hood path,.hood circle{transition:fill .3s,transform .3s}
+.hood text{font-family:var(--mono);font-size:12px;fill:var(--ink);pointer-events:none}
+.hood.on circle{fill:var(--orange)}
+.pin{transform-box:fill-box;transform-origin:center}
+.hood.on .pin{animation:pulse 1.6s ease-out infinite}
+@keyframes pulse{0%{r:8;opacity:1}100%{r:26;opacity:0}}
+.hood-card h3{font-size:clamp(36px,4.5vw,60px)}
+.hood-card .tag{display:inline-block;margin-top:12px;padding:4px 12px;border-radius:999px;background:var(--tile);color:var(--azahar);font-size:12px;font-weight:600}
+.hood-card p{color:#3A4566;max-width:44ch}
+.dist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:#CFC6B2;margin-top:24px}
+.dist div{background:var(--azahar);padding:16px 14px}
+.dist b{display:block;font-family:var(--display);font-size:34px;font-weight:400;font-variant-numeric:tabular-nums;line-height:1}
+.dist span{font-size:13px;color:#525C7A}
+.hood-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.hood-tabs button{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--ink);background:none;color:var(--ink);font:500 13px var(--body);cursor:pointer}
+.hood-tabs button[aria-pressed=true]{background:var(--ink);color:var(--azahar)}
+
+/* services pinned */
+.svc{background:var(--night);position:relative}
+.svc-head{padding-block:100px 40px}
+.svc-head h2{font-size:clamp(40px,6vw,84px);max-width:16ch}
+.svc-list{border-top:1px solid rgba(247,243,234,.15)}
+.svc-row{border-bottom:1px solid rgba(247,243,234,.15)}
+.svc-row button{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:56px 1fr 44px;align-items:center;gap:16px;padding:28px clamp(16px,5vw,56px);cursor:pointer;transition:background .3s}
+.svc-row button:hover{background:rgba(45,79,168,.3)}
+.svc-row button:focus-visible{outline:2px solid var(--orange);outline-offset:-2px}
+.svc-row .n{font-family:var(--mono);font-size:12px;color:var(--sea)}
+.svc-row .t{font-family:var(--display);font-size:clamp(26px,4vw,52px);line-height:1.1;transition:transform .4s}
+.svc-row button:hover .t{transform:translateX(10px);font-style:italic}
+.svc-row .pl{width:44px;height:44px;border-radius:50%;border:1px solid rgba(247,243,234,.35);display:grid;place-items:center;font-size:20px;transition:transform .5s,background .3s}
+.svc-row.open .pl{transform:rotate(135deg);background:var(--orange);color:var(--ink);border-color:var(--orange)}
+.svc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s cubic-bezier(.6,0,.2,1)}
+.svc-row.open .svc-body{grid-template-rows:1fr}
+.svc-body>div{overflow:hidden}
+.svc-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;padding:0 clamp(16px,5vw,56px) 40px clamp(16px,calc(5vw + 72px),128px)}
+.svc-inner p{margin:0;color:var(--mist);max-width:52ch}
+.svc-inner ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.svc-inner li{padding-left:22px;position:relative}
+.svc-inner li::before{content:"";position:absolute;left:0;top:.65em;width:10px;height:10px;border-radius:50%;background:var(--orange)}
+
+/* seasons hold */
+.season{position:relative;min-height:560px;overflow:hidden;display:flex;align-items:center;transition:background 1.2s}
+.season[data-s=fallas]{background:#2A0F12}
+.season[data-s=summer]{background:#0E4F66}
+#fx{position:absolute;inset:0;width:100%;height:100%}
+.season .wrap{position:relative;z-index:2;width:100%;padding-block:90px}
+.season h2{font-size:clamp(40px,6vw,84px);max-width:14ch}
+.season p{max-width:46ch;color:rgba(247,243,234,.8)}
+.seg{display:inline-flex;border:1px solid rgba(247,243,234,.4);border-radius:999px;padding:4px;margin-top:24px}
+.seg button{min-height:44px;padding:0 20px;border-radius:999px;border:0;background:none;color:var(--azahar);font:600 13px var(--body);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--azahar);color:var(--ink)}
+.hold{margin-top:28px;display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);user-select:none}
+.hold button{width:64px;height:64px;border-radius:50%;border:1px solid var(--orange);background:none;cursor:pointer;position:relative;color:var(--orange);font-size:20px}
+.hold button svg{position:absolute;inset:-4px;transform:rotate(-90deg)}
+
+/* journey timeline (drag) */
+.journey{background:var(--azahar);color:var(--ink);padding-block:100px}
+.journey .eyebrow{color:var(--tile)}
+.journey h2{font-size:clamp(40px,6vw,84px)}
+.track{margin-top:48px;display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:20px;cursor:grab;scrollbar-width:thin}
+.track.drag{cursor:grabbing;scroll-snap-type:none}
+.step{flex:0 0 min(340px,80vw);scroll-snap-align:start;border-top:2px solid var(--ink);padding-top:18px}
+.step .wk{font-family:var(--mono);font-size:12px;color:var(--tile);letter-spacing:.1em}
+.step h3{font-size:30px;margin:10px 0 8px}
+.step p{margin:0;color:#3A4566;font-size:15px}
+.step .doc{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:12px;background:#E7DFCC;padding:4px 10px;border-radius:3px}
+.drag-hint{font-family:var(--mono);font-size:12px;color:#525C7A;margin-top:8px}
+
+/* pricing */
+.price{background:var(--deep);padding-block:100px}
+.price h2{font-size:clamp(40px,6vw,84px);max-width:14ch}
+.pgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;margin-top:48px}
+.ctrl{display:grid;gap:36px}
+.ctrl label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);margin-bottom:12px}
+.ctrl output{color:var(--azahar);font-family:var(--display);font-size:22px;text-transform:none;letter-spacing:0}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:32px;margin:0;background:transparent;cursor:pointer;outline:none}
+input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:linear-gradient(90deg,var(--orange) var(--p,50%),rgba(247,243,234,.18) var(--p,50%))}
+input[type=range]::-moz-range-track{height:4px;border-radius:2px;background:rgba(247,243,234,.18)}
+input[type=range]::-moz-range-progress{height:4px;border-radius:2px;background:var(--orange)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-12px;border-radius:50%;background:var(--azahar);border:6px solid var(--orange);cursor:grab;transition:transform .2s}
+input[type=range]:active::-webkit-slider-thumb{transform:scale(1.12);cursor:grabbing}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--azahar);border:6px solid var(--orange);cursor:grab}
+input[type=range]:focus-visible{outline:2px solid var(--orange);outline-offset:4px;border-radius:4px}
+input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px rgba(242,134,46,.45)}
+.quote{border:1px solid rgba(247,243,234,.2);padding:36px;border-radius:4px;position:relative;overflow:hidden}
+.quote .amt{font-family:var(--display);font-size:clamp(56px,8vw,96px);line-height:1;font-variant-numeric:tabular-nums}
+.quote .pk{color:var(--orange);font-weight:600;margin:8px 0 20px}
+.quote ul{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:8px;color:var(--mist)}
+.quote li::before{content:"✓  ";color:var(--sea)}
+.quote small{display:block;margin-top:14px;color:var(--mist);font-size:12px}
+
+/* voices */
+.voices{background:var(--night);padding-block:100px;overflow:hidden}
+.voices h2{font-size:clamp(40px,6vw,84px)}
+.vstage{position:relative;margin-top:48px;min-height:300px}
+.v{position:absolute;inset:0;opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s;pointer-events:none}
+.v.on{opacity:1;transform:none;pointer-events:auto}
+.v p{font-family:var(--display);font-size:clamp(24px,3.4vw,42px);line-height:1.25;margin:0;max-width:28ch}
+.v cite{display:block;margin-top:20px;font-style:normal;font-family:var(--mono);font-size:13px;color:var(--sea)}
+.vnav{display:flex;gap:12px;align-items:center;margin-top:24px}
+.vnav button{width:52px;height:52px;border-radius:50%;border:1px solid rgba(247,243,234,.35);background:none;color:var(--azahar);font-size:18px;cursor:pointer}
+.vnav button:hover{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+.vcount{font-family:var(--mono);font-size:13px;color:var(--mist);font-variant-numeric:tabular-nums}
+
+/* founder */
+.founder{background:var(--azahar);color:var(--ink);padding-block:100px}
+.fgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:56px;align-items:center}
+.portrait{aspect-ratio:4/5;max-width:100%;background:var(--tile);border-radius:200px 200px 4px 4px;position:relative;overflow:hidden}
+.portrait canvas{width:100%;height:100%;display:block}
+.portrait .yr{position:absolute;left:20px;bottom:20px;color:var(--azahar);font-family:var(--display);font-size:64px;font-style:italic;line-height:1}
+.founder h2{font-size:clamp(36px,5vw,64px)}
+.founder p{color:#3A4566;max-width:56ch}
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px;border-top:1px solid #CFC6B2;padding-top:20px}
+.nums b{display:block;font-family:var(--display);font-size:44px;font-weight:400;line-height:1;font-variant-numeric:tabular-nums}
+.nums span{font-size:13px;color:#525C7A}
+
+/* faq */
+.faq{background:var(--azahar);color:var(--ink);padding-block:0 100px}
+.faq h2{font-size:clamp(36px,5vw,64px);margin-bottom:32px}
+.faq details{border-top:1px solid #CFC6B2;padding:20px 0}
+.faq details:last-child{border-bottom:1px solid #CFC6B2}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:18px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--display);font-size:28px;line-height:1;transition:transform .3s;color:var(--tile)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:12px 0 0;color:#3A4566;max-width:64ch}
+
+/* cta */
+.cta{background:var(--orange);color:var(--ink);padding-block:110px;position:relative;overflow:hidden}
+.cta h2{font-size:clamp(48px,9vw,130px);letter-spacing:-.02em}
+.cta .row{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px;align-items:center}
+.cta .btn{border-color:var(--ink)}
+.cta .btn::before{background:var(--ink)}
+.cta .btn:hover{color:var(--azahar)}
+.cta .mail{font-family:var(--mono);font-size:14px;user-select:all}
+footer{background:var(--ink);color:var(--mist);padding-block:48px calc(48px + env(safe-area-inset-bottom,0px));font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.proposal{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;font-family:var(--mono);font-size:12px;letter-spacing:.18em;background:var(--azahar);color:var(--ink);padding:6px 12px;border-radius:999px;text-transform:uppercase;pointer-events:none}
+
+/* modal */
+#modal{position:fixed;inset:0;z-index:80;background:rgba(11,20,48,.7);backdrop-filter:blur(10px);display:grid;place-items:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .35s}
+#modal{visibility:hidden;transition:opacity .35s,visibility 0s linear .35s}
+#modal.open{opacity:1;pointer-events:auto;visibility:visible;transition:opacity .35s}
+.mbox{background:var(--azahar);color:var(--ink);width:min(560px,100%);max-height:90svh;overflow:auto;border-radius:6px;padding:clamp(24px,5vw,40px);transform:translateY(30px);transition:transform .5s cubic-bezier(.2,.8,.2,1);position:relative}
+#modal.open .mbox{transform:none}
+.mbox h3{font-size:40px}
+.mbox form{display:grid;gap:14px;margin-top:20px}
+.mbox label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#525C7A;display:grid;gap:6px}
+.mbox input,.mbox select,.mbox textarea{font:15px var(--body);padding:12px 14px;border:1px solid #CFC6B2;border-radius:4px;background:#fff;color:var(--ink)}
+.mbox .x{position:absolute;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:#E7DFCC;color:var(--ink);cursor:pointer;font-size:16px}
+.mbox .btn{color:var(--ink);border-color:var(--ink);justify-content:center}
+
+/* reveal: visible at rest, animate when JS marks */
+.js .rv{opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .mapgrid,.pgrid,.fgrid,.svc-inner{grid-template-columns:minmax(0,1fr)}
+  .svc-inner{padding-left:clamp(16px,5vw,56px)}
+  .svc-row button{grid-template-columns:36px 1fr 44px}
+  .navr .btn{display:none}
+  .portrait{max-width:380px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero h1 .ln>span{transform:none}
+}
+
+.foot .wrap{display:block}
+
+
+/* ================= STORY LAYER ================= */
+html{scroll-behavior:auto}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+::selection{background:var(--orange);color:var(--ink)}
+
+/* overall progress hairline */
+.prog{position:fixed;top:0;left:0;right:0;height:2px;background:var(--orange);transform-origin:0 50%;transform:scaleX(0);z-index:72;pointer-events:none}
+
+/* chapter indicator in the bar */
+.chapind{position:absolute;left:50%;top:calc(14px + env(safe-area-inset-top,0px));height:44px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;overflow:hidden;pointer-events:none}
+.chapind b{font-family:var(--display);font-style:italic;font-weight:400;font-size:20px;letter-spacing:0;color:var(--orange);min-width:2.2ch;text-align:right}
+.chapind span{display:inline-block;transition:transform .5s cubic-bezier(.7,0,.2,1),opacity .5s}
+.chapind.swap span,.chapind.swap b{transform:translateY(-120%);opacity:0}
+@media (max-width:700px){.chapind span{display:none}}
+
+/* loader: counter + flicking photos that open into the hero */
+#pre{position:fixed;inset:0;z-index:100;background:var(--ink);display:none;place-items:center;transition:opacity .5s ease}
+.js #pre{display:grid}
+.seen #pre{display:none}
+#pre.done{opacity:0;pointer-events:none}
+.pframe{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;clip-path:inset(calc(50% - min(37.3vw,153px)) calc(50% - min(28vw,115px)));transition:clip-path .75s cubic-bezier(.8,0,.15,1)}
+.pframe.full{clip-path:inset(0)}
+.pframe img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+.pframe img.on{opacity:1}
+.pframe img{z-index:1}.pframe img:last-child{opacity:1;z-index:0}
+.pnum{position:absolute;left:clamp(16px,4vw,48px);bottom:clamp(16px,4vh,40px);font-family:var(--display);font-style:italic;font-size:clamp(80px,16vw,220px);line-height:.8;color:var(--azahar);font-variant-numeric:tabular-nums;transition:opacity .4s}
+.pcap{position:absolute;right:clamp(16px,4vw,48px);bottom:clamp(20px,5vh,48px);font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--mist);text-align:right;transition:opacity .4s}
+#pre.opening .pnum,#pre.opening .pcap{opacity:0}
+
+/* custom cursor */
+.cur{position:fixed;left:0;top:0;z-index:95;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--orange);pointer-events:none;display:grid;place-items:center;transition:width .35s cubic-bezier(.2,.8,.2,1),height .35s cubic-bezier(.2,.8,.2,1),margin .35s cubic-bezier(.2,.8,.2,1),background .3s}
+.cur span{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);opacity:0;transition:opacity .2s}
+.cur.big{width:86px;height:86px;margin:-43px 0 0 -43px;background:var(--azahar)}
+.cur.big span{opacity:1}
+.cur.link{width:44px;height:44px;margin:-22px 0 0 -22px;background:transparent;border:1px solid var(--orange)}
+@media (pointer:coarse){.cur{display:none}}
+
+/* menu thumbnail that follows the pointer */
+#menu a{position:relative;z-index:2}
+.mthumb{position:fixed;left:0;top:0;width:min(300px,40vw);aspect-ratio:4/3;max-width:100%;z-index:61;pointer-events:none;overflow:hidden;opacity:0;transform:translate(-50%,-50%) scale(.85) rotate(-4deg);transition:opacity .35s,transform .5s cubic-bezier(.2,.8,.2,1)}
+.mthumb.on{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-2deg)}
+.mthumb img{width:100%;height:100%;object-fit:cover}
+@media (pointer:coarse){.mthumb{display:none}}
+
+/* chapter marker */
+.chap{display:flex;align-items:center;gap:16px;font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--sea)}
+.chap b{font-family:var(--display);font-style:italic;font-weight:400;font-size:44px;line-height:1;letter-spacing:0;text-transform:none;color:var(--orange)}
+.chap::after{content:"";flex:1;height:1px;background:currentColor;opacity:.35}
+.paper .chap{color:var(--tile)}
+
+/* split-text + image reveals (visible without JS) */
+.js [data-split] .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
+.js [data-split] .w>span{display:inline-block;transform:translateY(112%);transition:transform 1.1s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i)*32ms)}
+.js [data-split].in .w>span{transform:none}
+.js [data-reveal]{clip-path:inset(100% 0 0 0);transition:clip-path 1.5s cubic-bezier(.75,0,.15,1)}
+.js [data-reveal] img{transform:scale(1.35);transition:transform 2s cubic-bezier(.2,.8,.2,1)}
+.js [data-reveal].in{clip-path:inset(0 0 0 0)}
+.js [data-reveal].in img{transform:scale(1)}
+.js .fade{opacity:0;transform:translateY(24px);transition:opacity 1s,transform 1s cubic-bezier(.2,.8,.2,1)}
+.js .fade.in{opacity:1;transform:none}
+
+
+/* III type wall: photo-filled wordmark between sliding bands of Valencian words */
+.typo{display:flex;flex-direction:column;justify-content:center;gap:clamp(6px,1.4vw,18px);min-height:0;place-items:initial;perspective:none;padding-block:clamp(56px,9vh,110px);background:var(--night);overflow:hidden}
+.trow{white-space:nowrap;font-family:var(--display);font-size:clamp(34px,6.4vw,104px);line-height:1.02}
+.tin{display:inline-flex;align-items:center;gap:.38em;will-change:transform}
+.tin i{font-style:normal;font-size:.3em;color:var(--sea)}
+.tw{transition:color .3s,-webkit-text-stroke-color .3s}
+.trow.o .tw{color:transparent;-webkit-text-stroke:1px rgba(247,243,234,.5)}
+.trow.i .tw{font-style:italic;color:var(--orange)}
+.tw[data-img]:hover{color:var(--azahar);-webkit-text-stroke-color:var(--azahar)}
+.trow.i .tw[data-img]:hover{color:var(--azahar)}
+.vwrap{perspective:1200px;padding-block:clamp(4px,1vw,14px);padding-inline:clamp(16px,3vw,40px)}
+.vword{position:relative;font-family:var(--display);font-weight:600;font-size:clamp(70px,20.5vw,380px);line-height:.86;letter-spacing:-.045em;text-align:center;transform-style:preserve-3d;will-change:transform}
+.vl{display:block;color:transparent;-webkit-background-clip:text;background-clip:text;background-size:cover;background-position:50% 50%;opacity:0;transition:opacity 1.1s ease;padding-bottom:.06em}
+.vl:not(.base){position:absolute;inset:0}
+.vl.on{opacity:1}
+.vl.base{position:relative}
+.vo{position:absolute;inset:0;color:transparent;-webkit-text-stroke:1.5px var(--orange);opacity:.7;pointer-events:none;padding-bottom:.06em}
+.vcap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:clamp(8px,1.4vw,18px);font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist)}
+.vcap b{color:var(--orange);font-weight:500}
+.tthumb{position:fixed;left:0;top:0;width:min(260px,40vw);aspect-ratio:4/3;max-width:100%;z-index:60;pointer-events:none;overflow:hidden;border-radius:3px;opacity:0;transform:translate(-50%,-110%) scale(.85) rotate(-4deg);transition:opacity .3s,transform .45s cubic-bezier(.2,.8,.2,1)}
+.tthumb.on{opacity:1;transform:translate(-50%,-110%) scale(1) rotate(-2deg)}
+.tthumb img{width:100%;height:100%;object-fit:cover}
+@media (pointer:coarse){.tthumb{display:none}}
+@media (max-width:600px){.fly .mega2 br,.fly .mega br{display:none}.fly .mega{font-size:clamp(44px,12vw,184px)}.fly .mega2{font-size:clamp(30px,8.4vw,92px)}}
+
+
+/* IV barrio finder */
+.finder{background:var(--azahar);color:var(--ink);padding-block:clamp(90px,12vh,140px)}
+.fhead{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:end;margin-top:28px}
+.fhead h2{font-size:clamp(42px,6.4vw,96px)}
+.fhead p{margin:0;color:#3A4566;max-width:40ch}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.chips button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(11,20,48,.3);background:transparent;color:var(--ink);font:600 14px var(--body);cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .2s}
+.chips button::before{content:"+ ";opacity:.5}
+.chips button[aria-pressed=true]{background:var(--ink);color:var(--azahar);border-color:var(--ink)}
+.chips button[aria-pressed=true]::before{content:"✓ ";color:var(--orange);opacity:1}
+.chips button:active{transform:scale(.96)}
+.fgrid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);margin-top:36px;align-items:start}
+.fpanel{position:sticky;top:calc(96px + env(safe-area-inset-top,0px));aspect-ratio:4/5;max-width:100%;border-radius:4px;overflow:hidden;color:var(--azahar);background:var(--ink)}
+.fph,.fph img{position:absolute;inset:0;width:100%;height:100%}
+.fph img{object-fit:cover;transition:opacity 1s ease,transform 6s ease-out;transform:scale(1.04)}
+.fph img.off{opacity:0;transform:scale(1.14)}
+.fpanel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,17,40,.25),rgba(10,17,40,0) 30%,rgba(10,17,40,.55) 58%,rgba(10,17,40,.92))}
+.fmap{position:absolute;top:16px;right:16px;width:clamp(150px,40%,210px);height:auto;z-index:2;background:rgba(10,17,40,.55);backdrop-filter:blur(6px);border-radius:3px;padding:6px}
+.fmap .dot{fill:rgba(247,243,234,.55);transition:fill .4s}
+.fmap .dot.on{fill:#F2862E}
+.fmap .ring{fill:none;stroke:#F2862E;stroke-width:1;transform-box:fill-box;transform-origin:center;animation:fping 1.8s ease-out infinite}
+@keyframes fping{from{transform:scale(1);opacity:1}to{transform:scale(3.4);opacity:0}}
+#fLine{animation:fdash 1.2s linear infinite}
+@keyframes fdash{to{stroke-dashoffset:-12}}
+.fpin{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:clamp(18px,3vw,32px)}
+.fmatch{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--azahar)}
+.fmatch b{font-family:var(--display);font-size:30px;font-style:italic;font-weight:400;letter-spacing:0;color:var(--orange);font-variant-numeric:tabular-nums}
+.fpin h3{font-size:clamp(40px,5vw,72px);margin:6px 0 8px}
+.ftag{display:inline-block;padding:4px 12px;border-radius:999px;border:1px solid rgba(247,243,234,.5);font-size:12px;font-weight:600}
+.fpin p{margin:14px 0 0;font-size:15px;max-width:46ch;color:rgba(247,243,234,.85)}
+.fdist{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(247,243,234,.2)}
+.fdist b{display:block;font-family:var(--display);font-size:30px;font-weight:400;line-height:1;font-variant-numeric:tabular-nums}
+.fdist span{font-size:12px;line-height:1.3;display:block;margin-top:4px;color:rgba(247,243,234,.75)}
+.fpin>*{transition:opacity .4s,transform .5s cubic-bezier(.2,.8,.2,1)}
+.fpin.swap>*{opacity:0;transform:translateY(10px)}
+.flist{list-style:none;margin:0;padding:0;border-top:1px solid #CFC6B2}
+.flist li{border-bottom:1px solid #CFC6B2;will-change:transform}
+.frow{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:34px minmax(0,1fr) auto;grid-template-areas:"n name pc" "n tag tag" "n bar bar";column-gap:14px;row-gap:4px;padding:18px 4px;cursor:pointer;transition:background .3s,padding .4s}
+.frow:focus-visible{outline:2px solid var(--orange);outline-offset:-2px}
+.frow:hover{background:rgba(45,79,168,.06);padding-left:12px}
+.fr-n{grid-area:n;font-family:var(--mono);font-size:12px;color:var(--tile);padding-top:10px}
+.fr-name{grid-area:name;font-family:var(--display);font-size:clamp(30px,3.4vw,46px);line-height:1;transition:color .3s}
+.fr-pc{grid-area:pc;align-self:center;font-family:var(--display);font-style:italic;font-size:24px;color:var(--tile);font-variant-numeric:tabular-nums}
+.fr-tag{grid-area:tag;font-size:13px;color:#525C7A}
+.fr-bar{grid-area:bar;height:3px;background:#E3DACA;border-radius:2px;overflow:hidden;margin-top:6px}
+.fr-bar i{display:block;height:100%;background:var(--tile);transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.flist li.on .fr-name{color:var(--orange);font-style:italic}
+.flist li.on .fr-bar i{background:var(--orange)}
+.flist li.on .fr-pc{color:var(--orange)}
+.fnote{margin:24px 0 0;font-size:13px;color:#4E5674}
+@media (max-width:860px){.fhead,.fgrid2{grid-template-columns:minmax(0,1fr)}.fpanel{position:relative;top:0;aspect-ratio:4/5}.fdist{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+/* loader wall: tilted columns of real Valencia photos drifting in opposite directions */
+.pwall{position:absolute;left:50%;top:50%;width:150vmax;height:150vmax;display:flex;gap:clamp(8px,1.2vw,16px);justify-content:center;transform:translate(-50%,-50%) perspective(1400px) rotateX(22deg) rotateZ(-12deg);transform-origin:center;opacity:0;transition:opacity 1s ease,transform 1.6s cubic-bezier(.8,0,.15,1)}
+#pre.wall-on .pwall{opacity:.9}
+#pre.opening .pwall{opacity:0;transform:translate(-50%,-50%) perspective(1400px) rotateX(0) rotateZ(0) scale(1.9)}
+.pcol{flex:0 0 clamp(150px,14vw,230px);display:flex;flex-direction:column;gap:clamp(8px,1.2vw,16px);animation:pUp 26s linear infinite;will-change:transform}
+.pcol:nth-child(even){animation-name:pDn;animation-duration:32s}
+.pcol:nth-child(3n){animation-duration:22s}
+.pcol img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:3px;max-width:100%}
+.pcol img:nth-child(3n){aspect-ratio:4/5}
+@keyframes pUp{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@keyframes pDn{from{transform:translateY(-50%)}to{transform:translateY(0)}}
+.pveil{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(10,17,40,.05),rgba(10,17,40,.55) 70%),linear-gradient(0deg,rgba(10,17,40,.75),rgba(10,17,40,0) 35%);pointer-events:none;transition:opacity .8s}
+#pre.opening .pveil{opacity:0}
+.pframe{box-shadow:0 40px 120px -20px rgba(0,0,0,.8);z-index:2}
+.pnum,.pcap{z-index:3}
+.pplace{position:absolute;left:50%;top:calc(50% + min(29.3vw,153px) + 18px);transform:translateX(-50%);z-index:3;font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--azahar);white-space:nowrap;transition:opacity .4s}
+#pre.opening .pplace{opacity:0}
+.credits{margin-top:28px;font-size:12px;color:var(--mist)}
+.credits summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+.credits ul{margin:12px 0;padding-left:18px;display:grid;gap:4px}
+.credits a{color:var(--azahar)}
+
+
+/* real-photo layers */
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.portrait .yr{z-index:1;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+.fcap{margin-top:10px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(247,243,234,.6)}
+.sbg{position:absolute;inset:0}
+.sbg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity 1.2s ease,transform 6s ease-out}
+.season[data-s=fallas] .sbg .f,.season[data-s=summer] .sbg .b{opacity:1;transform:scale(1)}
+.sbg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,17,40,.82),rgba(10,17,40,.35) 50%,rgba(10,17,40,.05))}
+#fx{mix-blend-mode:screen}
+
+
+/* ===== 9.5 pass ===== */
+.skip{position:fixed;left:16px;top:calc(12px + env(safe-area-inset-top,0px));z-index:120;padding:12px 18px;border-radius:999px;background:var(--azahar);color:var(--ink);font:600 14px var(--body);text-decoration:none;transform:translateY(-200%);transition:transform .3s}
+.skip:focus{transform:none}
+.dock{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:45;display:flex;align-items:center;gap:4px;padding:5px;border-radius:999px;background:rgba(11,20,48,.78);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border:1px solid rgba(247,243,234,.14);box-shadow:0 18px 50px -18px rgba(0,0,0,.6);transform:translate(-50%,160%);visibility:hidden;transition:transform .6s cubic-bezier(.2,.8,.2,1),visibility 0s linear .6s;max-width:calc(100vw - 32px)}
+.dock.on{transform:translate(-50%,0);visibility:visible;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.dock a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;color:var(--azahar);text-decoration:none;font:600 14px var(--body);transition:background .25s}
+.dock a:hover{background:rgba(247,243,234,.1)}
+.dock .btn{min-height:44px;padding:0 20px;font-size:14px;white-space:nowrap}
+@media (max-width:420px){.dock a{padding:0 12px}.dock .btn{padding:0 14px}}
+.brief{background:var(--azahar);color:var(--ink);padding-block:clamp(80px,11vh,130px)}
+.brief .eyebrow{color:var(--tile)}
+.brief h2{font-size:clamp(34px,4.8vw,70px);max-width:20ch;margin-top:16px}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px);margin-top:clamp(36px,5vw,60px)}
+.tier{position:relative;border-top:2px solid var(--ink);padding-top:20px}
+.tier-h{display:grid;gap:6px}
+.tier h3{font-size:clamp(24px,2.2vw,32px)}
+.tier b{display:block;font-family:var(--display);font-size:clamp(34px,3.4vw,52px);line-height:1;font-weight:400;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tier b::before{content:"from";display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#4E5674;margin-bottom:6px;line-height:1}
+.tier p{margin:12px 0 0;color:#3A4566;max-width:36ch}
+.tier.hi{border-top-color:var(--orange)}
+.tier-tag{display:inline-block;margin-top:14px;padding:4px 12px;border-radius:999px;background:var(--ink);color:var(--azahar);font-size:12px;font-weight:600}
+.brief-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:40px}
+.brief .btn{color:var(--ink);border-color:var(--ink)}
+.brief .btn.solid{background:var(--ink);border-color:var(--ink);color:var(--azahar)}
+.brief .btn.solid::before{background:#F2862E}
+.brief .btn.solid:hover{color:var(--ink)}
+.brief .btn:not(.solid)::before{background:var(--ink)}
+.brief .btn:not(.solid):hover{color:var(--azahar)}
+.brief-row small{color:#4E5674;font-size:13px}
+@media (max-width:860px){.tiers{grid-template-columns:minmax(0,1fr)}}
+.hero-src{display:none}
+
+/* I hero tweaks */
+.fly-stick::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(10,17,40,.35) 0%,rgba(10,17,40,0) 22%,rgba(10,17,40,0) 45%,rgba(10,17,40,.72) 100%)}
+.fly .mega2{font-size:clamp(36px,5.8vw,92px)}
+.stage .eyebrow{margin-bottom:14px}
+.fly .eyebrow{color:var(--azahar);text-shadow:0 1px 14px rgba(11,20,48,.75),0 0 2px rgba(11,20,48,.6)}
+.fly-fade{position:absolute;inset:0;background:var(--ink);opacity:0;pointer-events:none;z-index:3}
+.stage{z-index:4}
+.flybar{z-index:4}
+.scrollhint{display:inline-flex;align-items:center;gap:12px;margin-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--azahar)}
+.scrollhint i{width:1px;height:38px;background:var(--azahar);will-change:transform;animation:drip 1.8s cubic-bezier(.7,0,.3,1) infinite}
+@keyframes drip{0%{transform:translateY(-50%) scaleY(0)}50%{transform:none}100%{transform:translateY(50%) scaleY(0)}}
+.offscreen *,.offscreen{animation-play-state:paused!important}
+
+/* II chaos -> order */
+.doubt{position:relative;height:240vh;background:var(--ink)}
+.doubt-stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;flex-direction:column;padding-block:calc(92px + env(safe-area-inset-top,0px)) 28px}
+.doubt-head{position:relative;min-height:clamp(150px,24vh,230px);margin-top:22px}
+.doubt-head h2{position:absolute;left:0;top:0;font-size:clamp(30px,4.8vw,68px);max-width:19ch;transition:opacity .7s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.doubt-head h2.off{opacity:0;transform:translateY(24px);pointer-events:none}
+.chaos{position:relative;flex:1;perspective:900px;min-height:0}
+.cw{position:absolute;left:0;top:0;display:flex;align-items:center;gap:12px;white-space:nowrap;font-family:var(--display);font-size:clamp(14px,1.9vw,23px);color:var(--azahar);will-change:transform,opacity}
+.cw .tk{flex:0 0 auto;width:20px;height:20px;border-radius:50%;border:1px solid rgba(247,243,234,.35);display:grid;place-items:center;font:600 11px var(--body);font-style:normal;color:transparent;transition:background .4s,border-color .4s,color .4s,transform .4s cubic-bezier(.3,1.6,.5,1)}
+.cw .lb{position:relative}
+.cw .lb::after{content:"";position:absolute;left:0;right:0;top:55%;height:1px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.cw.done .tk{background:var(--orange);border-color:var(--orange);color:var(--ink);transform:scale(1.1)}
+.cw.done .lb{color:var(--mist)}
+.cw.done .lb::after{transform:scaleX(1)}
+.doubt-foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);padding-top:14px;border-top:1px solid rgba(247,243,234,.12)}
+.doubt-foot b{color:var(--orange);font-family:var(--display);font-size:22px;font-style:italic;font-weight:400;letter-spacing:0;font-variant-numeric:tabular-nums}
+
+/* III city intro */
+.city{background:var(--night);padding-block:clamp(96px,14vh,150px) 40px}
+.city-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,7vw,110px);align-items:end;margin-top:48px}
+.city h2{font-size:clamp(42px,6.4vw,96px)}
+.city p.lede{color:var(--mist);font-size:clamp(16px,1.3vw,19px);max-width:44ch;margin:28px 0 0}
+.fig{margin:0}
+.fig .im{aspect-ratio:4/5;max-width:100%;overflow:hidden;border-radius:2px}
+.fig img{width:100%;height:100%;object-fit:cover;display:block}
+.fig figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--mist);text-transform:uppercase}
+
+/* IV map tweaks */
+.map-sec h2{margin-top:22px}
+
+/* V the table */
+.table{position:relative;height:200vh;background:var(--ink)}
+.table-stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.table-t1{position:absolute;left:0;right:0;top:calc(96px + env(safe-area-inset-top,0px));z-index:1}
+.table-t1 h2{font-size:clamp(40px,7vw,108px);margin-top:20px;max-width:13ch}
+.plate{position:absolute;inset:0;z-index:2;clip-path:inset(46% 30% 8% 30% round 18px);will-change:clip-path}
+.plate img{width:100%;height:100%;object-fit:cover;display:block;will-change:transform}
+.plate::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,17,40,0) 40%,rgba(10,17,40,.82));opacity:var(--o,0)}
+.table-t2{position:absolute;left:0;right:0;bottom:clamp(40px,8vh,90px);z-index:3;opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.table-t2.on{opacity:1;transform:none}
+.table-t2 p{font-family:var(--display);font-size:clamp(28px,4.4vw,62px);line-height:1.08;margin:0;max-width:18ch}
+.table-t2 small{display:block;margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--azahar);opacity:.85}
+
+/* VI plan intro */
+.plan-intro{background:var(--night);padding-block:clamp(96px,14vh,150px) 0}
+.plan-intro h2{font-size:clamp(42px,6.4vw,96px);margin-top:22px;max-width:15ch}
+
+/* VII */
+.guide-intro{padding-top:0}
+
+/* epilogue */
+.morning{position:relative;height:190vh;background:var(--ink)}
+.morning-stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;place-items:center}
+.sun{position:absolute;inset:0;clip-path:circle(5% at 50% 64%);will-change:clip-path}
+.sun img{width:100%;height:100%;object-fit:cover;display:block;will-change:transform}
+.sun::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(10,17,40,.62),rgba(10,17,40,.3) 75%),linear-gradient(180deg,rgba(10,17,40,.3),rgba(10,17,40,0) 40%,rgba(10,17,40,.7))}
+.morning-txt{position:relative;z-index:2;text-align:center;padding-inline:16px}
+.morning h2{font-size:clamp(60px,14vw,220px);letter-spacing:-.03em;line-height:.88}
+.morning h2 .a{display:block}
+.morning-cta{margin-top:34px;display:grid;justify-items:center;gap:22px;opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.morning-cta.on{opacity:1;transform:none}
+.morning-cta p{margin:0;max-width:46ch;color:var(--azahar);font-size:17px}
+.mstats{display:flex;gap:clamp(24px,5vw,64px);justify-content:center;flex-wrap:wrap}
+.mstats div{text-align:center}
+.mstats b{display:block;font-family:var(--display);font-size:46px;font-weight:400;line-height:1;font-variant-numeric:tabular-nums}
+.mstats span{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--azahar);opacity:.8}
+.mrow{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;align-items:center}
+.copy{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(247,243,234,.4);background:rgba(10,17,40,.35);backdrop-filter:blur(8px);color:var(--azahar);font:500 13px var(--mono);cursor:pointer}
+
+/* footer wordmark */
+html{scroll-padding-top:96px;scroll-padding-bottom:96px}
+.fnote{margin:18px 0 0;font-size:13px;color:#3A4566}
+.mnote{margin:2px 0 0;font-size:13px;color:#3A4566}
+.foot{background:var(--ink);color:var(--mist);padding-block:72px calc(96px + env(safe-area-inset-bottom,0px));overflow:hidden}
+.foot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;font-size:14px}
+.foot-grid a{display:block;color:var(--azahar);padding-block:4px}
+.foot-grid h2.fh{margin:0 0 12px;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--sea);font-weight:400}
+.foot-grid a{display:block;text-decoration:none;padding:3px 0;color:var(--azahar);opacity:.8}
+.foot-grid a:hover{opacity:1;color:var(--orange)}
+.wordmark{position:relative;z-index:0;pointer-events:none;font-family:var(--display);font-size:clamp(40px,12.6vw,158px);line-height:.85;letter-spacing:-.04em;color:var(--azahar);margin:64px 0 24px;white-space:nowrap}
+.wordmark b{color:var(--orange);font-style:italic;font-weight:400}
+.foot .credits{position:relative;z-index:1}
+.foot-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+
+@media (max-width:860px){.city-grid{grid-template-columns:minmax(0,1fr)}.fig .im{aspect-ratio:4/3}}
+@media (prefers-reduced-motion:reduce){.js [data-split] .w>span,.js [data-reveal],.js .fade{transform:none;clip-path:none;opacity:1}}
+</style>
+
+<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="../client-import.css"><script src="../../jury-shell.js" defer></script><script src="../client-import.js" defer></script><script src="../../jury-audit.js" defer></script></head><body data-client-edition="azahar"><div class="prog" id="prog" aria-hidden="true"></div>
+<a class="skip" href="#brief">Skip to services and prices</a>
+<div class="cur" id="cur" aria-hidden="true"><span id="curTxt"></span></div>
+
+<div id="pre" aria-hidden="true">
+  <div class="pwall" id="pwall"></div>
+  <div class="pveil"></div>
+  <div class="pframe" id="pframe"></div>
+  <div class="pplace" id="pplace">València</div>
+  <div class="pnum" id="pnum">000</div>
+  <div class="pcap">Moving2Valencia<br>Tap or scroll to skip</div>
+</div>
+
+<nav class="top" id="nav">
+  <a class="logo" href="#top" data-c="link">moving<b>2</b>valencia</a>
+  <div class="chapind" id="chapind"><b id="chN">I</b><span id="chT">The Daydream</span></div>
+  <div class="navr">
+    <button class="btn solid" data-open data-c="link">Request a conversation</button>
+    <button id="menuBtn" aria-label="Open chapters" aria-expanded="false" aria-controls="menu" data-c="link"><span></span></button>
+  </div>
+</nav>
+
+<div id="menu" role="dialog" aria-label="Chapters">
+  <button id="menuClose" aria-label="Close menu">✕</button>
+  <a href="#top" data-img="cac"><small>I</small>The Daydream</a>
+  <a href="#doubt" data-img="cathedral"><small>II</small>The Doubt</a>
+  <a href="#city" data-img="carmen"><small>III</small>The City</a>
+  <a href="#barrios" data-img="promenade"><small>IV</small>The Street</a>
+  <a href="#table" data-img="paella"><small>V</small>The Table</a>
+  <a href="#plan" data-img="promenade"><small>VI</small>The Plan</a>
+  <a href="#christa" data-img="mercado"><small>VII</small>The Guide</a>
+  <a href="#morning" data-img="skyline"><small>✦</small>First Morning</a>
+</div>
+<div class="mthumb" id="mthumb"><img alt=""></div>
+
+<!-- I · THE DAYDREAM -->
+<main id="main">
+<header class="fly" id="top" data-ch="I|The Daydream">
+  <div class="fly-stick">
+    <canvas id="gl" aria-hidden="true"></canvas>
+    <div class="fly-grain" aria-hidden="true"></div>
+    <div class="fly-fade" id="flyFade"></div>
+    <div class="stage s0 on">
+      <div class="eyebrow">A relocation story in seven chapters</div>
+      <h1 class="mega"><span class="ln"><span>Every move begins</span></span><span class="ln"><span>as a <em>daydream.</em></span></span></h1>
+      <div class="scrollhint"><i></i>Scroll to begin</div>
+    </div>
+    <div class="stage s1"><div class="eyebrow">39.4699° N · 0.3763° W</div><h2 class="mega2">Mediterranean light. <br>A sea at the end of the <em>tram line.</em></h2></div>
+    <div class="stage s2"><div class="eyebrow">Calatrava · Candela · 1998–2009</div><h2 class="mega2">A city that built its future <br>in an old <em>riverbed.</em></h2></div>
+    <div class="stage s3"><div class="eyebrow">And then</div><h2 class="mega2">someone mentions <br>the <em>paperwork.</em></h2></div>
+    <div class="flybar"><span id="flyLbl">Hemisfèric</span><i><b id="flyFill"></b></i></div>
+  </div>
+</header>
+
+<!-- II · THE DOUBT -->
+<section class="doubt" id="doubt" data-ch="II|The Doubt">
+  <div class="doubt-stick wrap">
+    <div class="chap"><b>II</b>The Doubt</div>
+    <div class="doubt-head">
+      <h2 id="dA">New documents. New appointments. A process to <em>understand.</em></h2>
+      <h2 id="dB" class="off">Christa has put them in order <em>since founding Moving2Valencia in 2008.</em></h2>
+    </div>
+    <div class="chaos" id="chaos" data-c="Scroll"></div>
+    <div class="doubt-foot"><span>Still to chase <b id="dCount">18</b></span><span id="dState">Spanish bureaucracy, unsorted</span></div>
+  </div>
+</section>
+
+<section class="brief" id="brief" aria-labelledby="briefH">
+  <div class="wrap">
+    <div class="brief-top">
+      <div class="eyebrow fade">The short version</div>
+      <h2 id="briefH" data-split>Christa handles the <em>paperwork,</em> home priorities, school questions and settling in.</h2>
+    </div>
+    <div class="tiers">
+      <article class="tier fade"><div class="tier-h"><h3>Essential</h3><b>Proposal on request</b></div><p>Discuss practical support, local services and orientation.</p></article>
+      <article class="tier fade hi"><div class="tier-h"><h3>Full relocation</h3><b>Proposal on request</b></div><p>Explore home finding, school priorities and settling in.</p><span class="tier-tag">Home & family priorities</span></article>
+      <article class="tier fade"><div class="tier-h"><h3>Executive</h3><b>Proposal on request</b></div><p>Agree a combination of services around your circumstances.</p></article>
+    </div>
+    <div class="brief-row fade"><button class="btn solid" data-open>Request a conversation</button><a class="btn" href="#plan">See the full plan</a><small>Discuss your circumstances and the services you need. Scope and fees are agreed personally.</small></div>
+  </div>
+</section>
+
+<!-- III · THE CITY -->
+<section class="city" id="city" data-ch="III|The City">
+  <div class="wrap">
+    <div class="chap fade"><b>III</b>The City</div>
+    <div class="city-grid">
+      <div>
+        <h2 data-split>Spain’s third city still feels like a <em>neighbourhood.</em></h2>
+        <p class="lede fade">Christa Brokke moved with her family to the Valencia region in September 2004. Explore places that may shape your own daily life.</p>
+      </div>
+      <figure class="fig">
+        <div class="im" data-reveal><img data-k="cathedral" alt="Plaça de la Mare de Déu with the cathedral and the Micalet tower"></div>
+        <figcaption><span>Fig. 1 · Plaça de la Mare de Déu</span><span>10:40</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="typo" id="typo" aria-label="València in type"><div aria-hidden="true" class="trow o" data-dir="-1"><div class="tin"><span class="tw" data-img="paella">Paella</span><i>✦</i><span class="tw">Horchata</span><i>✦</i><span class="tw" data-img="mercado">Mercat</span><i>✦</i><span class="tw">Fartons</span><i>✦</i><span class="tw">Esmorzaret</span><i>✦</i><span class="tw" data-img="carmen">El Carmen</span><i>✦</i><span class="tw" data-img="paella">Paella</span><i>✦</i><span class="tw">Horchata</span><i>✦</i><span class="tw" data-img="mercado">Mercat</span><i>✦</i><span class="tw">Fartons</span><i>✦</i><span class="tw">Esmorzaret</span><i>✦</i><span class="tw" data-img="carmen">El Carmen</span><i>✦</i></div></div><div aria-hidden="true" class="trow i" data-dir="1"><div class="tin"><span class="tw">Mascletà</span><i>✦</i><span class="tw" data-img="beach">Malvarrosa</span><i>✦</i><span class="tw" data-img="oldtown">Azahar</span><i>✦</i><span class="tw" data-img="turia">Túria</span><i>✦</i><span class="tw">Bon dia</span><i>✦</i><span class="tw" data-img="cacday">Calatrava</span><i>✦</i><span class="tw">Mascletà</span><i>✦</i><span class="tw" data-img="beach">Malvarrosa</span><i>✦</i><span class="tw" data-img="oldtown">Azahar</span><i>✦</i><span class="tw" data-img="turia">Túria</span><i>✦</i><span class="tw">Bon dia</span><i>✦</i><span class="tw" data-img="cacday">Calatrava</span><i>✦</i></div></div><div class="vwrap" data-c="Tilt"><div class="vword" id="vword"><span class="vo" aria-hidden="true">València</span><span class="vl base on" data-k="carmen" aria-hidden="false">València</span><span class="vl" data-k="cac" aria-hidden="true">València</span><span class="vl" data-k="beach" aria-hidden="true">València</span><span class="vl" data-k="mercado" aria-hidden="true">València</span><span class="vl" data-k="skyline" aria-hidden="true">València</span></div><div class="vcap"><span>Fig. 3 · València, seen through its letters</span><span><b id="vIdx">01</b> / 05 · <span id="vName">El Carmen</span></span></div></div><div aria-hidden="true" class="trow o" data-dir="-1"><div class="tin"><span class="tw" data-img="skyline">Micalet</span><i>✦</i><span class="tw" data-img="fallas">Fallas</span><i>✦</i><span class="tw" data-img="promenade">Passeig</span><i>✦</i><span class="tw" data-img="cathedral">Catedral</span><i>✦</i><span class="tw">Sorolla</span><i>✦</i><span class="tw">Huerta</span><i>✦</i><span class="tw" data-img="skyline">Micalet</span><i>✦</i><span class="tw" data-img="fallas">Fallas</span><i>✦</i><span class="tw" data-img="promenade">Passeig</span><i>✦</i><span class="tw" data-img="cathedral">Catedral</span><i>✦</i><span class="tw">Sorolla</span><i>✦</i><span class="tw">Huerta</span><i>✦</i></div></div><div class="tthumb" id="tthumb"><img alt=""></div></section>
+
+<section class="post" id="postcards" style="height:250vh" data-c="Scroll">
+  <div class="post-stick">
+    <div class="post-head wrap"><div class="eyebrow">Postcards from your new life</div><h2>Five places you’ll <em>call yours</em></h2></div>
+    <div class="post-track" id="postTrack">
+      <figure class="pc"><div class="pc-img"><img src="" data-k="carmen" alt="Torres de Serranos at golden hour"><div class="pc-sheen"></div></div><figcaption><span class="pc-n">01</span><b>Torres de Serranos</b><span>The 14th-century gate into El Carmen</span><code>39.479 · −0.376</code></figcaption></figure>
+      <figure class="pc"><div class="pc-img"><img src="" data-k="mercado" alt="Mercat Central"><div class="pc-sheen"></div></div><figcaption><span class="pc-n">02</span><b>Mercat Central</b><span>Fruit, fish and jamón under a 1928 modernista dome</span><code>39.474 · −0.379</code></figcaption></figure>
+      <figure class="pc"><div class="pc-img"><img src="" data-k="cacday" alt="Museu de les Ciències by day"><div class="pc-sheen"></div></div><figcaption><span class="pc-n">03</span><b>Ciutat de les Arts</b><span>Calatrava’s white ribs in the old Túria riverbed</span><code>39.455 · −0.350</code></figcaption></figure>
+      <figure class="pc"><div class="pc-img"><img src="" data-k="promenade" alt="Palm-lined promenade at La Patacona"><div class="pc-sheen"></div></div><figcaption><span class="pc-n">04</span><b>La Patacona</b><span>Morning runs under the palms, just north of Malvarrosa</span><code>39.488 · −0.326</code></figcaption></figure>
+      <figure class="pc"><div class="pc-img"><img src="" data-k="beach" alt="Malvarrosa beach"><div class="pc-sheen"></div></div><figcaption><span class="pc-n">05</span><b>Malvarrosa</b><span>The Mediterranean coast</span><code>39.478 · −0.323</code></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="tiles" aria-hidden="true"></div>
+
+<!-- IV · THE STREET -->
+<section class="finder paper" id="barrios" data-ch="IV|The Street">
+  <div class="wrap">
+    <div class="chap fade"><b>IV</b>The Street</div>
+    <div class="fhead">
+      <h2 data-split>Which street will be <em>yours?</em></h2>
+      <p class="fade">Choose preferences to explore. This illustrative ordering starts a conversation; it is not a professional assessment.</p>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="What matters to you">
+      <button aria-pressed="true" data-k="beach">Beach life</button>
+      <button aria-pressed="true" data-k="family">Kids &amp; schools</button>
+      <button aria-pressed="false" data-k="night">Cafés &amp; nightlife</button>
+      <button aria-pressed="false" data-k="calm">Peace &amp; quiet</button>
+      <button aria-pressed="false" data-k="char">Old-world character</button>
+    </div>
+    <div class="fgrid2">
+      <div class="fpanel" id="fpanel" data-c="View">
+        <div class="fph"><img id="fA" alt=""><img id="fB" alt="" class="off"></div>
+        <svg class="fmap" viewBox="0 0 200 140" aria-hidden="true">
+          <rect x="172" y="0" width="28" height="140" fill="rgba(95,183,201,.28)"/>
+          <path d="M8 96 C40 70 70 92 96 74 S150 66 172 52" fill="none" stroke="rgba(155,191,122,.9)" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="92" cy="96" r="2.5" fill="#F7F3EA"/><text x="62" y="114" font-size="12" fill="#F7F3EA" font-family="JetBrains Mono">CENTRE</text>
+          <path id="fLine" d="" fill="none" stroke="#F2862E" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <g id="fDots"></g>
+        </svg>
+        <div class="fpin">
+          <div class="fmatch"><b id="fPct">Preference view</b> · <span id="fRank">Top pick</span></div>
+          <h3 id="fName">Cabanyal</h3>
+          <div class="ftag" id="fTag">Beach families</div><div class="fcap" id="fCap"></div>
+          <p id="fText"></p>
+          <div class="fdist" id="fDist"></div>
+        </div>
+      </div>
+      <ol class="flist" id="flist"></ol>
+    </div>
+    <p class="fnote">An illustrative preference ordering, not a probability or recommendation. Discuss budget, transport and school requirements personally.</p>
+  </div>
+</section>
+
+<!-- V · THE TABLE -->
+<section class="table" id="table" data-ch="V|The Table">
+  <div class="table-stick">
+    <div class="table-t1 wrap"><div class="chap"><b>V</b>The Table</div><h2>Where the day <em>slows down.</em></h2></div>
+    <div class="plate" id="plate"><img data-k="paella" alt="Paella valenciana in its pan"></div>
+    <div class="table-t2 wrap" id="t2"><p>Lunch is at two. Dinner at ten. Sunday is for paella over an orange-wood fire.</p><small>Fig. 2 · Paella over a wood fire at the international contest in Sueca, in the rice fields south of the city</small></div>
+  </div>
+</section>
+
+<section class="season" id="seasons" data-s="fallas">
+  <div class="sbg" aria-hidden="true"><img data-k="fallas" alt="" class="f"><img data-k="beach" alt="" class="b"></div>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="eyebrow">The year at the table and in the street</div>
+    <h2 id="sTitle">March is <em>fire</em>.</h2>
+    <p id="sText">Las Fallas fills the streets with towering satirical sculptures, daily 2pm mascletàs in Plaza del Ayuntamiento, and the cremà on the night of 19 March. We tell you which streets close and when to book.</p>
+    <div class="seg" role="group" aria-label="Season"><button aria-pressed="true" data-s="fallas">Fallas</button><button aria-pressed="false" data-s="summer">Summer</button></div>
+    <div class="hold"><button id="holdBtn" aria-label="Hold to light the sky" data-c="Hold"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="34" fill="none" stroke="#F2862E" stroke-width="2" stroke-dasharray="214" stroke-dashoffset="214" id="holdRing"/></svg>✦</button><span id="holdTxt">Hold to light the sky</span></div>
+  </div>
+</section>
+
+<!-- VI · THE PLAN -->
+<section class="plan-intro" id="plan" data-ch="VI|The Plan">
+  <div class="wrap">
+    <div class="chap fade"><b>VI</b>The Plan</div>
+    <h2 data-split>Your priorities. Your timing. <em>A personal plan.</em></h2>
+  </div>
+</section>
+<section class="svc" id="services">
+  <div class="wrap svc-head" style="padding-block:48px 32px"><div class="eyebrow">What Christa handles</div></div>
+  <div class="svc-list" id="svcList"></div>
+</section>
+
+<section class="journey paper" id="journey">
+  <div class="wrap">
+    <div class="eyebrow fade" style="color:var(--tile)">Your planning areas</div>
+    <h2 data-split>From boxes to <em>belonging</em></h2>
+    <div class="track" id="track" data-c="Drag" tabindex="0" role="region" aria-label="Your planning areas, week by week"></div>
+    <div class="drag-hint">Drag or swipe the timeline →</div>
+  </div>
+</section>
+
+<section class="price" id="pricing">
+  <div class="wrap">
+    <div class="eyebrow fade">Investment</div>
+    <h2 data-split>Build your <em>estimate</em></h2>
+    <div class="pgrid">
+      <div class="ctrl">
+        <div><label for="rFam">Household <output id="oFam">3–4 people</output></label><input type="range" id="rFam" min="1" max="3" value="2"></div>
+        <div><label for="rTime">Move window <output id="oTime">3 months</output></label><input type="range" id="rTime" min="1" max="4" value="2"></div>
+        <div><label for="rLvl">Support level <output id="oLvl">Full</output></label><input type="range" id="rLvl" min="1" max="3" value="2"></div>
+      </div>
+      <div class="quote" aria-live="polite">
+        <div class="eyebrow">Starting at</div>
+        <div class="amt" id="amt">Proposal on request</div>
+        <div class="pk" id="pk">Full Relocation Package</div>
+        <ul id="feat"></ul>
+        <button class="btn solid" data-open>Request a conversation</button>
+        <small>Your household, priorities and timing shape a personal proposal. Fees are agreed with Christa.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VII · THE GUIDE -->
+<section class="founder paper" id="christa" data-ch="VII|The Guide">
+  <div class="wrap">
+    <div class="chap fade" style="margin-bottom:48px"><b>VII</b>The Guide</div>
+    <div class="fgrid">
+      <div class="portrait" data-reveal><img data-k="christa" alt="Christa, founder of Moving2Valencia, in front of a mural in Valencia"><div class="yr">2004</div></div>
+      <div>
+        <h2 data-split>From opera stages to <em>your front door</em></h2>
+        <p class="fade">Christa Brokke brings a background in international organisation and stage productions to personal relocation support.</p>
+        <p class="fade">Christa Brokke moved with her family to the Valencia region in September 2004 and founded Moving2Valencia in 2008.</p>
+        <div class="client-events"><div><b>2004</b><span>Moved with her family to the Valencia region</span></div><div><b>2008</b><span>Founded Moving2Valencia</span></div></div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="voices" id="voices">
+  <div class="wrap">
+    <div class="eyebrow">Your first conversation</div>
+    <h2 data-split>A conversation,<br><em>a starting plan.</em></h2>
+    <div class="vstage" id="vstage"></div>
+    <div class="vnav"><button id="vPrev" aria-label="Previous story">←</button><button id="vNext" aria-label="Next story">→</button><span class="vcount" id="vCount">01 / 03</span></div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap" style="padding-top:100px">
+    <h2 data-split>Questions people <em>ask first</em></h2>
+    <details><summary>Can you get us a NIE appointment fast?</summary><p>Cita previa slots are released in small batches and go quickly. We start booking the moment you engage us and prepare every document so the appointment succeeds the first time.</p></details>
+    <details><summary>Do we need to be in Valencia for house hunting?</summary><p>No. We run curated virtual viewings and prepare your full rental dossier so you can commit remotely when the right flat appears.</p></details>
+    <details><summary>Which school types are available?</summary><p>Public, concertado (state-subsidised) and private international schools with British, American and IB curricula. We visit with you and handle Conselleria paperwork.</p></details>
+    <details><summary>What happens after we get our keys?</summary><p>Discuss the ongoing questions and local professional support relevant to your situation.</p></details>
+  </div>
+</section>
+
+<!-- EPILOGUE · FIRST MORNING -->
+<section class="morning" id="morning" data-ch="✦|First Morning">
+  <div class="morning-stick">
+    <div class="sun" id="sun"><img data-k="skyline" alt="Valencia rooftops seen from the Micalet tower"></div>
+    <div class="morning-txt">
+      <div class="eyebrow" style="color:var(--azahar);margin-bottom:18px">Epilogue · Your first morning</div>
+      <h2><span class="a">Bon dia,</span><span class="a"><em>València.</em></span></h2>
+      <div class="morning-cta" id="mcta">
+        <p>Start with your priorities, questions and preferred timing. Discuss the support that fits your circumstances.</p>
+        <div class="client-events"><div><b>2004</b><span>Moved with her family to the Valencia region</span></div><div><b>2008</b><span>Founded Moving2Valencia</span></div></div>
+        <div class="mrow"><button class="btn solid" data-open>Request a conversation</button><button class="copy" data-copy="info@moving2valencia.eu">info@moving2valencia.eu · copy</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><h2 class="fh">Chapters</h2><a href="#top">I · The Daydream</a><a href="#doubt">II · The Doubt</a><a href="#city">III · The City</a><a href="#barrios">IV · The Street</a></div>
+      <div><h2 class="fh" aria-hidden="true">&nbsp;</h2><a href="#table">V · The Table</a><a href="#plan">VI · The Plan</a><a href="#christa">VII · The Guide</a><a href="#morning">Epilogue</a></div>
+      <div><h2 class="fh">Contact</h2><a href="mailto:info@moving2valencia.eu">info@moving2valencia.eu</a><a href="https://wa.me/34648117862" rel="noopener">WhatsApp +34 648 117 862</a><span>Mon–Fri 09:00–19:00 · Valencia, Spain</span></div>
+      <div><h2 class="fh">Since</h2><span>Founded 2008 by Christa. Helping families arrive well.</span></div>
+    </div>
+    <div class="wordmark" aria-hidden="true">moving<b>2</b>valencia</div>
+    <details class="credits"><summary>Photo credits</summary><ul><li>Hemisfèric at dusk: Diliff, CC BY 2.5, <a href="https://commons.wikimedia.org/wiki/File:Hemispheric_-_Valencia,_Spain_-_Jan_2007.jpg">Wikimedia Commons</a></li><li>Museu de les Ciències: Alberto-g-rovi, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/wiki/File:Museo_principe_felipe-valencia-2009_(7).JPG">Wikimedia Commons</a></li><li>Plaça de la Mare de Déu: Diego Delso, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/wiki/File:Plaza_de_la_Virgen,_Valencia,_España,_2014-06-30,_DD_163.JPG">Wikimedia Commons</a></li><li>Mercat Central: Diego Delso, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/wiki/File:Mercado_Central,_Valencia,_España,_2014-06-30,_DD_117.JPG">Wikimedia Commons</a></li><li>Paella contest, Sueca: Carlos Delgado, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Concurso_Internacional_de_Paella_de_Sueca_2016_-_44.jpg">Wikimedia Commons</a></li><li>Túria gardens: Esniom, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:L&#x27;Àgora_and_Assut_de_l&#x27;Or_bridge_from_the_Turia_gardens,_Valencia.jpg">Wikimedia Commons</a></li><li>Torres de Serranos: Rhospano, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Torres_de_Serranos_-_septiembre_2021.jpg">Wikimedia Commons</a></li><li>Carrer d’En Pina: Dorieo, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/wiki/File:El_Micalet_des_del_carrer_d&#x27;En_Pina.jpg">Wikimedia Commons</a></li><li>La Malvarrosa: Juanedc, CC BY 2.0, <a href="https://commons.wikimedia.org/wiki/File:La_Malvarrosa_-_Juanedc.jpg">Wikimedia Commons</a></li><li>Patacona promenade: Laayudante, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Paseo_marítimo_playa_de_la_Patacona.jpg">Wikimedia Commons</a></li><li>From the Micalet: Juan Carlos from Tàrbena, Alicante - Alcublas, Valencia, Spa, CC BY-SA 2.0, <a href="https://commons.wikimedia.org/wiki/File:Desde_el_micalet_mirando_hacia_el_norte.jpg">Wikimedia Commons</a></li><li>Mercat de Russafa: Joanbanjo, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/wiki/File:Mercat_de_Russafa,_lateral_taronja.JPG">Wikimedia Commons</a></li><li>Falla at the Ajuntament: Falconaumanni, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/wiki/File:Falla_Ayuntamiento_2014_(3).JPG">Wikimedia Commons</a></li><li>Murals at Terra, Benimaclet: Francesc Fort, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Art_Urbà_Benimaclet_-_Agost_MMXXIV_08.jpg">Wikimedia Commons</a></li><li>Portrait of Christa: supplied by Moving2Valencia</li></ul><p>Photos are colour-graded and cropped for this page. Campanar is shown by the Túria gardens, which begin there.</p></details>
+    <div class="foot-bot"><span>© 2026 Moving2Valencia</span><span>Design proposal · concept by Helbert</span></div>
+  </div>
+</footer>
+
+<nav class="dock" id="dock" aria-label="Quick links"><a href="#services" data-c="link">Services</a><a href="#pricing" data-c="link">Pricing</a><button class="btn solid" data-open data-c="link">Request a conversation</button></nav>
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="mT">
+  <div class="mbox" data-lenis-prevent>
+    <button class="x" data-close aria-label="Close">✕</button>
+    <div class="eyebrow" style="color:var(--tile)">First conversation</div>
+    <h3 id="mT">Tell Christa about your move</h3>
+    <form id="form">
+      <label for="fmName">Name<input id="fmName" required autocomplete="name" placeholder="Your name"></label>
+      <label for="fMail">Email<input id="fMail" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+      <label for="fWhen">Timeline<select id="fWhen"><option>Within 3 months</option><option>3–6 months</option><option>6–12 months</option><option>Just exploring</option></select></label>
+      <label for="fMsg">Your move<textarea id="fMsg" rows="3" placeholder="Family size, where you're coming from, main worries"></textarea></label>
+      <button class="btn solid" type="submit">Prepare my email</button>
+      <p class="mnote">This opens a draft in your own email app. Nothing is sent from this page.</p>
+    </form>
+  </div>
+</div>
+
+<script>const IMG={"cac": "img/cac-1600.webp", "cacday": "img/cacday-1600.webp", "cathedral": "img/cathedral-1600.webp", "mercado": "img/mercado-1600.webp", "paella": "img/paella-1600.webp", "turia": "img/turia-1600.webp", "carmen": "img/carmen-1600.webp", "oldtown": "img/oldtown-1600.webp", "beach": "img/beach-1600.webp", "promenade": "img/promenade-1600.webp", "skyline": "img/skyline-1600.webp", "ruzafa": "img/ruzafa-1600.webp", "fallas": "img/fallas-1600.webp", "benimaclet": "img/benimaclet-1600.webp", "christa": "img/christa-900.webp"};const IMGS={"cac": "img/cac-800.webp", "cacday": "img/cacday-800.webp", "cathedral": "img/cathedral-800.webp", "mercado": "img/mercado-800.webp", "paella": "img/paella-800.webp", "turia": "img/turia-800.webp", "carmen": "img/carmen-800.webp", "oldtown": "img/oldtown-800.webp", "beach": "img/beach-800.webp", "promenade": "img/promenade-800.webp", "skyline": "img/skyline-800.webp", "ruzafa": "img/ruzafa-800.webp", "fallas": "img/fallas-800.webp", "benimaclet": "img/benimaclet-800.webp", "christa": "img/christa-500.webp"};const IMGT={"cac": "img/cac-480.webp", "cacday": "img/cacday-480.webp", "cathedral": "img/cathedral-480.webp", "mercado": "img/mercado-480.webp", "paella": "img/paella-480.webp", "turia": "img/turia-480.webp", "carmen": "img/carmen-480.webp", "oldtown": "img/oldtown-480.webp", "beach": "img/beach-480.webp", "promenade": "img/promenade-480.webp", "skyline": "img/skyline-480.webp", "ruzafa": "img/ruzafa-480.webp", "fallas": "img/fallas-480.webp", "benimaclet": "img/benimaclet-480.webp", "christa": "img/christa-500.webp"};window.RNAMES={"cac": "Hemisfèric at dusk", "cacday": "Museu de les Ciències", "cathedral": "Plaça de la Mare de Déu", "mercado": "Mercat Central", "paella": "Paella contest, Sueca", "turia": "Túria gardens", "carmen": "Torres de Serranos", "oldtown": "Carrer d’En Pina", "beach": "La Malvarrosa", "promenade": "Patacona promenade", "skyline": "From the Micalet", "ruzafa": "Mercat de Russafa", "fallas": "Falla at the Ajuntament", "benimaclet": "Murals at Terra, Benimaclet"};</script>
+<script src="js/lenis.min.js" defer></script>
+<script src="js/azahar.js" defer></script>
+
+<footer class="client-edition-footer"><p><strong>Azahar · Client archive edition</strong><br>Imported separately for design review. Service scope and fees are discussed personally. Supplied imagery credits are retained.</p><a href="media-credits.html">Supplied photography credits ↗</a><a href="../../jury-review.html">Return to the twelve-concept review ↗</a></footer></body></html>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="m2v-build" content="bento-light-v4">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FFF8EE">
+
+<title>Moving2Valencia — Valencia, sorted</title>
+
+
+<style>
+
+:root{color-scheme:light;--bg:#FFF8EE;--ink:#1C1B1A;--mute:#6A645E;--o:#F26A1F;--o2:#FFB547;--sea:#0F8B8D;--sky:#BFE7E4;--sand:#F3E6D3;--tile:#FFFFFF;--r:28px;--spring:cubic-bezier(.34,1.56,.64,1);--ease:cubic-bezier(.22,1,.36,1)}
+
+*{box-sizing:border-box;margin:0}
+body{font:400 17px/1.55 "Bricolage Grotesque",system-ui,sans-serif;background:var(--bg);color:var(--ink);padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+@media(min-width:960px){body{padding-bottom:0}}
+.wrap{width:min(1200px,100% - 24px);margin-inline:auto}
+h1,h2,h3{font-weight:760;letter-spacing:-.035em;line-height:.98;text-wrap:balance}
+:focus-visible{outline:3px solid var(--o);outline-offset:3px;border-radius:10px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:99px;background:var(--tile);font-size:.8rem;font-weight:600}
+.pill i{width:8px;height:8px;border-radius:50%;background:#2DBE6C;box-shadow:0 0 0 4px #2DBE6C33;animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px #2DBE6C11}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:0 24px;border-radius:18px;border:0;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;background:var(--ink);color:var(--bg);transition:transform .4s var(--spring)}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.95)}.btn.o{background:var(--o);color:#fff}
+.btn.soft{background:var(--bg);color:var(--ink)}
+header{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:10px}
+.logo{font-weight:800;font-size:1.25rem;text-decoration:none;color:inherit;letter-spacing:-.03em}.logo span{color:var(--o)}
+.lang{display:flex;gap:2px;background:var(--tile);border-radius:99px;padding:3px}
+.lang button{border:0;background:none;font:inherit;font-size:.75rem;font-weight:700;color:var(--mute);min-width:38px;min-height:36px;border-radius:99px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.bento{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:960px){.bento{grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(190px,auto)}}
+.t{background:var(--tile);border-radius:var(--r);padding:22px;position:relative;overflow:hidden;container-type:inline-size;animation:pop both;animation-timeline:view();animation-range:entry 0% entry 60%}
+@keyframes pop{from{opacity:0;scale:.92;translate:0 20px}to{opacity:1;scale:1;translate:0}}
+.span2{grid-column:span 2}
+.hero{grid-column:1/-1;background:linear-gradient(150deg,var(--o2),var(--o) 60%,#D9411F);color:#fff;padding:28px;min-height:560px;display:flex;flex-direction:column;justify-content:space-between}
+@media(min-width:960px){.hero{grid-column:span 3;grid-row:span 2}}
+.hero h1{font-size:clamp(3.2rem,13cqi,7.6rem);font-variation-settings:"wdth" 80;position:relative;z-index:2}
+.hero p{max-width:34ch;opacity:.95;font-size:1.1rem;margin:14px 0 22px;position:relative;z-index:2}
+.orange{position:absolute;right:-50px;bottom:-60px;width:min(54%,340px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFD08A,#FF8A2A 55%,#D9541A);box-shadow:inset -20px -30px 60px #0003;animation:float 7s ease-in-out infinite;z-index:1}
+.orange::before{content:"";position:absolute;width:26%;height:14%;background:#3E8E41;border-radius:0 100% 0 100%;top:-4%;left:46%;rotate:-20deg}
+@keyframes float{50%{transform:translateY(-14px) rotate(6deg)}}
+.hero-ph{position:absolute;right:7%;top:9%;width:min(34%,260px);aspect-ratio:3/4;object-fit:cover;border-radius:22px;rotate:6deg;box-shadow:0 24px 50px #0004;border:6px solid #fff;z-index:1;transition:rotate .6s var(--spring)}
+.hero:hover .hero-ph{rotate:-2deg}
+@media(max-width:700px){.hero-ph{top:auto;bottom:34%;right:5%;width:36%}}
+.big{font-size:clamp(2.6rem,24cqi,4.8rem);font-weight:800;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.small{color:var(--mute);font-size:.9rem}
+.sea{background:var(--sky)}.sand{background:var(--sand)}.ink{background:var(--ink);color:var(--bg)}
+.photo{min-height:220px;display:flex;align-items:flex-end;padding:14px;isolation:isolate}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;transition:scale .8s var(--ease)}
+.photo:hover img{scale:1.07}
+.cap{background:#fff;color:#1C1B1A;font-weight:700;font-size:.85rem;padding:8px 14px;border-radius:99px}
+.tilt{transition:transform .5s var(--spring)}
+@media(hover:hover){.tilt:hover{transform:translateY(-5px) rotate(-.6deg)}}
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:64px 4px 16px}
+.sec-h h2{font-size:clamp(2.2rem,6.5vw,4rem);font-variation-settings:"wdth" 85}
+.svc h3{font-size:1.5rem;margin:14px 0 8px}
+.ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;background:var(--bg)}
+/* MATCHER — signature */
+.matcher{grid-column:1/-1;background:var(--ink);color:var(--bg);padding:clamp(22px,4vw,44px);min-height:520px;display:grid}
+.mtop{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+.mbar{flex:1;height:6px;border-radius:9px;background:#ffffff22;overflow:hidden;max-width:260px}
+.mbar i{display:block;height:100%;background:var(--o);width:0;transition:width .5s var(--ease)}
+.q{view-transition-name:none}
+.q h3{font-size:clamp(1.9rem,6cqi,3.4rem);margin-bottom:22px;max-width:18ch}
+.qopts{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+@media(min-width:760px){.qopts{grid-template-columns:repeat(4,1fr)}}
+.qopts button{min-height:96px;border-radius:22px;border:1px solid #ffffff26;background:#ffffff0c;color:inherit;font:inherit;font-weight:600;cursor:pointer;padding:14px;text-align:left;display:grid;align-content:space-between;gap:10px;transition:background .25s,transform .4s var(--spring),border-color .25s}
+.qopts button span{font-size:1.8rem}
+.qopts button:hover{background:#ffffff18;transform:translateY(-3px)}
+.qopts button:active{transform:scale(.96)}
+.res{display:grid;gap:22px}
+@media(min-width:860px){.res{grid-template-columns:1fr 1fr;align-items:center}}
+.card{border-radius:24px;overflow:hidden;background:var(--o);color:#fff;position:relative;aspect-ratio:4/5;max-width:380px;width:100%;box-shadow:0 30px 70px #0006;rotate:-2deg;view-transition-name:none}
+.card img{width:100%;height:58%;object-fit:cover;display:block}
+.card .ct{padding:18px 22px}
+.card .ct small{opacity:.85;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.7rem}
+.card .ct b{display:block;font-size:2.6rem;letter-spacing:-.04em;line-height:1;margin:4px 0 6px}
+.card .stamp{position:absolute;top:14px;right:14px;background:#fff;color:#1C1B1A;font-weight:800;font-size:.8rem;padding:6px 12px;border-radius:99px}
+.scores{display:grid;gap:8px;margin:14px 0 20px}
+.scores div{display:grid;grid-template-columns:110px 1fr 40px;gap:10px;align-items:center;font-size:.9rem}
+.scores i{height:8px;border-radius:9px;background:#ffffff22;overflow:hidden}
+.scores i b{display:block;height:100%;background:var(--o2);transition:width .9s var(--ease)}
+.racts{display:flex;flex-wrap:wrap;gap:10px}
+/* pricing */
+.plans{display:grid;gap:12px}
+@media(min-width:960px){.plans{grid-template-columns:repeat(3,1fr)}}
+.plan{display:flex;flex-direction:column;gap:14px}
+.plan.hot{background:var(--o);color:#fff}
+.plan .amt{font-size:3.4rem;font-weight:800;letter-spacing:-.05em}
+.plan ul{list-style:none;padding:0;display:grid;gap:8px;flex:1}
+.plan li::before{content:"● ";color:var(--o)}.plan.hot li::before{color:#fff}
+.plan .btn{width:100%}
+@media(max-width:959px){.plans{grid-auto-flow:column;grid-auto-columns:86%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none;overscroll-behavior-x:contain}.plan{scroll-snap-align:center}}
+.qt{font-size:clamp(1.4rem,4vw,2rem);font-weight:650;letter-spacing:-.02em;line-height:1.2}
+.ph{font-size:.72rem;opacity:.7;margin-top:12px}
+.av{width:42px;height:42px;border-radius:50%;object-fit:cover}
+.faq details{background:var(--tile);border-radius:20px;padding:18px 22px;margin-bottom:10px}
+.faq summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;min-height:28px}
+.faq summary::after{content:"+";font-size:1.4rem;line-height:1;transition:rotate .4s var(--spring)}.faq details[open] summary::after{rotate:45deg}
+:root{interpolate-size:allow-keywords}
+.faq details::details-content{block-size:0;overflow:hidden;transition:block-size .4s var(--ease),content-visibility .4s allow-discrete}
+.faq details[open]::details-content{block-size:auto}
+.faq p{color:var(--mute);margin-top:10px}
+footer{padding:40px 4px;color:var(--mute);font-size:.85rem}
+.dock{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom));left:50%;translate:-50% 0;z-index:40;display:flex;gap:6px;padding:6px;background:var(--tile);border-radius:24px;box-shadow:0 18px 50px #0003;width:min(440px,calc(100% - 24px))}
+.dock a{flex:1;display:grid;place-items:center;gap:2px;min-height:56px;border-radius:18px;text-decoration:none;color:var(--mute);font-size:.7rem;font-weight:700}
+.dock a b{font-size:1.15rem}
+.dock a.cta{background:var(--o);color:#fff;flex:1.5;font-size:.85rem}
+@media(min-width:960px){.dock{display:none}}
+[popover]{border:0;border-radius:28px;padding:26px;width:min(460px,calc(100% - 24px));background:var(--tile);color:var(--ink);box-shadow:0 30px 80px #0005;opacity:0;scale:.9;transition:opacity .3s,scale .5s var(--spring),display .3s allow-discrete,overlay .3s allow-discrete}
+[popover]:popover-open{opacity:1;scale:1}
+@starting-style{[popover]:popover-open{opacity:0;scale:.9}}
+[popover]::backdrop{background:#0007;backdrop-filter:none}
+.opts{display:grid;gap:10px;margin-top:16px}
+.opts a{display:flex;gap:14px;align-items:center;padding:16px;border-radius:18px;background:var(--bg);text-decoration:none;color:inherit;font-weight:700;min-height:64px}
+.opts small{display:block;font-weight:400;color:var(--mute)}
+.toast{position:fixed;left:50%;bottom:110px;translate:-50% 20px;background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:99px;font-weight:700;opacity:0;transition:.4s var(--spring);z-index:90;pointer-events:none}
+.toast.on{opacity:1;translate:-50% 0}
+::view-transition-old(quiz){animation:.25s ease both qout}::view-transition-new(quiz){animation:.45s var(--spring) both qin}
+@keyframes qout{to{opacity:0;translate:-30px 0}}@keyframes qin{from{opacity:0;translate:40px 0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+<link rel="stylesheet" href="proposal-optimizations.css?v=289b7312"><script src="proposal-optimizations.js?v=044ade4c" defer></script><link rel="stylesheet" href="selected-proposals.css?v=319e0335"><script src="selected-proposals.js?v=339da182" defer></script><link rel="stylesheet" href="jury-fonts.css?v=f39ba8ce"><link rel="stylesheet" href="jury-shell.css?v=f9cd401d"><script src="jury-shell.js?v=11fec7eb" defer></script><meta name="description" content="A city board with an editable shortlist. Personal relocation guidance in Valencia with Christa Brokke."><meta name="robots" content="noindex,follow"><link rel="canonical" href="https://m3libere28.github.io/moving2valencia-creative/review/06-bento-clear.html"><link rel="icon" href="jury-icon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest"><script type="application/ld+json" id="jury-business-data">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Moving2Valencia", "url": "https://moving2valencia.eu/", "email": "info@moving2valencia.eu", "founder": {"@type": "Person", "name": "Christa Brokke"}, "foundingDate": "2008", "areaServed": {"@type": "City", "name": "Valencia"}, "description": "Personal relocation guidance: planning, home finding, schools, formalities and settling in."}</script><meta property="og:type" content="website"><meta property="og:title" content="Valencia Bento · Moving2Valencia"><meta property="og:description" content="A city board with an editable shortlist"><meta property="og:image" content="https://m3libere28.github.io/moving2valencia-creative/review/assets/hero_valencia-1440.webp"><meta name="twitter:card" content="summary_large_image"><script src="jury-audit.js?v=fc6873df" defer></script><meta name="jury-source-sha" content="577a8489c63c1dc7020f7fb656d47dd1fee9c988c940aac71ce383591c8ae195"></head>
+<body data-jury-concept="valencia-bento" data-proposal="6"><a class="skip-link" href="#main-content">Skip to content</a><a class="collection-return" href="index.html">← All twelve concepts</a>
+<div class="wrap">
+<header><a class="logo" href="#">moving<span>2</span>valencia</a>
+  
+</header>
+
+<main id="main-content" tabindex="-1">
+<div class="bento">
+  <div class="t hero">
+    <span class="pill" style="color:var(--ink);align-self:start;position:relative;z-index:2"><i></i><span data-i="pill">Your next chapter starts here</span></span>
+    <div>
+      <h1 data-i="h1">Valencia,<br>sorted.</h1>
+      <p data-i="lead">NIE, flat, school, bank and friends — personal guidance brings the practical details into one clear plan.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:2"><button class="btn" data-book-open data-i="cta">Request a consultation →</button><a class="btn soft" href="#selected-bento" data-i="cta2">Find my barrio</a></div>
+    </div>
+    <img width="1672" height="941" srcset="assets/valencia-morning-640.webp 640w, assets/valencia-morning-hd.webp 1672w" sizes="(max-width:700px) 100vw, 65vw" decoding="async" class="hero-ph" src="assets/valencia-morning-hd.webp" alt="" aria-hidden="true">
+    <div class="orange" aria-hidden="true"></div>
+  </div>
+  <div class="t sea tilt"><div class="big">Hola.</div><p class="small" data-i="s1">Personal guidance, local perspective</p></div>
+  <div class="t photo tilt"><img decoding="async" src="assets/proposal/556c9a7d02307843.webp" alt="" loading="lazy"><span class="cap">☀️ Mediterranean mornings</span></div>
+  <div class="t ink span2"><p style="opacity:.6;font-size:.8rem;font-weight:700;letter-spacing:.1em" data-i="how">HOW IT WORKS</p>
+    <ol style="padding-left:1.2em;margin-top:10px;display:grid;gap:6px;font-weight:600"><li>Your priorities and timing, discussed together</li><li>Your roadmap, built around your family</li><li>Agree your home-finding and formalities support</li><li>Practical next steps for settling in</li></ol></div>
+  <div class="t tilt span2" style="display:flex;align-items:center;gap:18px">
+    <img class="jury-bento-founder" src="assets/jury-photo-about_founder-1440.webp" alt="Christa Brokke" width="76" height="95" loading="lazy">
+    <div><b style="font-size:1.2rem">Christa</b><p class="small">Christa Brokke moved with her family in 2004 and founded Moving2Valencia in 2008. International organisation and local experience, together.</p></div>
+  </div>
+</div>
+
+
+<section class="selected-bento" id="selected-bento" aria-labelledby="selected-bento-title">
+ <div class="selected-bento-heading"><div><p class="selected-overline">BUILD YOUR EVERYDAY</p><h2 id="selected-bento-title">Find your kind<br>of <em>Valencia.</em></h2></div><p>A few possibilities, a little curiosity. Save the places you want to discuss — your next chapter starts with what matters to you.</p></div>
+ <div class="selected-district-grid">
+  <article class="selected-district selected-district-large"><img src="assets/jury-photo-city_ruzafa-1440.webp" srcset="assets/jury-photo-city_ruzafa-640.webp 640w, assets/jury-photo-city_ruzafa-1440.webp 1280w" sizes="(max-width:700px) 100vw,60vw" width="1280" height="854" alt="Mercat de Russafa, the neighbourhood’s covered market" loading="lazy" decoding="async"><div class="selected-district-copy"><span>01 / CITY ENERGY</span><h3>Ruzafa</h3><p>For a move with cafés, creative corners and lively evenings in the picture.</p><button type="button" data-save-district="Ruzafa" aria-pressed="false">Save to my list <span aria-hidden="true">＋</span></button></div></article>
+  <article class="selected-district"><img src="assets/valencia-cabanyal-hd.webp" srcset="assets/valencia-cabanyal-640.webp 640w, assets/valencia-cabanyal-hd.webp 1800w" sizes="(max-width:700px) 100vw,35vw" width="1672" height="941" alt="A photographed street in El Cabanyal, Valencia" loading="lazy" decoding="async"><div class="selected-district-copy"><span>02 / SEA AIR</span><h3>El Cabanyal</h3><p>Put a coastal rhythm on your conversation list.</p><button type="button" data-save-district="El Cabanyal" aria-pressed="false">Save to my list <span aria-hidden="true">＋</span></button></div></article>
+  <article class="selected-district selected-district-carmen"><div class="selected-district-copy"><span>03 / OLD CITY CURIOSITY</span><h3>El Carmen</h3><p>Explore the character of old streets and a life closer to the city’s history.</p><button type="button" data-save-district="El Carmen" aria-pressed="false">Save to my list <span aria-hidden="true">＋</span></button></div><span class="selected-arch" aria-hidden="true">↗</span></article>
+  <article class="selected-district selected-district-benimaclet"><div class="selected-district-copy"><span>04 / A LOCAL RHYTHM</span><h3>Benimaclet</h3><p>Start with a wish for neighbourhood familiarity and everyday connection.</p><button type="button" data-save-district="Benimaclet" aria-pressed="false">Save to my list <span aria-hidden="true">＋</span></button></div><span class="selected-orbit" aria-hidden="true"></span></article>
+  <aside class="selected-brief"><p class="selected-overline">YOUR MOVE, TAKING SHAPE</p><h3>Make it<br><em>your own.</em></h3><p id="selected-shortlist-status" role="status">Save a neighbourhood to start your list.</p><ul id="selected-shortlist" aria-label="Saved neighbourhoods"></ul><label for="selected-move-month">When are you thinking of moving?</label><input id="selected-move-month" type="month"><a class="selected-brief-email" id="selected-brief-email" href="mailto:info@moving2valencia.eu?subject=My%20Valencia%20move">Discuss my shortlist ↗</a><button type="button" id="selected-clear">Clear my list</button><small>Saved on this device. A conversation starter; budget, schools and transport still need a personal assessment.</small></aside>
+ </div>
+ <div class="selected-bento-foot"><p>Illustrative imagery · Explore possibilities, then check the practical fit.</p><a href="#match">Want a starting point? Try the barrio matcher ↓</a></div>
+</section>
+<div class="sec-h" id="services"><h2 data-i="svcH">What we handle</h2></div>
+<div class="bento svc">
+  <div class="t tilt"><div class="ico">🗺️</div><h3>Planning</h3><p class="small">Timeline, documents, budget.</p></div>
+  <div class="t tilt"><div class="ico">📑</div><h3>Paperwork</h3><p class="small">NIE, TIE, padrón, bank, insurance.</p></div>
+  <div class="t tilt"><div class="ico">🔑</div><h3>Home</h3><p class="small">Viewings, lease review, utilities.</p></div>
+  <div class="t tilt"><div class="ico">🎒</div><h3>Schools</h3><p class="small">Visits, enrolment, transition.</p></div>
+  <div class="t photo span2"><img decoding="async" srcset="assets/proposal/85e9892deb4fb059-640.webp 640w, assets/proposal/85e9892deb4fb059.webp 900w" sizes="(max-width:700px) 100vw, 65vw" width="900" height="500" src="assets/proposal/85e9892deb4fb059.webp" alt="" loading="lazy"><span class="cap">Old-town balconies</span></div>
+  <div class="t photo span2"><img decoding="async" srcset="assets/proposal/07ec02e8461ed08d-640.webp 640w, assets/proposal/07ec02e8461ed08d.webp 900w" sizes="(max-width:700px) 100vw, 65vw" width="900" height="500" src="assets/proposal/07ec02e8461ed08d.webp" alt="" loading="lazy"><span class="cap">Mercado Central</span></div>
+  <div class="t photo span2" style="min-height:260px"><video autoplay muted loop playsinline preload="none" poster="assets/valencia-coast-hd.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1"><source src="assets/valencia-coast-hd.mp4" type="video/mp4"></video><span class="cap">🌊 A life by the Mediterranean</span></div>
+  <div class="t tilt span2 sea"><div class="ico">💃</div><h3>Culture</h3><p class="small">Dinner at ten, Fallas in March, Valencian next to Spanish — coaching that turns a move into a life.</p></div>
+  <div class="t tilt span2 sand"><div class="ico">💬</div><h3>After you land</h3><p class="small">Hacienda letters, TIE renewals, lease questions. Discuss the ongoing support your circumstances need.</p></div>
+
+  <div class="t matcher" id="match" aria-live="polite"><div id="mbody"></div></div>
+</div>
+
+<div class="sec-h" id="pricing"><h2 data-i="prH">Support</h2><span class="small">swipe →</span></div>
+<p class="scope-note">Compare the support you need. Confirm scope, availability and any additional fees with Christa before proceeding.</p><div class="plans">
+  <div class="plan t"><b>Practical essentials</b><div class="amt">Proposal on request</div><ul><li>Consultation &amp; timeline</li><li>NIE support</li><li>Bank account</li><li>Local orientation</li><li>Settling-in support</li></ul><button class="btn" data-book-open>Discuss practical support</button></div>
+  <div class="plan hot t"><b>Home & family</b><div class="amt">Proposal on request</div><ul><li>Everything in Essential</li><li>Home-finding support</li><li>School search &amp; enrolment</li><li>Intercultural workshops</li><li>Settling-in questions</li></ul><button class="btn" data-book-open>Discuss home & family</button></div>
+  <div class="plan t"><b>Tailored support</b><div class="amt">Proposal on request</div><ul><li>Everything in Full</li><li>Viewing priorities and local support</li><li>Full school liaison</li><li>Ongoing-support priorities</li><li>Local professional introductions</li></ul><button class="btn" data-book-open>Discuss tailored support</button></div>
+</div>
+
+<div class="sec-h"><h2 data-i="famH">Make room for everyday life</h2></div>
+<div class="bento">
+  <div class="t span2 sea"><p class="qt">The route you will use every day.</p><p class="small" style="margin-top:14px">01 · Your routine</p><p class="ph">Discuss work, school and transport together with your home-finding priorities.</p></div>
+  <div class="t span2 sand"><p class="qt">A practical plan behind the possibility.</p><p class="small" style="margin-top:14px">02 · Your next steps</p><p class="ph">Bring your shortlist, timing and questions into one conversation with Christa.</p></div>
+</div>
+
+<div class="sec-h"><h2 data-i="faqH">Questions</h2></div>
+<div class="faq">
+  <details name="faq"><summary>How early should we start?</summary><p>Share your preferred timing as early as you can. Christa will discuss which appointments, home-finding steps and school questions apply to your move.</p></details>
+  <details name="faq"><summary>Do you work with non-EU families?</summary><p>Yes. Your roadmap is built around your specific visa route and its document requirements.</p></details>
+  <details name="faq"><summary>Can we do viewings remotely?</summary><p>Ask Christa which viewing arrangements are available for your circumstances.</p></details>
+</div>
+
+<div class="t ink" style="margin-top:48px;padding:44px 28px;text-align:center">
+  <h2 style="font-size:clamp(2.4rem,8vw,4.8rem);font-variation-settings:'wdth' 80" data-i="endH">Let’s talk about<br>your move.</h2>
+  <p style="opacity:.7;margin:14px auto 24px;max-width:40ch" data-i="endP">A first conversation. A clearer starting point.</p>
+  <button class="btn o" data-book-open data-i="cta">Request a consultation →</button>
+</div>
+</main>
+<footer>© 2026 Moving2Valencia · info@moving2valencia.eu<a href="photo-credits.html">Photography credits ↗</a></footer>
+</div>
+
+<nav class="dock" aria-label="Quick nav"><a href="#match"><b>🧭</b><span data-i="dMatch">Barrio</span></a><a href="#pricing"><b aria-hidden="true">↗</b><span data-i="dPrice">Support</span></a><a class="cta" href="#" id="dockBook" data-i="dBook">Request call</a></nav>
+
+<dialog id="book" aria-modal="false" aria-labelledby="bento-contact-title">
+  <h3 id="bento-contact-title" style="font-size:2rem">Request a consultation</h3>
+  <p class="small" style="margin-top:6px">Tell Christa your priorities and preferred timing. Availability and scope are confirmed personally.</p>
+  <form id="jury-enquiry-form"><label for="jury-name">Your name</label><input id="jury-name" name="name" autocomplete="name" required maxlength="100"><label for="jury-email">Email address</label><input id="jury-email" name="email" type="email" autocomplete="email" required><label for="jury-priorities">Your priorities and timing</label><textarea id="jury-priorities" name="priorities" rows="4" maxlength="2000"></textarea><p class="jury-enquiry-note">Creates a draft preview. Nothing is sent from this page.</p><button class="btn" type="submit">Prepare my email draft ↗</button></form>
+  <button class="btn soft" style="width:100%;margin-top:14px" data-book-close>Close</button>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const vt=f=>f();
+const buzz=()=>navigator.vibrate?.(8);
+const contactDialog=$('#book');let contactOpener=null;
+document.addEventListener('click',event=>{const open=event.target.closest('[data-book-open],#dockBook');if(open){event.preventDefault();contactOpener=open;if(!contactDialog.open)contactDialog.show();return;}if(event.target.closest('[data-book-close]')){contactDialog.close();return;}if(contactDialog.open&&!contactDialog.contains(event.target))contactDialog.close();});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&contactDialog.open){event.preventDefault();contactDialog.close();}});
+contactDialog.addEventListener('click',event=>{if(event.target!==contactDialog)return;const r=contactDialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)contactDialog.close();});
+contactDialog.addEventListener('close',()=>{contactOpener?.focus({preventScroll:true});});
+/* counters */
+$$('[data-count]').forEach(el=>new IntersectionObserver((es,o)=>es.forEach(e=>{if(!e.isIntersecting)return;const t=+el.dataset.count,t0=performance.now();(function f(n){const k=RM?1:Math.min((n-t0)/1400,1);el.textContent=Math.round(t*(1-Math.pow(1-k,3)))+(t===16?'+':'');if(k<1)requestAnimationFrame(f)})(t0);o.unobserve(el)}),{threshold:.5}).observe(el));
+/* BARRIO MATCHER */
+const IMGS={'1666861522569-3a352a533c1e':'assets/proposal/b300acc8161f565e.webp','1725208179317-c5e56702816a':'assets/proposal/cc10cd666fd916c4.webp','1624396372026-dac58b4fb3b8':'assets/proposal/b38489f0f24c5719.webp','1598654478773-a2d74c66c94b':'assets/proposal/93c64f292c3aa836.webp'};const B={ruzafa:{n:'Ruzafa',d:'Cafés, galleries and the liveliest dinner scene in town.',img:'1624396372026-dac58b4fb3b8',c:'#E2643B'},carmen:{n:'El Carmen',d:'Medieval lanes, street art and the old towers.',img:'1666861522569-3a352a533c1e',c:'#9A6B3B'},cabanyal:{n:'El Cabanyal',d:'Tiled fishermen’s houses two streets from the sand.',img:'1598654478773-a2d74c66c94b',c:'#0F8B8D'},benimaclet:{n:'Benimaclet',d:'A village inside the city — plazas, gardens, community.',img:'1725208179317-c5e56702816a',c:'#4E7D3A'}};
+const Q=[
+ {q:'A perfect Saturday morning starts with…',o:[['🌊','A swim before breakfast','cabanyal'],['☕','A flat white and a gallery','ruzafa'],['🏛️','Getting lost in old streets','carmen'],['🥬','The farmers’ market','benimaclet']]},
+ {q:'Who’s moving with you?',o:[['💑','Just us two','ruzafa'],['👨‍👩‍👧','Kids under 10','benimaclet'],['🧑‍🎓','Teenagers','carmen'],['🐕','A dog who loves sand','cabanyal']]},
+ {q:'What do you want outside your door?',o:[['🌳','A quiet plaza','benimaclet'],['🍷','Bars until 2am','ruzafa'],['⛪','A 600-year-old tower','carmen'],['🏖️','The Mediterranean','cabanyal']]},
+ {q:'Your ideal flat has…',o:[['🎨','High ceilings, tiled floors','carmen'],['🌿','A shared garden','benimaclet'],['🪟','A balcony over a busy street','ruzafa'],['🐚','A sea breeze','cabanyal']]},
+ {q:'How do you get around?',o:[['🚲','Bike everywhere','benimaclet'],['🚶','On foot, always','carmen'],['🚋','Tram to the beach','cabanyal'],['🛴','Scooter to everything','ruzafa']]}];
+let step=0,score={};
+function drawQ(){const q=Q[step];$('#mbody').innerHTML=`<div class="mtop"><span style="font-weight:700;opacity:.7">Explore your preferences · ${step+1}/5</span><span class="mbar"><i style="width:${step/5*100}%"></i></span></div><div class="q"><h3>${q.q}</h3><div class="qopts">${q.o.map((o,i)=>`<button data-o="${i}"><span>${o[0]}</span>${o[1]}</button>`).join('')}</div></div>`;
+$$('[data-o]').forEach(b=>b.onclick=()=>{buzz();const k=q.o[+b.dataset.o][2];score[k]=(score[k]||0)+1;step++;vt(step<5?drawQ:drawR)})}
+function drawR(){const ranked=Object.keys(B).sort((a,b)=>(score[b]||0)-(score[a]||0)),w=B[ranked[0]],pct=k=>Math.round((score[k]||0)/5*100);
+$('#mbody').innerHTML=`<div class="res"><div class="card" id="card" style="background:${w.c}"><img src="${IMGS[w.img]}" alt=""><span class="stamp">Your starting point</span><div class="ct"><small>Your preferences point toward</small><b>${w.n}</b><span style="opacity:.9">${w.d}</span></div></div>
+<div><h3 style="font-size:clamp(2rem,6cqi,3.4rem)">Explore <span style="color:var(--o2)">${w.n}</span>.</h3><div class="scores">${ranked.map(k=>`<div><span>${B[k].n}</span><i><b style="width:0" data-w="${pct(k)}"></b></i><span>${pct(k)}%</span></div>`).join('')}</div>
+<p class="matcher-note">Percentages show the share of your five answers, not the probability of a suitable home. A playful starting point. Discuss budget, transport and schools before deciding.</p><div class="racts"><button class="btn o" id="save-match">Add to my city board</button><button class="btn soft" id="share">Copy my result</button><button class="btn soft" data-book-open>Discuss ${w.n} with Christa</button><button class="btn" style="background:#ffffff14;color:#fff" id="again">Retake</button></div></div></div>`;
+requestAnimationFrame(()=>$$('[data-w]').forEach(b=>b.style.width=b.dataset.w+'%'));
+$('#save-match').onclick=()=>{const b=[...document.querySelectorAll('[data-save-district]')].find(x=>x.dataset.saveDistrict===w.n);if(b&&b.getAttribute('aria-pressed')!=='true')b.click();document.querySelector('#selected-bento').scrollIntoView({behavior:RM?'auto':'smooth'});b?.focus({preventScroll:true});};$('#again').onclick=()=>{step=0;score={};vt(drawQ)};
+$('#share').onclick=async()=>{const text=`I’m a ${w.n} person 🍊 — which Valencia barrio are you?`;try{await navigator.clipboard.writeText(text+' '+location.href);toast('Copied — paste it anywhere')}catch(e){toast('Copy is unavailable here. Your result is still on your city board.')}}}
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2200)}
+drawQ();
+document.querySelectorAll('[data-vid]').forEach(b=>b.addEventListener('click',()=>{const box=b.parentElement,v=document.createElement('video');v.src=b.dataset.vid;v.controls=true;v.autoplay=true;v.playsInline=true;v.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000';box.appendChild(v);b.remove()}));
+</script>
+<div class="jury-review-footer"><span>Valencia Bento · Refined review edition</span><a href="jury-review.html">Review all twelve concepts ↗</a><a href="photo-credits.html">Photography & media credits ↗</a></div></body>
+</html>

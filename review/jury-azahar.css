@@ -1,0 +1,22 @@
+body[data-jury-azahar] #pre{display:none!important;visibility:hidden!important;pointer-events:none!important}
+body[data-jury-azahar] .fade{opacity:1!important}
+body[data-jury-azahar] .chap b{color:#f7f3ea}body[data-jury-azahar] .finder .chap b,body[data-jury-azahar] .journey .chap b,body[data-jury-azahar] .paper .chap b{color:#18315f}
+body[data-jury-azahar] #menu[hidden],body[data-jury-azahar] #modal:not([open]){display:none!important;visibility:hidden!important}
+.jury-azahar-skip{position:fixed;z-index:10000;left:12px;top:12px;padding:12px 18px;min-height:44px;transform:translateY(-180%);background:#f7f3ea;color:#0b1430;border-radius:12px;font:600 14px/1.4 system-ui}.jury-azahar-skip:focus{transform:none}
+.jury-azahar-hero-offer{margin:26px auto 0;max-width:36ch}.jury-azahar-hero-offer p{margin:0;color:#f7f3ea;font:500 clamp(15px,1.3vw,18px)/1.6 var(--body);text-shadow:0 2px 14px #0b1430}.jury-azahar-hero-offer strong{font-weight:600}.jury-azahar-hero-offer a{display:inline-flex;justify-content:center;align-items:center;gap:24px;margin-top:20px;min-height:48px;padding:12px 22px;background:#f7f3ea;color:#0b1430;border:1px solid #f7f3ea;border-radius:99px;font:600 13px/1.5 var(--body);text-decoration:none}.jury-azahar-hero-offer a:hover{background:#ffe1b0;border-color:#ffe1b0}
+body[data-jury-azahar] #track:focus-visible{outline:3px solid #29467c;outline-offset:6px}
+body[data-jury-azahar] .jury-azahar-events{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding-top:26px;margin-top:24px;border-top:1px solid currentColor}
+.jury-azahar-events b{display:block;font-family:var(--display);font-size:clamp(38px,5vw,66px);font-weight:400;line-height:1.15;color:inherit}.jury-azahar-events span{display:block;max-width:25ch;margin-top:8px;font:500 13px/1.6 var(--body);color:inherit}
+body[data-jury-azahar] .fmatch b{font-family:var(--body);font-size:12px;font-style:normal;font-weight:700;letter-spacing:.06em;color:#ffe1b0}
+body[data-jury-azahar] .fr-pc{font-family:var(--body);font-size:12px;font-style:normal;font-weight:600;color:#29467c}.fr-bar{display:none!important}
+body[data-jury-azahar] .flist li.on .fr-name,body[data-jury-azahar] .flist li.on .fr-pc{color:#9e3e05}
+body[data-jury-azahar] .fdist{grid-template-columns:1fr}.fdist b{font-size:22px}.fdist span{font-size:13px;color:#f7f3ea}
+body[data-jury-azahar] .fnote{color:#414d68;font-size:13px;line-height:1.7}.finder .eyebrow{color:#29467c}
+body[data-jury-azahar] .finder button,body[data-jury-azahar] .hood-tabs button,body[data-jury-azahar] .vnav button,body[data-jury-azahar] .menu button,body[data-jury-azahar] .copy,body[data-jury-azahar] [data-close]{min-width:44px;min-height:44px}
+body[data-jury-azahar] .frow:focus-visible{outline:3px solid #29467c;outline-offset:4px;border-radius:4px}
+body[data-jury-azahar] .fpin p,body[data-jury-azahar] .fcap{color:#f7f3ea}.fpanel:after{background:linear-gradient(180deg,#0b143045,transparent 20%,#0b1430a8 50%,#0b1430fa)}
+body[data-jury-azahar] .season .hold{min-height:44px}.jury-azahar-motion{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:75;min-height:44px;padding:10px 16px;background:#f7f3ea;color:#0b1430;border:1px solid #0b143050;border-radius:99px;font:600 12px/1.4 system-ui;box-shadow:0 3px 18px #0002}
+body[data-jury-azahar][data-azahar-paused=true] *,body[data-jury-azahar][data-azahar-paused=true] *:before,body[data-jury-azahar][data-azahar-paused=true] *:after{animation-play-state:paused!important;transition:none!important}
+body[data-jury-azahar][data-azahar-paused=true] .fx,body[data-jury-azahar][data-azahar-paused=true] #fx{visibility:hidden}
+@media(max-width:600px){.jury-azahar-events{gap:18px!important}.jury-azahar-events span{font-size:12px}.jury-azahar-motion{right:12px;bottom:calc(12px + env(safe-area-inset-bottom));padding:10px 12px;font-size:11px}body[data-jury-azahar] .fpin{padding:22px}body[data-jury-azahar] .fpin h3{font-size:clamp(34px,9vw,48px)}body[data-jury-azahar] .fmap{width:125px}body[data-jury-azahar] .fpanel{aspect-ratio:3/4;min-height:510px}body[data-jury-azahar] .fnote{font-size:12px}}
+@media(prefers-reduced-motion:reduce){body[data-jury-azahar]{scroll-behavior:auto}body[data-jury-azahar] *,body[data-jury-azahar] *:before,body[data-jury-azahar] *:after{animation:none!important;transition:none!important}.jury-azahar-motion{display:none}body[data-jury-azahar] .fph img{transform:none!important}}

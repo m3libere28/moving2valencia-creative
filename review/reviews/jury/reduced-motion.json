@@ -1,0 +1,131 @@
+[
+  {
+    "id": "casa-editorial",
+    "h1": "A new life,beautifully arranged.",
+    "hiddenMain": "block",
+    "reduced": true,
+    "sourceSha": "a1e245a66c69235b567dff9ec853e8a6dd7799648baff33fa71406372806f796",
+    "videos": []
+  },
+  {
+    "id": "blue-horizon",
+    "h1": "A new horizon.A life that fits.",
+    "hiddenMain": "block",
+    "reduced": true,
+    "sourceSha": "482faf3d4e6a0cd8c7f9af1141f4d4b776fd313805410c93370eae409c0299df",
+    "videos": []
+  },
+  {
+    "id": "hola-valencia",
+    "h1": "Less paperwork.More paella.",
+    "hiddenMain": "block",
+    "reduced": true,
+    "sourceSha": "6fa8b3069c65ea3473a68b08ae3809b409bac335c93d306235cd7a2449f2106b",
+    "videos": [
+      {
+        "paused": true,
+        "ready": 4
+      }
+    ]
+  },
+  {
+    "id": "valencia-plan",
+    "h1": "Your move.Made manageable.",
+    "hiddenMain": "block",
+    "reduced": true,
+    "sourceSha": "65fb5ef7b1c68979638f36c3742822dc45630d7f857bc9916c6a191f6fb9678a",
+    "videos": []
+  },
+  {
+    "id": "editorial-journey",
+    "h1": "Arrive as a neighbour, not a visitor.",
+    "hiddenMain": "block",
+    "reduced": true,
+    "sourceSha": "260dd7c3a15157309861256300091fa149896766973f83adc7caabd62e601a09",
+    "videos": []
+  },
+  {
+    "id": "valencia-bento",
+    "h1": "Valencia,sorted.",
+    "hiddenMain": "block",
+    "reduced": true,
+    "sourceSha": "577a8489c63c1dc7020f7fb656d47dd1fee9c988c940aac71ce383591c8ae195",
+    "videos": [
+      {
+        "paused": true,
+        "ready": 4
+      }
+    ]
+  },
+  {
+    "id": "immersive-valencia",
+    "h1": "Valencia awaits.",
+    "hiddenMain": "block",
+    "reduced": true,
+    "sourceSha": "56714ca434ec746b1a9ac746e3b685fcefdd23deb359b6db1a583e7fba11d0ca",
+    "videos": [
+      {
+        "paused": true,
+        "ready": 0
+      },
+      {
+        "paused": true,
+        "ready": 4
+      }
+    ]
+  },
+  {
+    "id": "valencia-in-motion",
+    "h1": "VALENCIA",
+    "hiddenMain": "block",
+    "reduced": true,
+    "sourceSha": "15d325643c44143e6dc54497f7b2d70911d560308912a81c837773981e4c379c",
+    "videos": [
+      {
+        "paused": true,
+        "ready": 4
+      },
+      {
+        "paused": true,
+        "ready": 0
+      }
+    ]
+  },
+  {
+    "id": "valencia-3d-atlas",
+    "h1": "Your Valencia,in miniature.",
+    "hiddenMain": "block",
+    "reduced": true,
+    "sourceSha": "a7fb19a4257dfaa8c29641eb1c940f5fc0dea6d691405a3238bc749171194b59",
+    "videos": [
+      {
+        "paused": true,
+        "ready": 0
+      }
+    ]
+  },
+  {
+    "id": "azahar",
+    "h1": "Every move beginsas a daydream.",
+    "hiddenMain": "block",
+    "reduced": true,
+    "sourceSha": "428c3caed6ead5e667fabc4604bd6e7047f00924afc8737ae224da43b84e0201",
+    "videos": []
+  },
+  {
+    "id": "a-new-horizon",
+    "h1": "Imagine your lifein Valencia.",
+    "hiddenMain": "block",
+    "reduced": true,
+    "sourceSha": "76220789dd47e22085fdb1d63e6919c5ec825a23234ac159d36b93da44a0e63c",
+    "videos": []
+  },
+  {
+    "id": "valencia-arrivals",
+    "h1": "Imagine your life in VALENCIA",
+    "hiddenMain": "block",
+    "reduced": true,
+    "sourceSha": "52909da7f07755279e1afbcbac2535591b6831c8cf7a36967c8c193db849a49a",
+    "videos": []
+  }
+]
