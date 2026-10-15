@@ -2,13 +2,14 @@
 (()=>{'use strict';
  const dialog=document.querySelector('.m2v-opening');if(!dialog)return;
  const reduce=matchMedia('(prefers-reduced-motion: reduce)'),pause=dialog.querySelector('[data-film-pause]');
- let timer=0,closing=0,remaining=4800,started=0,paused=false,manualPause=false,previous=null,held=false;
+ const duration=Math.min(10000,Math.max(3000,Number(dialog.getAttribute?.('data-film-duration'))||4800));
+ let timer=0,closing=0,remaining=duration,started=0,paused=false,manualPause=false,previous=null,held=false;
  const clear=()=>{clearTimeout(timer);timer=0;};
  function complete(){clear();clearTimeout(closing);dialog.classList.remove('is-leaving','is-paused');if(dialog.open)dialog.close();dialog.hidden=true;previous?.isConnected&&previous.focus?.({preventScroll:true});document.dispatchEvent(new CustomEvent('m2v:opener-finished'));}
  function finish(){if(!dialog.open)return;clear();dialog.classList.add('is-leaving');closing=setTimeout(complete,reduce.matches?0:650);}
  function schedule(){clear();if(!paused&&!reduce.matches&&!held){started=performance.now();timer=setTimeout(finish,remaining);}}
  function setPaused(value){if(!dialog.open)return;if(value&&!paused){remaining=Math.max(0,remaining-(performance.now()-started));clear();}paused=value;dialog.classList.toggle('is-paused',paused);pause.textContent=paused?'Play motion':'Pause motion';pause.setAttribute('aria-pressed',String(paused));if(!paused)schedule();}
- function open(hold=false){clear();clearTimeout(closing);held=hold===true;previous=document.activeElement;remaining=4800;paused=false;manualPause=false;dialog.classList.remove('is-paused','is-leaving');dialog.hidden=false;
+ function open(hold=false){clear();clearTimeout(closing);held=hold===true;previous=document.activeElement;remaining=duration;paused=false;manualPause=false;dialog.classList.remove('is-paused','is-leaving');dialog.hidden=false;
   // Restart the finite CSS film for each replay without recreating the content page.
   const film=dialog.querySelector('.m2v-film');film.style.display='none';void film.offsetHeight;film.style.display='';
   pause.hidden=reduce.matches;pause.textContent='Pause motion';pause.setAttribute('aria-pressed','false');

@@ -1,0 +1,52 @@
+<svg class="m2v-vlc-scene" viewBox="0 0 720 620" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<defs>
+ <radialGradient id="vlc-sun" cx=".28" cy=".2" r=".9"><stop stop-color="#ffd98c"/><stop offset=".58" stop-color="#e89c4e"/><stop offset="1" stop-color="#b9542f"/></radialGradient>
+ <linearGradient id="vlc-stone" x1="170" y1="160" x2="250" y2="420" gradientUnits="userSpaceOnUse"><stop stop-color="#faf0d7"/><stop offset=".55" stop-color="#cead7b"/><stop offset="1" stop-color="#ad7b53"/></linearGradient>
+ <linearGradient id="vlc-shell" x1="410" y1="300" x2="460" y2="460" gradientUnits="userSpaceOnUse"><stop stop-color="#fffef3"/><stop offset=".53" stop-color="#e3e7da"/><stop offset="1" stop-color="#899f91"/></linearGradient>
+ <linearGradient id="vlc-glass" x1="400" y1="360" x2="460" y2="455" gradientUnits="userSpaceOnUse"><stop stop-color="#a1d5ca"/><stop offset=".45" stop-color="#4e928f"/><stop offset="1" stop-color="#153f49"/></linearGradient>
+ <linearGradient id="vlc-water" x1="340" y1="400" x2="340" y2="540" gradientUnits="userSpaceOnUse"><stop stop-color="#729e93"/><stop offset="1" stop-color="#eae7d5" stop-opacity="0"/></linearGradient>
+ <radialGradient id="vlc-orange" cx=".3" cy=".23" r=".8"><stop stop-color="#ffcf70"/><stop offset=".55" stop-color="#ee913c"/><stop offset="1" stop-color="#b94e25"/></radialGradient>
+ <radialGradient id="vlc-shadow"><stop stop-color="#483d27" stop-opacity=".25"/><stop offset="1" stop-color="#483d27" stop-opacity="0"/></radialGradient>
+ <linearGradient id="vlc-leaf"><stop stop-color="#6b8661"/><stop offset="1" stop-color="#244e43"/></linearGradient>
+</defs>
+<ellipse cx="384" cy="500" rx="298" ry="64" fill="url(#vlc-shadow)"/>
+<g class="m2v-vlc-solar"><circle cx="410" cy="256" r="202" fill="url(#vlc-sun)"/><circle cx="410" cy="256" r="186" stroke="#ffefd2" stroke-opacity=".3"/><path d="M250 173C310 86 451 56 550 138" stroke="#fff4d7" stroke-opacity=".3" stroke-width="2"/></g>
+<g class="m2v-vlc-orbit"><ellipse cx="388" cy="284" rx="284" ry="220" transform="rotate(-24 388 284)" stroke="#98683b" stroke-opacity=".34" stroke-width=".8" pathLength="1"/><path d="M96 303C121 148 240 52 412 42" stroke="#97663b" stroke-width="1.2" pathLength="1"/><circle cx="412" cy="42" r="4" fill="#956436"/></g>
+<g class="m2v-vlc-orbit-marker"><circle cx="410" cy="54" r="4" fill="#885130"/><circle cx="410" cy="54" r="10" stroke="#885130" stroke-opacity=".25"/></g>
+<g class="m2v-vlc-blueprint" stroke="#536d5c" stroke-width="1" fill="none"><path pathLength="1" d="M150 438L158 216 182 197H211L236 218 246 438M258 425Q446 205 651 425Q449 478 258 425M281 423Q447 299 626 423M258 425L651 425"/></g>
+<g class="m2v-vlc-tower">
+ <path d="M150 438L158 216 182 197 211 198 236 218 246 438Z" fill="url(#vlc-stone)"/>
+ <path d="M211 198L236 218 246 438H217Z" fill="#8d684b" fill-opacity=".4"/>
+ <path d="M158 216L182 197 177 438H150Z" fill="#fff9e8" fill-opacity=".4"/>
+ <path d="M155 241L239 243M154 301L241 304M153 365L244 370M157 221L237 224" stroke="#73543b" stroke-opacity=".3" stroke-width="2"/>
+ <path d="M161 213L163 188 183 171 208 172 229 190 231 214" fill="#e5cda6" stroke="#8b6d4e"/>
+ <path d="M183 175V206M207 176V207M168 190L177 183V205H168ZM216 184L224 191V206H216Z" fill="#715840"/>
+ <path d="M179 173V165H215V173ZM187 165V144Q197 129 207 144V165Z" fill="#b69d7b"/><path d="M192 163V146Q197 138 202 146V163Z" fill="#685c48"/><path d="M184 143Q197 121 210 143Z" fill="#c4ad8b"/><path d="M197 131V109M190 117H204" stroke="#795c42" stroke-width="2"/>
+ <path d="M179 264Q191 246 201 265V291H178Z" fill="#735b42"/><path d="M180 326Q190 312 201 328V350H179Z" fill="#765c43"/>
+ <path d="M186 258V290M185 319V350" stroke="#bda17a" stroke-width="2"/>
+ <path d="M164 226L163 437M178 216L177 438M212 216L218 438M231 227L241 438" stroke="#f5e3c4" stroke-opacity=".5"/>
+ <path d="M150 438H246L253 447H145Z" fill="#a17d58"/>
+</g>
+<g class="m2v-vlc-shore"><path d="M102 441Q365 396 660 441L622 504Q351 546 78 491Z" fill="url(#vlc-water)"/><path d="M110 440Q356 410 662 440" stroke="#f9f1db" stroke-width="2"/></g>
+<g class="m2v-vlc-eye">
+ <ellipse cx="453" cy="439" rx="210" ry="21" fill="#274e46" fill-opacity=".16"/>
+ <path d="M258 425Q446 205 651 425Q449 478 258 425Z" fill="url(#vlc-shell)"/>
+ <path d="M281 423Q447 299 626 423Q454 449 281 423Z" fill="url(#vlc-glass)"/>
+ <path d="M258 425Q446 205 651 425" stroke="#fffbea" stroke-width="7"/>
+ <path d="M258 425Q449 478 651 425" stroke="#dce6d9" stroke-width="5"/>
+ <path d="M281 423Q447 299 626 423" stroke="#c2d5c7" stroke-width="2"/>
+ <g stroke="#e4efe1" stroke-width="1.5" stroke-opacity=".8"><path d="M315 402L316 431M346 384L349 436M379 370L382 439M415 360L417 441M452 357V442M488 362L487 441M524 373L521 439M558 389L555 436M593 408L589 431"/></g>
+ <g class="m2v-vlc-ribs" stroke="#fffbed" stroke-width="1.7" stroke-opacity=".8"><path pathLength="1" d="M297 383Q446 246 608 383M326 352Q447 265 578 354M361 326Q447 286 544 330M403 308Q447 294 500 310"/></g>
+ <path d="M245 428Q448 458 665 428L652 438Q445 471 255 439Z" fill="#dbe6d9"/><path d="M265 440Q446 463 643 441" stroke="#527a71"/>
+</g>
+<g class="m2v-vlc-waves" stroke="#3e716c" stroke-width="1.2" stroke-opacity=".55"><path pathLength="1" d="M275 478Q394 461 563 481M314 496Q426 483 600 496M377 514Q479 501 556 512"/><path pathLength="1" d="M98 470Q164 457 239 471"/></g>
+<g class="m2v-vlc-citrus">
+ <ellipse cx="166" cy="490" rx="90" ry="23" fill="url(#vlc-shadow)"/>
+ <circle cx="143" cy="468" r="45" fill="url(#vlc-orange)"/><circle cx="192" cy="486" r="34" fill="url(#vlc-orange)"/>
+ <path d="M144 426Q148 405 163 399" stroke="#6e6340" stroke-width="3"/>
+ <path d="M151 419Q124 363 83 392Q99 427 151 419Z" fill="url(#vlc-leaf)"/><path d="M151 419L99 397" stroke="#d5dfb0" stroke-opacity=".4"/>
+ <path d="M155 415Q166 367 210 369Q203 411 155 415Z" fill="url(#vlc-leaf)"/><path d="M155 415L195 381" stroke="#d5dfb0" stroke-opacity=".4"/>
+ <path d="M123 440Q133 433 144 435M178 465Q186 460 193 461" stroke="#ffdfa0" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"/>
+</g>
+<g class="m2v-vlc-contour" stroke="#956d46" stroke-width=".8" stroke-opacity=".45"><path pathLength="1" d="M95 541H640M694 272V388M685 280H703M685 380H703"/><circle cx="95" cy="541" r="3" fill="#956d46"/><circle cx="640" cy="541" r="3" fill="#956d46"/></g>
+</svg>
