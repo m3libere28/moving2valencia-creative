@@ -10,7 +10,7 @@ CSS+='\n'+(ROOT/'m2v-azahar-film.css').read_text(encoding='utf-8')
 CSS+='\n'+(ROOT/'m2v-planner-film.css').read_text(encoding='utf-8')
 JS=(ROOT/'m2v-openers.js').read_text(encoding='utf-8')
 PLANNER_JS=(ROOT/'m2v-planner-film.js').read_text(encoding='utf-8')
-VERSION=hashlib.sha256((CSS+JS+PLANNER_JS+(REPO/'tools/planner-opener-scene.html').read_text(encoding='utf-8')+(ROOT/'m2v-review-openers.js').read_text(encoding='utf-8')+(REPO/'tools/hola-valencia-scene.svg').read_text(encoding='utf-8')+hashlib.sha256((ROOT/'assets/postcard/editorial-postcard.mp4').read_bytes()+(ROOT/'assets/postcard/editorial-postcard-phone.mp4').read_bytes()).hexdigest()).encode()).hexdigest()[:10]
+VERSION=hashlib.sha256((CSS+JS+PLANNER_JS+hashlib.sha256((ROOT/'assets/planner/valencia-cathedral-walk-2200.webp').read_bytes()+(ROOT/'assets/planner/valencia-cathedral-walk-960.webp').read_bytes()).hexdigest()+(REPO/'tools/planner-opener-scene.html').read_text(encoding='utf-8')+(ROOT/'m2v-review-openers.js').read_text(encoding='utf-8')+(REPO/'tools/hola-valencia-scene.svg').read_text(encoding='utf-8')+hashlib.sha256((ROOT/'assets/postcard/editorial-postcard.mp4').read_bytes()+(ROOT/'assets/postcard/editorial-postcard-phone.mp4').read_bytes()).hexdigest()).encode()).hexdigest()[:10]
 FILMS={
  'casa-editorial':('folio','The first page of your next chapter','A place to call your own.','Casa Editorial / A personal beginning'),
  'blue-horizon':('tide','Between city life and sea air','Find your own horizon.','Blue Horizon / Mediterranean light'),
@@ -94,10 +94,15 @@ def composition(ident,parent,portable):
         return '<div class="m2v-hola-film"><div class="m2v-hola-film-copy">'+brand+'<p class="m2v-hola-film-eyebrow">A Mediterranean state of mind</p><h2><span>¡Hola,</span><em>Valencia!</em></h2><p class="m2v-hola-film-caption">Sea air. City soul.<br> A life that feels like you.</p><div class="m2v-hola-film-index"><span>01 / Old town</span><span>02 / New perspectives</span><span>03 / Sea air</span></div></div><div class="m2v-hola-film-scene" role="img" aria-label="A sunlit Valencia composition: the Micalet tower, the eye-shaped Hemisfèric, oranges and Mediterranean waves">'+scene+'<p class="m2v-hola-film-note">A new chapter, in a different light.</p></div></div>'
     if ident=='valencia-plan':
         scene=(REPO/'tools/planner-opener-scene.html').read_text(encoding='utf-8')
-        photos=[('city','assets/immersive/valencia-film-poster.webp'),('sea','15-new-horizon/img/malvarrosa-sky-1600.webp'),('neighbourhood','assets/valencia-cabanyal-hd.webp')]
+        photos=[('city','assets/planner/valencia-cathedral-walk-2200.webp'),('sea','15-new-horizon/img/malvarrosa-sky-1600.webp'),('neighbourhood','assets/valencia-cabanyal-hd.webp')]
+        def planner_photo(key,asset):
+            tag=image(asset,'').replace('<img ','<img data-scene-image="'+key+'" ',1)
+            if key=='city' and not portable:
+                tag=tag.replace(' alt=""',' srcset="assets/planner/valencia-cathedral-walk-960.webp 960w, assets/planner/valencia-cathedral-walk-2200.webp 2200w" sizes="(max-width:700px) 90vw, 45vw" alt=""')
+            return tag
         folds=''
         for i in range(4):
-            folds+='<div class="m2v-planner-fold" style="--panel:'+str(i)+'">'+''.join(image(asset,'').replace('<img ','<img data-scene-image="'+key+'" ',1) for key,asset in photos)+'</div>'
+            folds+='<div class="m2v-planner-fold" style="--panel:'+str(i)+'">'+''.join(planner_photo(key,asset) for key,asset in photos)+'</div>'
         return scene.replace('@@FOLDS@@',folds)
     if ident=='editorial-journey':
         return '<div class="m2v-postcard-layout"><div class="m2v-postcard-copy">'+brand+'<p class="m2v-postcard-eyebrow">A postcard from your next chapter</p><h2>Wish you <br><em>were here.</em></h2><p class="m2v-postcard-message">From a new address to a place that feels like home.</p><span class="m2v-postcard-signature">With Christa Brokke</span></div></div>'

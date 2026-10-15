@@ -1,0 +1,32 @@
+{
+  "title": "Historic Plaza with View of Valencia Cathedral",
+  "photographer": "Zak Mogel",
+  "source": "https://www.pexels.com/photo/historic-plaza-with-view-of-valencia-cathedral-37290380/",
+  "license": "https://www.pexels.com/license/",
+  "originalDimensions": [
+    2560,
+    3840
+  ],
+  "crop": [
+    0,
+    1240,
+    2560,
+    3440
+  ],
+  "derivative": "valencia-cathedral-walk-2200.webp",
+  "dimensions": [
+    2200,
+    1891
+  ],
+  "changes": "Cropped empty sky and foreground; resized and converted to WebP. No generated people or architectural changes.",
+  "sha256": "e43dbc25df1f4ad00511c8e1fd2140f3251e873331adee0dc6688141789573b4",
+  "mobileDerivative": {
+    "name": "valencia-cathedral-walk-960.webp",
+    "dimensions": [
+      960,
+      825
+    ],
+    "bytes": 185726,
+    "sha256": "ba9a42fc73d25c46ca67532134b11958677e9629c8459a6237ac881c0840da71"
+  }
+}

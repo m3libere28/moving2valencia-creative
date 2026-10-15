@@ -7,7 +7,7 @@
  const pause=dialog.querySelector('[data-film-pause]');
  const choices=[...dialog.querySelectorAll('[data-planner-scene]')];
  const duration=9600;
- const scenes={city:['A new perspective.','Arts & Sciences','THE CITY IS YOURS','VALÈNCIA'],sea:['A little more breathing room.','Mediterranean','SPACE TO BREATHE','SEA AIR'],neighbourhood:['The feeling of finding your place.','El Cabanyal','A PLACE TO BELONG','YOUR LIFE']};
+ const scenes={city:['Everyday life, beautifully framed.','Ciutat Vella','THE CITY IS YOURS','VALÈNCIA'],sea:['A little more breathing room.','Mediterranean','SPACE TO BREATHE','SEA AIR'],neighbourhood:['The feeling of finding your place.','El Cabanyal','A PLACE TO BELONG','YOUR LIFE']};
  let frame=0,closeTimer=0,last=0,elapsed=0,paused=false,manualPaused=false,exploring=false,previous=null;
  function scene(key){
   if(!scenes[key])return;
