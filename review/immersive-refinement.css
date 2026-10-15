@@ -1,0 +1,61 @@
+/* Immersive Valencia: documentary photography, generous type and complete portraits. */
+body[data-proposal="7"]::after{opacity:.025}
+body[data-proposal="7"] .story{padding:120px 0 100px;scroll-margin-top:90px}
+body[data-proposal="7"] .story-heading{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:48px}
+body[data-proposal="7"] .story-heading h2{font-size:clamp(48px,6.5vw,88px);max-width:12ch;margin-top:20px}
+body[data-proposal="7"] .story-heading>p{max-width:32ch;color:#c8bbb1;font-size:18px}
+body[data-proposal="7"] .rail{width:min(1200px,100% - 40px);margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:0;overflow:visible;scroll-snap-type:none}
+body[data-proposal="7"] .chap{padding:0;min-height:0;border-radius:6px;background:#191715;border-color:#ffffff21;overflow:hidden;display:grid;grid-template-columns:42% 1fr;align-content:stretch;justify-content:initial;box-shadow:0 16px 50px #0002}
+body[data-proposal="7"] .chap .img{height:100%;min-height:300px;border-radius:0;overflow:hidden}
+body[data-proposal="7"] .chap .img img{display:block;filter:none;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+body[data-proposal="7"] .chap-copy{padding:32px 28px;align-self:center}
+body[data-proposal="7"] .chap .yr{font:600 14px/1.4 Manrope,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0;color:#e9b872}
+body[data-proposal="7"] .chap h3{font-size:clamp(32px,3vw,42px);line-height:1.05;margin:22px 0 16px}
+body[data-proposal="7"] .chap p{font-size:17px;line-height:1.65;color:#c8bbb1}
+body[data-proposal="7"] .chap.founder{grid-column:1/-1;grid-template-columns:46% 54%;background:#eee6d9;color:#242b27;border:0}
+body[data-proposal="7"] .founder .img{min-height:0;min-width:0;width:100%;background:#283c37;aspect-ratio:auto}
+body[data-proposal="7"] .founder .img img{object-fit:contain;object-position:center;width:100%;height:100%;transform:none}
+body[data-proposal="7"] .founder .chap-copy{padding:clamp(32px,5vw,76px)}
+body[data-proposal="7"] .founder .yr{color:#80502f}
+body[data-proposal="7"] .founder h3{font-size:clamp(48px,5vw,68px);margin:26px 0}
+body[data-proposal="7"] .founder h3 em{color:#8b492a}
+body[data-proposal="7"] .founder p{font-size:18px;color:#46504a;max-width:35ch}
+body[data-proposal="7"] .founder .founder-signature{font-family:"Instrument Serif",Georgia,serif;font-size:36px;color:#263d32;margin-top:32px}
+body[data-proposal="7"] .founder .founder-role{font-size:14px;margin-top:2px;color:#566259}
+body[data-proposal="7"] .story-link{display:inline-flex;align-items:center;min-height:48px;margin-top:28px;color:#243c31;font-size:17px;font-weight:700;text-underline-offset:7px;text-decoration-thickness:1px;gap:20px}
+body[data-proposal="7"] .service-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+body[data-proposal="7"] .sc{position:relative;top:auto;min-height:0;margin:0;padding:0;border-radius:6px;display:flex;flex-direction:column;background:#191715;box-shadow:none;border:1px solid #ffffff21}
+body[data-proposal="7"] .sc .bgi{position:relative;inset:auto;z-index:auto;aspect-ratio:16/9;overflow:hidden;background:#283c37}
+body[data-proposal="7"] .sc .bgi img{display:block;opacity:1;mix-blend-mode:normal;filter:none;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+body[data-proposal="7"] .service-copy{padding:32px 36px 36px;flex:1;display:flex;flex-direction:column}
+body[data-proposal="7"] .service-topline{display:flex;align-items:center;justify-content:space-between;padding-bottom:24px;color:#d7c5b0;border-bottom:1px solid #ffffff26;font-size:14px;letter-spacing:.1em;text-transform:uppercase}
+body[data-proposal="7"] .service-topline b{font-weight:400;font-size:24px;line-height:1;letter-spacing:0;color:#e9b872}
+body[data-proposal="7"] .sc h3{font-size:clamp(40px,4vw,56px);margin:28px 0 20px;line-height:1.05}
+body[data-proposal="7"] .sc p{font-size:18px;opacity:1;color:#cec1b6;max-width:37ch}
+body[data-proposal="7"] .sc ul{gap:0;column-gap:22px;margin:28px 0 0;padding-top:20px;border-top:1px solid #ffffff20}
+body[data-proposal="7"] .sc li{padding:6px 0;border:0;border-radius:0;backdrop-filter:none;font-size:15px;color:#decab3}
+body[data-proposal="7"] .sc li::before{content:'·';margin-right:8px;color:#e9b872}
+body[data-proposal="7"] .service-copy .story-link{color:#f6eee6;align-self:start;margin-top:auto;padding-top:24px}
+body[data-proposal="7"] .voices{padding:100px 0 120px;scroll-margin-top:100px}
+body[data-proposal="7"] .vgrid{display:block}
+body[data-proposal="7"] .film-heading{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:38px}
+body[data-proposal="7"] .voice{font-size:clamp(44px,6vw,80px);max-width:15ch;margin-top:18px!important}
+body[data-proposal="7"] .film-heading .ph{max-width:34ch;font-size:18px;line-height:1.65;color:#c8bbb1;margin:0}
+body[data-proposal="7"] .valencia-cinema{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#19272a;box-shadow:0 28px 90px #0005}
+body[data-proposal="7"] .valencia-cinema>video{width:100%;height:100%;display:block;object-fit:contain}
+body[data-proposal="7"] .cinema-start{position:absolute;inset:0;border:0;background:linear-gradient(transparent 30%,#0008);color:white;display:flex;flex-direction:column;gap:20px;align-items:center;justify-content:center;font:500 18px/1.4 Manrope,system-ui,sans-serif;cursor:pointer;text-shadow:0 2px 12px #0008}
+body[data-proposal="7"] .cinema-start[hidden]{display:none}
+body[data-proposal="7"] .cinema-start i{width:80px;height:80px;display:grid;place-items:center;border:1px solid #fff9;border-radius:50%;background:#f6eee6ed;color:#263b35;font-style:normal;font-size:24px;text-shadow:none;box-shadow:0 6px 40px #0002;transition:transform .3s}
+body[data-proposal="7"] .cinema-start:hover i{transform:scale(1.08)}
+body[data-proposal="7"] .film-meta{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:18px;color:#c8bbb1;font-size:14px}
+body[data-proposal="7"] .film-meta a{color:#e9b872;text-underline-offset:4px}
+body[data-proposal="7"] .film-error{padding:18px;color:#fff;background:#243832}
+body[data-proposal="7"] .film-error[hidden]{display:none}
+body[data-proposal="7"] .end::before{background:linear-gradient(90deg,#0e0b0ac9,#0e0b0a70 60%,#0e0b0a80)}
+body[data-proposal="7"] .end>div{max-width:1000px}
+body[data-proposal="7"] .end p[data-i="endP"]{color:#f0e5da!important;font-size:19px}
+body[data-proposal="7"] .end>video{object-position:center 55%}
+body[data-proposal="7"] .k{font-size:13px;letter-spacing:.17em}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){body[data-proposal="7"] .sc:hover .bgi img,body[data-proposal="7"] .chap:not(.founder):hover .img img{transform:scale(1.035)}}
+@media(max-width:900px){body[data-proposal="7"] .story-heading,body[data-proposal="7"] .film-heading{display:block}body[data-proposal="7"] .story-heading>p,body[data-proposal="7"] .film-heading .ph{margin-top:24px}body[data-proposal="7"] .chap:not(.founder){grid-template-columns:1fr}body[data-proposal="7"] .chap:not(.founder) .img{height:230px;min-height:0}body[data-proposal="7"] .founder h3{font-size:50px}body[data-proposal="7"] .founder .chap-copy{padding:30px}}
+@media(max-width:600px){body[data-proposal="7"] .story{padding:76px 0 64px}body[data-proposal="7"] .rail{grid-template-columns:1fr;gap:20px}body[data-proposal="7"] .chap.founder{grid-column:auto;grid-template-columns:1fr}body[data-proposal="7"] .founder .img{width:100%;aspect-ratio:1000/1374;height:auto;max-height:none}body[data-proposal="7"] .founder .chap-copy{padding:32px 28px 36px}body[data-proposal="7"] .founder h3{font-size:clamp(38px,12vw,54px)}body[data-proposal="7"] .founder p{font-size:18px}body[data-proposal="7"] .chap-copy{padding:30px 28px}body[data-proposal="7"] .service-grid{grid-template-columns:1fr;gap:24px}body[data-proposal="7"] .service-copy{padding:28px 26px 30px}body[data-proposal="7"] .sc h3{font-size:44px}body[data-proposal="7"] .sc p{font-size:18px}body[data-proposal="7"] .stack{padding:64px 0}body[data-proposal="7"] .voices{padding:64px 0 80px}body[data-proposal="7"] .cinema-start{font-size:15px;gap:12px}body[data-proposal="7"] .cinema-start i{width:56px;height:56px;font-size:20px}body[data-proposal="7"] .film-meta{font-size:14px;gap:12px}body[data-proposal="7"] .end{min-height:80svh}body[data-proposal="7"] .end h2{font-size:clamp(48px,13vw,72px)}}

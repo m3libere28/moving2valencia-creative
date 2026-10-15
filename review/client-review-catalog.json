@@ -228,14 +228,15 @@
     "zip": null,
     "desktop": "assets/client-review/immersive-valencia-desktop.webp",
     "mobile": "assets/client-review/immersive-valencia-mobile.webp",
-    "description": "A cinematic shoreline, followed by a clear practical story. The opening invites visitors to pause, then explore the support behind a new chapter.",
+    "description": "An immersive shoreline, an uncropped portrait of Christa and beautifully clear service cards. Real Valencia footage brings the city and coast into focus.",
     "points": [
-      "A moving shoreline with a pause control",
-      "Your story and practical support in clear chapters",
-      "Household and timing choices for a personal scope"
+      "Christa’s story with a complete founder portrait",
+      "Photographic service cards with clear next steps",
+      "A real Valencia film in HD, adapted for mobile"
     ],
-    "downloadSize": 26008340,
-    "zipSize": null
+    "downloadSize": 25530005,
+    "zipSize": null,
+    "revision": "740cc18364"
   },
   {
     "id": "valencia-in-motion",

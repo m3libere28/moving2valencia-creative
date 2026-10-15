@@ -1,0 +1,99 @@
+{
+  "license": "https://www.pexels.com/license/",
+  "sources": [
+    {
+      "creator": "Maksym Parovenko",
+      "page": "https://www.pexels.com/video/valencia-s-futuristic-city-of-arts-and-sciences-35901359/",
+      "sourceDimensions": [
+        3840,
+        2160
+      ]
+    },
+    {
+      "creator": "Lazar Krstić",
+      "page": "https://www.pexels.com/video/drone-footage-of-the-coastal-city-of-valencia-spain-15044556/",
+      "sourceDimensions": [
+        3840,
+        2160
+      ]
+    }
+  ],
+  "files": {
+    "valencia-film-1080.mp4": {
+      "sha256": "764c135a46e56236f1b60cb9085ba68827900b03f5f37ce6d65dbf323dcb1e10",
+      "bytes": 17845618,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "30/1"
+          }
+        ],
+        "format": {
+          "duration": "25.000000"
+        }
+      }
+    },
+    "valencia-film-720.mp4": {
+      "sha256": "11f16cd47775ab83a2c8675150d585cfa9b00629a3acfcabe27878268641d1de",
+      "bytes": 10274710,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "30/1"
+          }
+        ],
+        "format": {
+          "duration": "25.000000"
+        }
+      }
+    },
+    "valencia-shore-1080.mp4": {
+      "sha256": "568f92da4726b81f751940bbe0687e39ce26e26d6ad373945ed477bfcd25dac5",
+      "bytes": 7481176,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "30/1"
+          }
+        ],
+        "format": {
+          "duration": "15.000000"
+        }
+      }
+    },
+    "valencia-shore-720.mp4": {
+      "sha256": "eba84c1dd64180c0204b823ed81cededb8c3bb2ecc292caafb5fdf3811f37efe",
+      "bytes": 3686798,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "30/1"
+          }
+        ],
+        "format": {
+          "duration": "15.000000"
+        }
+      }
+    }
+  }
+}
