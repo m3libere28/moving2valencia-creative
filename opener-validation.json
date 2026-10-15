@@ -38,7 +38,7 @@
   ],
   "browser": "Microsoft Edge",
   "date": "2026-10-15",
-  "version": "13028d19f7",
+  "version": "6a16d55b71",
   "distinctCompositions": 10,
   "desktopLayoutProfilesChecked": 1440,
   "mobileLayoutProfilesChecked": 375,
@@ -116,6 +116,7 @@
     "videoPauseResumeReplay": "passed",
     "reducedMotionStaticFallback": "passed",
     "pageContentOutsideOpeningPreserved": true,
-    "otherOpeningCompositionsPreserved": true
+    "otherOpeningCompositionsPreserved": true,
+    "responsiveFilmSwap": "passed: preserves progress across phone and desktop"
   }
 }

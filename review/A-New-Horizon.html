@@ -1710,7 +1710,7 @@ html:has(.m2v-opening[data-film=thread][open]){overflow:hidden!important;scrollb
  const dialog=document.querySelector('.m2v-opening');if(!dialog)return;
  const reduce=matchMedia('(prefers-reduced-motion: reduce)'),pause=dialog.querySelector('[data-film-pause]');
  const video=dialog.querySelector('video[data-film-video]');
- const chooseFilm=()=>{if(!video?.getAttribute)return;const mode=matchMedia('(max-width: 900px)').matches?'mobile':'desktop',src=video.getAttribute('data-film-'+mode),poster=video.getAttribute('data-film-poster-'+mode);if(src&&video.getAttribute('src')!==src)video.setAttribute('src',src);if(poster)video.setAttribute('poster',poster);};
+ const chooseFilm=()=>{if(!video?.getAttribute)return false;const mode=matchMedia('(max-width: 900px)').matches?'mobile':'desktop',src=video.getAttribute('data-film-'+mode),poster=video.getAttribute('data-film-poster-'+mode),changed=Boolean(src&&video.getAttribute('src')!==src);if(changed)video.setAttribute('src',src);if(poster)video.setAttribute('poster',poster);if(changed)video.load?.();return changed;};
  const playMedia=()=>{if(video&&!reduce.matches){const playing=video.play?.();playing?.catch?.(()=>{});}};
  const duration=Math.min(10000,Math.max(3000,Number(dialog.getAttribute?.('data-film-duration'))||4800));
  let timer=0,closing=0,remaining=duration,started=0,paused=false,manualPause=false,previous=null,held=false;
@@ -1730,6 +1730,8 @@ html:has(.m2v-opening[data-film=thread][open]){overflow:hidden!important;scrollb
  dialog.addEventListener('cancel',event=>{event.preventDefault();finish();});
  dialog.addEventListener('close',()=>{clear();clearTimeout(closing);video?.pause?.();dialog.hidden=true;});
  document.querySelector('[data-film-replay]')?.addEventListener('click',()=>open(true));
+ // The review can resize an open film when switching between desktop and phone.
+ addEventListener('resize',()=>{if(!video||!dialog.open)return;const time=video.currentTime,playing=!video.paused;if(!chooseFilm())return;video.addEventListener('loadedmetadata',()=>{if(!dialog.open)return;video.currentTime=Math.min(time,Number.isFinite(video.duration)?video.duration:time);if(playing&&!paused&&!reduce.matches)playMedia();},{once:true});});
  addEventListener('message',event=>{if(event.source===parent&&(event.origin===location.origin||location.protocol==='file:')&&event.data?.type==='m2v:replay-opening')open(true);});
  document.addEventListener('visibilitychange',()=>{if(!dialog.open)return;if(document.hidden)setPaused(true);else if(!manualPause)setPaused(false);});
  reduce.addEventListener('change',()=>{if(reduce.matches&&dialog.open)complete();});
