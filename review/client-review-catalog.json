@@ -265,31 +265,6 @@
     "zipSize": null
   },
   {
-    "id": "valencia-3d-atlas",
-    "name": "Valencia 3D Atlas",
-    "path": "13-valencia-3d-atlas.html",
-    "aliases": [
-      "Valencia-3D-Atlas.html"
-    ],
-    "signature": "A slowly turning architectural miniature",
-    "download": "Valencia-3D-Atlas.html",
-    "added": false,
-    "tag": "Original collection",
-    "capture": "valencia-3d-atlas",
-    "family": "interactive",
-    "zip": null,
-    "desktop": "assets/client-review/valencia-3d-atlas-desktop.webp",
-    "mobile": "assets/client-review/valencia-3d-atlas-mobile.webp",
-    "description": "Valencia in miniature. Visitors move between neighbourhood stories on an architectural model, save a place and bring it into their enquiry.",
-    "points": [
-      "A slowly turning miniature and neighbourhood tour",
-      "Museum detail and shoreline motion",
-      "Favourite places carried into the enquiry"
-    ],
-    "downloadSize": 18238701,
-    "zipSize": null
-  },
-  {
     "id": "azahar",
     "name": "Azahar",
     "path": "14-azahar.html",
@@ -337,31 +312,6 @@
       "A complete route into a personal conversation"
     ],
     "downloadSize": 3034805,
-    "zipSize": null
-  },
-  {
-    "id": "valencia-arrivals",
-    "name": "Valencia Arrivals",
-    "path": "16-horizon-arrivals.html",
-    "aliases": [
-      "Valencia-Arrivals.html"
-    ],
-    "signature": "An arrival scene and a route assembled around you",
-    "download": "Valencia-Arrivals.html",
-    "added": false,
-    "tag": "Original collection",
-    "capture": "valencia-arrivals",
-    "family": "cinematic",
-    "zip": null,
-    "desktop": "assets/client-review/valencia-arrivals-desktop.webp",
-    "mobile": "assets/client-review/valencia-arrivals-mobile.webp",
-    "description": "A complete arrival itinerary. A concise opening leads into a practical route through services, planning and an enquiry to you.",
-    "points": [
-      "A complete arrival itinerary",
-      "A move planner and a practical service route",
-      "An enquiry shaped by the support a visitor selects"
-    ],
-    "downloadSize": 11672558,
     "zipSize": null
   }
 ]
