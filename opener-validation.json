@@ -38,7 +38,7 @@
   ],
   "browser": "Microsoft Edge",
   "date": "2026-10-15",
-  "version": "456fb405d2",
+  "version": "13028d19f7",
   "distinctCompositions": 10,
   "desktopLayoutProfilesChecked": 1440,
   "mobileLayoutProfilesChecked": 375,
@@ -88,5 +88,34 @@
         720
       ]
     ]
+  },
+  "editorialJourneyPostcard": {
+    "modeling": "Blender 5.2.1",
+    "renderer": "Unreal Engine 5.8",
+    "framesPerFilm": 192,
+    "durationSeconds": 8,
+    "dedicatedDesktopAndPhoneFilms": true,
+    "browserViewports": [
+      [
+        1440,
+        900
+      ],
+      [
+        1280,
+        720
+      ],
+      [
+        375,
+        812
+      ],
+      [
+        320,
+        740
+      ]
+    ],
+    "videoPauseResumeReplay": "passed",
+    "reducedMotionStaticFallback": "passed",
+    "pageContentOutsideOpeningPreserved": true,
+    "otherOpeningCompositionsPreserved": true
   }
 }

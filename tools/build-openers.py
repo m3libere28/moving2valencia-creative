@@ -4,9 +4,9 @@ import base64, hashlib, html, io, json, os, re, zipfile
 
 REPO=Path(__file__).resolve().parents[1]
 ROOT=REPO/'review'
-CSS=(ROOT/'m2v-openers.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-opener-scenes.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-editorial-magazine.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-hola-film.css').read_text(encoding='utf-8')
+CSS=(ROOT/'m2v-openers.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-opener-scenes.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-editorial-magazine.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-hola-film.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-postcard-film.css').read_text(encoding='utf-8')
 JS=(ROOT/'m2v-openers.js').read_text(encoding='utf-8')
-VERSION=hashlib.sha256((CSS+JS+(ROOT/'m2v-review-openers.js').read_text(encoding='utf-8')+(REPO/'tools/hola-valencia-scene.svg').read_text(encoding='utf-8')).encode()).hexdigest()[:10]
+VERSION=hashlib.sha256((CSS+JS+(ROOT/'m2v-review-openers.js').read_text(encoding='utf-8')+(REPO/'tools/hola-valencia-scene.svg').read_text(encoding='utf-8')+hashlib.sha256((ROOT/'assets/postcard/editorial-postcard.mp4').read_bytes()+(ROOT/'assets/postcard/editorial-postcard-phone.mp4').read_bytes()).hexdigest()).encode()).hexdigest()[:10]
 FILMS={
  'casa-editorial':('folio','The first page of your next chapter','A place to call your own.','Casa Editorial / A personal beginning'),
  'blue-horizon':('tide','Between city life and sea air','Find your own horizon.','Blue Horizon / Mediterranean light'),
@@ -35,6 +35,11 @@ def photo(asset,klass,portable,parent):
 def route(path,klass=''):
     return '<svg viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true" class="'+klass+'"><path class="m2v-path" pathLength="1" d="'+path+'"/></svg>'
 
+def media(asset,parent,portable,mime):
+    p=ROOT/asset
+    assert p.is_file(),p
+    return 'data:'+mime+';base64,'+base64.b64encode(p.read_bytes()).decode() if portable else Path(os.path.relpath(p,parent)).as_posix()+'?v='+VERSION
+
 def art(theme,portable,parent):
     image=lambda asset,klass:photo(asset,klass,portable,parent)
     if theme=='folio':
@@ -47,7 +52,13 @@ def art(theme,portable,parent):
         tiles=''.join('<div class="m2v-plan-tile" style="--i:'+str(i)+'"><span>'+sign+'</span>'+label+'</div>' for i,(sign,label) in enumerate([('↗','A possibility'),('⌂','A home'),('✓','A clear plan'),('✳','Your everyday')]))
         return '<div class="m2v-plan-grid"></div>'+tiles+route('M80 160H280Q330 160 330 210V580Q330 630 380 630H850Q900 630 900 580V220Q900 170 950 170H1120','m2v-plan-route')
     if theme=='thread':
-        return image('assets/jury-photo-editorial-lane-1440.webp','m2v-thread-photo')+image('assets/valencia-market-hd.webp','m2v-thread-photo')+route('M-20 130C180 70 370 110 370 260S70 430 250 570 520 750 600 610 930 90 1110 220 1000 600 1240 660')
+        movie=media('assets/postcard/editorial-postcard.mp4',parent,portable,'video/mp4')
+        phone=media('assets/postcard/editorial-postcard-phone.mp4',parent,portable,'video/mp4')
+        poster=media('assets/postcard/postcard-back.webp',parent,portable,'image/webp')
+        phoneposter=media('assets/postcard/postcard-back-phone.webp',parent,portable,'image/webp')
+        still=media('assets/postcard/postcard-front.webp',parent,portable,'image/webp')
+        phonestill=media('assets/postcard/postcard-front-phone.webp',parent,portable,'image/webp')
+        return '<video class="m2v-postcard-cinema" data-film-video data-film-desktop="'+movie+'" data-film-mobile="'+phone+'" data-film-poster-desktop="'+poster+'" data-film-poster-mobile="'+phoneposter+'" muted playsinline preload="metadata" poster="'+poster+'"><source src="'+movie+'" type="video/mp4"></video><picture class="m2v-postcard-still"><source media="(max-width:900px)" srcset="'+phonestill+'"><img src="'+still+'" alt=""></picture>'
     if theme=='mosaic':
         return ''.join('<div class="m2v-mosaic-tile" style="--i:'+str(i)+'">'+image(asset,'')+'</div>' for i,asset in enumerate(['assets/valencia-market-hd.webp','assets/hero_valencia-1440.webp','assets/valencia-cabanyal-hd.webp']))+'<div class="m2v-mosaic-tile" style="--i:3">Benvinguts.</div>'
     if theme=='reflection':
@@ -82,7 +93,7 @@ def composition(ident,parent,portable):
     if ident=='valencia-plan':
         return '<div class="m2v-plan-layout">'+brand+'<h2>Your next chapter.<br><em>Coming together.</em></h2><div class="m2v-plan-board"><svg viewBox="0 0 800 110" preserveAspectRatio="none" aria-hidden="true"><path class="m2v-path" pathLength="1" d="M10 55H790"/></svg>'+''.join('<div class="m2v-plan-step" style="--i:'+str(i)+'"><span class="m2v-step-dot">'+str(i+1)+'</span><strong>'+name+'</strong><p>'+copy+'</p></div>' for i,(name,copy) in enumerate([('Dream','Picture your everyday.'),('Plan','Put the pieces in place.'),('Live','Make Valencia yours.')]))+'</div><p class="m2v-support">Big dreams. Thoughtful little steps.</p></div>'
     if ident=='editorial-journey':
-        return '<div class="m2v-letter-layout"><div class="m2v-postmark" aria-hidden="true">VLC<br><span>39° 28′ N</span></div><p class="m2v-section-label">A note from your next chapter</p><h2>Dear future<br><em>neighbour,</em></h2><p class="m2v-letter-message">Somewhere between a new address<br>and feeling at home,<br>a beautiful story begins.</p><div class="m2v-letter-signature">'+brand+'<span>Your local welcome.</span></div>'+image('assets/valencia-market-hd.webp','m2v-letter-photo')+'</div>'
+        return '<div class="m2v-postcard-layout"><div class="m2v-postcard-copy">'+brand+'<p class="m2v-postcard-eyebrow">A postcard from your next chapter</p><h2>Wish you <br><em>were here.</em></h2><p class="m2v-postcard-message">From a new address to a place that feels like home.</p><span class="m2v-postcard-signature">With Christa Brokke</span></div></div>'
     if ident=='valencia-bento':
         return '<div class="m2v-bento-layout"><div class="m2v-bento-heading"><p class="m2v-section-label">The little things make a life</p>'+brand+'</div><div class="m2v-bento-board"><div class="m2v-bento-say"><h2>Make room <br>for <em>life.</em></h2></div><div class="m2v-bento-photo m2v-bento-market">'+image('assets/valencia-market-hd.webp','')+'<span>Your usual market.</span></div><div class="m2v-bento-sun"><span aria-hidden="true">✳</span><p>A sunnier<br>everyday.</p></div><div class="m2v-bento-photo m2v-bento-street">'+image('assets/valencia-cabanyal-hd.webp','')+'<span>Your new street.</span></div><div class="m2v-bento-welcome"><p>Hola,<br><strong>neighbour.</strong></p></div></div></div>'
     if ident=='immersive-valencia':
@@ -97,15 +108,15 @@ def composition(ident,parent,portable):
 
 def markup(ident,parent,portable=False):
     theme,kicker,caption,label=FILMS[ident]
-    backdrop=art(theme,portable,parent) if theme in ['tide','reflection','blossom','horizon'] else ('<div class="m2v-plan-grid"></div>' if theme=='assemble' else '')
-    return '<!-- m2v-film-markup:start --><dialog class="m2v-opening" data-film="'+theme+'" data-opener-for="'+ident+'" aria-label="Moving2Valencia introduction"'+(' data-film-duration="6200" style="--m2v-duration:6.2s"' if ident=='hola-valencia' else '')+' hidden><div class="m2v-film"><div class="m2v-art" aria-hidden="true">'+backdrop+'</div><div class="m2v-top"><span>'+html.escape(label)+'</span><button type="button" data-film-exit>Skip intro ↗</button></div><div class="m2v-center m2v-bespoke">'+composition(ident,parent,portable)+'</div><div class="m2v-bottom"><span>València, España</span><div class="m2v-controls"><button type="button" data-film-pause aria-pressed="false">Pause motion</button><button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button></div></div><div class="m2v-progress" aria-hidden="true"></div></div></dialog><!-- m2v-film-markup:end -->'
+    backdrop=art(theme,portable,parent) if theme in ['tide','thread','reflection','blossom','horizon'] else ('<div class="m2v-plan-grid"></div>' if theme=='assemble' else '')
+    return '<!-- m2v-film-markup:start --><dialog class="m2v-opening" data-film="'+theme+'" data-opener-for="'+ident+'" aria-label="Moving2Valencia introduction"'+((' data-film-duration="'+str({'hola-valencia':6200,'editorial-journey':9200}[ident])+'" style="--m2v-duration:'+str({'hola-valencia':6.2,'editorial-journey':9.2}[ident])+'s"') if ident in ['hola-valencia','editorial-journey'] else '')+' hidden><div class="m2v-film"><div class="m2v-art" aria-hidden="true">'+backdrop+'</div><div class="m2v-top"><span>'+html.escape(label)+'</span><button type="button" data-film-exit>Skip intro ↗</button></div><div class="m2v-center m2v-bespoke">'+composition(ident,parent,portable)+'</div><div class="m2v-bottom"><span>València, España</span><div class="m2v-controls"><button type="button" data-film-pause aria-pressed="false">Pause motion</button><button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button></div></div><div class="m2v-progress" aria-hidden="true"></div></div></dialog><!-- m2v-film-markup:end -->'
 
 def inject(code,ident,parent,portable=False):
     code=re.sub(r'<!-- m2v-film-(head|markup|foot):start -->[\s\S]*?<!-- m2v-film-\1:end -->','',code)
     prefix=Path(os.path.relpath(ROOT,parent)).as_posix()
     if prefix=='.':prefix=''
     else:prefix+='/'
-    head='<style>'+CSS+'</style>' if portable else '<link rel="stylesheet" href="'+prefix+'m2v-openers.css?v='+VERSION+'"><link rel="stylesheet" href="'+prefix+'m2v-opener-scenes.css?v='+VERSION+'">'+('<link rel="stylesheet" href="'+prefix+'m2v-editorial-magazine.css?v='+VERSION+'">' if ident=='casa-editorial' else '')+('<link rel="stylesheet" href="'+prefix+'m2v-hola-film.css?v='+VERSION+'">' if ident=='hola-valencia' else '')
+    head='<style>'+CSS+'</style>' if portable else '<link rel="stylesheet" href="'+prefix+'m2v-openers.css?v='+VERSION+'"><link rel="stylesheet" href="'+prefix+'m2v-opener-scenes.css?v='+VERSION+'">'+('<link rel="stylesheet" href="'+prefix+'m2v-editorial-magazine.css?v='+VERSION+'">' if ident=='casa-editorial' else '')+('<link rel="stylesheet" href="'+prefix+'m2v-hola-film.css?v='+VERSION+'">' if ident=='hola-valencia' else '')+('<link rel="stylesheet" href="'+prefix+'m2v-postcard-film.css?v='+VERSION+'">' if ident=='editorial-journey' else '')
     script='<script>'+JS+'</script>' if portable else '<script src="'+prefix+'m2v-openers.js?v='+VERSION+'" defer></script>'
     code=code.replace('</head>','<!-- m2v-film-head:start -->'+head+'<!-- m2v-film-head:end --></head>',1)
     code=re.sub(r'(<body\b[^>]*>)',lambda m:m[1]+markup(ident,parent,portable),code,count=1)

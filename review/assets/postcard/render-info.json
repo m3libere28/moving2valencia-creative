@@ -1,0 +1,43 @@
+{
+  "modeling": "Blender 5.2.1 LTS",
+  "lightingAndRendering": "Unreal Engine 5.8 Movie Render Queue",
+  "durationSeconds": 8,
+  "frameRate": 24,
+  "framesPerFilm": 192,
+  "desktopResolution": [
+    1600,
+    1000
+  ],
+  "phoneResolution": [
+    720,
+    1440
+  ],
+  "geometry": "Curved card stock, separate photographic front, printed back and paper edges",
+  "finishing": "Warm studio sweep compositing for phone; H.264 encoding with FFmpeg",
+  "files": {
+    "editorial-postcard-phone.mp4": {
+      "bytes": 698145,
+      "sha256": "c94643753b4f9b11f5406f5596cb5ee9ee841c3ee652158ba741008cce48d0e1"
+    },
+    "editorial-postcard.mp4": {
+      "bytes": 1456538,
+      "sha256": "c3f75a2f995661d39b9a75d9580a3786cccac4d3ea193407f4b56ac551bacc6e"
+    },
+    "postcard-back-phone.webp": {
+      "bytes": 22158,
+      "sha256": "23f7513d691a3f6335b29c37c7ec458e8788b686123f872e9095953964dbc25c"
+    },
+    "postcard-back.webp": {
+      "bytes": 28534,
+      "sha256": "8bd270c4b932aa77a61f741e3ab6c3755b0dc12555194b0510a6618cf341e095"
+    },
+    "postcard-front-phone.webp": {
+      "bytes": 73978,
+      "sha256": "aee6cb02e67338776b51eeb7303080504e5f928762151b110088befee4730510"
+    },
+    "postcard-front.webp": {
+      "bytes": 102608,
+      "sha256": "0372a7e8d3d7fca02ea5ac19b924443f103377c15bbfb118813eb5c97db5a982"
+    }
+  }
+}
