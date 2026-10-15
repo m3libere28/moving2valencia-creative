@@ -38,7 +38,7 @@
   ],
   "browser": "Microsoft Edge",
   "date": "2026-10-15",
-  "version": "7db1dab09a",
+  "version": "6de30556a7",
   "distinctCompositions": 10,
   "desktopLayoutProfilesChecked": 1440,
   "mobileLayoutProfilesChecked": 375,
@@ -139,6 +139,28 @@
     "interactionHoldsOpener": true,
     "nativeVideoPauseResume": "passed",
     "reducedMotion": "still imagery, no animation or autoplay",
+    "originalContentPreserved": true,
+    "otherOpenerCompositionsPreserved": true
+  },
+  "azaharBotanical": {
+    "composition": "Dimensional orange-blossom artwork, kinetic word art, interactive circular city reveal",
+    "viewports": [
+      [
+        1440,
+        900
+      ],
+      [
+        375,
+        812
+      ],
+      [
+        320,
+        740
+      ]
+    ],
+    "mobileTextClearance": "passed, art below supporting text",
+    "controls": "keyboard reveal/return, hold-open, pause/resume and replay reset passed",
+    "reducedMotion": "static artwork and instant city reveal",
     "originalContentPreserved": true,
     "otherOpenerCompositionsPreserved": true
   }
