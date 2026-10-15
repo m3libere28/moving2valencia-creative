@@ -38,7 +38,7 @@
   ],
   "browser": "Microsoft Edge",
   "date": "2026-10-15",
-  "version": "8142d09f65",
+  "version": "456fb405d2",
   "distinctCompositions": 10,
   "desktopLayoutProfilesChecked": 1440,
   "mobileLayoutProfilesChecked": 375,
@@ -77,6 +77,16 @@
     ],
     "lifecycleChecks": "passed",
     "contentOutsideOpeningPreserved": true,
-    "otherOpeningCompositionsPreserved": true
+    "otherOpeningCompositionsPreserved": true,
+    "desktopViewports": [
+      [
+        1440,
+        900
+      ],
+      [
+        1280,
+        720
+      ]
+    ]
   }
 }
