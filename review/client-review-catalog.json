@@ -42,7 +42,7 @@
     "zip": "client-editions/azahar/website.zip",
     "desktop": "assets/client-review/azahar-client-desktop.webp",
     "mobile": "assets/client-review/azahar-client-mobile.webp",
-    "downloadSize": 9594466,
+    "downloadSize": 9595451,
     "zipSize": 5854084
   },
   {
@@ -65,8 +65,8 @@
     "zip": "client-editions/new-horizon/website.zip",
     "desktop": "assets/client-review/new-horizon-client-desktop.webp",
     "mobile": "assets/client-review/new-horizon-client-mobile.webp",
-    "downloadSize": 7013157,
-    "zipSize": 3823117
+    "downloadSize": 7033255,
+    "zipSize": 3827457
   },
   {
     "id": "casa-editorial",
@@ -88,7 +88,7 @@
       "A personal arrival journal",
       "Everyday priorities carried into an enquiry"
     ],
-    "downloadSize": 5246303,
+    "downloadSize": 5266555,
     "zipSize": null
   },
   {
@@ -111,7 +111,7 @@
       "Visual neighbourhood exploration",
       "Preferences that help shape the first conversation"
     ],
-    "downloadSize": 4544755,
+    "downloadSize": 4565006,
     "zipSize": null
   },
   {
@@ -137,7 +137,7 @@
       "An inviting daily-life itinerary",
       "Warm colours and a playful, welcoming voice"
     ],
-    "downloadSize": 11616415,
+    "downloadSize": 11636788,
     "zipSize": null
   },
   {
@@ -160,7 +160,7 @@
       "A checklist with clear progress",
       "An editable starting plan for the conversation"
     ],
-    "downloadSize": 4485618,
+    "downloadSize": 4505726,
     "zipSize": null
   },
   {
@@ -185,7 +185,7 @@
       "An illustrated route through planning areas",
       "A personal consultation-time request"
     ],
-    "downloadSize": 6230550,
+    "downloadSize": 6106349,
     "zipSize": null
   },
   {
@@ -211,7 +211,7 @@
       "A saved city board and move-month choice",
       "A personal enquiry built from the shortlist"
     ],
-    "downloadSize": 5480092,
+    "downloadSize": 5143945,
     "zipSize": null
   },
   {
@@ -234,7 +234,7 @@
       "Your story and practical support in clear chapters",
       "Household and timing choices for a personal scope"
     ],
-    "downloadSize": 12726820,
+    "downloadSize": 12747026,
     "zipSize": null
   },
   {
@@ -286,7 +286,7 @@
       "An exploratory neighbourhood finder",
       "Practical planning around personal priorities"
     ],
-    "downloadSize": 9280806,
+    "downloadSize": 9301028,
     "zipSize": null
   },
   {
@@ -311,7 +311,7 @@
       "Real city photographs and everyday possibilities",
       "A complete route into a personal conversation"
     ],
-    "downloadSize": 3225962,
+    "downloadSize": 3246147,
     "zipSize": null
   }
 ]

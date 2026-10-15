@@ -4,7 +4,7 @@ import base64, hashlib, html, io, json, os, re, zipfile
 
 REPO=Path(__file__).resolve().parents[1]
 ROOT=REPO/'review'
-CSS=(ROOT/'m2v-openers.css').read_text(encoding='utf-8')
+CSS=(ROOT/'m2v-openers.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-opener-scenes.css').read_text(encoding='utf-8')
 JS=(ROOT/'m2v-openers.js').read_text(encoding='utf-8')
 VERSION=hashlib.sha256((CSS+JS+(ROOT/'m2v-review-openers.js').read_text(encoding='utf-8')).encode()).hexdigest()[:10]
 FILMS={
@@ -65,16 +65,47 @@ def art(theme,portable,parent):
 def word(text):
     return '<span class="m2v-word">'+''.join('<i style="--n:'+str(i)+'">'+c+'</i>' for i,c in enumerate(text))+'</span>'
 
+def identity():
+    return '<p class="m2v-identity">Moving<span>2</span>Valencia</p>'
+
+def composition(ident,parent,portable):
+    """Each film has its own authored hierarchy and composition, not a logo template."""
+    image=lambda asset,klass:photo(asset,klass,portable,parent)
+    brand=identity()
+    if ident=='casa-editorial':
+        return '<div class="m2v-folio-layout"><div class="m2v-folio-copy"><p class="m2v-section-label">A personal beginning</p><h2>A place. <br>A life.<br><em>Your own.</em></h2><p class="m2v-support">Moving2Valencia</p></div><div class="m2v-book"><div class="m2v-book-cover">'+brand+image('assets/jury-photo-editorial-lane-1440.webp','m2v-book-image')+'<span class="m2v-book-edition">VALÈNCIA / YOUR NEXT CHAPTER</span></div><div class="m2v-book-page">A beautiful<br>beginning.<span>01 / WELCOME HOME</span></div></div></div>'
+    if ident=='blue-horizon':
+        return '<div class="m2v-tide-layout"><p class="m2v-section-label">One city. Two beautiful rhythms.</p><h2 class="m2v-city-word">CITY</h2><div class="m2v-tide-brand">'+brand+'<span class="m2v-tide-crossing">39.47° N / 0.37° W</span></div><h2 class="m2v-sea-word">SEA</h2><p class="m2v-support">Find your own horizon.</p></div>'
+    if ident=='hola-valencia':
+        letters=''.join('<i style="--n:'+str(i)+'">'+c+'</i>' for i,c in enumerate('¡HOLA!'))
+        return '<div class="m2v-hola-layout"><p class="m2v-section-label">A little sunshine. A lot of life.</p><h2 aria-label="Hola" class="m2v-hola-word"><span aria-hidden="true">'+letters+'</span></h2><div class="m2v-hola-ribbon">less admin <span>✳</span> more vida</div>'+brand+'<p class="m2v-support">Your good life starts here.</p></div>'
+    if ident=='valencia-plan':
+        return '<div class="m2v-plan-layout">'+brand+'<h2>Your next chapter.<br><em>Coming together.</em></h2><div class="m2v-plan-board"><svg viewBox="0 0 800 110" preserveAspectRatio="none" aria-hidden="true"><path class="m2v-path" pathLength="1" d="M10 55H790"/></svg>'+''.join('<div class="m2v-plan-step" style="--i:'+str(i)+'"><span class="m2v-step-dot">'+str(i+1)+'</span><strong>'+name+'</strong><p>'+copy+'</p></div>' for i,(name,copy) in enumerate([('Dream','Picture your everyday.'),('Plan','Put the pieces in place.'),('Live','Make Valencia yours.')]))+'</div><p class="m2v-support">Big dreams. Thoughtful little steps.</p></div>'
+    if ident=='editorial-journey':
+        return '<div class="m2v-letter-layout"><div class="m2v-postmark" aria-hidden="true">VLC<br><span>39° 28′ N</span></div><p class="m2v-section-label">A note from your next chapter</p><h2>Dear future<br><em>neighbour,</em></h2><p class="m2v-letter-message">Somewhere between a new address<br>and feeling at home,<br>a beautiful story begins.</p><div class="m2v-letter-signature">'+brand+'<span>Your local welcome.</span></div>'+image('assets/valencia-market-hd.webp','m2v-letter-photo')+'</div>'
+    if ident=='valencia-bento':
+        return '<div class="m2v-bento-layout"><div class="m2v-bento-heading"><p class="m2v-section-label">The little things make a life</p>'+brand+'</div><div class="m2v-bento-board"><div class="m2v-bento-say"><h2>Make room <br>for <em>life.</em></h2></div><div class="m2v-bento-photo m2v-bento-market">'+image('assets/valencia-market-hd.webp','')+'<span>Your usual market.</span></div><div class="m2v-bento-sun"><span aria-hidden="true">✳</span><p>A sunnier<br>everyday.</p></div><div class="m2v-bento-photo m2v-bento-street">'+image('assets/valencia-cabanyal-hd.webp','')+'<span>Your new street.</span></div><div class="m2v-bento-welcome"><p>Hola,<br><strong>neighbour.</strong></p></div></div></div>'
+    if ident=='immersive-valencia':
+        return '<div class="m2v-reflection-layout">'+brand+'<p class="m2v-section-label">Listen to the possibility</p><h2>A different<br><em>rhythm.</em></h2><div class="m2v-reflection-echo" aria-hidden="true">A different rhythm.</div><p class="m2v-support">Let a new life come to you.</p></div>'
+    if ident=='azahar':
+        return '<div class="m2v-bloom-layout"><p class="m2v-section-label">The art of beginning</p><div class="m2v-bloom-name"><span class="m2v-bloom-a" aria-hidden="true">a</span><h2>azahar</h2></div><div class="m2v-bloom-caption"><span class="m2v-bloom-line"></span><p>Let life unfold.</p></div>'+brand+'</div>'
+    if ident=='a-new-horizon':
+        return '<div class="m2v-horizon-layout">'+brand+'<p class="m2v-section-label">A new horizon</p><h2><span>closer</span><em>to home.</em></h2><div class="m2v-horizon-baseline" aria-hidden="true"><i></i></div><p class="m2v-support">The distance becomes a possibility.</p></div>'
+    if ident=='new-horizon-client':
+        return '<div class="m2v-aperture-layout"><div class="m2v-aperture-copy"><p class="m2v-section-label">An open invitation</p><h2>what if<br><em>this was</em><br>home?</h2>'+brand+'</div><div class="m2v-doorway">'+image('15-new-horizon/img/malvarrosa-sky-1600.webp','')+'<span>Step into your next chapter.</span></div></div>'
+    raise ValueError(ident)
+
 def markup(ident,parent,portable=False):
     theme,kicker,caption,label=FILMS[ident]
-    return '<!-- m2v-film-markup:start --><dialog class="m2v-opening" data-film="'+theme+'" data-opener-for="'+ident+'" aria-label="Moving2Valencia introduction" hidden><div class="m2v-film"><div class="m2v-art" aria-hidden="true">'+art(theme,portable,parent)+'</div><div class="m2v-top"><span>'+html.escape(label)+'</span><button type="button" data-film-exit>Skip intro ↗</button></div><div class="m2v-center"><p class="m2v-kicker">'+html.escape(kicker)+'</p><p class="m2v-wordmark" role="heading" aria-level="2" aria-label="Moving2Valencia"><span class="m2v-sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">Moving2Valencia</span><span aria-hidden="true" style="display:contents">'+word('Moving')+'<span class="m2v-number">2</span>'+word('Valencia')+'</span></p><div class="m2v-line"></div><p class="m2v-caption">'+html.escape(caption)+'</p></div><div class="m2v-bottom"><span>València, España<br>A new way to feel at home.</span><div class="m2v-controls"><button type="button" data-film-pause aria-pressed="false">Pause motion</button><button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button></div></div><div class="m2v-progress" aria-hidden="true"></div></div></dialog><!-- m2v-film-markup:end -->'
+    backdrop=art(theme,portable,parent) if theme in ['tide','citrus','reflection','blossom','horizon'] else ('<div class="m2v-plan-grid"></div>' if theme=='assemble' else '')
+    return '<!-- m2v-film-markup:start --><dialog class="m2v-opening" data-film="'+theme+'" data-opener-for="'+ident+'" aria-label="Moving2Valencia introduction" hidden><div class="m2v-film"><div class="m2v-art" aria-hidden="true">'+backdrop+'</div><div class="m2v-top"><span>'+html.escape(label)+'</span><button type="button" data-film-exit>Skip intro ↗</button></div><div class="m2v-center m2v-bespoke">'+composition(ident,parent,portable)+'</div><div class="m2v-bottom"><span>València, España</span><div class="m2v-controls"><button type="button" data-film-pause aria-pressed="false">Pause motion</button><button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button></div></div><div class="m2v-progress" aria-hidden="true"></div></div></dialog><!-- m2v-film-markup:end -->'
 
 def inject(code,ident,parent,portable=False):
     code=re.sub(r'<!-- m2v-film-(head|markup|foot):start -->[\s\S]*?<!-- m2v-film-\1:end -->','',code)
     prefix=Path(os.path.relpath(ROOT,parent)).as_posix()
     if prefix=='.':prefix=''
     else:prefix+='/'
-    head='<style>'+CSS+'</style>' if portable else '<link rel="stylesheet" href="'+prefix+'m2v-openers.css?v='+VERSION+'">'
+    head='<style>'+CSS+'</style>' if portable else '<link rel="stylesheet" href="'+prefix+'m2v-openers.css?v='+VERSION+'"><link rel="stylesheet" href="'+prefix+'m2v-opener-scenes.css?v='+VERSION+'">'
     script='<script>'+JS+'</script>' if portable else '<script src="'+prefix+'m2v-openers.js?v='+VERSION+'" defer></script>'
     code=code.replace('</head>','<!-- m2v-film-head:start -->'+head+'<!-- m2v-film-head:end --></head>',1)
     code=re.sub(r'(<body\b[^>]*>)',lambda m:m[1]+markup(ident,parent,portable),code,count=1)
@@ -113,6 +144,19 @@ for name in ['index.html','jury-review.html','client-review.html']:
         code=code.replace('</head>','<script src="m2v-review-openers.js?v='+VERSION+'" defer></script></head>')
     p.write_text(code,encoding='utf-8')
 
+# Refresh download labels after embedding the distinct artwork and styles.
+for site in SITES:
+    site['downloadSize']=(ROOT/site['download']).stat().st_size
+    if site.get('zip'):site['zipSize']=(ROOT/site['zip']).stat().st_size
+for name in ['index.html','jury-review.html','client-review.html']:
+    p=ROOT/name;code=p.read_text(encoding='utf-8')
+    for site in SITES:
+        for key,sizekey in [('download','downloadSize'),('zip','zipSize')]:
+            if not site.get(key):continue
+            pattern=r'(href="'+re.escape(site[key])+r'" download>[^<]*<small>)[^<]*(</small>)'
+            code=re.sub(pattern,lambda m:m[1]+f'{site[sizekey]/1024/1024:.1f} MB'+m[2],code)
+    p.write_text(code,encoding='utf-8')
+(ROOT/'client-review-catalog.json').write_text(json.dumps(SITES,ensure_ascii=False,indent=2),encoding='utf-8')
 report={'newOpeners':{key:value[0] for key,value in FILMS.items()},'preservedOpeners':KEEP,'updatedFiles':updated,'version':VERSION}
 (REPO/'opener-implementation.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
 print(json.dumps({'newOpeners':len(FILMS),'preservedOpeners':len(KEEP),'updatedPages':len(updated),'version':VERSION}))
