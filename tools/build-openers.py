@@ -4,7 +4,7 @@ import base64, hashlib, html, io, json, os, re, zipfile
 
 REPO=Path(__file__).resolve().parents[1]
 ROOT=REPO/'review'
-CSS=(ROOT/'m2v-openers.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-opener-scenes.css').read_text(encoding='utf-8')
+CSS=(ROOT/'m2v-openers.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-opener-scenes.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-editorial-magazine.css').read_text(encoding='utf-8')
 JS=(ROOT/'m2v-openers.js').read_text(encoding='utf-8')
 VERSION=hashlib.sha256((CSS+JS+(ROOT/'m2v-review-openers.js').read_text(encoding='utf-8')).encode()).hexdigest()[:10]
 FILMS={
@@ -73,7 +73,7 @@ def composition(ident,parent,portable):
     image=lambda asset,klass:photo(asset,klass,portable,parent)
     brand=identity()
     if ident=='casa-editorial':
-        return '<div class="m2v-folio-layout"><div class="m2v-folio-copy"><p class="m2v-section-label">A personal beginning</p><h2>A place. <br>A life.<br><em>Your own.</em></h2><p class="m2v-support">Moving2Valencia</p></div><div class="m2v-book"><div class="m2v-book-cover">'+brand+image('assets/jury-photo-editorial-lane-1440.webp','m2v-book-image')+'<span class="m2v-book-edition">VALÈNCIA / YOUR NEXT CHAPTER</span></div><div class="m2v-book-page">A beautiful<br>beginning.<span>01 / WELCOME HOME</span></div></div></div>'
+        return '<div class="m2v-folio-layout m2v-folio-magazine"><div class="m2v-folio-copy"><p class="m2v-section-label">A personal beginning</p><h2>A place. <br>A life.<br><em>Your own.</em></h2><p class="m2v-support">Moving2Valencia</p></div><div class="m2v-magazine-stage" role="img" aria-label="A photographic Moving2Valencia magazine opens to a Valencia city-and-sea spread"><div class="m2v-magazine-shadow" aria-hidden="true"></div><div class="m2v-magazine" aria-hidden="true"><div class="m2v-magazine-paper"></div><div class="m2v-magazine-right"><div class="m2v-magazine-running">THE ART OF FEELING AT HOME <span>02</span></div><div class="m2v-magazine-story"><span>YOUR NEXT CHAPTER</span><strong>At home.<br><em>In Valencia.</em></strong><p>A slower morning. A familiar street.<br>A beautiful life, made yours.</p></div>'+image('assets/valencia-coast-hd.webp','m2v-magazine-sea')+'<div class="m2v-magazine-foot">CITY, SEA &amp; EVERYDAY POSSIBILITY <span>Moving2Valencia</span></div></div><div class="m2v-magazine-leaf"><div class="m2v-magazine-front">'+image('assets/valencia-morning-hd.webp','m2v-magazine-cover-photo')+'<div class="m2v-magazine-cover-type"><span class="m2v-magazine-issue">THE VALENCIA ISSUE / Nº 01</span><strong class="m2v-magazine-masthead">Moving<span>2</span>Valencia</strong><div class="m2v-magazine-cover-story"><span>A NEW ADDRESS. A NEW PERSPECTIVE.</span><strong>A life<br><em>well lived.</em></strong><p>Your personal guide to a<br>beautiful beginning in Valencia.</p></div><span class="m2v-magazine-cover-foot">PLACES · PEOPLE · POSSIBILITIES</span></div></div><div class="m2v-magazine-back">'+image('assets/jury-photo-editorial-lane-1440.webp','m2v-magazine-lane')+'<div class="m2v-magazine-back-type"><span>01 / THE CITY IS YOURS</span><strong>Somewhere<br>to belong.</strong></div></div></div><div class="m2v-magazine-gutter"></div></div></div></div>'
     if ident=='blue-horizon':
         return '<div class="m2v-tide-layout"><p class="m2v-section-label">One city. Two beautiful rhythms.</p><h2 class="m2v-city-word">CITY</h2><div class="m2v-tide-brand">'+brand+'<span class="m2v-tide-crossing">39.47° N / 0.37° W</span></div><h2 class="m2v-sea-word">SEA</h2><p class="m2v-support">Find your own horizon.</p></div>'
     if ident=='hola-valencia':
@@ -105,7 +105,7 @@ def inject(code,ident,parent,portable=False):
     prefix=Path(os.path.relpath(ROOT,parent)).as_posix()
     if prefix=='.':prefix=''
     else:prefix+='/'
-    head='<style>'+CSS+'</style>' if portable else '<link rel="stylesheet" href="'+prefix+'m2v-openers.css?v='+VERSION+'"><link rel="stylesheet" href="'+prefix+'m2v-opener-scenes.css?v='+VERSION+'">'
+    head='<style>'+CSS+'</style>' if portable else '<link rel="stylesheet" href="'+prefix+'m2v-openers.css?v='+VERSION+'"><link rel="stylesheet" href="'+prefix+'m2v-opener-scenes.css?v='+VERSION+'">'+('<link rel="stylesheet" href="'+prefix+'m2v-editorial-magazine.css?v='+VERSION+'">' if ident=='casa-editorial' else '')
     script='<script>'+JS+'</script>' if portable else '<script src="'+prefix+'m2v-openers.js?v='+VERSION+'" defer></script>'
     code=code.replace('</head>','<!-- m2v-film-head:start -->'+head+'<!-- m2v-film-head:end --></head>',1)
     code=re.sub(r'(<body\b[^>]*>)',lambda m:m[1]+markup(ident,parent,portable),code,count=1)

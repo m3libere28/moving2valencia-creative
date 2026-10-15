@@ -38,10 +38,24 @@
   ],
   "browser": "Microsoft Edge",
   "date": "2026-10-15",
-  "version": "eb726ee284",
+  "version": "fa1122b182",
   "distinctCompositions": 10,
   "desktopLayoutProfilesChecked": 1440,
   "mobileLayoutProfilesChecked": 375,
   "normalLayoutOverflowInNewOpeners": false,
-  "localPagesUpdated": 24
+  "localPagesUpdated": 24,
+  "editorialMagazine": {
+    "twoSidedCover": true,
+    "paperStackAndGutter": true,
+    "desktopViewport": [
+      1440,
+      900
+    ],
+    "mobileViewport": [
+      375,
+      812
+    ],
+    "contentOutsideOpeningPreserved": true,
+    "otherOpeningCompositionsPreserved": true
+  }
 }
