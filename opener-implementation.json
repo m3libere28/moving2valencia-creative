@@ -1,0 +1,142 @@
+{
+  "newOpeners": {
+    "casa-editorial": "folio",
+    "blue-horizon": "tide",
+    "hola-valencia": "citrus",
+    "valencia-plan": "assemble",
+    "editorial-journey": "thread",
+    "valencia-bento": "mosaic",
+    "immersive-valencia": "reflection",
+    "azahar": "blossom",
+    "a-new-horizon": "horizon",
+    "new-horizon-client": "aperture"
+  },
+  "preservedOpeners": {
+    "new-horizon-ii-client": "Existing full branded splash",
+    "azahar-client": "Existing photographic brand introduction",
+    "valencia-in-motion": "Existing kinetic city-to-sea opening"
+  },
+  "updatedFiles": [
+    {
+      "path": "01-editorial.html",
+      "id": "casa-editorial",
+      "portable": false
+    },
+    {
+      "path": "02-cinematic.html",
+      "id": "blue-horizon",
+      "portable": false
+    },
+    {
+      "path": "03-playful.html",
+      "id": "hola-valencia",
+      "portable": false
+    },
+    {
+      "path": "04-planner.html",
+      "id": "valencia-plan",
+      "portable": false
+    },
+    {
+      "path": "05-proposal-editorial.html",
+      "id": "editorial-journey",
+      "portable": false
+    },
+    {
+      "path": "06-bento-clear.html",
+      "id": "valencia-bento",
+      "portable": false
+    },
+    {
+      "path": "06-proposal-bento.html",
+      "id": "valencia-bento",
+      "portable": false
+    },
+    {
+      "path": "07-proposal-immersive.html",
+      "id": "immersive-valencia",
+      "portable": false
+    },
+    {
+      "path": "08-editorial-developed.html",
+      "id": "editorial-journey",
+      "portable": false
+    },
+    {
+      "path": "09-bento-developed.html",
+      "id": "valencia-bento",
+      "portable": false
+    },
+    {
+      "path": "10-hola-developed.html",
+      "id": "hola-valencia",
+      "portable": false
+    },
+    {
+      "path": "14-azahar.html",
+      "id": "azahar",
+      "portable": false
+    },
+    {
+      "path": "A-New-Horizon.html",
+      "id": "a-new-horizon",
+      "portable": true
+    },
+    {
+      "path": "Blue-Horizon.html",
+      "id": "blue-horizon",
+      "portable": true
+    },
+    {
+      "path": "Casa-Editorial.html",
+      "id": "casa-editorial",
+      "portable": true
+    },
+    {
+      "path": "Editorial-Journey.html",
+      "id": "editorial-journey",
+      "portable": true
+    },
+    {
+      "path": "Hola-Valencia-Animated.html",
+      "id": "hola-valencia",
+      "portable": true
+    },
+    {
+      "path": "Immersive-Valencia.html",
+      "id": "immersive-valencia",
+      "portable": true
+    },
+    {
+      "path": "Moving2Valencia-Azahar.html",
+      "id": "azahar",
+      "portable": true
+    },
+    {
+      "path": "The-Valencia-Plan.html",
+      "id": "valencia-plan",
+      "portable": true
+    },
+    {
+      "path": "Valencia-Bento.html",
+      "id": "valencia-bento",
+      "portable": true
+    },
+    {
+      "path": "15-new-horizon/index.html",
+      "id": "a-new-horizon",
+      "portable": false
+    },
+    {
+      "path": "client-editions/new-horizon/index.html",
+      "id": "new-horizon-client",
+      "portable": false
+    },
+    {
+      "path": "client-editions/new-horizon/single-file.html",
+      "id": "new-horizon-client",
+      "portable": true
+    }
+  ],
+  "version": "5184b1ff25"
+}

@@ -1,0 +1,41 @@
+{
+  "originalPagesPreserved": [
+    "01-editorial.html",
+    "02-cinematic.html",
+    "03-playful.html",
+    "04-planner.html",
+    "05-proposal-editorial.html",
+    "06-bento-clear.html",
+    "06-proposal-bento.html",
+    "07-proposal-immersive.html",
+    "08-editorial-developed.html",
+    "09-bento-developed.html",
+    "10-hola-developed.html",
+    "14-azahar.html",
+    "A-New-Horizon.html",
+    "Blue-Horizon.html",
+    "Casa-Editorial.html",
+    "Editorial-Journey.html",
+    "Hola-Valencia-Animated.html",
+    "Immersive-Valencia.html",
+    "Moving2Valencia-Azahar.html",
+    "The-Valencia-Plan.html",
+    "Valencia-Bento.html",
+    "15-new-horizon/index.html",
+    "client-editions/new-horizon/index.html",
+    "client-editions/new-horizon/single-file.html"
+  ],
+  "lifecycleChecks": "passed",
+  "mobileCompositionsVisuallyReviewed": 10,
+  "newOpeners": 10,
+  "retainedOpeners": 3,
+  "liveBrowserChecks": [
+    "First visit automatically enters the website",
+    "Review toolbar replays the mounted frame",
+    "Manual replay remains open for comparison",
+    "Pause button changes to Play motion",
+    "Phone-sized layout inspected for all ten new films"
+  ],
+  "browser": "Microsoft Edge",
+  "date": "2026-10-15"
+}
