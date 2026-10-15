@@ -512,6 +512,68 @@ body[data-jury-concept="azahar"] .voices blockquote p{font-size:clamp(24px,3vw,4
 html:has(.m2v-opening[data-film=thread][open]){overflow:hidden!important;scrollbar-gutter:auto!important}
 
 @media(min-width:901px) and (max-height:800px){.m2v-opening[data-film=thread] .m2v-art .m2v-postcard-cinema,.m2v-opening[data-film=thread] .m2v-art .m2v-postcard-still img{object-position:50% 100%}}
+
+/* Immersive Valencia: three photographic portals, one cinematic composition. */
+.m2v-opening[data-film=reflection]{--m2v-bg:#101b20;--m2v-ink:#f7f1e6;--m2v-accent:#ffb080;border-radius:0;box-shadow:none}
+html:has(.m2v-opening[data-film=reflection][open]){overflow:hidden!important;scrollbar-gutter:auto!important}
+.m2v-opening[data-film=reflection] .m2v-film{padding:25px 3.5vw 22px;gap:20px}
+.m2v-opening[data-film=reflection] .m2v-top{font-size:14px;letter-spacing:.055em;text-transform:none}
+.m2v-opening[data-film=reflection] button{font-size:16px}
+.m2v-opening[data-film=reflection] .m2v-center{height:100%;align-self:stretch;padding:0;overflow:visible;min-height:0}
+.m2v-immersive-layout{height:100%;display:grid;grid-template-rows:auto minmax(180px,1fr) auto;gap:20px;text-align:left}
+.m2v-immersive-heading{display:flex;align-items:end;justify-content:space-between;gap:25px;padding:0 0 5px}
+.m2v-immersive-heading .m2v-identity{font:500 clamp(25px,2.4vw,36px)/1.1 Georgia,serif!important;letter-spacing:-.055em;margin:0!important}
+.m2v-immersive-heading .m2v-identity span{color:#ffb080}
+.m2v-immersive-eyebrow{font:400 16px/1.5 Arial,sans-serif;margin:14px 0 0!important;color:#d1d9da}
+.m2v-immersive-heading h2{font:400 clamp(64px,7vw,118px)/.92 'Instrument Serif',Georgia,serif!important;letter-spacing:-.05em;margin:0!important;white-space:nowrap;animation:m2v-immersive-type 1.3s .15s cubic-bezier(.16,1,.3,1) both}
+.m2v-immersive-heading h2 em{font-weight:400;color:#ffb080}
+.m2v-portals{position:relative;display:flex;gap:12px;min-height:0;perspective:1400px;isolation:isolate}
+.m2v-opening[data-film=reflection] .m2v-portal{position:relative;display:block;min-width:0;flex:1;overflow:hidden;border:0;border-radius:3px;padding:0;isolation:isolate;color:#fff;background:#1c3038;text-align:left;transition:flex .95s cubic-bezier(.22,.8,.2,1),box-shadow .4s;animation:m2v-portal-enter 1.75s cubic-bezier(.16,1,.3,1) both;animation-delay:calc(.15s + var(--portal-i)*.18s);box-shadow:0 30px 50px #0004}
+.m2v-opening[data-film=reflection] .m2v-portal:hover{color:#fff;background:#1c3038;box-shadow:0 18px 45px #0008}
+.m2v-opening[data-film=reflection] .m2v-portal:focus-visible{outline-offset:4px;outline:3px solid #ffb080;z-index:5}
+.m2v-portal-media,.m2v-portal-veil{position:absolute;inset:0;display:block;pointer-events:none}
+.m2v-portal-media{overflow:hidden}
+.m2v-portal-media img,.m2v-portal-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none;display:block;opacity:1!important;filter:none!important;animation:m2v-portal-drift 18s ease-in-out infinite alternate;transform-origin:50% 55%}
+.m2v-portal[data-portal=city] img{object-position:49% 50%}
+.m2v-portal[data-portal=soul] img{object-position:38% 45%;animation-direction:alternate-reverse}
+.m2v-portal-veil{background:linear-gradient(180deg,#04101855,transparent 32%,#06141a1a 55%,#06141ad9);z-index:1}
+.m2v-portal[aria-pressed=true] .m2v-portal-veil{background:linear-gradient(90deg,#041018b3,transparent 85%),linear-gradient(180deg,#04101855,transparent 32%,#06141a1a 55%,#06141ad9)}
+.m2v-portal-index{position:absolute;top:22px;left:23px;right:23px;display:flex;gap:13px;align-items:center;font:500 14px/1.4 Arial,sans-serif;z-index:3;white-space:nowrap;letter-spacing:.03em;text-shadow:0 2px 10px #000}
+.m2v-portal-index>span{font-size:16px}
+.m2v-portal-caption{position:absolute;bottom:37%;left:28px;right:20px;z-index:3;display:grid;gap:12px;opacity:0;transform:translateY(18px);transition:opacity .4s,transform .65s;pointer-events:none}
+.m2v-portal-caption strong{font:400 clamp(32px,3.7vw,60px)/1.04 'Instrument Serif',Georgia,serif;letter-spacing:-.04em;max-width:10ch;text-wrap:balance}
+.m2v-portal-caption>span{font:400 16px/1.4 Arial,sans-serif;max-width:25ch}
+.m2v-portal-arrow{position:absolute;top:16px;right:19px;z-index:3;font:25px Arial,sans-serif;opacity:0;transition:opacity .4s}
+.m2v-immersive-layout[data-portal-stage=city] [data-portal=city],.m2v-immersive-layout[data-portal-stage=soul] [data-portal=soul],.m2v-immersive-layout[data-portal-stage=sea] [data-portal=sea]{flex:2.65}
+.m2v-portal[aria-pressed=true] .m2v-portal-caption{opacity:1;transform:none;transition-delay:.25s}
+.m2v-portal[aria-pressed=true] .m2v-portal-arrow{opacity:1}
+.m2v-immersive-location{position:absolute;z-index:10;bottom:-.12em;left:1.5%;right:1.5%;font:600 clamp(80px,16.4vw,290px)/1 Arial,sans-serif;letter-spacing:-.085em;pointer-events:none;color:#fff4e9;white-space:nowrap;text-align:center;mix-blend-mode:screen;animation:m2v-immersive-type 1.6s .5s cubic-bezier(.16,1,.3,1) both}
+.m2v-immersive-footnote{display:flex;justify-content:space-between;gap:20px;font:400 16px/1.4 Arial,sans-serif;color:#d1d9da}
+.m2v-explore-hint{display:flex;align-items:center;gap:10px;color:#ffb080}
+.m2v-explore-hint i{font:24px Arial,sans-serif;animation:m2v-portal-hint 2s ease-in-out 3}
+.m2v-opening[data-film=reflection] .m2v-bottom{display:flex!important;font-size:14px;letter-spacing:.03em;text-transform:none}
+.m2v-opening[data-film=reflection] .m2v-progress{height:2px}
+.m2v-opening[data-film=reflection].is-exploring .m2v-progress{visibility:hidden}
+@keyframes m2v-portal-enter{0%{clip-path:inset(46% 0);transform:translateY(55px) rotateY(18deg) scale(.9)}55%{clip-path:inset(0);transform:translateY(0) rotateY(-3deg) scale(1)}100%{clip-path:inset(0);transform:none}}
+@keyframes m2v-portal-drift{from{transform:scale(1.04) translateX(-1%)}to{transform:scale(1.15) translateX(1%)}}
+@keyframes m2v-immersive-type{from{clip-path:inset(100% 0 0);transform:translateY(35px)}to{clip-path:inset(0);transform:none}}
+@keyframes m2v-portal-hint{50%{transform:translateX(5px)}}
+@media(min-width:1000px) and (max-height:750px){.m2v-opening[data-film=reflection] .m2v-film{padding:18px 3.5vw;gap:14px}.m2v-immersive-layout{gap:14px}.m2v-immersive-heading h2{font-size:74px!important}.m2v-portal-caption{bottom:40%}.m2v-portal-caption strong{font-size:40px}.m2v-immersive-location{font-size:15vw}}
+@media(max-width:700px){
+ .m2v-opening[data-film=reflection] .m2v-film{padding:max(16px,env(safe-area-inset-top)) 18px max(18px,env(safe-area-inset-bottom));gap:16px}
+ .m2v-opening[data-film=reflection] .m2v-top{font-size:14px;letter-spacing:0}.m2v-opening[data-film=reflection] .m2v-top>span{max-width:18ch;line-height:1.4}.m2v-opening[data-film=reflection] .m2v-top button{font-size:14px;padding:9px 14px}
+ .m2v-immersive-layout{gap:15px;grid-template-rows:auto minmax(180px,1fr) auto}
+ .m2v-immersive-heading{display:block;padding:0}.m2v-immersive-heading .m2v-identity{font-size:27px!important}.m2v-immersive-eyebrow{font-size:16px;max-width:29ch;margin-top:9px!important}.m2v-immersive-heading h2{font-size:59px!important;letter-spacing:-.06em;margin-top:17px!important}
+ .m2v-portals{gap:6px}.m2v-opening[data-film=reflection] .m2v-portal{border-radius:2px;min-width:44px}
+ .m2v-immersive-layout[data-portal-stage=city] [data-portal=city],.m2v-immersive-layout[data-portal-stage=soul] [data-portal=soul],.m2v-immersive-layout[data-portal-stage=sea] [data-portal=sea]{flex:4.6}
+ .m2v-portal-index{left:14px;top:17px;right:9px;gap:8px;font-size:14px}.m2v-portal-index>span{display:none}.m2v-portal[aria-pressed=true] .m2v-portal-index>span{display:inline;font-size:14px}.m2v-portal-arrow{display:none}
+ .m2v-portal-caption{left:16px;right:12px;bottom:26%;gap:9px}.m2v-portal-caption strong{font-size:38px}.m2v-portal-caption>span{font-size:14px;max-width:22ch}.m2v-immersive-location{font-size:16.8vw;bottom:5%;left:0;right:0}
+ .m2v-immersive-footnote{font-size:14px;gap:12px}.m2v-immersive-footnote>span:last-child{max-width:15ch;text-align:right}.m2v-explore-hint{max-width:15ch;gap:7px}
+ .m2v-opening[data-film=reflection] .m2v-bottom{font-size:14px;gap:8px}.m2v-opening[data-film=reflection] .m2v-bottom>span{max-width:8ch}.m2v-opening[data-film=reflection] .m2v-controls{gap:6px;flex-wrap:nowrap}.m2v-opening[data-film=reflection] .m2v-controls button{font-size:14px;padding:10px 13px}
+}
+@media(max-width:360px){.m2v-immersive-heading h2{font-size:50px!important}.m2v-opening[data-film=reflection] .m2v-film{gap:12px;padding-inline:14px}.m2v-immersive-heading .m2v-identity{font-size:25px!important}.m2v-immersive-eyebrow{font-size:16px}.m2v-portal-caption strong{font-size:32px}.m2v-opening[data-film=reflection] .m2v-controls button{font-size:14px;padding-inline:7px;white-space:nowrap}.m2v-opening[data-film=reflection] .m2v-bottom>span{font-size:12px}.m2v-opening[data-film=reflection] .m2v-controls{gap:4px}}
+@media(max-height:650px) and (max-width:700px){.m2v-immersive-heading h2{font-size:43px!important;margin-top:10px!important}.m2v-immersive-eyebrow{display:none}.m2v-immersive-layout{gap:10px;grid-template-rows:auto minmax(120px,1fr) auto}.m2v-opening[data-film=reflection] .m2v-film{gap:10px}.m2v-portal-caption strong{font-size:29px}.m2v-portal-caption>span{display:none}.m2v-immersive-footnote>span:last-child{display:none}}
+@media(prefers-reduced-motion:reduce){.m2v-portal-media video{display:none}.m2v-portal-media img{animation:none!important;transform:none}.m2v-portals *{transition:none!important}.m2v-immersive-heading h2,.m2v-immersive-location{clip-path:none!important;transform:none!important}}
 </style><!-- m2v-film-head:end --></head>
 <body data-jury-concept="hola-valencia" class="playful"><!-- m2v-film-markup:start --><dialog class="m2v-opening" data-film="citrus" data-opener-for="hola-valencia" aria-label="Moving2Valencia introduction" data-film-duration="6200" style="--m2v-duration:6.2s" hidden><div class="m2v-film"><div class="m2v-art" aria-hidden="true"></div><div class="m2v-top"><span>Hola, Valencia / A warm welcome</span><button type="button" data-film-exit>Skip intro ↗</button></div><div class="m2v-center m2v-bespoke"><div class="m2v-hola-film"><div class="m2v-hola-film-copy"><p class="m2v-identity">Moving<span>2</span>Valencia</p><p class="m2v-hola-film-eyebrow">A Mediterranean state of mind</p><h2><span>¡Hola,</span><em>Valencia!</em></h2><p class="m2v-hola-film-caption">Sea air. City soul.<br> A life that feels like you.</p><div class="m2v-hola-film-index"><span>01 / Old town</span><span>02 / New perspectives</span><span>03 / Sea air</span></div></div><div class="m2v-hola-film-scene" role="img" aria-label="A sunlit Valencia composition: the Micalet tower, the eye-shaped Hemisfèric, oranges and Mediterranean waves"><svg class="m2v-vlc-scene" viewBox="0 0 720 620" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
 <defs>
@@ -846,6 +908,7 @@ if('IntersectionObserver' in window){const sectionLinks=[...nav.querySelectorAll
   // Restart the finite CSS film for each replay without recreating the content page.
   const film=dialog.querySelector('.m2v-film');film.style.display='none';void film.offsetHeight;film.style.display='';
   pause.hidden=reduce.matches;pause.textContent='Pause motion';pause.setAttribute('aria-pressed','false');
+  if(dialog.getAttribute('data-opener-for')==='immersive-valencia'){dialog.classList.remove('is-exploring');dialog.querySelector('[data-portal-stage]').setAttribute('data-portal-stage','city');dialog.querySelectorAll('[data-portal]').forEach(item=>item.setAttribute('aria-pressed',String(item.getAttribute('data-portal')==='city')));}
   try{if(!dialog.open)dialog.showModal();chooseFilm();if(video)video.currentTime=0;playMedia();schedule();}catch{video?.pause?.();dialog.hidden=true;return;}
  }
  dialog.querySelectorAll('[data-film-exit]').forEach(b=>b.addEventListener('click',finish));
@@ -853,6 +916,11 @@ if('IntersectionObserver' in window){const sectionLinks=[...nav.querySelectorAll
  dialog.addEventListener('cancel',event=>{event.preventDefault();finish();});
  dialog.addEventListener('close',()=>{clear();clearTimeout(closing);video?.pause?.();dialog.hidden=true;});
  document.querySelector('[data-film-replay]')?.addEventListener('click',()=>open(true));
+ if(dialog.getAttribute('data-opener-for')==='immersive-valencia'){
+  const stage=dialog.querySelector('[data-portal-stage]');
+  const portals=dialog.querySelectorAll('[data-portal]');
+  portals.forEach(portal=>portal.addEventListener('click',()=>{held=true;clear();dialog.classList.add('is-exploring');stage.setAttribute('data-portal-stage',portal.getAttribute('data-portal'));portals.forEach(item=>item.setAttribute('aria-pressed',String(item===portal)));}));
+ }
  // The review can resize an open film when switching between desktop and phone.
  addEventListener('resize',()=>{if(!video||!dialog.open)return;const time=video.currentTime,playing=!video.paused;if(!chooseFilm())return;video.addEventListener('loadedmetadata',()=>{if(!dialog.open)return;video.currentTime=Math.min(time,Number.isFinite(video.duration)?video.duration:time);if(playing&&!paused&&!reduce.matches)playMedia();},{once:true});});
  addEventListener('message',event=>{if(event.source===parent&&(event.origin===location.origin||location.protocol==='file:')&&event.data?.type==='m2v:replay-opening')open(true);});

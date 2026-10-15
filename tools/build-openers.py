@@ -5,6 +5,7 @@ import base64, hashlib, html, io, json, os, re, zipfile
 REPO=Path(__file__).resolve().parents[1]
 ROOT=REPO/'review'
 CSS=(ROOT/'m2v-openers.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-opener-scenes.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-editorial-magazine.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-hola-film.css').read_text(encoding='utf-8')+'\n'+(ROOT/'m2v-postcard-film.css').read_text(encoding='utf-8')
+CSS+='\n'+(ROOT/'m2v-immersive-film.css').read_text(encoding='utf-8')
 JS=(ROOT/'m2v-openers.js').read_text(encoding='utf-8')
 VERSION=hashlib.sha256((CSS+JS+(ROOT/'m2v-review-openers.js').read_text(encoding='utf-8')+(REPO/'tools/hola-valencia-scene.svg').read_text(encoding='utf-8')+hashlib.sha256((ROOT/'assets/postcard/editorial-postcard.mp4').read_bytes()+(ROOT/'assets/postcard/editorial-postcard-phone.mp4').read_bytes()).hexdigest()).encode()).hexdigest()[:10]
 FILMS={
@@ -14,7 +15,7 @@ FILMS={
  'valencia-plan':('assemble','Big dreams. Thoughtful little steps.','Let’s put your life in place.','The Valencia Plan / Coming together'),
  'editorial-journey':('thread','Every new chapter starts somewhere','From somewhere. To belonging.','Editorial Journey / Follow the thread'),
  'valencia-bento':('mosaic','The little things make a life','Make room for your Valencia.','Valencia Bento / Life, piece by piece'),
- 'immersive-valencia':('reflection','A different rhythm is calling','Let a new life come to you.','Immersive Valencia / A moment of stillness'),
+ 'immersive-valencia':('reflection','Three perspectives. One new life.','Feel it all.','Immersive Valencia / A new perspective'),
  'azahar':('blossom','Some things are meant to unfold','A new life, in full bloom.','Azahar / The art of beginning'),
  'a-new-horizon':('horizon','The distance becomes a possibility','Your horizon. A little closer.','A New Horizon / Room to imagine'),
  'new-horizon-client':('aperture','Somewhere new. Something familiar.','Step into your next chapter.','A New Horizon / An open invitation'),
@@ -62,8 +63,7 @@ def art(theme,portable,parent):
     if theme=='mosaic':
         return ''.join('<div class="m2v-mosaic-tile" style="--i:'+str(i)+'">'+image(asset,'')+'</div>' for i,asset in enumerate(['assets/valencia-market-hd.webp','assets/hero_valencia-1440.webp','assets/valencia-cabanyal-hd.webp']))+'<div class="m2v-mosaic-tile" style="--i:3">Benvinguts.</div>'
     if theme=='reflection':
-        rings=''.join('<ellipse cx="600" cy="400" rx="'+str(95+i*42)+'" ry="'+str(70+i*26)+'" style="--i:'+str(i)+'"/>' for i in range(12))
-        return '<div class="m2v-water-light"></div><div class="m2v-water-sun"></div><div class="m2v-water-rings"><svg viewBox="0 0 1200 800" preserveAspectRatio="none">'+rings+'</svg></div><div class="m2v-reflected">Moving2Valencia</div>'
+        return ''
     if theme=='blossom':
         petals=''.join('<ellipse class="m2v-path" pathLength="1" cx="300" cy="206" rx="55" ry="110" transform="rotate('+str(i*72)+' 300 300)"/>' for i in range(5))
         return '<div class="m2v-blossom"><svg viewBox="0 0 600 600">'+petals+'<circle cx="300" cy="300" r="21"/></svg></div><div class="m2v-blossom-core"></div>'
@@ -97,7 +97,17 @@ def composition(ident,parent,portable):
     if ident=='valencia-bento':
         return '<div class="m2v-bento-layout"><div class="m2v-bento-heading"><p class="m2v-section-label">The little things make a life</p>'+brand+'</div><div class="m2v-bento-board"><div class="m2v-bento-say"><h2>Make room <br>for <em>life.</em></h2></div><div class="m2v-bento-photo m2v-bento-market">'+image('assets/valencia-market-hd.webp','')+'<span>Your usual market.</span></div><div class="m2v-bento-sun"><span aria-hidden="true">✳</span><p>A sunnier<br>everyday.</p></div><div class="m2v-bento-photo m2v-bento-street">'+image('assets/valencia-cabanyal-hd.webp','')+'<span>Your new street.</span></div><div class="m2v-bento-welcome"><p>Hola,<br><strong>neighbour.</strong></p></div></div></div>'
     if ident=='immersive-valencia':
-        return '<div class="m2v-reflection-layout">'+brand+'<p class="m2v-section-label">Listen to the possibility</p><h2>A different<br><em>rhythm.</em></h2><div class="m2v-reflection-echo" aria-hidden="true">A different rhythm.</div><p class="m2v-support">Let a new life come to you.</p></div>'
+        movie=media('assets/coastal-waves-hd.mp4',parent,portable,'video/mp4')
+        phone=media('assets/coastal-waves-mobile.mp4',parent,portable,'video/mp4')
+        poster=media('assets/coastal-waves-poster.webp',parent,portable,'image/webp')
+        sea=image('assets/coastal-waves-poster.webp','m2v-sea-still')+'<video data-film-video data-film-desktop="'+movie+'" data-film-mobile="'+phone+'" data-film-poster-desktop="'+poster+'" data-film-poster-mobile="'+poster+'" muted loop playsinline preload="metadata" poster="'+poster+'"><source src="'+movie+'" type="video/mp4"></video>'
+        panels=''
+        for i,(key,name,title,detail,asset) in enumerate([
+            ('city','The city','A new perspective.','City of Arts and Sciences','15-new-horizon/img/hemisferic-night-1600.webp'),
+            ('soul','The soul','Find your familiar.','The streets of Ciutat Vella','assets/jury-photo-editorial-lane-1440.webp'),
+            ('sea','The sea','Room to breathe.','Mediterranean state of mind','assets/coastal-waves-poster.webp')]):
+            panels+='<button class="m2v-portal" type="button" data-portal="'+key+'" aria-pressed="'+('true' if i==0 else 'false')+'" aria-label="Explore '+name.lower()+'" style="--portal-i:'+str(i)+'"><span class="m2v-portal-media" aria-hidden="true">'+(sea if key=='sea' else image(asset,''))+'</span><span class="m2v-portal-veil" aria-hidden="true"></span><span class="m2v-portal-index">0'+str(i+1)+' <span>'+name+'</span></span><span class="m2v-portal-caption"><strong>'+title+'</strong><span>'+detail+'</span></span><span class="m2v-portal-arrow" aria-hidden="true">↗</span></button>'
+        return '<div class="m2v-immersive-layout" data-portal-stage="city"><div class="m2v-immersive-heading"><div>'+brand+'<p class="m2v-immersive-eyebrow">A city to discover. A life to make your own.</p></div><h2>Feel <em>it all.</em></h2></div><div class="m2v-portals" role="group" aria-label="Explore three perspectives of Valencia">'+panels+'<span class="m2v-immersive-location" aria-hidden="true">VALÈNCIA</span></div><div class="m2v-immersive-footnote"><span class="m2v-explore-hint"><i aria-hidden="true">↔</i> Choose a perspective</span><span>Your next chapter, with Christa Brokke.</span></div></div>'
     if ident=='azahar':
         return '<div class="m2v-bloom-layout"><p class="m2v-section-label">The art of beginning</p><div class="m2v-bloom-name"><span class="m2v-bloom-a" aria-hidden="true">a</span><h2>azahar</h2></div><div class="m2v-bloom-caption"><span class="m2v-bloom-line"></span><p>Let life unfold.</p></div>'+brand+'</div>'
     if ident=='a-new-horizon':
@@ -109,7 +119,8 @@ def composition(ident,parent,portable):
 def markup(ident,parent,portable=False):
     theme,kicker,caption,label=FILMS[ident]
     backdrop=art(theme,portable,parent) if theme in ['tide','thread','reflection','blossom','horizon'] else ('<div class="m2v-plan-grid"></div>' if theme=='assemble' else '')
-    return '<!-- m2v-film-markup:start --><dialog class="m2v-opening" data-film="'+theme+'" data-opener-for="'+ident+'" aria-label="Moving2Valencia introduction"'+((' data-film-duration="'+str({'hola-valencia':6200,'editorial-journey':9200}[ident])+'" style="--m2v-duration:'+str({'hola-valencia':6.2,'editorial-journey':9.2}[ident])+'s"') if ident in ['hola-valencia','editorial-journey'] else '')+' hidden><div class="m2v-film"><div class="m2v-art" aria-hidden="true">'+backdrop+'</div><div class="m2v-top"><span>'+html.escape(label)+'</span><button type="button" data-film-exit>Skip intro ↗</button></div><div class="m2v-center m2v-bespoke">'+composition(ident,parent,portable)+'</div><div class="m2v-bottom"><span>València, España</span><div class="m2v-controls"><button type="button" data-film-pause aria-pressed="false">Pause motion</button><button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button></div></div><div class="m2v-progress" aria-hidden="true"></div></div></dialog><!-- m2v-film-markup:end -->'
+    durations={'hola-valencia':6200,'editorial-journey':9200,'immersive-valencia':7800}
+    return '<!-- m2v-film-markup:start --><dialog class="m2v-opening" data-film="'+theme+'" data-opener-for="'+ident+'" aria-label="Moving2Valencia introduction"'+((' data-film-duration="'+str(durations[ident])+'" style="--m2v-duration:'+str(durations[ident]/1000)+'s"') if ident in durations else '')+' hidden><div class="m2v-film"><div class="m2v-art" aria-hidden="true">'+backdrop+'</div><div class="m2v-top"><span>'+html.escape(label)+'</span><button type="button" data-film-exit>Skip intro ↗</button></div><div class="m2v-center m2v-bespoke">'+composition(ident,parent,portable)+'</div><div class="m2v-bottom"><span>València, España</span><div class="m2v-controls"><button type="button" data-film-pause aria-pressed="false">Pause motion</button><button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button></div></div><div class="m2v-progress" aria-hidden="true"></div></div></dialog><!-- m2v-film-markup:end -->'
 
 def inject(code,ident,parent,portable=False):
     code=re.sub(r'<!-- m2v-film-(head|markup|foot):start -->[\s\S]*?<!-- m2v-film-\1:end -->','',code)
@@ -118,6 +129,7 @@ def inject(code,ident,parent,portable=False):
     else:prefix+='/'
     head='<style>'+CSS+'</style>' if portable else '<link rel="stylesheet" href="'+prefix+'m2v-openers.css?v='+VERSION+'"><link rel="stylesheet" href="'+prefix+'m2v-opener-scenes.css?v='+VERSION+'">'+('<link rel="stylesheet" href="'+prefix+'m2v-editorial-magazine.css?v='+VERSION+'">' if ident=='casa-editorial' else '')+('<link rel="stylesheet" href="'+prefix+'m2v-hola-film.css?v='+VERSION+'">' if ident=='hola-valencia' else '')+('<link rel="stylesheet" href="'+prefix+'m2v-postcard-film.css?v='+VERSION+'">' if ident=='editorial-journey' else '')
     script='<script>'+JS+'</script>' if portable else '<script src="'+prefix+'m2v-openers.js?v='+VERSION+'" defer></script>'
+    if not portable and ident=='immersive-valencia':head+='<link rel="stylesheet" href="'+prefix+'m2v-immersive-film.css?v='+VERSION+'">'
     code=code.replace('</head>','<!-- m2v-film-head:start -->'+head+'<!-- m2v-film-head:end --></head>',1)
     code=re.sub(r'(<body\b[^>]*>)',lambda m:m[1]+markup(ident,parent,portable),code,count=1)
     replay='<div class="m2v-opener-replay"><span>Moving2Valencia · The opening moment</span><button type="button" data-film-replay>Replay the opening ↗</button></div>'

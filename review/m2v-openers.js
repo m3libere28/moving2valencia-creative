@@ -16,6 +16,7 @@
   // Restart the finite CSS film for each replay without recreating the content page.
   const film=dialog.querySelector('.m2v-film');film.style.display='none';void film.offsetHeight;film.style.display='';
   pause.hidden=reduce.matches;pause.textContent='Pause motion';pause.setAttribute('aria-pressed','false');
+  if(dialog.getAttribute('data-opener-for')==='immersive-valencia'){dialog.classList.remove('is-exploring');dialog.querySelector('[data-portal-stage]').setAttribute('data-portal-stage','city');dialog.querySelectorAll('[data-portal]').forEach(item=>item.setAttribute('aria-pressed',String(item.getAttribute('data-portal')==='city')));}
   try{if(!dialog.open)dialog.showModal();chooseFilm();if(video)video.currentTime=0;playMedia();schedule();}catch{video?.pause?.();dialog.hidden=true;return;}
  }
  dialog.querySelectorAll('[data-film-exit]').forEach(b=>b.addEventListener('click',finish));
@@ -23,6 +24,11 @@
  dialog.addEventListener('cancel',event=>{event.preventDefault();finish();});
  dialog.addEventListener('close',()=>{clear();clearTimeout(closing);video?.pause?.();dialog.hidden=true;});
  document.querySelector('[data-film-replay]')?.addEventListener('click',()=>open(true));
+ if(dialog.getAttribute('data-opener-for')==='immersive-valencia'){
+  const stage=dialog.querySelector('[data-portal-stage]');
+  const portals=dialog.querySelectorAll('[data-portal]');
+  portals.forEach(portal=>portal.addEventListener('click',()=>{held=true;clear();dialog.classList.add('is-exploring');stage.setAttribute('data-portal-stage',portal.getAttribute('data-portal'));portals.forEach(item=>item.setAttribute('aria-pressed',String(item===portal)));}));
+ }
  // The review can resize an open film when switching between desktop and phone.
  addEventListener('resize',()=>{if(!video||!dialog.open)return;const time=video.currentTime,playing=!video.paused;if(!chooseFilm())return;video.addEventListener('loadedmetadata',()=>{if(!dialog.open)return;video.currentTime=Math.min(time,Number.isFinite(video.duration)?video.duration:time);if(playing&&!paused&&!reduce.matches)playMedia();},{once:true});});
  addEventListener('message',event=>{if(event.source===parent&&(event.origin===location.origin||location.protocol==='file:')&&event.data?.type==='m2v:replay-opening')open(true);});

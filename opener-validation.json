@@ -38,7 +38,7 @@
   ],
   "browser": "Microsoft Edge",
   "date": "2026-10-15",
-  "version": "6a16d55b71",
+  "version": "7db1dab09a",
   "distinctCompositions": 10,
   "desktopLayoutProfilesChecked": 1440,
   "mobileLayoutProfilesChecked": 375,
@@ -118,5 +118,28 @@
     "pageContentOutsideOpeningPreserved": true,
     "otherOpeningCompositionsPreserved": true,
     "responsiveFilmSwap": "passed: preserves progress across phone and desktop"
+  },
+  "immersiveValencia": {
+    "composition": "Three cinematic photographic portals with kinetic Valencia word art",
+    "viewports": [
+      [
+        1440,
+        900
+      ],
+      [
+        375,
+        812
+      ],
+      [
+        320,
+        740
+      ]
+    ],
+    "sceneExpansion": "touch and keyboard passed",
+    "interactionHoldsOpener": true,
+    "nativeVideoPauseResume": "passed",
+    "reducedMotion": "still imagery, no animation or autoplay",
+    "originalContentPreserved": true,
+    "otherOpenerCompositionsPreserved": true
   }
 }
