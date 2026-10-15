@@ -1,6 +1,6 @@
 """Add original, theme-specific brand films without rebuilding the existing sites."""
 from pathlib import Path
-import base64, hashlib, html, io, json, os, re, zipfile
+import base64, hashlib, html, io, json, math, os, re, zipfile
 
 REPO=Path(__file__).resolve().parents[1]
 ROOT=REPO/'review'
@@ -117,11 +117,45 @@ def composition(ident,parent,portable):
         return '<div class="m2v-aperture-layout"><div class="m2v-aperture-copy"><p class="m2v-section-label">An open invitation</p><h2>what if<br><em>this was</em><br>home?</h2>'+brand+'</div><div class="m2v-doorway">'+image('15-new-horizon/img/malvarrosa-sky-1600.webp','')+'<span>Step into your next chapter.</span></div></div>'
     raise ValueError(ident)
 
+def curve_magazine(code):
+    """Twenty connected 3D hinges bend each printed leaf without rasterizing its type."""
+    def element(source,klass):
+        start=source.index('<div class="'+klass+'">')
+        depth=0
+        for token in re.finditer(r'</?div\b[^>]*>',source[start:]):
+            depth+=-1 if token[0].startswith('</') else 1
+            if depth==0:return source[start:start+token.end()]
+        raise ValueError(klass)
+    def sheet(front,back='',moving=False):
+        chain=''
+        for i in reversed(range(20)):
+            bend=round(1.6+2.3*math.sin((i+1)/20*math.pi),4)
+            frontface='<div class="m2v-mag-slice-face m2v-mag-slice-front"><div class="m2v-mag-slice-print">'+front+'</div></div>'
+            backface='<div class="m2v-mag-slice-face m2v-mag-slice-back"><div class="m2v-mag-slice-print">'+back+'</div></div>' if back else ''
+            chain='<div class="m2v-mag-hinge'+(' m2v-mag-hinge-root' if i==0 else '')+'" style="--slice:'+str(i)+';--bend:'+str(bend)+'deg">'+frontface+backface+chain+'</div>'
+        return chain
+    leaf=element(code,'m2v-magazine-leaf')
+    front=element(leaf,'m2v-magazine-front');back=element(leaf,'m2v-magazine-back')
+    code=code.replace(leaf,'<div class="m2v-magazine-leaf">'+sheet(front,back,True)+'</div>')
+    right=element(code,'m2v-magazine-right')
+    code=code.replace(right,'<div class="m2v-magazine-right-curve">'+sheet(right)+'</div>')
+    # Portable editions store each photo once; curved strips share its decoded image.
+    masters={}
+    def share(match):
+        tag=match[0];src=re.search(r'src="(data:image/[^\"]+)"',tag)
+        if not src:return tag
+        if src[1] in masters:return tag.replace(src[0],'data-print-copy="'+masters[src[1]]+'"')
+        ident='mag-print-'+str(len(masters));masters[src[1]]=ident
+        return tag.replace('<img ','<img data-print-master="'+ident+'" ',1)
+    return re.sub(r'<img\b[^>]*>',share,code)
+
 def markup(ident,parent,portable=False):
     theme,kicker,caption,label=FILMS[ident]
     backdrop=art(theme,portable,parent) if theme in ['tide','thread','reflection','blossom','horizon'] else ('<div class="m2v-plan-grid"></div>' if theme=='assemble' else '')
-    durations={'hola-valencia':6200,'editorial-journey':9200,'immersive-valencia':7800,'azahar':8800}
-    return '<!-- m2v-film-markup:start --><dialog class="m2v-opening" data-film="'+theme+'" data-opener-for="'+ident+'" aria-label="Moving2Valencia introduction"'+((' data-film-duration="'+str(durations[ident])+'" style="--m2v-duration:'+str(durations[ident]/1000)+'s"') if ident in durations else '')+' hidden><div class="m2v-film"><div class="m2v-art" aria-hidden="true">'+backdrop+'</div><div class="m2v-top"><span>'+html.escape(label)+'</span><button type="button" data-film-exit>Skip intro ↗</button></div><div class="m2v-center m2v-bespoke">'+composition(ident,parent,portable)+'</div><div class="m2v-bottom"><span>València, España</span><div class="m2v-controls"><button type="button" data-film-pause aria-pressed="false">Pause motion</button><button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button></div></div><div class="m2v-progress" aria-hidden="true"></div></div></dialog><!-- m2v-film-markup:end -->'
+    durations={'casa-editorial':6400,'hola-valencia':6200,'editorial-journey':9200,'immersive-valencia':7800,'azahar':8800}
+    scene=composition(ident,parent,portable)
+    if ident=='casa-editorial':scene=curve_magazine(scene)
+    return '<!-- m2v-film-markup:start --><dialog class="m2v-opening" data-film="'+theme+'" data-opener-for="'+ident+'" aria-label="Moving2Valencia introduction"'+((' data-film-duration="'+str(durations[ident])+'" style="--m2v-duration:'+str(durations[ident]/1000)+'s"') if ident in durations else '')+' hidden><div class="m2v-film"><div class="m2v-art" aria-hidden="true">'+backdrop+'</div><div class="m2v-top"><span>'+html.escape(label)+'</span><button type="button" data-film-exit>Skip intro ↗</button></div><div class="m2v-center m2v-bespoke">'+scene+'</div><div class="m2v-bottom"><span>València, España</span><div class="m2v-controls"><button type="button" data-film-pause aria-pressed="false">Pause motion</button><button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button></div></div><div class="m2v-progress" aria-hidden="true"></div></div></dialog><!-- m2v-film-markup:end -->'
 
 def inject(code,ident,parent,portable=False):
     code=re.sub(r'<!-- m2v-film-(head|markup|foot):start -->[\s\S]*?<!-- m2v-film-\1:end -->','',code)

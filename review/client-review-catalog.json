@@ -65,8 +65,8 @@
     "zip": "client-editions/new-horizon/website.zip",
     "desktop": "assets/client-review/new-horizon-client-desktop.webp",
     "mobile": "assets/client-review/new-horizon-client-mobile.webp",
-    "downloadSize": 7073312,
-    "zipSize": 3835308
+    "downloadSize": 7076554,
+    "zipSize": 3835963
   },
   {
     "id": "casa-editorial",
@@ -88,7 +88,7 @@
       "A personal arrival journal",
       "Everyday priorities carried into an enquiry"
     ],
-    "downloadSize": 6249081,
+    "downloadSize": 6286467,
     "zipSize": null
   },
   {
@@ -111,7 +111,7 @@
       "Visual neighbourhood exploration",
       "Preferences that help shape the first conversation"
     ],
-    "downloadSize": 4605063,
+    "downloadSize": 4608305,
     "zipSize": null
   },
   {
@@ -137,7 +137,7 @@
       "An inviting daily-life itinerary",
       "Warm colours and a playful, welcoming voice"
     ],
-    "downloadSize": 11683205,
+    "downloadSize": 11686447,
     "zipSize": null
   },
   {
@@ -160,7 +160,7 @@
       "A checklist with clear progress",
       "An editable starting plan for the conversation"
     ],
-    "downloadSize": 4545783,
+    "downloadSize": 4549025,
     "zipSize": null
   },
   {
@@ -185,7 +185,7 @@
       "An illustrated route through planning areas",
       "A personal consultation-time request"
     ],
-    "downloadSize": 10774549,
+    "downloadSize": 9486491,
     "zipSize": null
   },
   {
@@ -211,7 +211,7 @@
       "A saved city board and move-month choice",
       "A personal enquiry built from the shortlist"
     ],
-    "downloadSize": 5184002,
+    "downloadSize": 5187244,
     "zipSize": null
   },
   {
@@ -234,7 +234,7 @@
       "Your story and practical support in clear chapters",
       "Household and timing choices for a personal scope"
     ],
-    "downloadSize": 26004883,
+    "downloadSize": 26008125,
     "zipSize": null
   },
   {
@@ -286,7 +286,7 @@
       "An exploratory neighbourhood finder",
       "Practical planning around personal priorities"
     ],
-    "downloadSize": 10143624,
+    "downloadSize": 10146866,
     "zipSize": null
   },
   {
@@ -311,7 +311,7 @@
       "Real city photographs and everyday possibilities",
       "A complete route into a personal conversation"
     ],
-    "downloadSize": 3286204,
+    "downloadSize": 3289446,
     "zipSize": null
   }
 ]

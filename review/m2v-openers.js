@@ -3,6 +3,7 @@
  const dialog=document.querySelector('.m2v-opening');if(!dialog)return;
  const reduce=matchMedia('(prefers-reduced-motion: reduce)'),pause=dialog.querySelector('[data-film-pause]');
  const video=dialog.querySelector('video[data-film-video]');
+ if(dialog.getAttribute('data-opener-for')==='casa-editorial')dialog.querySelectorAll('img[data-print-copy]').forEach(img=>{const master=dialog.querySelector('img[data-print-master="'+img.getAttribute('data-print-copy')+'"]');if(master)img.setAttribute('src',master.getAttribute('src'));});
  const chooseFilm=()=>{if(!video?.getAttribute)return false;const mode=matchMedia('(max-width: 900px)').matches?'mobile':'desktop',src=video.getAttribute('data-film-'+mode),poster=video.getAttribute('data-film-poster-'+mode),changed=Boolean(src&&video.getAttribute('src')!==src);if(changed)video.setAttribute('src',src);if(poster)video.setAttribute('poster',poster);if(changed)video.load?.();return changed;};
  const playMedia=()=>{if(video&&!reduce.matches){const playing=video.play?.();playing?.catch?.(()=>{});}};
  const duration=Math.min(10000,Math.max(3000,Number(dialog.getAttribute?.('data-film-duration'))||4800));

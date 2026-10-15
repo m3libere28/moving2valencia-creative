@@ -38,7 +38,7 @@
   ],
   "browser": "Microsoft Edge",
   "date": "2026-10-15",
-  "version": "6de30556a7",
+  "version": "ecfb909b22",
   "distinctCompositions": 10,
   "desktopLayoutProfilesChecked": 1440,
   "mobileLayoutProfilesChecked": 375,
@@ -56,7 +56,14 @@
       812
     ],
     "contentOutsideOpeningPreserved": true,
-    "otherOpeningCompositionsPreserved": true
+    "otherOpeningCompositionsPreserved": true,
+    "connectedBendingSectionsPerPage": 20,
+    "durationMs": 6400,
+    "continuousPrintSurfaces": true,
+    "portableSharedImages": {
+      "total": 60,
+      "unique": 3
+    }
   },
   "holaValenciaFilm": {
     "durationMs": 6200,
@@ -92,7 +99,7 @@
   "editorialJourneyPostcard": {
     "modeling": "Blender 5.2.1",
     "renderer": "Unreal Engine 5.8",
-    "framesPerFilm": 192,
+    "framesPerFilm": 480,
     "durationSeconds": 8,
     "dedicatedDesktopAndPhoneFilms": true,
     "browserViewports": [
@@ -117,7 +124,12 @@
     "reducedMotionStaticFallback": "passed",
     "pageContentOutsideOpeningPreserved": true,
     "otherOpeningCompositionsPreserved": true,
-    "responsiveFilmSwap": "passed: preserves progress across phone and desktop"
+    "responsiveFilmSwap": "passed: preserves progress across phone and desktop",
+    "frameRate": 60,
+    "paperMaterials": "cotton fibres, wrinkles, worn-edge patina and matte roughness",
+    "geometry": "shallow handling creases, softened dog-ear corner and bowed stock",
+    "motion": "continuous quintic flip and soft contact settle",
+    "desktopCameraKeepsCardInFrame": true
   },
   "immersiveValencia": {
     "composition": "Three cinematic photographic portals with kinetic Valencia word art",
