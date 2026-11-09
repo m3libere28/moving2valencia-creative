@@ -557,16 +557,61 @@ form.ask{display:grid;gap:1rem}
 .horizon-package-action p{color:var(--ink-soft)}
 .horizon-reviews{background:var(--sea);color:var(--paper)}
 .horizon-reviews .label,.horizon-reviews h2 em{color:var(--citrus)}
+.horizon-reviews h2{font-size:clamp(2.35rem,4.7vw,4.4rem)}
 .horizon-reviews .lead{color:var(--sea-mist)}
-.horizon-reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(25px,6vw,84px);align-items:center}
-.horizon-reviews .btn{margin-top:1.4rem}
-.horizon-quote{
-  margin:0;border:1px solid var(--rule-dark);border-left:3px solid var(--citrus);
-  padding:clamp(20px,4vw,46px);background:rgba(247,242,233,.06)
+.horizon-story-set{min-inline-size:0;border:0;padding:0;margin:clamp(1.6rem,4vw,3rem) 0 0}
+.horizon-story-set legend{padding:0;margin-bottom:.7rem;color:var(--sea-mist);font-weight:600}
+.horizon-story-tabs{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1rem}
+.horizon-story-tabs label{
+  display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+  padding:.55rem 1rem;border:1px solid #b5c6d5;border-radius:999px;
+  color:var(--paper);font-weight:600;line-height:1.3;cursor:pointer
 }
-.horizon-quote blockquote{margin:0;font:italic 500 clamp(1.42rem,2.6vw,2.3rem)/1.26 var(--f-display)}
-.horizon-quote figcaption{margin-top:1.2rem;color:var(--sea-mist)}
-.horizon-quote a,.horizon-contact-links a,.footer .horizon-footer-mail{text-underline-offset:.2em}
+.horizon-story-tabs label:hover{border-color:var(--citrus)}
+#story-family:checked~.horizon-story-tabs label[for="story-family"],
+#story-paperwork:checked~.horizon-story-tabs label[for="story-paperwork"],
+#story-rental:checked~.horizon-story-tabs label[for="story-rental"]{
+  background:var(--citrus);border-color:var(--citrus);color:var(--ink)
+}
+#story-family:focus-visible~.horizon-story-tabs label[for="story-family"],
+#story-paperwork:focus-visible~.horizon-story-tabs label[for="story-paperwork"],
+#story-rental:focus-visible~.horizon-story-tabs label[for="story-rental"]{
+  outline:3px solid var(--paper);outline-offset:3px
+}
+.horizon-story-deck{display:grid}
+.horizon-story-card{
+  display:grid;grid-area:1/1;visibility:hidden;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  background:var(--paper);color:var(--ink);box-shadow:0 14px 40px #06192766;border-radius:4px;overflow:hidden;
+}
+#story-family:checked~.horizon-story-deck #story-family-card,
+#story-paperwork:checked~.horizon-story-deck #story-paperwork-card,
+#story-rental:checked~.horizon-story-deck #story-rental-card{
+  visibility:visible;animation:horizon-story-arrival .38s cubic-bezier(.18,.72,.29,1) both
+}
+.horizon-story-image{position:relative;min-height:255px;margin:0;overflow:hidden;background:var(--limestone-deep)}
+.horizon-story-image img{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+.horizon-story-image figcaption{
+  position:absolute;left:.7rem;bottom:.7rem;padding:.36rem .65rem;background:var(--paper);
+  color:var(--sea);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase
+}
+.horizon-story-copy{padding:clamp(1.2rem,4vw,3rem);border-left:3px solid var(--citrus)}
+.horizon-story-copy .horizon-story-route{margin:0 0 .55rem;color:var(--terra);font-weight:700;font-size:.79rem;letter-spacing:.09em;text-transform:uppercase}
+.horizon-story-copy h3{margin:0 0 .6rem;color:var(--sea);font-size:var(--t-h3)}
+.horizon-story-copy>p{color:var(--ink-soft)}
+.horizon-story-copy blockquote{
+  margin:1rem 0 .48rem;padding-top:.7rem;border-top:1px solid var(--rule);color:var(--sea);
+  font:italic 500 clamp(1.18rem,2.1vw,1.7rem)/1.24 var(--f-display)
+}
+.horizon-story-copy .horizon-story-credit{font-weight:600}
+.horizon-story-google{margin-top:1.25rem}
+@keyframes horizon-story-arrival{from{opacity:.45;transform:translateY(7px)}to{opacity:1;transform:none}}
+@media(max-width:680px){
+  .horizon-story-card{grid-template-columns:1fr}
+  .horizon-story-image{min-height:clamp(160px,43vw,245px)}
+  .horizon-story-copy{border-left:0;border-top:3px solid var(--citrus)}
+}
+@media(prefers-reduced-motion:reduce){.horizon-story-set .horizon-story-deck .horizon-story-card{animation:none!important}}
+.horizon-contact-links a,.footer .horizon-footer-mail{text-underline-offset:.2em}
 .horizon-contact-links{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;margin:.5rem 0 0}
 .horizon-contact-links a{display:inline-flex;align-items:center;min-height:44px}
 .horizon-hours{margin:0;color:var(--ink-soft)}
@@ -580,7 +625,7 @@ form.ask{display:grid;gap:1rem}
 }
 .horizon-logo-options button[aria-pressed="true"]{color:var(--ink);background:var(--citrus);border-color:var(--citrus)}
 @media(max-width:680px){
-  .horizon-package-grid,.horizon-reviews-grid{grid-template-columns:1fr}
+  .horizon-package-grid{grid-template-columns:1fr}
   .nav .horizon-mark{width:clamp(120px,37vw,153px)}
 }
 </style>
@@ -834,17 +879,48 @@ form.ask{display:grid;gap:1rem}
 
 
 <section class="chapter horizon-reviews on-dark" id="reviews" aria-labelledby="reviews-title">
-  <div class="wrap horizon-reviews-grid">
-    <div>
-      <p class="label kicker">Client experiences</p>
-      <h2 id="reviews-title" style="margin-top:1rem">What it’s like <em>to make the move.</em></h2>
-      <p class="lead">Hear from people who worked with Christa as they found homes, sorted out paperwork and settled into life around Valencia.</p>
-      <a class="btn btn-citrus" href="https://www.google.com/maps?cid=10361883075186195757">Read Google reviews <span class="arrow" aria-hidden="true">↗</span></a>
-    </div>
-    <figure class="horizon-quote">
-      <blockquote>“Her help was instrumental in finding a home, registering at the town hall and enrolling our eldest son into a school.”</blockquote>
-      <figcaption>Dave Shotbolt and family · 2018–2019<br><a href="https://moving2valencia.eu/testimonials/">Read their story on Moving2Valencia</a></figcaption>
-    </figure>
+  <div class="wrap">
+    <p class="label kicker">Client stories</p>
+    <h2 id="reviews-title" style="margin-top:1rem">What it’s like <em>to make the move.</em></h2>
+    <p class="lead">Read how three clients found a home, navigated appointments or got their children started in school with Christa’s help.</p>
+    <fieldset class="horizon-story-set">
+      <legend>Choose a story</legend>
+      <input class="sr" type="radio" name="client-story" id="story-family" aria-controls="story-family-card" checked> <input class="sr" type="radio" name="client-story" id="story-paperwork" aria-controls="story-paperwork-card"> <input class="sr" type="radio" name="client-story" id="story-rental" aria-controls="story-rental-card">
+      <div class="horizon-story-tabs"><label for="story-family">Moving with children</label> <label for="story-paperwork">Paperwork and appointments</label> <label for="story-rental">Finding a rental</label></div>
+      <div class="horizon-story-deck">
+        <article class="horizon-story-card" id="story-family-card" aria-labelledby="story-family-title">
+          <figure class="horizon-story-image"><img src="../15-new-horizon/img/plaza-virgen-800.webp" alt="" width="800" height="533" loading="lazy" decoding="async"><figcaption>Scenes from Valencia</figcaption></figure>
+          <div class="horizon-story-copy">
+            <p class="horizon-story-route">London → Valencia</p>
+            <h3 id="story-family-title">A home and a school, together</h3>
+            <p>While Dave was still working in London, Christa helped his family find a home, register at the town hall and enrol their eldest son in school.</p>
+            <blockquote>“I would happily recommend Christa’s services”</blockquote>
+            <p class="horizon-story-credit">Dave Shotbolt and family · 2018–2019</p>
+          </div>
+        </article>
+<article class="horizon-story-card" id="story-paperwork-card" aria-labelledby="story-paperwork-title">
+          <figure class="horizon-story-image"><img src="../15-new-horizon/img/mercado-facade-800.webp" alt="" width="800" height="533" loading="lazy" decoding="async"><figcaption>Scenes from Valencia</figcaption></figure>
+          <div class="horizon-story-copy">
+            <p class="horizon-story-route">Canada → Valencia</p>
+            <h3 id="story-paperwork-title">Someone beside you at the appointment</h3>
+            <p>Valerie wanted help with residence cards during her move from Canada. Christa arranged the appointments, prepared the forms and went along to translate.</p>
+            <blockquote>“She came with us to our appointments and translated for us.”</blockquote>
+            <p class="horizon-story-credit">Valerie Jones · 2018</p>
+          </div>
+        </article>
+<article class="horizon-story-card" id="story-rental-card" aria-labelledby="story-rental-title">
+          <figure class="horizon-story-image"><img src="../15-new-horizon/img/el-carmen-square-800.webp" alt="" width="800" height="533" loading="lazy" decoding="async"><figcaption>Scenes from Valencia</figcaption></figure>
+          <div class="horizon-story-copy">
+            <p class="horizon-story-route">London → Valencia</p>
+            <h3 id="story-rental-title">Confidence to choose a home</h3>
+            <p>Rebecca and her husband needed help arranging viewings and understanding the rental contract. Christa negotiated with local agencies and guided them through the paperwork.</p>
+            <blockquote>“giving us the confidence to make decisions”</blockquote>
+            <p class="horizon-story-credit">Rebecca Donnelly · 2016</p>
+          </div>
+        </article>
+      </div>
+    </fieldset>
+    <div class="horizon-story-google"><a class="btn btn-citrus" href="https://www.google.com/maps?cid=10361883075186195757">More reviews on Google <span class="arrow" aria-hidden="true">↗</span></a></div>
   </div>
 </section>
 
