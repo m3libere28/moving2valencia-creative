@@ -45,12 +45,14 @@
 [data-direction="personal-welcome"] .horizon-reviews {background:#2e1d1b}
 
 .m2v-opening.direction-film {--m2v-duration:5.2s}
-.m2v-opening[data-film="clear-route"] {--m2v-bg:#122d40;--m2v-ink:#f7f2e9;--m2v-accent:#f2ac59}
+.m2v-opening.direction-film::backdrop {background:transparent}
+.m2v-opening.direction-film.is-leaving {transform:none}
+.m2v-opening[data-film="clear-route"] {--m2v-bg:#122d40;--m2v-ink:#f7f2e9;--m2v-accent:#f2ac59;--m2v-duration:5.6s}
 .m2v-opening[data-film="personal-welcome"] {--m2v-bg:#f2e4d4;--m2v-ink:#653629;--m2v-accent:#9f3e29}
 .m2v-opening[data-film="clear-route"] .m2v-film {
-  background:radial-gradient(ellipse at 50% 30%,#204f69 0%,transparent 65%),
-    repeating-linear-gradient(0deg,transparent 0 33px,#f7f2e914 34px 35px),
-    repeating-linear-gradient(90deg,transparent 0 33px,#f7f2e914 34px 35px)
+  background:radial-gradient(ellipse at 70% 40%,#245370 0%,transparent 67%),
+    repeating-linear-gradient(0deg,transparent 0 43px,#f7f2e910 44px 45px),
+    repeating-linear-gradient(90deg,transparent 0 43px,#f7f2e910 44px 45px)
 }
 .m2v-opening[data-film="personal-welcome"] .m2v-film {
   background:radial-gradient(ellipse at 50% 31%,#fff5e8 0%,#f2e4d4 62%,#ead5bd 100%)
@@ -67,38 +69,68 @@
   letter-spacing:-.04em;animation:direction-reveal 1.25s 1.45s both
 }
 .direction-film-center h2 em {color:var(--m2v-accent)}
-.direction-film-center>p {font-size:clamp(.95rem,2vw,1.2rem);margin:.75rem 0 0;animation:direction-reveal .9s 1.8s both}
+.direction-film-lead {font-size:clamp(.95rem,2vw,1.2rem);margin:.75rem 0 0;animation:direction-reveal .9s 1.8s both}
+.direction-route-cover {
+  width:min(100%,1170px);margin:auto;display:grid;grid-template-columns:.86fr 1fr;
+  gap:clamp(1.6rem,5vw,5.2rem);align-items:center;text-align:left
+}
+.direction-route-copy .direction-film-logo {margin:0 0 clamp(.8rem,3vh,2rem);object-position:left center}
+.direction-route-copy h2 {font-size:clamp(2.4rem,6.9vw,6.65rem);max-width:10ch;margin:0}
+.direction-film-kicker {
+  margin:0 0 .7rem;color:#ffca90;font-weight:650;font-size:.76rem;letter-spacing:.15em;text-transform:uppercase;
+  animation:direction-reveal .85s .7s both
+}
+.direction-route-picture {margin:0;min-width:0}
+.direction-route-window {
+  position:relative;isolation:isolate;overflow:hidden;height:clamp(218px,56vh,500px);
+  border-radius:50% 50% .3rem .3rem / 38% 38% .3rem .3rem;
+  border:1px solid #f2ac5966;background:#1e3f53;
+  animation:direction-window 1.6s .18s cubic-bezier(.24,.72,.19,1) both
+}
+.direction-route-window img {width:100%;height:100%;object-fit:cover;object-position:52% 57%;animation:direction-photo 4.9s both}
+.direction-route-window::after {position:absolute;content:"";inset:0;background:linear-gradient(transparent 45%,#081d32bf 100%);pointer-events:none}
+.direction-route-picture figcaption {
+  display:flex;justify-content:space-between;gap:.7rem;margin-top:.55rem;color:#ffdcad;
+  font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;animation:direction-reveal 1s .9s both
+}
 .direction-map {
-  display:block;width:min(100%,650px);height:clamp(65px,16vh,130px);
-  margin:.9rem auto .5rem;color:var(--m2v-accent);overflow:visible
+  display:block;position:absolute;z-index:1;width:100%;height:auto;left:0;bottom:0;
+  color:#ffd082;overflow:visible;filter:drop-shadow(0 2px 5px #09152399)
 }
 .direction-map path {fill:none;stroke-width:2.7;stroke-linecap:round}
-.direction-map-underlay {stroke:#f7f2e944}
+.direction-map-underlay {stroke:#f7f2e966}
 .direction-map-line {
   stroke:currentColor;stroke-dasharray:1;stroke-dashoffset:0;
-  animation:direction-draw 2.1s .45s cubic-bezier(.22,.7,.24,1) both
+  animation:direction-draw 2.45s .76s cubic-bezier(.22,.7,.24,1) both
 }
-.direction-map circle {fill:var(--m2v-bg);stroke:currentColor;stroke-width:2.7;animation:direction-reveal .45s .57s both}
-.direction-map circle:nth-of-type(2) {animation-delay:1.05s}
-.direction-map circle:nth-of-type(3) {animation-delay:1.48s}
-.direction-map circle:nth-of-type(4) {animation-delay:2.04s}
+.direction-map circle {fill:var(--m2v-bg);stroke:currentColor;stroke-width:3;animation:direction-reveal .55s .81s both}
+.direction-map circle:nth-of-type(2) {animation-delay:1.23s}
+.direction-map circle:nth-of-type(3) {animation-delay:1.83s}
+.direction-map circle:nth-of-type(4) {animation-delay:2.46s}
 .direction-portrait-film {
-  display:grid;position:relative;width:min(100%,500px);height:clamp(110px,29vh,230px);
+  display:grid;position:relative;width:min(100%,595px);height:clamp(125px,32vh,278px);
   place-items:center;margin:clamp(.75rem,2vh,1.2rem) auto
 }
 .direction-print {
-  grid-area:1/1;margin:0;height:100%;width:44%;padding:6px 6px 12px;background:#fff8ed;
-  box-shadow:0 12px 22px #3e231b44;border-radius:2px;animation:direction-print 1.8s .3s cubic-bezier(.22,.7,.23,1) both
+  display:grid;grid-template-rows:minmax(0,1fr) auto;gap:.27rem;
+  grid-area:1/1;margin:0;height:100%;width:44%;padding:6px 6px 4px;
+  background:linear-gradient(135deg,#fffdf8,#fff3e3);
+  box-shadow:0 1px 1px #58362925,0 12px 22px #3e231b44;
+  border:1px solid #fffcf5;border-radius:2px;
+  animation:direction-print 1.8s .3s cubic-bezier(.22,.7,.23,1) both
 }
 .direction-print img {width:100%;height:100%;object-fit:cover}
-.direction-print-street {--print-x:-49%;--print-r:-11deg;height:77%}
-.direction-print-coast {--print-x:49%;--print-r:10deg;height:77%;animation-delay:.47s}
+.direction-print figcaption {color:#793e30;white-space:nowrap;font:600 clamp(.5rem,1.15vw,.71rem)/1.3 var(--f-text);letter-spacing:.07em;text-transform:uppercase}
+.direction-print-street {--print-x:-50%;--print-r:-10deg;height:76%}
+.direction-print-coast {--print-x:50%;--print-r:9deg;height:76%;animation-delay:.47s}
 .direction-print-christa {--print-x:0%;--print-r:-2deg;width:34%;z-index:2;animation-delay:.6s}
 .direction-print-christa img {object-position:50% 30%}
 @keyframes direction-reveal {from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes direction-draw {from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes direction-window {from{opacity:0;clip-path:inset(80% 4% 0 round 45%)}to{opacity:1;clip-path:inset(0)}}
+@keyframes direction-photo {from{transform:scale(1.1)}to{transform:scale(1)}}
 @keyframes direction-print {
-  from {opacity:0;transform:translate(0,18%) rotate(0) scale(.7)}
+  from {opacity:0;transform:perspective(720px) translate(0,15%) rotateY(-23deg) rotate(-2deg) scale(.76)}
   to {opacity:1;transform:translateX(var(--print-x)) rotate(var(--print-r))}
 }
 @media(max-width:899.98px) {
@@ -122,15 +154,26 @@
 @media(max-width:480px) {
   [data-direction="clear-route"] .hero h1,[data-direction="personal-welcome"] .hero h1 {font-size:clamp(2.85rem,11vw,4rem)}
   .direction-film-center h2 {font-size:clamp(2.1rem,10vw,3.4rem)}
-  .direction-film-center>p {line-height:1.4}
+  .direction-film-lead {line-height:1.4}
   .direction-film .m2v-top>span,.direction-film .m2v-bottom>span {max-width:15ch;font-size:.73rem}
+}
+@media(max-width:720px) {
+  .direction-route-cover {grid-template-columns:1fr;gap:clamp(.8rem,2.7vh,1.4rem);text-align:center}
+  .direction-route-copy .direction-film-logo {margin:0 auto .45rem;object-position:center;height:clamp(38px,7vh,55px)}
+  .direction-route-copy h2 {font-size:clamp(2.25rem,9.5vw,4rem);margin:auto;max-width:none}
+  .direction-route-copy .direction-film-kicker {margin-bottom:.38rem}
+  .direction-route-picture {width:min(100%,460px);margin:auto}
+  .direction-route-window {height:clamp(160px,34vh,270px)}
+  .direction-route-picture figcaption {font-size:.63rem}
 }
 @media(max-height:500px) {
   .direction-film-center h2 {font-size:clamp(1.7rem,9vh,3rem)}
-  .direction-film-center>p {margin-top:.35rem}
+  .direction-film-lead {margin-top:.35rem}
   .direction-film-logo {height:42px}
   .direction-portrait-film {height:clamp(72px,28vh,124px);margin:.4rem auto}
-  .direction-map {height:clamp(48px,17vh,90px);margin:.4rem auto}
+  .direction-route-cover {grid-template-columns:1fr 1fr;text-align:left;gap:.9rem}
+  .direction-route-copy .direction-film-logo {margin:0 0 .45rem;object-position:left center}
+  .direction-route-window {height:clamp(110px,43vh,205px)}
 }
 @media(prefers-reduced-motion:reduce) {
   .direction-print {transform:translateX(var(--print-x)) rotate(var(--print-r))}

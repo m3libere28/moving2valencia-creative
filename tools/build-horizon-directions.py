@@ -17,14 +17,26 @@ def replace_once(page, old, new):
 
 
 def film(kind, center):
-    return f'''<dialog class="m2v-opening direction-film" data-film="{kind}" data-opener-for="a-new-horizon" data-film-duration="5200" aria-label="Moving2Valencia introduction" hidden>
+    logo = f'<img class="direction-film-logo" data-horizon-mark src="{source}brand-r1-classic-transparent.webp" alt="Moving2Valencia · Relocation Support" width="360" height="82">'
+    words = f'<h2>{center["title"]}</h2><p class="direction-film-lead">{center["line"]}</p>'
+    if kind == 'clear-route':
+        composition = f'''<div class="direction-route-cover">
+          <div class="direction-route-copy">
+            {logo}
+            <p class="direction-film-kicker">València · Your relocation route</p>
+            {words}
+          </div>
+          {center['art']}
+        </div>'''
+    else:
+        composition = f'''{logo}
+        {center['art']}
+        {words}'''
+    return f'''<dialog class="m2v-opening direction-film" data-film="{kind}" data-opener-for="a-new-horizon" data-film-duration="{center['duration']}" aria-label="Moving2Valencia introduction" hidden>
   <div class="m2v-film">
     <div class="m2v-top"><span>Moving2Valencia · {center['name']}</span><button type="button" data-film-exit>Skip intro ↗</button></div>
     <div class="m2v-center direction-film-center">
-      <img class="direction-film-logo" data-horizon-mark src="{source}brand-r1-classic-transparent.webp" alt="Moving2Valencia · Relocation Support" width="360" height="82">
-      {center['art']}
-      <h2>{center['title']}</h2>
-      <p>{center['line']}</p>
+      {composition}
     </div>
     <div class="m2v-bottom"><span>València, Espanya</span><div class="m2v-controls"><button type="button" data-film-pause aria-pressed="false">Pause motion</button><button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button></div></div>
     <div class="m2v-progress" aria-hidden="true"></div>
@@ -32,16 +44,22 @@ def film(kind, center):
 </dialog>'''
 
 
-route_art = '''<svg class="direction-map" viewBox="0 0 620 112" aria-hidden="true">
-  <path class="direction-map-underlay" d="M30 78H135Q174 78 195 46T260 20H357Q402 20 429 52T498 78H590"/>
-  <path class="direction-map-line" pathLength="1" d="M30 78H135Q174 78 195 46T260 20H357Q402 20 429 52T498 78H590"/>
-  <circle cx="30" cy="78" r="9"/><circle cx="204" cy="37" r="9"/><circle cx="389" cy="27" r="9"/><circle cx="590" cy="78" r="9"/>
-</svg>'''
+route_art = f'''<figure class="direction-route-picture">
+  <div class="direction-route-window">
+    <img src="{source}plaza-virgen-1200.webp" srcset="{source}plaza-virgen-800.webp 800w, {source}plaza-virgen-1200.webp 1200w" sizes="(min-width: 721px) 44vw, 85vw" width="1200" height="800" alt="People walking through Plaça de la Mare de Déu in Valencia.">
+    <svg class="direction-map" viewBox="0 0 620 150" aria-hidden="true">
+      <path class="direction-map-underlay" d="M30 102H135Q174 102 195 70T260 44H357Q402 44 429 76T498 102H590"/>
+      <path class="direction-map-line" pathLength="1" d="M30 102H135Q174 102 195 70T260 44H357Q402 44 429 76T498 102H590"/>
+      <circle cx="30" cy="102" r="9"/><circle cx="195" cy="70" r="9"/><circle cx="429" cy="76" r="9"/><circle cx="590" cy="102" r="9"/>
+    </svg>
+  </div>
+  <figcaption><span>Plaça de la Mare de Déu</span><span>València, Espanya</span></figcaption>
+</figure>'''
 
 portrait_art = f'''<div class="direction-portrait-film" aria-hidden="true">
-  <figure class="direction-print direction-print-street"><img src="{source}el-carmen-square-800.webp" alt="" width="800" height="533"></figure>
-  <figure class="direction-print direction-print-christa"><img src="{source}christa-600.webp" alt="" width="600" height="824"></figure>
-  <figure class="direction-print direction-print-coast"><img src="{source}malvarrosa-sky-800.webp" alt="" width="800" height="600"></figure>
+  <figure class="direction-print direction-print-street"><img src="{source}el-carmen-square-800.webp" alt="" width="800" height="533"><figcaption>El Carme</figcaption></figure>
+  <figure class="direction-print direction-print-christa"><img src="{source}christa-600.webp" alt="" width="600" height="824"><figcaption>Christa Brokke</figcaption></figure>
+  <figure class="direction-print direction-print-coast"><img src="{source}malvarrosa-sky-800.webp" alt="" width="800" height="600"><figcaption>La Malva-rosa</figcaption></figure>
 </div>'''
 
 route_index = '''<aside class="direction-route-index" aria-label="Find relocation services">
@@ -60,6 +78,7 @@ directions = {
         'name': 'A Clear Route',
         'title': 'A path takes <em>shape.</em>',
         'line': 'Plan · Prepare · Arrive · Settle',
+        'duration': 5600,
         'art': route_art,
         'headline': ('Start with', 'a clear plan.'),
         'intro': 'Find the support you need for your move to Valencia. Start with home finding, school search, paperwork or settling in, and take it one step at a time with Christa Brokke.',
@@ -72,6 +91,7 @@ directions = {
         'name': 'A Personal Welcome',
         'title': 'Hola. I’m <em>Christa.</em>',
         'line': 'Your local guide to a new life in Valencia.',
+        'duration': 5200,
         'art': portrait_art,
         'headline': ('A familiar face', 'in a new city.'),
         'intro': 'I made Valencia my home in 2004. As an independent relocation consultant, I now help individuals, couples and families find their feet here, from the first practical questions to the everyday details.',
@@ -96,7 +116,7 @@ def build(slug, direction):
     page = re.sub(r'url\((?:\./)?fonts/', 'url(../15-new-horizon/fonts/', page)
     page = replace_once(page, '<title>A New Horizon</title>', f'<title>{direction["name"]} · Moving2Valencia</title>')
     page = replace_once(page, '<body data-jury-concept=', f'<body data-direction="{slug}" data-jury-concept=')
-    page = replace_once(page, '</head>', '<link rel="stylesheet" href="directions.css"></head>')
+    page = replace_once(page, '</head>', '<link rel="stylesheet" href="directions.css?v=opening-2"></head>')
     page = page.replace('href="../?concept=a-new-horizon#preview"', 'href="./#compare" target="_top"')
     page = page.replace('href="../jury-review.html"', 'href="./" target="_top"')
     page = page.replace('Back to website selection ↗', 'Back to Christa’s three directions ↗').replace('Review all concepts ↗', 'Compare the three directions ↗')
