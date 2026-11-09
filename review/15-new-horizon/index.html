@@ -440,12 +440,108 @@ form.ask{display:grid;gap:1rem}
 <link rel="preload" as="font" href="../assets/jury-fonts/345453b756128bd47a09.woff2" type="font/woff2" crossorigin><link rel="preload" as="font" href="../assets/jury-fonts/5114ef56c5415163cbe4.woff2" type="font/woff2" crossorigin><link rel="preload" as="font" href="../assets/jury-fonts/ec86b9d397813bef15d7.woff2" type="font/woff2" crossorigin><link rel="stylesheet" href="../jury-shell.css?v=f9cd401d"><script src="../jury-shell.js?v=11fec7eb" defer></script><meta name="robots" content="noindex,follow"><link rel="canonical" href="https://m3libere28.github.io/moving2valencia-creative/review/15-new-horizon/index.html"><link rel="icon" href="../jury-icon.svg" type="image/svg+xml"><link rel="manifest" href="../site.webmanifest"><script type="application/ld+json" id="jury-business-data">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Moving2Valencia", "url": "https://moving2valencia.eu/", "email": "info@moving2valencia.eu", "founder": {"@type": "Person", "name": "Christa Brokke"}, "foundingDate": "2008", "areaServed": {"@type": "City", "name": "Valencia"}, "description": "Personal relocation guidance: planning, home finding, schools, formalities and settling in."}</script><meta property="og:type" content="website"><meta property="og:title" content="A New Horizon · Moving2Valencia"><meta property="og:description" content="The horizon becomes a doorway"><meta property="og:image" content="https://m3libere28.github.io/moving2valencia-creative/review/assets/hero_valencia-1440.webp"><meta name="twitter:card" content="summary_large_image"><script src="../jury-audit.js?v=fc6873df" defer></script><meta name="jury-source-sha" content="76220789dd47e22085fdb1d63e6919c5ec825a23234ac159d36b93da44a0e63c"><!-- m2v-film-head:start --><link rel="stylesheet" href="../m2v-openers.css?v=eef75efa7b"><link rel="stylesheet" href="../m2v-opener-scenes.css?v=eef75efa7b"><!-- m2v-film-head:end -->
 <style id="horizon-christa-styles">
 .horizon-mark{display:block;width:178px;height:44px;object-fit:contain;object-position:center}
-.nav .horizon-mark{width:clamp(136px,16vw,178px);mix-blend-mode:multiply}
+.nav .horizon-mark{width:clamp(136px,16vw,178px)}
 [data-horizon-logo="r5"] .nav .horizon-mark{object-position:left center}
-.footer .horizon-mark{width:180px;height:52px;padding:6px 10px;background:#fff;border-radius:3px}
-.m2v-opening[data-opener-for="a-new-horizon"] .m2v-identity .horizon-mark{
-  width:clamp(126px,24vw,182px);height:clamp(40px,8vw,58px);padding:5px 9px;
-  margin-inline:auto;background:#fff;border-radius:3px
+.footer .horizon-mark{width:184px;height:52px;object-position:left center;filter:brightness(0) invert(.94) sepia(.11)}
+.m2v-opening[data-film="horizon"]{--m2v-bg:var(--paper);--m2v-ink:var(--sea);--m2v-accent:var(--terra)}
+.m2v-opening[data-film="horizon"].is-leaving{transform:none}
+.horizon-film-art{background:radial-gradient(ellipse at 50% 36%,var(--paper) 22%,var(--limestone) 95%)}
+.m2v-art .horizon-film-photo{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% 85%;
+  opacity:1;clip-path:inset(75% 0 0);animation:horizon-photo-open 4s cubic-bezier(.24,.65,.26,1) both
+}
+.horizon-film-art::after{
+  content:"";position:absolute;inset:75% 0 0;
+  background:linear-gradient(transparent 40%,rgba(15,27,41,.72));
+  animation:horizon-photo-shade 4s cubic-bezier(.24,.65,.26,1) both
+}
+.horizon-film-center{align-self:center;transform:translateY(-6vh)}
+.horizon-film-title{width:min(100%,650px);margin:auto;text-align:center}
+.horizon-film-kicker{
+  margin:0 0 clamp(.75rem,2.6vh,1.55rem);color:var(--terra);
+  font:650 .76rem/1.35 var(--f-text);letter-spacing:.22em;text-transform:uppercase;
+  animation:horizon-film-caption .8s .12s both
+}
+.horizon-film-mark-frame{
+  display:grid;place-items:center;width:min(100%,485px);height:clamp(88px,17vh,154px);margin:auto
+}
+.horizon-film-mark{
+  width:100%;height:100%;min-height:0;object-fit:contain;
+  animation:horizon-film-ink 2.2s .34s cubic-bezier(.22,.7,.23,1) both
+}
+[data-horizon-logo="r5"] .horizon-film-mark{max-width:265px;animation-name:horizon-film-ink-stacked}
+.horizon-film-line{
+  display:block;width:min(100%,560px);height:clamp(28px,6vh,56px);margin:.5rem auto .65rem;
+  overflow:visible;color:var(--terra)
+}
+.horizon-film-line path{
+  fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round;
+  stroke-dasharray:1;stroke-dashoffset:0;animation:horizon-film-draw 1.75s .5s cubic-bezier(.22,.65,.26,1) both
+}
+.horizon-film-line circle{fill:var(--citrus);stroke:var(--terra);stroke-width:1}
+.horizon-film-sun{animation:horizon-film-caption .65s 1.62s both}
+.horizon-film-spark{display:none}
+@supports(offset-path:path("M0 0 L1 1")){
+  .horizon-film-spark{
+    display:block;offset-path:path("M4 44 H153 C204 44 213 13 280 13 S356 44 407 44 H556");
+    offset-rotate:0deg;animation:horizon-film-spark 1.75s .5s cubic-bezier(.22,.65,.26,1) both
+  }
+}
+.horizon-film-title h2{
+  margin:0;color:var(--sea);font:400 clamp(2.15rem,6vw,5.05rem)/1 var(--f-display);
+  letter-spacing:-.035em;animation:horizon-film-caption 1.15s 1.65s both
+}
+.horizon-film-title h2 em{font-weight:400}
+.m2v-opening[data-film="horizon"] .m2v-bottom>span{animation:horizon-foot-ink 4s linear both}
+.m2v-opening[data-film="horizon"] .m2v-controls button{min-height:44px}
+.m2v-opening[data-film="horizon"] .m2v-controls [data-film-pause]{
+  color:var(--paper);background:rgba(15,27,41,.65);border-color:rgba(247,242,233,.68)
+}
+.m2v-opening[data-film="horizon"] .m2v-enter{color:var(--sea);background:var(--paper);border:1px solid var(--sea)}
+@keyframes horizon-film-ink{
+  from{clip-path:inset(0 100% 0 0);opacity:.35}
+  30%{clip-path:inset(0 72% 0 0);opacity:1}
+  to{clip-path:inset(0);opacity:1}
+}
+@keyframes horizon-film-ink-stacked{
+  from{clip-path:inset(0 0 100% 0);opacity:.35}
+  38%{clip-path:inset(0 0 52% 0);opacity:1}
+  to{clip-path:inset(0);opacity:1}
+}
+@keyframes horizon-film-caption{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@keyframes horizon-film-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes horizon-film-spark{
+  0%{opacity:0;offset-distance:0}
+  10%{opacity:1}
+  90%{opacity:1}
+  100%{opacity:0;offset-distance:100%}
+}
+@keyframes horizon-foot-ink{0%,45%{color:var(--sea)}60%,100%{color:var(--paper)}}
+@keyframes horizon-photo-open{
+  0%,40%{clip-path:inset(100% 0 0)}
+  to{clip-path:inset(75% 0 0)}
+}
+@keyframes horizon-photo-shade{
+  0%,40%{clip-path:inset(100% 0 0)}
+  to{clip-path:inset(0)}
+}
+@media(max-width:600px){
+  .horizon-film-title{width:min(100%,335px);padding-inline:8px}
+  .horizon-film-center{transform:translateY(-7vh)}
+  [data-horizon-logo="r5"] .horizon-film-mark{max-width:210px}
+}
+@media(max-height:510px){
+  .horizon-film-center{transform:none}
+  .horizon-film-kicker{margin-bottom:.35rem}
+  .horizon-film-mark-frame{height:clamp(52px,17vh,88px)}
+  .horizon-film-line{height:26px;margin:.25rem auto}
+  .horizon-film-title h2{font-size:clamp(1.7rem,7vh,2.4rem)}
+}
+@media(prefers-reduced-motion:reduce){
+  .m2v-art .horizon-film-photo{opacity:1}
+  .horizon-film-line path{stroke-dashoffset:0}
+  .horizon-film-spark{display:none}
+  .m2v-opening[data-film="horizon"] .m2v-bottom>span{color:var(--paper)}
 }
 .horizon-packages{background:var(--limestone)}
 .horizon-packages .lead,.horizon-reviews .lead{margin-top:1.2rem}
@@ -488,12 +584,38 @@ form.ask{display:grid;gap:1rem}
   .nav .horizon-mark{width:clamp(120px,37vw,153px)}
 }
 </style>
-</head><body data-jury-concept="a-new-horizon"><!-- m2v-film-markup:start --><dialog class="m2v-opening" data-film="horizon" data-opener-for="a-new-horizon" aria-label="Moving2Valencia introduction" hidden><div class="m2v-film"><div class="m2v-art" aria-hidden="true"><img class="m2v-horizon-photo" src="img/malvarrosa-sky-1600.webp" alt="" decoding="async"><div class="m2v-horizon-rule"></div><div class="m2v-horizon-sun"></div></div><div class="m2v-top"><span>A New Horizon / Room to imagine</span><button type="button" data-film-exit>Skip intro ↗</button></div><div class="m2v-center m2v-bespoke"><div class="m2v-horizon-layout"><p class="m2v-identity"><img class="horizon-mark" data-horizon-mark src="img/brand-r1-medium-classic.jpg" width="178" height="44" alt="Moving2Valencia"></p><p class="m2v-section-label">A new horizon</p><h2><span>closer</span><em>to home.</em></h2><div class="m2v-horizon-baseline" aria-hidden="true"><i></i></div><p class="m2v-support">The distance becomes a possibility.</p></div></div><div class="m2v-bottom"><span>València, España</span><div class="m2v-controls"><button type="button" data-film-pause aria-pressed="false">Pause motion</button><button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button></div></div><div class="m2v-progress" aria-hidden="true"></div></div></dialog><!-- m2v-film-markup:end -->
+</head><body data-jury-concept="a-new-horizon"><!-- m2v-film-markup:start --><dialog class="m2v-opening" data-film="horizon" data-opener-for="a-new-horizon" data-film-duration="4900" aria-label="Moving2Valencia introduction" hidden>
+  <div class="m2v-film">
+    <div class="m2v-art horizon-film-art" aria-hidden="true">
+      <img class="horizon-film-photo" src="img/malvarrosa-sky-1600.webp" alt="" decoding="async">
+    </div>
+    <div class="m2v-top"><span>Moving2Valencia · A New Horizon</span><button type="button" data-film-exit>Skip intro ↗</button></div>
+    <div class="m2v-center horizon-film-center">
+      <div class="horizon-film-title">
+        <p class="horizon-film-kicker">València, Espanya</p>
+        <div class="horizon-film-mark-frame">
+          <img class="horizon-film-mark" data-horizon-mark src="img/brand-r1-classic-transparent.webp" alt="Moving2Valencia · Relocation Support">
+        </div>
+        <svg class="horizon-film-line" viewBox="0 0 560 56" preserveAspectRatio="none" aria-hidden="true">
+          <path pathLength="1" d="M4 44 H153 C204 44 213 13 280 13 S356 44 407 44 H556"/>
+          <circle class="horizon-film-sun" cx="280" cy="13" r="4.5"/>
+          <circle class="horizon-film-spark" r="3"/>
+        </svg>
+        <h2>Closer to <em>home.</em></h2>
+      </div>
+    </div>
+    <div class="m2v-bottom"><span>39° 28′ N · 0° 22′ W</span><div class="m2v-controls">
+      <button type="button" data-film-pause aria-pressed="false">Pause motion</button>
+      <button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button>
+    </div></div>
+    <div class="m2v-progress" aria-hidden="true"></div>
+  </div>
+</dialog><!-- m2v-film-markup:end -->
 <a class="skip" href="#route">Skip to how it works</a>
 
 <header class="nav">
   <div class="nav-inner">
-    <a class="wordmark" href="#horizon" aria-label="Moving2Valencia, back to top"><img class="horizon-mark" data-horizon-mark src="img/brand-r1-medium-classic.jpg" width="178" height="44" alt="Moving2Valencia"></a>
+    <a class="wordmark" href="#horizon" aria-label="Moving2Valencia, back to top"><img class="horizon-mark" data-horizon-mark src="img/brand-r1-classic-transparent.webp" width="178" height="44" alt="Moving2Valencia"></a>
     <ul class="nav-links" id="navMenu">
       <li><a href="#route">Services</a></li>
       <li><a href="#packages">Packages</a></li>
@@ -893,7 +1015,7 @@ form.ask{display:grid;gap:1rem}
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a class="wordmark" href="#horizon"><img class="horizon-mark" data-horizon-mark src="img/brand-r1-medium-classic.jpg" width="178" height="44" alt="Moving2Valencia"></a>
+        <a class="wordmark" href="#horizon"><img class="horizon-mark" data-horizon-mark src="img/brand-r1-classic-transparent.webp" width="178" height="44" alt="Moving2Valencia"></a>
         <p>Personal relocation support in Valencia, Spain: planning, paperwork, home finding, schools and settling in.</p>
       </div>
       <div>
@@ -1257,7 +1379,7 @@ form.ask{display:grid;gap:1rem}
   const marks = document.querySelectorAll('[data-horizon-mark]');
   const preview = document.querySelector('[data-horizon-logo-preview]');
   const choices = preview.querySelectorAll('[data-horizon-logo-option]');
-  const sources = { r1: marks[0].getAttribute('src'), r5: 'img/brand-r5-medium-classic.webp' };
+  const sources = { r1: marks[0].getAttribute('src'), r5: 'img/brand-r5-classic-transparent.webp' };
 
   function showLogo(choice) {
     document.documentElement.dataset.horizonLogo = choice;
