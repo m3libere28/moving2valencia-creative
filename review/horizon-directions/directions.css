@@ -44,16 +44,25 @@
 [data-direction="personal-welcome"] .trust .portrait-fig {max-width:390px}
 [data-direction="personal-welcome"] .horizon-reviews {background:#2e1d1b}
 
+.direction-review-heading {
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem;margin-top:1rem
+}
+
 .m2v-opening.direction-film {--m2v-duration:5.2s}
 .m2v-opening.direction-film::backdrop {background:transparent}
 .m2v-opening.direction-film.is-leaving {transform:none}
-.m2v-opening[data-film="clear-route"] {--m2v-bg:#122d40;--m2v-ink:#f7f2e9;--m2v-accent:#f2ac59;--m2v-duration:5.6s}
+.m2v-opening[data-film="clear-route"] {--m2v-bg:#281711;--m2v-ink:#fff4e5;--m2v-accent:#f7bf82;--m2v-duration:5.6s}
 .m2v-opening[data-film="personal-welcome"] {--m2v-bg:#f2e4d4;--m2v-ink:#653629;--m2v-accent:#9f3e29}
 .m2v-opening[data-film="clear-route"] .m2v-film {
-  background:radial-gradient(ellipse at 70% 40%,#245370 0%,transparent 67%),
-    repeating-linear-gradient(0deg,transparent 0 43px,#f7f2e910 44px 45px),
-    repeating-linear-gradient(90deg,transparent 0 43px,#f7f2e910 44px 45px)
+  background:var(--m2v-bg)
 }
+.m2v-opening[data-film="clear-route"] .m2v-film::after {
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,#281711 7%,#281711fa 24%,#281711bd 41%,#28171128 66%,transparent 83%),
+    linear-gradient(0deg,#21130ddd,transparent 24%,transparent 82%,#21130d99)
+}
+.m2v-opening[data-film="clear-route"] .m2v-top button {background:#281711d9}
+.m2v-opening[data-film="clear-route"] .m2v-top button:hover {background:#281711;color:var(--m2v-ink)}
 .m2v-opening[data-film="personal-welcome"] .m2v-film {
   background:radial-gradient(ellipse at 50% 31%,#fff5e8 0%,#f2e4d4 62%,#ead5bd 100%)
 }
@@ -70,43 +79,35 @@
 }
 .direction-film-center h2 em {color:var(--m2v-accent)}
 .direction-film-lead {font-size:clamp(.95rem,2vw,1.2rem);margin:.75rem 0 0;animation:direction-reveal .9s 1.8s both}
-.direction-route-cover {
-  width:min(100%,1170px);margin:auto;display:grid;grid-template-columns:.86fr 1fr;
-  gap:clamp(1.6rem,5vw,5.2rem);align-items:center;text-align:left
+.direction-route-copy {
+  width:min(100%,680px);padding-inline-start:clamp(0px,4vw,90px);text-align:left
 }
-.direction-route-copy .direction-film-logo {margin:0 0 clamp(.8rem,3vh,2rem);object-position:left center}
-.direction-route-copy h2 {font-size:clamp(2.4rem,6.9vw,6.65rem);max-width:10ch;margin:0}
+.direction-route-copy .direction-film-logo {
+  width:clamp(175px,22vw,255px);height:clamp(44px,9vh,74px);
+  margin:0 0 clamp(1.25rem,4vh,3.25rem);object-position:left center
+}
+.direction-route-copy h2 {font-size:clamp(2.6rem,6.3vw,6.4rem);margin:0;animation-delay:.64s}
+.direction-route-copy h2 em {display:block}
+.direction-route-copy .direction-film-lead {max-width:32ch;line-height:1.5;animation-delay:1.05s}
 .direction-film-kicker {
-  margin:0 0 .7rem;color:#ffca90;font-weight:650;font-size:.76rem;letter-spacing:.15em;text-transform:uppercase;
-  animation:direction-reveal .85s .7s both
+  margin:0 0 .9rem;color:#f5c898;font-weight:650;font-size:.76rem;letter-spacing:.15em;text-transform:uppercase;
+  animation:direction-reveal .85s .35s both
 }
-.direction-route-picture {margin:0;min-width:0}
-.direction-route-window {
-  position:relative;isolation:isolate;overflow:hidden;height:clamp(218px,56vh,500px);
-  border-radius:50% 50% .3rem .3rem / 38% 38% .3rem .3rem;
-  border:1px solid #f2ac5966;background:#1e3f53;
-  animation:direction-window 1.6s .18s cubic-bezier(.24,.72,.19,1) both
+.direction-route-picture {
+  position:absolute;inset:0 0 0 24%;overflow:hidden;
+  animation:direction-photo-in 1.35s ease-out both
 }
-.direction-route-window img {width:100%;height:100%;object-fit:cover;object-position:52% 57%;animation:direction-photo 4.9s both}
-.direction-route-window::after {position:absolute;content:"";inset:0;background:linear-gradient(transparent 45%,#081d32bf 100%);pointer-events:none}
-.direction-route-picture figcaption {
-  display:flex;justify-content:space-between;gap:.7rem;margin-top:.55rem;color:#ffdcad;
-  font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;animation:direction-reveal 1s .9s both
+.direction-route-picture img {
+  width:100%;height:100%;object-fit:cover;object-position:57% 62%;
+  animation:direction-photo 5.6s ease-out both
 }
-.direction-map {
-  display:block;position:absolute;z-index:1;width:100%;height:auto;left:0;bottom:0;
-  color:#ffd082;overflow:visible;filter:drop-shadow(0 2px 5px #09152399)
+.direction-route-trail {
+  display:block;width:clamp(105px,18vw,195px);height:auto;margin:1rem 0 0;color:var(--m2v-accent)
 }
-.direction-map path {fill:none;stroke-width:2.7;stroke-linecap:round}
-.direction-map-underlay {stroke:#f7f2e966}
-.direction-map-line {
-  stroke:currentColor;stroke-dasharray:1;stroke-dashoffset:0;
-  animation:direction-draw 2.45s .76s cubic-bezier(.22,.7,.24,1) both
+.direction-route-trail path {
+  fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-dasharray:1;
+  animation:direction-draw 1.55s 1.3s cubic-bezier(.22,.7,.24,1) both
 }
-.direction-map circle {fill:var(--m2v-bg);stroke:currentColor;stroke-width:3;animation:direction-reveal .55s .81s both}
-.direction-map circle:nth-of-type(2) {animation-delay:1.23s}
-.direction-map circle:nth-of-type(3) {animation-delay:1.83s}
-.direction-map circle:nth-of-type(4) {animation-delay:2.46s}
 .direction-portrait-film {
   display:grid;position:relative;width:min(100%,595px);height:clamp(125px,32vh,278px);
   place-items:center;margin:clamp(.75rem,2vh,1.2rem) auto
@@ -127,8 +128,8 @@
 .direction-print-christa img {object-position:50% 30%}
 @keyframes direction-reveal {from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes direction-draw {from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
-@keyframes direction-window {from{opacity:0;clip-path:inset(80% 4% 0 round 45%)}to{opacity:1;clip-path:inset(0)}}
-@keyframes direction-photo {from{transform:scale(1.1)}to{transform:scale(1)}}
+@keyframes direction-photo-in {from{opacity:0}to{opacity:1}}
+@keyframes direction-photo {from{transform:scale(1.065)}to{transform:scale(1)}}
 @keyframes direction-print {
   from {opacity:0;transform:perspective(720px) translate(0,15%) rotateY(-23deg) rotate(-2deg) scale(.76)}
   to {opacity:1;transform:translateX(var(--print-x)) rotate(var(--print-r))}
@@ -158,22 +159,27 @@
   .direction-film .m2v-top>span,.direction-film .m2v-bottom>span {max-width:15ch;font-size:.73rem}
 }
 @media(max-width:720px) {
-  .direction-route-cover {grid-template-columns:1fr;gap:clamp(.8rem,2.7vh,1.4rem);text-align:center}
-  .direction-route-copy .direction-film-logo {margin:0 auto .45rem;object-position:center;height:clamp(38px,7vh,55px)}
-  .direction-route-copy h2 {font-size:clamp(2.25rem,9.5vw,4rem);margin:auto;max-width:none}
-  .direction-route-copy .direction-film-kicker {margin-bottom:.38rem}
-  .direction-route-picture {width:min(100%,460px);margin:auto}
-  .direction-route-window {height:clamp(160px,34vh,270px)}
-  .direction-route-picture figcaption {font-size:.63rem}
+  .m2v-opening[data-film="clear-route"] .m2v-film::after {
+    background:linear-gradient(0deg,#281711 3%,#281711ef 22%,#281711ae 44%,transparent 70%,#21130da8)
+  }
+  [data-film="clear-route"] .direction-film-center {align-self:end;padding:0 0 clamp(1rem,5vh,2.8rem)}
+  .direction-route-copy {padding:0}
+  .direction-route-copy .direction-film-logo {margin:0 0 .8rem;height:clamp(40px,7vh,55px)}
+  .direction-route-copy h2 {font-size:clamp(2.35rem,10vw,4rem)}
+  .direction-route-copy .direction-film-kicker {margin-bottom:.55rem}
+  .direction-route-picture {inset:0}
+  .direction-route-picture img {object-position:46% center}
+  .direction-route-trail {margin-top:.75rem}
 }
 @media(max-height:500px) {
   .direction-film-center h2 {font-size:clamp(1.7rem,9vh,3rem)}
   .direction-film-lead {margin-top:.35rem}
   .direction-film-logo {height:42px}
   .direction-portrait-film {height:clamp(72px,28vh,124px);margin:.4rem auto}
-  .direction-route-cover {grid-template-columns:1fr 1fr;text-align:left;gap:.9rem}
-  .direction-route-copy .direction-film-logo {margin:0 0 .45rem;object-position:left center}
-  .direction-route-window {height:clamp(110px,43vh,205px)}
+  [data-film="clear-route"] .direction-film-center {padding-bottom:.55rem}
+  .direction-route-copy .direction-film-logo {margin:0 0 .5rem;height:36px}
+  .direction-route-copy h2 {font-size:clamp(1.9rem,8vh,3.4rem)}
+  .direction-route-trail {margin-top:.4rem}
 }
 @media(prefers-reduced-motion:reduce) {
   .direction-print {transform:translateX(var(--print-x)) rotate(var(--print-r))}

@@ -20,14 +20,18 @@ def replace_once(page, old, new):
 def film(kind, center):
     logo = f'<img class="direction-film-logo" data-horizon-mark src="{source}brand-r1-classic-transparent.webp" alt="Moving2Valencia · Relocation Support" width="360" height="82">'
     words = f'<h2>{center["title"]}</h2><p class="direction-film-lead">{center["line"]}</p>'
+    backdrop = ''
+    location = 'València, Espanya'
     if kind == 'clear-route':
-        composition = f'''<div class="direction-route-cover">
-          <div class="direction-route-copy">
-            {logo}
-            <p class="direction-film-kicker">València · Your relocation route</p>
-            {words}
-          </div>
-          {center['art']}
+        backdrop = center['art']
+        location = 'Plaça de la Mare de Déu · València'
+        composition = f'''<div class="direction-route-copy">
+          {logo}
+          <p class="direction-film-kicker">A new life in Valencia</p>
+          {words}
+          <svg class="direction-route-trail" viewBox="0 0 230 28" aria-hidden="true">
+            <path pathLength="1" d="M2 23C40 23 53 6 88 7S151 27 228 4"/>
+          </svg>
         </div>'''
     else:
         composition = f'''{logo}
@@ -35,27 +39,20 @@ def film(kind, center):
         {words}'''
     return f'''<dialog class="m2v-opening direction-film" data-film="{kind}" data-opener-for="a-new-horizon" data-film-duration="{center['duration']}" aria-label="Moving2Valencia introduction" hidden>
   <div class="m2v-film">
+    {backdrop}
     <div class="m2v-top"><span>Moving2Valencia · {center['name']}</span><button type="button" data-film-exit>Skip intro ↗</button></div>
     <div class="m2v-center direction-film-center">
       {composition}
     </div>
-    <div class="m2v-bottom"><span>València, Espanya</span><div class="m2v-controls"><button type="button" data-film-pause aria-pressed="false">Pause motion</button><button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button></div></div>
+    <div class="m2v-bottom"><span>{location}</span><div class="m2v-controls"><button type="button" data-film-pause aria-pressed="false">Pause motion</button><button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button></div></div>
     <div class="m2v-progress" aria-hidden="true"></div>
   </div>
 </dialog>'''
 
 
-route_art = f'''<figure class="direction-route-picture">
-  <div class="direction-route-window">
-    <img src="{source}plaza-virgen-1200.webp" srcset="{source}plaza-virgen-800.webp 800w, {source}plaza-virgen-1200.webp 1200w" sizes="(min-width: 721px) 44vw, 85vw" width="1200" height="800" alt="People walking through Plaça de la Mare de Déu in Valencia.">
-    <svg class="direction-map" viewBox="0 0 620 150" aria-hidden="true">
-      <path class="direction-map-underlay" d="M30 102H135Q174 102 195 70T260 44H357Q402 44 429 76T498 102H590"/>
-      <path class="direction-map-line" pathLength="1" d="M30 102H135Q174 102 195 70T260 44H357Q402 44 429 76T498 102H590"/>
-      <circle cx="30" cy="102" r="9"/><circle cx="195" cy="70" r="9"/><circle cx="429" cy="76" r="9"/><circle cx="590" cy="102" r="9"/>
-    </svg>
-  </div>
-  <figcaption><span>Plaça de la Mare de Déu</span><span>València, Espanya</span></figcaption>
-</figure>'''
+route_art = f'''<div class="direction-route-picture">
+      <img src="{source}plaza-virgen-1200.webp" srcset="{source}plaza-virgen-800.webp 800w, {source}plaza-virgen-1200.webp 1200w" sizes="(min-width: 721px) 76vw, 100vw" width="1200" height="897" alt="People walking through Plaça de la Mare de Déu in Valencia.">
+    </div>'''
 
 portrait_art = f'''<div class="direction-portrait-film" aria-hidden="true">
   <figure class="direction-print direction-print-street"><img src="{source}el-carmen-square-800.webp" alt="" width="800" height="533"><figcaption>El Carme</figcaption></figure>
@@ -77,8 +74,8 @@ directions = {
     'coastal-story': {'name': 'The Coastal Story'},
     'clear-route': {
         'name': 'A Clear Route',
-        'title': 'A path takes <em>shape.</em>',
-        'line': 'Plan · Prepare · Arrive · Settle',
+        'title': 'A new city. <em>A clear way in.</em>',
+        'line': 'Personal support from your first questions to feeling at home.',
         'duration': 5600,
         'art': route_art,
         'headline': ('Start with', 'a clear plan.'),
@@ -116,8 +113,8 @@ def build(slug, direction):
     page = re.sub(r'url\((?:\./)?fonts/', 'url(../15-new-horizon/fonts/', page)
     page = replace_once(page, '<title>A New Horizon</title>', f'<title>{direction["name"]} · Moving2Valencia</title>')
     page = replace_once(page, '<body data-jury-concept=', f'<body data-direction="{slug}" data-jury-concept=')
-    styles = 'directions.css?v=portrait' if slug == 'personal-welcome' else 'directions.css?v=opening-2'
-    page = replace_once(page, '</head>', f'<link rel="stylesheet" href="{styles}"></head>')
+    style_revision = {'personal-welcome': 'portrait', 'clear-route': 'valencia-opening'}.get(slug, 'opening-2')
+    page = replace_once(page, '</head>', f'<link rel="stylesheet" href="directions.css?v={style_revision}"></head>')
     page = page.replace('href="../?concept=a-new-horizon#preview"', 'href="./#compare" target="_top"')
     page = page.replace('href="../jury-review.html"', 'href="./" target="_top"')
     page = page.replace('Back to website selection ↗', 'Back to Christa’s three directions ↗').replace('Review all concepts ↗', 'Compare the three directions ↗')
@@ -150,6 +147,12 @@ def build(slug, direction):
   if (heroImg)''', page, count=1, flags=re.S)
     assert count == 1
     if slug == 'clear-route':
+        review_heading = '<h2 id="reviews-title" style="margin-top:1rem">What it’s like <em>to make the move.</em></h2>'
+        page = replace_once(page, review_heading, '''<div class="direction-review-heading">
+      <h2 id="reviews-title">What it’s like <em>to make the move.</em></h2>
+      <button type="button" class="btn btn-line" data-film-replay aria-haspopup="dialog">Replay the opening</button>
+    </div>''')
+        page = re.sub(r'(src="../m2v-openers\.js\?v=)[^"]+', r'\g<1>route-replay', page, count=1)
         page = replace_once(page, '        </div>\n    </div>\n    <div class="horizon"', route_index + '\n        </div>\n    </div>\n    <div class="horizon"')
         for number, key in enumerate(('plan', 'paperwork', 'home', 'settle')):
             page = replace_once(page, f'<article class="stage" data-stage="{number}">', f'<article class="stage" data-stage="{number}" id="service-{key}">')

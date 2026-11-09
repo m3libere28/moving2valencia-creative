@@ -610,20 +610,32 @@ form.ask{display:grid;gap:1rem}
 .horizon-google-score strong{font-size:1.04rem}
 .horizon-google-score small{color:var(--sea-mist)}
 .horizon-stars{
-  --star-gold:#925311;--star-glint:#f6ca79;
+  --star-gold:#b47b14;
+  --star-metal:linear-gradient(#bc8119 6%,#edc15a 35%,#d2992c 52%,#9c6412 76%,#d59e34 100%);
+  --star-glint:#fff1b9;
   display:inline-flex;white-space:nowrap;width:fit-content;color:var(--star-gold);
-  letter-spacing:.14em;font:700 1.1rem/1.15 system-ui,sans-serif
+  font:700 1.1rem/1.15 system-ui,sans-serif
 }
 .horizon-stars>span{letter-spacing:.14em}
-.horizon-google-score .horizon-stars{--star-gold:#f3bc63;--star-glint:#fff3c6}
+.horizon-google-score .horizon-stars{
+  --star-gold:#e9b74e;
+  --star-metal:linear-gradient(#da9f31 6%,#ffdc81 35%,#edb648 52%,#bf8322 76%,#f4c563 100%)
+}
 @supports(background-clip:text){
   .horizon-stars>span{
-    background:linear-gradient(115deg,var(--star-gold) 41%,var(--star-glint) 49%,var(--star-gold) 57%);
-    background-size:280% 100%;background-position:100% 50%;background-clip:text;color:transparent
+    background-image:linear-gradient(110deg,transparent 43%,#ffe29955 47%,var(--star-glint) 50%,#ffe29955 54%,transparent 59%),var(--star-metal);
+    background-size:320% 100%,100% 100%;background-position:100% 50%,center;
+    background-repeat:no-repeat;background-clip:text;color:transparent
   }
-  .horizon-stars.is-in-view>span{animation:horizon-star-glint 1.7s .18s cubic-bezier(.24,.72,.26,1) both}
+  .horizon-stars.is-in-view>span{animation:horizon-star-glint 9s linear infinite}
 }
-@keyframes horizon-star-glint{to{background-position:0% 50%}}
+@keyframes horizon-star-glint{
+  0%,8%{background-position:100% 50%,center}
+  72%,100%{background-position:0% 50%,center}
+}
+@media(forced-colors:active){
+  .horizon-stars>span{background:none;color:CanvasText}
+}
 .horizon-story-group{display:none;gap:.85rem}
 #story-family:checked~.horizon-story-deck #story-family-card,
 #story-paperwork:checked~.horizon-story-deck #story-paperwork-card,
@@ -663,30 +675,23 @@ form.ask{display:grid;gap:1rem}
   .nav .horizon-mark{width:clamp(120px,37vw,153px)}
 }
 </style>
-<link rel="stylesheet" href="directions.css?v=opening-2"></head><body data-direction="clear-route" data-jury-concept="a-new-horizon"><!-- m2v-film-markup:start --><dialog class="m2v-opening direction-film" data-film="clear-route" data-opener-for="a-new-horizon" data-film-duration="5600" aria-label="Moving2Valencia introduction" hidden>
+<link rel="stylesheet" href="directions.css?v=valencia-opening"></head><body data-direction="clear-route" data-jury-concept="a-new-horizon"><!-- m2v-film-markup:start --><dialog class="m2v-opening direction-film" data-film="clear-route" data-opener-for="a-new-horizon" data-film-duration="5600" aria-label="Moving2Valencia introduction" hidden>
   <div class="m2v-film">
+    <div class="direction-route-picture">
+      <img src="../15-new-horizon/img/plaza-virgen-1200.webp" srcset="../15-new-horizon/img/plaza-virgen-800.webp 800w, ../15-new-horizon/img/plaza-virgen-1200.webp 1200w" sizes="(min-width: 721px) 76vw, 100vw" width="1200" height="897" alt="People walking through Plaça de la Mare de Déu in Valencia.">
+    </div>
     <div class="m2v-top"><span>Moving2Valencia · A Clear Route</span><button type="button" data-film-exit>Skip intro ↗</button></div>
     <div class="m2v-center direction-film-center">
-      <div class="direction-route-cover">
-          <div class="direction-route-copy">
-            <img class="direction-film-logo" data-horizon-mark src="../15-new-horizon/img/brand-r1-classic-transparent.webp" alt="Moving2Valencia · Relocation Support" width="360" height="82">
-            <p class="direction-film-kicker">València · Your relocation route</p>
-            <h2>A path takes <em>shape.</em></h2><p class="direction-film-lead">Plan · Prepare · Arrive · Settle</p>
-          </div>
-          <figure class="direction-route-picture">
-  <div class="direction-route-window">
-    <img src="../15-new-horizon/img/plaza-virgen-1200.webp" srcset="../15-new-horizon/img/plaza-virgen-800.webp 800w, ../15-new-horizon/img/plaza-virgen-1200.webp 1200w" sizes="(min-width: 721px) 44vw, 85vw" width="1200" height="800" alt="People walking through Plaça de la Mare de Déu in Valencia.">
-    <svg class="direction-map" viewBox="0 0 620 150" aria-hidden="true">
-      <path class="direction-map-underlay" d="M30 102H135Q174 102 195 70T260 44H357Q402 44 429 76T498 102H590"/>
-      <path class="direction-map-line" pathLength="1" d="M30 102H135Q174 102 195 70T260 44H357Q402 44 429 76T498 102H590"/>
-      <circle cx="30" cy="102" r="9"/><circle cx="195" cy="70" r="9"/><circle cx="429" cy="76" r="9"/><circle cx="590" cy="102" r="9"/>
-    </svg>
-  </div>
-  <figcaption><span>Plaça de la Mare de Déu</span><span>València, Espanya</span></figcaption>
-</figure>
+      <div class="direction-route-copy">
+          <img class="direction-film-logo" data-horizon-mark src="../15-new-horizon/img/brand-r1-classic-transparent.webp" alt="Moving2Valencia · Relocation Support" width="360" height="82">
+          <p class="direction-film-kicker">A new life in Valencia</p>
+          <h2>A new city. <em>A clear way in.</em></h2><p class="direction-film-lead">Personal support from your first questions to feeling at home.</p>
+          <svg class="direction-route-trail" viewBox="0 0 230 28" aria-hidden="true">
+            <path pathLength="1" d="M2 23C40 23 53 6 88 7S151 27 228 4"/>
+          </svg>
         </div>
     </div>
-    <div class="m2v-bottom"><span>València, Espanya</span><div class="m2v-controls"><button type="button" data-film-pause aria-pressed="false">Pause motion</button><button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button></div></div>
+    <div class="m2v-bottom"><span>Plaça de la Mare de Déu · València</span><div class="m2v-controls"><button type="button" data-film-pause aria-pressed="false">Pause motion</button><button type="button" class="m2v-enter" data-film-exit autofocus>Enter Valencia ↗</button></div></div>
     <div class="m2v-progress" aria-hidden="true"></div>
   </div>
 </dialog><!-- m2v-film-markup:end -->
@@ -919,7 +924,10 @@ form.ask{display:grid;gap:1rem}
 <section class="chapter horizon-reviews on-dark" id="reviews" aria-labelledby="reviews-title">
   <div class="wrap">
     <p class="label kicker">Client reviews</p>
-    <h2 id="reviews-title" style="margin-top:1rem">What it’s like <em>to make the move.</em></h2>
+    <div class="direction-review-heading">
+      <h2 id="reviews-title">What it’s like <em>to make the move.</em></h2>
+      <button type="button" class="btn btn-line" data-film-replay aria-haspopup="dialog">Replay the opening</button>
+    </div>
     <p class="lead">Eight client experiences, from finding a home or school to making sense of the paperwork.</p>
     <div class="horizon-google-score"><span class="horizon-stars" data-review-stars role="img" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></span><strong>5.0 on Google · 34 reviews</strong><small>Checked 9 November 2026</small></div>
     <fieldset class="horizon-story-set">
@@ -1528,7 +1536,7 @@ form.ask{display:grid;gap:1rem}
   });
 })();
 </script>
-<div class="jury-review-footer"><span>A New Horizon · Refined review edition</span><a href="./" target="_top">Compare the three directions ↗</a><a href="../photo-credits.html">Photography & media credits ↗</a></div><!-- m2v-film-foot:start --><div class="m2v-opener-replay"><span>Moving2Valencia · The opening moment</span><button type="button" data-film-replay>Replay the opening ↗</button></div><script src="../m2v-openers.js?v=eef75efa7b" defer></script><!-- m2v-film-foot:end -->
+<div class="jury-review-footer"><span>A New Horizon · Refined review edition</span><a href="./" target="_top">Compare the three directions ↗</a><a href="../photo-credits.html">Photography & media credits ↗</a></div><!-- m2v-film-foot:start --><div class="m2v-opener-replay"><span>Moving2Valencia · The opening moment</span><button type="button" data-film-replay>Replay the opening ↗</button></div><script src="../m2v-openers.js?v=route-replay" defer></script><!-- m2v-film-foot:end -->
 <script id="horizon-logo-controls">
 (() => {
   const marks = document.querySelectorAll('[data-horizon-mark]');
@@ -1561,9 +1569,7 @@ form.ask{display:grid;gap:1rem}
   if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const glint = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-in-view');
-      glint.unobserve(entry.target);
+      entry.target.classList.toggle('is-in-view', entry.isIntersecting);
     });
   }, {threshold: .75});
   reviews.querySelectorAll('[data-review-stars]').forEach(mark => glint.observe(mark));

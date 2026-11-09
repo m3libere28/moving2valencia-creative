@@ -27,7 +27,7 @@
  pause.addEventListener('click',()=>{manualPause=!paused;setPaused(!paused);});
  dialog.addEventListener('cancel',event=>{event.preventDefault();finish();});
  dialog.addEventListener('close',()=>{clear();clearTimeout(closing);video?.pause?.();dialog.hidden=true;});
- document.querySelector('[data-film-replay]')?.addEventListener('click',()=>open(true));
+ document.querySelectorAll('[data-film-replay]').forEach(button=>button.addEventListener('click',()=>open(true)));
  if(bloom){bloom.button.addEventListener('click',()=>{held=true;clear();dialog.classList.add('is-exploring');setBloom(bloom.button.getAttribute('aria-expanded')!=='true');});dialog.addEventListener('pointermove',event=>{if(!dialog.open||paused||reduce.matches||event.pointerType==='touch')return;const rect=dialog.getBoundingClientRect();bloom.stage.style.setProperty('--azahar-x',((event.clientX-rect.left)/rect.width-.5)*20+'px');bloom.stage.style.setProperty('--azahar-y',((event.clientY-rect.top)/rect.height-.5)*14+'px');});}
  if(dialog.getAttribute('data-opener-for')==='immersive-valencia'){
   const stage=dialog.querySelector('[data-portal-stage]');

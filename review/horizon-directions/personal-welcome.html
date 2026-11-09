@@ -610,20 +610,32 @@ form.ask{display:grid;gap:1rem}
 .horizon-google-score strong{font-size:1.04rem}
 .horizon-google-score small{color:var(--sea-mist)}
 .horizon-stars{
-  --star-gold:#925311;--star-glint:#f6ca79;
+  --star-gold:#b47b14;
+  --star-metal:linear-gradient(#bc8119 6%,#edc15a 35%,#d2992c 52%,#9c6412 76%,#d59e34 100%);
+  --star-glint:#fff1b9;
   display:inline-flex;white-space:nowrap;width:fit-content;color:var(--star-gold);
-  letter-spacing:.14em;font:700 1.1rem/1.15 system-ui,sans-serif
+  font:700 1.1rem/1.15 system-ui,sans-serif
 }
 .horizon-stars>span{letter-spacing:.14em}
-.horizon-google-score .horizon-stars{--star-gold:#f3bc63;--star-glint:#fff3c6}
+.horizon-google-score .horizon-stars{
+  --star-gold:#e9b74e;
+  --star-metal:linear-gradient(#da9f31 6%,#ffdc81 35%,#edb648 52%,#bf8322 76%,#f4c563 100%)
+}
 @supports(background-clip:text){
   .horizon-stars>span{
-    background:linear-gradient(115deg,var(--star-gold) 41%,var(--star-glint) 49%,var(--star-gold) 57%);
-    background-size:280% 100%;background-position:100% 50%;background-clip:text;color:transparent
+    background-image:linear-gradient(110deg,transparent 43%,#ffe29955 47%,var(--star-glint) 50%,#ffe29955 54%,transparent 59%),var(--star-metal);
+    background-size:320% 100%,100% 100%;background-position:100% 50%,center;
+    background-repeat:no-repeat;background-clip:text;color:transparent
   }
-  .horizon-stars.is-in-view>span{animation:horizon-star-glint 1.7s .18s cubic-bezier(.24,.72,.26,1) both}
+  .horizon-stars.is-in-view>span{animation:horizon-star-glint 9s linear infinite}
 }
-@keyframes horizon-star-glint{to{background-position:0% 50%}}
+@keyframes horizon-star-glint{
+  0%,8%{background-position:100% 50%,center}
+  72%,100%{background-position:0% 50%,center}
+}
+@media(forced-colors:active){
+  .horizon-stars>span{background:none;color:CanvasText}
+}
 .horizon-story-group{display:none;gap:.85rem}
 #story-family:checked~.horizon-story-deck #story-family-card,
 #story-paperwork:checked~.horizon-story-deck #story-paperwork-card,
@@ -665,6 +677,7 @@ form.ask{display:grid;gap:1rem}
 </style>
 <link rel="stylesheet" href="directions.css?v=portrait"></head><body data-direction="personal-welcome" data-jury-concept="a-new-horizon"><!-- m2v-film-markup:start --><dialog class="m2v-opening direction-film" data-film="personal-welcome" data-opener-for="a-new-horizon" data-film-duration="5200" aria-label="Moving2Valencia introduction" hidden>
   <div class="m2v-film">
+
     <div class="m2v-top"><span>Moving2Valencia · A Personal Welcome</span><button type="button" data-film-exit>Skip intro ↗</button></div>
     <div class="m2v-center direction-film-center">
       <img class="direction-film-logo" data-horizon-mark src="../15-new-horizon/img/brand-r1-classic-transparent.webp" alt="Moving2Valencia · Relocation Support" width="360" height="82">
@@ -1541,9 +1554,7 @@ form.ask{display:grid;gap:1rem}
   if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const glint = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-in-view');
-      glint.unobserve(entry.target);
+      entry.target.classList.toggle('is-in-view', entry.isIntersecting);
     });
   }, {threshold: .75});
   reviews.querySelectorAll('[data-review-stars]').forEach(mark => glint.observe(mark));
