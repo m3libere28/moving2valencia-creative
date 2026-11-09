@@ -584,7 +584,59 @@ form.ask{display:grid;gap:1rem}
   .nav .horizon-mark{width:clamp(120px,37vw,153px)}
 }
 </style>
-<link rel="stylesheet" href="directions.css"></head><body data-direction="coastal-story" data-jury-concept="a-new-horizon"><!-- m2v-film-markup:start --><dialog class="m2v-opening" data-film="horizon" data-opener-for="a-new-horizon" data-film-duration="4900" aria-label="Moving2Valencia introduction" hidden>
+<style id="horizon-runner-style">
+.horizon-film-mark-frame>*{grid-area:1/1}
+.horizon-run-scene{
+  width:100%;height:100%;overflow:visible;pointer-events:none;
+  animation:horizon-run-scene 3.75s ease both
+}
+.horizon-run-ground{fill:none;stroke:var(--terra);stroke-opacity:.25;stroke-width:1}
+.horizon-run-house-fill{fill:#a2462a0a;animation:horizon-film-caption .9s .3s both}
+.horizon-run-house{
+  fill:none;stroke:#a92232;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:1;stroke-dashoffset:0;animation:horizon-film-draw .9s .12s ease-out both
+}
+.horizon-run-doorway{fill:#e4c49f;animation:horizon-film-caption .65s .57s both}
+.horizon-run-door{
+  fill:#a2462a55;transform-box:fill-box;transform-origin:left center;
+  animation:horizon-door-open 2.75s .5s both
+}
+.horizon-run-jamb{
+  fill:none;stroke:#ad4931;stroke-width:1.9;stroke-linecap:round;
+  animation:horizon-film-caption .6s .63s both
+}
+.horizon-run-track{
+  fill:none;stroke:currentColor;stroke-width:3.8;stroke-linecap:round;stroke-linejoin:round;
+  animation:horizon-run-cross 2.5s var(--run-delay) linear both
+}
+.horizon-run-lead{color:#a92232;--run-delay:.66s}
+.horizon-run-follow{color:#bd631d;--run-delay:.98s}
+.horizon-run-stride{animation:horizon-run-bounce .27s var(--run-delay) ease-in-out 9 alternate}
+.horizon-run-arm-near,.horizon-run-arm-far{transform-origin:0 -51px}
+.horizon-run-leg-near,.horizon-run-leg-far{transform-origin:-6px -25px}
+.horizon-run-arm-near,.horizon-run-leg-far{animation:horizon-run-swing .26s var(--run-delay) ease-in-out 10 alternate}
+.horizon-run-arm-far,.horizon-run-leg-near{animation:horizon-run-swing .26s var(--run-delay) ease-in-out 10 alternate-reverse}
+.horizon-film-mark{animation-duration:1.45s;animation-delay:3.3s}
+.horizon-film-line path,.horizon-film-spark{animation-delay:3.66s;animation-duration:1.38s}
+.horizon-film-sun{animation-delay:4.57s}
+.horizon-film-title h2{animation-delay:4.12s;animation-duration:.95s}
+.m2v-art .horizon-film-photo,.horizon-film-art::after{animation-delay:2.55s;animation-duration:3.1s}
+.m2v-opening[data-film="horizon"] .m2v-bottom>span{animation-duration:6s;animation-name:horizon-run-foot-ink}
+.m2v-opening[data-film="horizon"]{--m2v-duration:6.1s}
+@keyframes horizon-run-scene{0%{opacity:0}13%,84%{opacity:1}to{opacity:0}}
+@keyframes horizon-door-open{0%,18%{opacity:1;transform:scaleX(1)}36%,85%{opacity:.75;transform:scaleX(.11)}to{opacity:1;transform:scaleX(1)}}
+@keyframes horizon-run-cross{
+  0%{opacity:0;transform:translate(30px,127px)}
+  10%{opacity:1}
+  91%{opacity:1}
+  to{opacity:0;transform:translate(470px,127px)}
+}
+@keyframes horizon-run-bounce{from{transform:translateY(0)}to{transform:translateY(-4px)}}
+@keyframes horizon-run-swing{from{transform:rotate(-18deg)}to{transform:rotate(19deg)}}
+@keyframes horizon-run-foot-ink{0%,63%{color:var(--sea)}76%,100%{color:var(--paper)}}
+@media(prefers-reduced-motion:reduce){.horizon-run-scene{display:none}}
+</style>
+<link rel="stylesheet" href="directions.css"></head><body data-direction="coastal-story" data-jury-concept="a-new-horizon"><!-- m2v-film-markup:start --><dialog class="m2v-opening" data-film="horizon" data-opener-for="a-new-horizon" data-film-duration="6100" aria-label="Moving2Valencia introduction" hidden>
   <div class="m2v-film">
     <div class="m2v-art horizon-film-art" aria-hidden="true">
       <img class="horizon-film-photo" src="../15-new-horizon/img/malvarrosa-sky-1600.webp" alt="" decoding="async">
@@ -594,6 +646,34 @@ form.ask{display:grid;gap:1rem}
       <div class="horizon-film-title">
         <p class="horizon-film-kicker">València, Espanya</p>
         <div class="horizon-film-mark-frame">
+          <svg class="horizon-run-scene" viewBox="0 0 500 158" aria-hidden="true" focusable="false">
+            <path class="horizon-run-ground" d="M28 128H472"/>
+            <path class="horizon-run-house-fill" d="M202 125V57L253 9 305 57V125Z"/>
+            <path class="horizon-run-house" pathLength="1" d="M195 125H202V57L249 12Q253 8 257 12L305 57V125H312M197 61L253 8 310 61"/>
+            <path class="horizon-run-doorway" d="M233 127V72Q233 64 241 64H265Q273 64 273 72V127Z"/>
+            <path class="horizon-run-door" d="M235 126V73Q235 67 241 67H271V126Z"/>
+            <g class="horizon-run-track horizon-run-lead">
+              <g class="horizon-run-stride">
+                <circle cx="5" cy="-64" r="7.5"/>
+                <path d="M3-54Q-4-50-9-36L-6-25"/>
+                <path class="horizon-run-arm-far" d="M0-51-14-42-21-48"/>
+                <path class="horizon-run-leg-far" d="M-6-25-17-12-28-3H-35"/>
+                <path class="horizon-run-arm-near" d="M0-51 13-43 25-50"/>
+                <path class="horizon-run-leg-near" d="M-6-25 12-14 15 0H24"/>
+              </g>
+            </g>
+            <g class="horizon-run-track horizon-run-follow">
+              <g class="horizon-run-stride">
+                <circle cx="5" cy="-64" r="7.5"/>
+                <path d="M3-54Q-4-50-9-36L-6-25"/>
+                <path class="horizon-run-arm-far" d="M0-51-14-42-21-48"/>
+                <path class="horizon-run-leg-far" d="M-6-25-17-12-28-3H-35"/>
+                <path class="horizon-run-arm-near" d="M0-51 13-43 25-50"/>
+                <path class="horizon-run-leg-near" d="M-6-25 12-14 15 0H24"/>
+              </g>
+            </g>
+            <path class="horizon-run-jamb" d="M233 125V73Q233 64 241 64H265Q273 64 273 73V125"/>
+          </svg>
           <img class="horizon-film-mark" data-horizon-mark src="../15-new-horizon/img/brand-r1-classic-transparent.webp" alt="Moving2Valencia · Relocation Support">
         </div>
         <svg class="horizon-film-line" viewBox="0 0 560 56" preserveAspectRatio="none" aria-hidden="true">
