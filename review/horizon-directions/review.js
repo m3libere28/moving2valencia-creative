@@ -6,7 +6,6 @@ const preview = document.getElementById('site-preview');
 const full = document.getElementById('full');
 const deviceButtons = document.querySelectorAll('[data-device]');
 const devices = { desktop: [1280, 740], phone: [390, 785] };
-const revision = new URL(preview.src).searchParams.get('v');
 let device = matchMedia('(max-width: 700px)').matches ? 'phone' : 'desktop';
 
 function sizePreview() {
@@ -24,7 +23,6 @@ function sizePreview() {
 
 function updatePreview() {
   const url = new URL(concept.value + '.html', location.href);
-  if (revision) url.searchParams.set('v', revision);
   if (logo.value === 'r5') url.searchParams.set('logo', 'r5');
   if (preview.src !== url.href) preview.src = url.href;
   full.href = url.href;

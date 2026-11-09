@@ -103,7 +103,6 @@ def build(slug, direction):
     if slug == 'coastal-story':
         return page
 
-    page = re.sub(r'\n<style id="horizon-runner-style">.*?</style>', '', page, flags=re.S)
     page, count = re.subn(r'<dialog class="m2v-opening".*?</dialog>', lambda _: film(slug, direction), page, count=1, flags=re.S)
     assert count == 1
     image = re.search(r'<img class="hero-photo"[^>]+>', page)[0]
