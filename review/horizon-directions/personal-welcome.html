@@ -584,14 +584,14 @@ form.ask{display:grid;gap:1rem}
   .nav .horizon-mark{width:clamp(120px,37vw,153px)}
 }
 </style>
-<link rel="stylesheet" href="directions.css?v=opening-2"></head><body data-direction="personal-welcome" data-jury-concept="a-new-horizon"><!-- m2v-film-markup:start --><dialog class="m2v-opening direction-film" data-film="personal-welcome" data-opener-for="a-new-horizon" data-film-duration="5200" aria-label="Moving2Valencia introduction" hidden>
+<link rel="stylesheet" href="directions.css?v=portrait"></head><body data-direction="personal-welcome" data-jury-concept="a-new-horizon"><!-- m2v-film-markup:start --><dialog class="m2v-opening direction-film" data-film="personal-welcome" data-opener-for="a-new-horizon" data-film-duration="5200" aria-label="Moving2Valencia introduction" hidden>
   <div class="m2v-film">
     <div class="m2v-top"><span>Moving2Valencia · A Personal Welcome</span><button type="button" data-film-exit>Skip intro ↗</button></div>
     <div class="m2v-center direction-film-center">
       <img class="direction-film-logo" data-horizon-mark src="../15-new-horizon/img/brand-r1-classic-transparent.webp" alt="Moving2Valencia · Relocation Support" width="360" height="82">
         <div class="direction-portrait-film" aria-hidden="true">
   <figure class="direction-print direction-print-street"><img src="../15-new-horizon/img/el-carmen-square-800.webp" alt="" width="800" height="533"><figcaption>El Carme</figcaption></figure>
-  <figure class="direction-print direction-print-christa"><img src="../15-new-horizon/img/christa-600.webp" alt="" width="600" height="824"><figcaption>Christa Brokke</figcaption></figure>
+  <figure class="direction-print direction-print-christa"><img src="christa-brokke-original.jpg" alt="" width="1080" height="1484"><figcaption>Christa Brokke</figcaption></figure>
   <figure class="direction-print direction-print-coast"><img src="../15-new-horizon/img/malvarrosa-sky-800.webp" alt="" width="800" height="600"><figcaption>La Malva-rosa</figcaption></figure>
 </div>
         <h2>Hola. I’m <em>Christa.</em></h2><p class="direction-film-lead">Your local guide to a new life in Valencia.</p>
@@ -625,7 +625,7 @@ form.ask{display:grid;gap:1rem}
 <!-- ============ 1. THE HORIZON ============ -->
 <section class="hero" id="horizon" aria-labelledby="hero-title">
   <div class="hero-stage">
-    <img class="hero-photo" src="../15-new-horizon/img/christa-1000.webp" srcset="../15-new-horizon/img/christa-600.webp 600w, ../15-new-horizon/img/christa-1000.webp 1000w" sizes="(min-width: 900px) 51vw, 100vw" fetchpriority="high" decoding="async" alt="Christa Brokke smiling beside an old wooden doorway in Valencia.">
+    <img class="hero-photo" src="christa-brokke-original.jpg" width="1080" height="1484" fetchpriority="high" decoding="async" alt="Christa Brokke smiling beside an old wooden doorway in Valencia.">
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="hero-copy">
       <div class="wrap">
@@ -651,7 +651,7 @@ form.ask{display:grid;gap:1rem}
 <section class="chapter trust" id="christa" aria-labelledby="christa-title">
   <div class="wrap trust-grid">
     <figure class="portrait-fig">
-      <div class="portrait"><img src="../15-new-horizon/img/christa-600.webp" srcset="../15-new-horizon/img/christa-600.webp 600w, ../15-new-horizon/img/christa-1000.webp 1000w" sizes="(max-width: 899px) 340px, 440px" width="1000" height="1374" loading="lazy" decoding="async" alt="Christa, smiling with her arms crossed, standing in front of a teal mural beside an old wooden doorway."></div>
+      <div class="portrait"><img src="christa-brokke-original.jpg" width="1080" height="1484" loading="lazy" decoding="async" alt="Christa, smiling with her arms crossed, standing in front of a teal mural beside an old wooden doorway."></div>
       <figcaption class="label portrait-cap">Christa Brokke · Moving2Valencia</figcaption>
     </figure>
     <div>
@@ -1078,7 +1078,7 @@ form.ask{display:grid;gap:1rem}
     var tl = gsap.timeline({ defaults:{ ease:"none" }, scrollTrigger:{
       trigger: ".hero", start: "top top", end: desk ? "+=130%" : "bottom 15%",
       pin: desk ? stage : false, scrub: .5, anticipatePin: 1, invalidateOnRefresh: true } });
-    tl.fromTo(".hero-photo", { scale:1.12 }, { scale:1, duration:3 }, 0)
+    tl.fromTo(".hero-photo", { scale:1.04 }, { scale:1, duration:3 }, 0)
       .fromTo(".horizon", { scaleX:.45 }, { scaleX:1, duration:3 }, 0)
       .fromTo(".hero-copy", { opacity:1, y:0 }, { opacity:0, y:-36, duration:1.6 }, 3)
       .fromTo(".imagine", { scale: desk ? .32 : .4, opacity:0 }, { scale: desk ? 1 : .92, opacity:1, duration:3 }, 3)

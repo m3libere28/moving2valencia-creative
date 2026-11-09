@@ -9,6 +9,7 @@ review = Path(__file__).resolve().parents[1] / 'review'
 out = review / 'horizon-directions'
 base = (review / '15-new-horizon/index.html').read_text(encoding='utf-8')
 source = '../15-new-horizon/img/'
+portrait = 'christa-brokke-original.jpg'
 
 
 def replace_once(page, old, new):
@@ -58,7 +59,7 @@ route_art = f'''<figure class="direction-route-picture">
 
 portrait_art = f'''<div class="direction-portrait-film" aria-hidden="true">
   <figure class="direction-print direction-print-street"><img src="{source}el-carmen-square-800.webp" alt="" width="800" height="533"><figcaption>El Carme</figcaption></figure>
-  <figure class="direction-print direction-print-christa"><img src="{source}christa-600.webp" alt="" width="600" height="824"><figcaption>Christa Brokke</figcaption></figure>
+  <figure class="direction-print direction-print-christa"><img src="{portrait}" alt="" width="1080" height="1484"><figcaption>Christa Brokke</figcaption></figure>
   <figure class="direction-print direction-print-coast"><img src="{source}malvarrosa-sky-800.webp" alt="" width="800" height="600"><figcaption>La Malva-rosa</figcaption></figure>
 </div>'''
 
@@ -95,7 +96,6 @@ directions = {
         'art': portrait_art,
         'headline': ('A familiar face', 'in a new city.'),
         'intro': 'I made Valencia my home in 2004. As an independent relocation consultant, I now help individuals, couples and families find their feet here, from the first practical questions to the everyday details.',
-        'hero_image': ('christa-1000.webp', 'christa-600.webp', 'Christa Brokke smiling beside an old wooden doorway in Valencia.'),
         'photo_note': 'Christa Brokke · Independent relocation consultant',
         'waypoint': 'BELONG',
         'order': ('christa', 'reviews', 'route', 'packages', 'life', 'begin'),
@@ -116,7 +116,8 @@ def build(slug, direction):
     page = re.sub(r'url\((?:\./)?fonts/', 'url(../15-new-horizon/fonts/', page)
     page = replace_once(page, '<title>A New Horizon</title>', f'<title>{direction["name"]} · Moving2Valencia</title>')
     page = replace_once(page, '<body data-jury-concept=', f'<body data-direction="{slug}" data-jury-concept=')
-    page = replace_once(page, '</head>', '<link rel="stylesheet" href="directions.css?v=opening-2"></head>')
+    styles = 'directions.css?v=portrait' if slug == 'personal-welcome' else 'directions.css?v=opening-2'
+    page = replace_once(page, '</head>', f'<link rel="stylesheet" href="{styles}"></head>')
     page = page.replace('href="../?concept=a-new-horizon#preview"', 'href="./#compare" target="_top"')
     page = page.replace('href="../jury-review.html"', 'href="./" target="_top"')
     page = page.replace('Back to website selection ↗', 'Back to Christa’s three directions ↗').replace('Review all concepts ↗', 'Compare the three directions ↗')
@@ -126,10 +127,12 @@ def build(slug, direction):
     page, count = re.subn(r'<dialog class="m2v-opening".*?</dialog>', lambda _: film(slug, direction), page, count=1, flags=re.S)
     assert count == 1
     image = re.search(r'<img class="hero-photo"[^>]+>', page)[0]
-    large, small, alt = direction['hero_image']
-    small_width, large_width = (600, 1000) if slug == 'personal-welcome' else (800, 1200)
-    sizes = '(min-width: 900px) 51vw, 100vw' if slug == 'personal-welcome' else '100vw'
-    page = replace_once(page, image, f'<img class="hero-photo" src="{source}{large}" srcset="{source}{small} {small_width}w, {source}{large} {large_width}w" sizes="{sizes}" fetchpriority="high" decoding="async" alt="{alt}">')
+    if slug == 'personal-welcome':
+        hero = f'<img class="hero-photo" src="{portrait}" width="1080" height="1484" fetchpriority="high" decoding="async" alt="Christa Brokke smiling beside an old wooden doorway in Valencia.">'
+    else:
+        large, small, alt = direction['hero_image']
+        hero = f'<img class="hero-photo" src="{source}{large}" srcset="{source}{small} 800w, {source}{large} 1200w" sizes="100vw" fetchpriority="high" decoding="async" alt="{alt}">'
+    page = replace_once(page, image, hero)
     page = replace_once(page, f'<link rel="preload" as="image" href="{source}malvarrosa-sky-1600.webp" type="image/webp">', '')
     page = replace_once(page, 'Imagine your life</span>', direction['headline'][0] + '</span>')
     page = replace_once(page, '<em>in Valencia.</em>', f'<em>{direction["headline"][1]}</em>')
@@ -152,6 +155,12 @@ def build(slug, direction):
             page = replace_once(page, f'<article class="stage" data-stage="{number}">', f'<article class="stage" data-stage="{number}" id="service-{key}">')
     if slug == 'personal-welcome':
         page = replace_once(page, '<a class="btn btn-line" href="#route">Explore services</a>', '<a class="btn btn-line" href="#christa">Meet Christa</a>')
+        page = replace_once(page, '{ scale:1.12 }, { scale:1, duration:3 }', '{ scale:1.04 }, { scale:1, duration:3 }')
+        photo = re.search(r'<div class="portrait"><img[^>]+>', page)[0]
+        original = re.sub(r' src="[^"]+" srcset="[^"]+" sizes="[^"]+" width="1000" height="1374"',
+                          f' src="{portrait}" width="1080" height="1484"', photo)
+        assert original != photo
+        page = replace_once(page, photo, original)
     return page
 
 
@@ -174,7 +183,7 @@ a{display:inline-block;background:#132e43;color:#f7f2e9;padding:.75rem 1.15rem;b
 <main><p>Prepared for Christa Brokke</p><h1>Moving2Valencia<br>Design review</h1>
 <p>Extract the entire ZIP before opening the review so all three websites, photos and animations stay together.</p>
 <a href="review/horizon-directions/index.html">Open the three website directions ↗</a></main></html>'''
-    paths = [*out.glob('*.html'), *out.glob('*.css'), out / 'review.js',
+    paths = [*out.glob('*.html'), *out.glob('*.css'), out / 'review.js', out / portrait,
              *(review / file for file in shared),
              *(review / '15-new-horizon/img').glob('*.webp'),
              *(review / '15-new-horizon/vendor').glob('*.js'), *font_root.glob('*.woff2')]

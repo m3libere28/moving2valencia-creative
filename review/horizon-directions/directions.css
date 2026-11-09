@@ -30,7 +30,7 @@
 
 [data-direction="personal-welcome"] .hero-stage {background:#2e1d1b}
 [data-direction="personal-welcome"] .hero-photo {
-  left:49%;width:51%;object-position:51% 32%;filter:saturate(.83) contrast(1.02)
+  left:auto;right:0;width:min(51%,1038px);object-position:51% 32%;filter:saturate(.83) contrast(1.02)
 }
 [data-direction="personal-welcome"] .hero-scrim {
   background:linear-gradient(90deg,#2e1d1b 0%,#2e1d1b 43%,#2e1d1bc9 51%,transparent 70%),
