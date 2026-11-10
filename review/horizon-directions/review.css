@@ -59,6 +59,9 @@ h3 {font-size:clamp(1.75rem,3vw,2.5rem)}
 .preview-section {background:var(--navy);color:var(--paper)}
 .preview-section h2,.preview-section .section-head>p:not(.eyebrow) {color:var(--paper)}
 .preview-section .eyebrow {color:#ffbf82}
+.latest-revision{margin-bottom:2rem}
+.latest-revision-links{display:flex;flex-wrap:wrap;gap:0 1.35rem}
+.latest-revision .text-link{color:var(--paper);text-decoration:underline;text-underline-offset:.24em}
 .preview-tools {display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:.8rem;align-items:end}
 .preview-field {min-width:0}
 label,.field-label {display:block;margin:0 0 .35rem;font-size:.87rem;font-weight:650}
