@@ -30,7 +30,7 @@ def cut(pattern):
 
 swap('A New Horizon II · Client archive edition', 'A New Horizon II · Christa’s review')
 swap('data-client-edition="new-horizon-ii"', 'data-client-edition="new-horizon-ii" data-christa-preview')
-swap('</head>', '<link rel="stylesheet" href="christa.css?v=vision-audit"></head>')
+swap('</head>', '<link rel="stylesheet" href="christa.css?v=verified-reviews"></head>')
 swap('plays once per session in front of the hero', 'replays on refresh in front of the hero')
 swap('   plays once per session and never under reduced motion.', '   replays on refresh and respects reduced motion.')
 swap('  var play = false;\n  try {\n    play = !sessionStorage.getItem("m2v-intro-seen") &&\n      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;\n  } catch (e) { play = false; }\n  if (play){', '''  var navigation = performance.getEntriesByType("navigation")[0];
@@ -180,20 +180,36 @@ swap(planner_marker, '''  <section class="christa-packages" id="packages" aria-l
 
 ''' + planner_marker)
 
+reviews = (
+    ('Boombap Conissour', 'It felt like concierge service. She guided us through each step, and her local connections gave us confidence that we were in experienced hands.', 'https://maps.app.goo.gl/wuR94andqYxRHjN47'),
+    ('Anna Madarasz', 'finding the right primary school for our daughter.', 'https://maps.app.goo.gl/H6RpPt7ZK8UHfQKR9'),
+    ('Elly Johnson', 'Christa knows everything about relocating to Valencia and will save you so much stress.', 'https://maps.app.goo.gl/PvdhKRkhwup1j3JT7'),
+    ('Bee Avila', 'From the moment we got in touch, she was direct, patient, kind, and incredibly helpful.', 'https://maps.app.goo.gl/rEhV62qUDrHyWzeu9'),
+    ('Richard Adams', 'This was the best decision we have made so far related to our move!', 'https://maps.app.goo.gl/SiraVEC2eu3f5yGo8'),
+)
+
+
+def review_card(name, excerpt, url):
+    return f'''      <figure class="christa-quote">
+        <span class="christa-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote>“{excerpt}”</blockquote>
+        <figcaption><strong>{name}</strong><a href="{url}" target="_blank" rel="noopener" aria-label="Read the original review by {name} on Google">Read original on Google <span aria-hidden="true">↗</span></a></figcaption>
+      </figure>'''
+
+
+review_cards = '\n'.join(review_card(*review) for review in reviews)
 leap_marker = '  <!-- ============ CHAPTER 3 · THE LEAP ============ -->'
 swap(leap_marker, f'''  <section class="christa-reviews" id="reviews" aria-labelledby="reviews-h">
-    <div class="wrap christa-review-grid">
+    <div class="wrap">
       <div>
         <p class="chapter-tag">Google reviews</p>
         <h2 id="reviews-h">What clients say</h2>
-        <p>A family’s experience moving to Spain with Christa’s support.</p>
+        <p>Families and individuals share what it was like to move with Christa’s support.</p>
         <a class="btn btn-terra" href="{GOOGLE}" target="_blank" rel="noopener">Read all reviews on Google <span aria-hidden="true">↗</span></a>
       </div>
-      <figure class="christa-quote">
-        <span class="christa-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
-        <blockquote>“It felt like concierge service. She guided us through each step, and her local connections gave us confidence that we were in experienced hands.”</blockquote>
-        <figcaption><strong>Boombap Conissour</strong><span>Google review excerpt</span></figcaption>
-      </figure>
+      <div class="christa-review-grid">
+{review_cards}
+      </div>
     </div>
   </section>
 
@@ -262,6 +278,15 @@ OUTPUT.mkdir(parents=True, exist_ok=True)
 (OUTPUT / 'index.html').write_text(re.sub(r'[ \t]+$', '', html, flags=re.M), encoding='utf-8')
 (OUTPUT / 'christa-site.js').write_text(site, encoding='utf-8')
 (OUTPUT / 'christa-splash.js').write_text(splash.rstrip() + '\n', encoding='utf-8')
+
+feedback_path = REVIEW / 'christa/index.html'
+feedback = feedback_path.read_text(encoding='utf-8')
+feedback, blocks = re.subn(
+    r'(?<=<!-- begin Google review excerpts -->).*?(?=<!-- end Google review excerpts -->)',
+    lambda _: '\n' + review_cards + '\n        ', feedback, flags=re.S,
+)
+assert blocks == 1, 'Expected one Google review excerpt block on the feedback page'
+feedback_path.write_text(feedback, encoding='utf-8')
 
 if len(sys.argv) == 2:
     import fitz

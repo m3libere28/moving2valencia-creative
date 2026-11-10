@@ -1,7 +1,6 @@
 const image = document.querySelector('#preview-image');
 const stage = document.querySelector('#preview-stage');
 const frame = document.querySelector('#site-preview');
-const load = document.querySelector('#preview-load');
 const tools = document.querySelector('#preview-tools');
 const replay = document.querySelector('#preview-replay');
 const widthButtons = document.querySelectorAll('[data-width]');
@@ -21,17 +20,17 @@ function showOpening() {
 }
 
 setWidth(matchMedia('(max-width: 600px)').matches ? 'phone' : 'desktop');
-load.hidden = false;
-load.addEventListener('click', () => {
-  image.hidden = true;
-  stage.hidden = false;
-  tools.hidden = false;
-  load.hidden = true;
-  showOpening();
-  replay.focus();
-});
+tools.hidden = false;
 replay.addEventListener('click', showOpening);
-widthButtons.forEach(button => button.addEventListener('click', () => setWidth(button.dataset.width)));
+widthButtons.forEach(button => button.addEventListener('click', () => {
+  setWidth(button.dataset.width);
+  if (stage.hidden) {
+    image.hidden = true;
+    stage.hidden = false;
+    replay.hidden = false;
+    showOpening();
+  }
+}));
 
 const form = document.querySelector('#feedback-form');
 const feedbackStatus = document.querySelector('#feedback-status');

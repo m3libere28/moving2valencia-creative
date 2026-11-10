@@ -64,10 +64,14 @@ h2 { font-size: clamp(2.4rem, 4.5vw, 4.15rem); }
 .notes dt span { color: var(--rust); font: 700 .79rem/2.3 system-ui, sans-serif; }
 .notes dd p { color: var(--muted); max-width: 62ch; }
 .notes dd a { display: inline-block; margin-top: .4rem; margin-right: .85rem; font-weight: 650; }
-.family-review { margin-top: 1rem; padding: .8rem 1rem; border-left: 3px solid var(--rust); background: #f7ecdf; scroll-margin-top: 1.5rem; }
-.family-review blockquote { margin: 0; max-width: 58ch; font: 1.13rem/1.5 var(--serif); }
-.family-review figcaption { margin-top: .55rem; color: var(--muted); font-size: .9rem; }
-.family-review figcaption span { margin-left: .35rem; color: var(--rust); }
+.review-evidence { padding-bottom: clamp(3.5rem, 7vw, 6rem); }
+.review-evidence-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; margin-top: 1rem; }
+.review-evidence-grid .christa-quote:first-child { grid-column: 1 / -1; border-left: 3px solid var(--rust); }
+.review-evidence .christa-quote { padding: .9rem 1rem; background: #f7ecdf; border: 1px solid var(--line); border-radius: 6px; }
+.review-evidence .christa-stars { color: var(--rust); }
+.review-evidence blockquote { margin: .2rem 0; max-width: 65ch; font: 1.14rem/1.5 var(--serif); }
+.review-evidence figcaption { display: flex; align-items: center; flex-wrap: wrap; gap: 0 .8rem; margin-top: .35rem; color: var(--muted); font-size: .9rem; }
+.review-evidence figcaption a { display: inline-flex; align-items: center; gap: .3em; min-height: 44px; }
 .logo-section { background: #f4e5d8; }
 .logo-layout { display: grid; grid-template-columns: .77fr 1.23fr; align-items: center; gap: clamp(2rem, 5vw, 4.5rem); padding-block: clamp(3rem, 7vw, 6rem); }
 .proofs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
@@ -87,6 +91,10 @@ h2 { font-size: clamp(2.4rem, 4.5vw, 4.15rem); }
   .intro, .logo-layout, .feedback { grid-template-columns: 1fr; gap: 1.25rem; }
   .notes > div { grid-template-columns: 1fr; gap: .4rem; }
   .notes dd { padding-left: 2.55rem; }
+}
+
+@media (max-width: 600px) {
+  .review-evidence-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 475px) {
