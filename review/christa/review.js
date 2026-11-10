@@ -1,16 +1,29 @@
 const image = document.querySelector('#preview-image');
 const stage = document.querySelector('#preview-stage');
+const deviceScreen = stage.querySelector('.device-screen');
 const frame = document.querySelector('#site-preview');
 const tools = document.querySelector('#preview-tools');
 const replay = document.querySelector('#preview-replay');
-const widthButtons = document.querySelectorAll('[data-width]');
+const widthButtons = tools.querySelectorAll('[data-width]');
 let opening = 0;
+
+function fitDesktopScreen() {
+  if (frame.hidden || stage.dataset.width !== 'desktop') return;
+  const screenWidth = deviceScreen.clientWidth;
+  if (!screenWidth) return;
+  // Keep the desktop navigation active when the whole monitor is scaled down.
+  const viewportWidth = Math.max(screenWidth, 1160);
+  deviceScreen.style.setProperty('--desktop-width', `${viewportWidth}px`);
+  deviceScreen.style.setProperty('--desktop-height', `${viewportWidth * 9 / 16}px`);
+  deviceScreen.style.setProperty('--desktop-scale', screenWidth / viewportWidth);
+}
 
 function setWidth(width) {
   stage.dataset.width = width;
   widthButtons.forEach(button => {
     button.setAttribute('aria-pressed', String(button.dataset.width === width));
   });
+  fitDesktopScreen();
 }
 
 function showOpening() {
@@ -20,14 +33,16 @@ function showOpening() {
 }
 
 setWidth(matchMedia('(max-width: 600px)').matches ? 'phone' : 'desktop');
+new ResizeObserver(fitDesktopScreen).observe(deviceScreen);
 tools.hidden = false;
 replay.addEventListener('click', showOpening);
 widthButtons.forEach(button => button.addEventListener('click', () => {
   setWidth(button.dataset.width);
-  if (stage.hidden) {
+  if (frame.hidden) {
     image.hidden = true;
-    stage.hidden = false;
+    frame.hidden = false;
     replay.hidden = false;
+    fitDesktopScreen();
     showOpening();
   }
 }));

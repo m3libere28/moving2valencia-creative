@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>A New Horizon II · Website review for Christa Brokke</title>
-  <link rel="stylesheet" href="review.css?v=phone-in-hand">
-  <script src="review.js?v=reviews-mobile" defer></script>
+  <link rel="stylesheet" href="review.css?v=widescreen-preview">
+  <script src="review.js?v=widescreen-preview" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to the review</a>
@@ -45,17 +45,20 @@
           <button type="button" class="button secondary" id="preview-replay" hidden>Replay opening</button>
         </div>
       </div>
-      <a class="preview-image" id="preview-image" href="../client-editions/new-horizon-ii-review/index.html" target="_blank" rel="noopener" aria-label="Open the revised A New Horizon II website">
-        <picture>
-          <source media="(max-width: 475px)" srcset="homepage-phone.jpg?v=transparent-brand" width="390" height="844">
-          <img src="homepage-preview.jpg?v=transparent-brand" width="1440" height="900" alt="The revised homepage with the title Imagine your life in Valencia, warm city photography and links to services and Google reviews" fetchpriority="high">
-        </picture>
-      </a>
-      <div class="preview-stage" id="preview-stage" hidden>
+      <div class="preview-stage" id="preview-stage" data-width="desktop">
         <div class="device-mockup">
           <div class="device-shell">
-            <iframe id="site-preview" title="Interactive A New Horizon II website preview"></iframe>
+            <div class="device-screen">
+              <a class="preview-image" id="preview-image" href="../client-editions/new-horizon-ii-review/index.html" target="_blank" rel="noopener" aria-label="Open the revised A New Horizon II website">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="homepage-phone.jpg?v=transparent-brand" width="390" height="844">
+                  <img src="homepage-preview.jpg?v=transparent-brand" width="1440" height="900" alt="The revised homepage with the title Imagine your life in Valencia, warm city photography and links to services and Google reviews" fetchpriority="high">
+                </picture>
+              </a>
+              <iframe id="site-preview" title="Interactive A New Horizon II website preview" hidden></iframe>
+            </div>
           </div>
+          <div class="device-stand" aria-hidden="true"></div>
         </div>
       </div>
     </section>
