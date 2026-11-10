@@ -11,7 +11,7 @@ import sys
 REVIEW = Path(__file__).resolve().parents[1] / 'review'
 SOURCE = REVIEW / 'client-editions/new-horizon-ii'
 OUTPUT = REVIEW / 'client-editions/new-horizon-ii-review'
-GOOGLE = 'https://www.google.com/maps?cid=10361883075186195757'
+GOOGLE = 'https://search.google.com/local/reviews?placeid=ChIJc0M3QetqYA0RLf2a3MHNzI8'
 
 html = (SOURCE / 'index.html').read_text(encoding='utf-8')
 
@@ -180,46 +180,20 @@ swap(planner_marker, '''  <section class="christa-packages" id="packages" aria-l
 
 ''' + planner_marker)
 
-reviews = (
-    (
-        'Boombap Conissour',
-        'It felt like concierge service. She guided us through each step, and her local connections gave us confidence that we were in experienced hands.',
-        'https://maps.app.goo.gl/wuR94andqYxRHjN47',
-    ),
-    ('Anna Madarasz', 'She gave us confidence'),
-    ('Elly Johnson', 'will save you so much stress'),
-    ('Bee Avila', 'she really did make us feel welcomed'),
-)
-
-
-def review_card(person, excerpt, url=None):
-    source = (
-        f'<a href="{url}" target="_blank" rel="noopener">Read this review on Google</a>'
-        if url else '<span>Google review excerpt</span>'
-    )
-    return f'''<figure class="christa-quote">
-      <span class="christa-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
-      <blockquote>“{excerpt}”</blockquote>
-      <figcaption><strong>{person}</strong>{source}</figcaption>
-    </figure>'''
-
-
 leap_marker = '  <!-- ============ CHAPTER 3 · THE LEAP ============ -->'
 swap(leap_marker, f'''  <section class="christa-reviews" id="reviews" aria-labelledby="reviews-h">
     <div class="wrap christa-review-grid">
       <div>
         <p class="chapter-tag">Google reviews</p>
         <h2 id="reviews-h">What clients say</h2>
-        <p>See what people wrote about working with Christa on their move to Valencia.</p>
-        <a class="btn btn-terra" href="{GOOGLE}" target="_blank" rel="noopener">Read the full reviews on Google <span aria-hidden="true">↗</span></a>
+        <p>A family’s experience moving to Spain with Christa’s support.</p>
+        <a class="btn btn-terra" href="{GOOGLE}" target="_blank" rel="noopener">Read all reviews on Google <span aria-hidden="true">↗</span></a>
       </div>
-      <div>
-        {review_card(*reviews[0])}
-        <details class="christa-more">
-          <summary>Read more review excerpts <span class="christa-details-icon" aria-hidden="true"></span></summary>
-          <div class="christa-more-quotes">{''.join(review_card(*review) for review in reviews[1:])}</div>
-        </details>
-      </div>
+      <figure class="christa-quote">
+        <span class="christa-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote>“It felt like concierge service. She guided us through each step, and her local connections gave us confidence that we were in experienced hands.”</blockquote>
+        <figcaption><strong>Boombap Conissour</strong><span>Google review excerpt</span></figcaption>
+      </figure>
     </div>
   </section>
 
