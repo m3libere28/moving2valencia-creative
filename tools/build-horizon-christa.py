@@ -30,7 +30,7 @@ def cut(pattern):
 
 swap('A New Horizon II · Client archive edition', 'A New Horizon II · Christa’s review')
 swap('data-client-edition="new-horizon-ii"', 'data-client-edition="new-horizon-ii" data-christa-preview')
-swap('</head>', '<link rel="stylesheet" href="christa.css"></head>')
+swap('</head>', '<link rel="stylesheet" href="christa.css?v=vision-audit"></head>')
 swap('plays once per session in front of the hero', 'replays on refresh in front of the hero')
 swap('   plays once per session and never under reduced motion.', '   replays on refresh and respects reduced motion.')
 swap('  var play = false;\n  try {\n    play = !sessionStorage.getItem("m2v-intro-seen") &&\n      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;\n  } catch (e) { play = false; }\n  if (play){', '''  var navigation = performance.getEntriesByType("navigation")[0];
@@ -86,6 +86,12 @@ cut(r'\n +<li>Intercultural Workshops</li>')
 swap('School Finding, Intercultural Workshops; help', 'School Finding; help')
 swap('home finding, school finding, formalities, workshops', 'home finding, school finding and formalities')
 swap('The route, <em>step by step.</em>', 'The route, <em>at your pace.</em>')
+swap('<span class="no">Chapter four</span> Your route to arrival', '<span class="no">Chapter four</span> Relocation services')
+swap('<h2 id="route-h">The route, <em>at your pace.</em></h2>', '''<h2 id="route-h">The route, <em>at your pace.</em></h2>
+      <div class="service-shortcuts">
+        <p>Explore the support that fits your move. The order depends on your plans and the kind of school you’re considering.</p>
+        <a href="#packages">See relocation packages <span aria-hidden="true">↓</span></a>
+      </div>''')
 swap('A home, a school', 'Home &amp; school')
 swap('The two anchors of a new life, searched on the ground in Valencia — not from another continent, weeks behind the listings.',
      'Christa helps you look for a home and a school in Valencia. Where you start depends on the kind of school you’re considering.')
@@ -98,7 +104,12 @@ swap('            <div class="svc">\n              <button type="button" aria-ex
             <div class="svc">
               <button type="button" aria-expanded="false" aria-controls="svc-home">''')
 swap('Finding the right fit for your children is a crucial part of the move. School finding support helps you compare options and settle the question early, because it shapes where and how you live.',
-     'Christa helps you compare schools and work out when to start looking, based on your children’s needs and the type of school you choose.')
+     'Christa helps you compare schools, arrange visits and work through enrolment. When you start depends on your children’s needs and the type of school you choose.')
+swap('Legal advice &amp; negotiation', 'Contracts &amp; practical support')
+swap('Support understanding contracts and terms before you sign — including rental agreements — and help negotiating, so local paperwork doesn\'t become expensive guesswork.',
+     'Christa helps you work through practical questions about rental agreements and can connect you with a local specialist when needed.')
+swap('Help finding your home in Valencia, whether you are renting or buying — searching, viewing and judging properties with local eyes, against the life you described in the planning stage.',
+     'Christa helps you shortlist homes, arrange viewings and work through practical questions before you decide where to live.')
 swap('Select the help you\'d want — the plan on the right orders itself the way Christa would sequence it — then carry it straight into your first email. Nothing is priced or promised here; the conversation works out the details.',
      'Select the help you’d like, then add it to your enquiry. The list shows your priorities; Christa can help you work out what needs to happen first.')
 swap('Your route, so far', 'Your priorities, so far')
@@ -116,7 +127,7 @@ swap('Tel / WhatsApp — <a href="https://wa.me/34648117862" target="_blank" rel
 
 swap('Not a call centre. <em>A person.</em>', 'Meet <em>Christa Brokke.</em>')
 swap('<p><strong>Christa Brokke</strong> is the relocation consultant behind Moving2Valencia — and the person you will actually deal with. Based in Valencia, she supports individuals, couples, families and employees relocating here, on every aspect of the move.</p>',
-     '<p>I moved to Valencia with my family in 2004. I know how exciting a move can feel and how many decisions there are to make before you can settle in. Today I work directly with individuals, couples and families moving to Valencia and the surrounding area.</p>')
+     '<p>I moved to Valencia with my family in 2004. I know how exciting a move can feel and how many decisions there are to make before you can settle in. I’m now an independent relocation consultant, working with individuals, couples and families moving to Valencia and the surrounding area.</p>')
 swap('<p>Her approach, in the business\'s own words, is to take the tangle out of your hands: comprehensive relocation support built on years of experience, thorough knowledge of the local market, and strong local networks — so you can adapt quickly and calmly, and avoid the isolation of figuring out a strange country alone.</p>',
      '<p>Before relocation work, I was an opera stage manager. A lot of the job happened out of sight: keeping track of timings, people and last-minute changes so the evening could go ahead. That experience still shapes how I work. I help you see what needs doing now, what can wait and who to speak to next.</p>')
 swap('<p>One point of contact means nothing is lost between departments: the person who hears what your life should look like is the person searching for your home, standing in the paperwork queue, and answering when the small questions come.</p>',
@@ -137,6 +148,37 @@ swap('<div class="ph"><img src="img/83651e4d.webp" srcset="img/461b5fd1.webp 640
           <figcaption>City and coast · illustrations from proposal 11</figcaption>
         </figure>''')
 swap('All photographs are real and used under their Creative Commons licences;', 'The city and coast illustrations are from proposal 11. The listed photographs are used under their Creative Commons licences;')
+swap('The move is the journey between the two.</p>', '''The move is the journey between the two.</p>
+        <a class="city-sea-jump" href="#belong">Explore the city and the coast <span aria-hidden="true">↓</span></a>''')
+
+planner_marker = '  <!-- ============ BUILD YOUR MOVE — INTERACTIVE PLANNER ============ -->'
+swap(planner_marker, '''  <section class="christa-packages" id="packages" aria-labelledby="packages-h">
+    <div class="wrap">
+      <p class="chapter-tag">Relocation packages</p>
+      <h2 id="packages-h">Choose the support that <em>fits your move.</em></h2>
+      <div class="christa-package-grid">
+        <article>
+          <h3>Basic Homefinding</h3>
+          <p>For people who mainly need help finding a home. Includes the home search, help setting up a bank account and mobile phone, and two weeks of online support.</p>
+        </article>
+        <article>
+          <h3>Basic Package</h3>
+          <p>For a move that needs some planning and paperwork. Includes pre-move guidance, a home search, help with your NIE, banking and home insurance, and two months of online support.</p>
+        </article>
+        <article>
+          <h3>Family Package</h3>
+          <p>For families arranging a home and school. Includes pre-move guidance, both searches, help with local registration and other paperwork, and two months of online support.</p>
+        </article>
+        <article>
+          <h3>Tailormade Package</h3>
+          <p>For a move that needs a different mix of services. Tell Christa which parts you’d like help with and she’ll put together a proposal.</p>
+        </article>
+      </div>
+      <p><a href="#start">Ask about a package</a>. Christa will confirm what’s included and share the fees in her reply.</p>
+    </div>
+  </section>
+
+''' + planner_marker)
 
 reviews = (
     ('Anna Madarasz', 'She gave us confidence'),
@@ -153,25 +195,26 @@ def review_card(person, excerpt):
     </figure>'''
 
 
-swap('  <!-- Signature scene 1: IMAGINE becomes a doorway -->', f'''  <section class="christa-reviews" id="reviews" aria-labelledby="reviews-h">
+leap_marker = '  <!-- ============ CHAPTER 3 · THE LEAP ============ -->'
+swap(leap_marker, f'''  <section class="christa-reviews" id="reviews" aria-labelledby="reviews-h">
     <div class="wrap christa-review-grid">
       <div>
         <p class="chapter-tag">Google reviews</p>
         <h2 id="reviews-h">What clients say</h2>
         <p>See what people wrote about working with Christa on their move to Valencia.</p>
-        <a class="btn btn-terra" href="{GOOGLE}">Read all reviews on Google <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-terra" href="{GOOGLE}">Read the full reviews on Google <span aria-hidden="true">↗</span></a>
       </div>
       <div>
         {review_card(*reviews[0])}
         <details class="christa-more">
-          <summary>Read further <span class="christa-details-icon" aria-hidden="true"></span></summary>
+          <summary>Read more review excerpts <span class="christa-details-icon" aria-hidden="true"></span></summary>
           <div class="christa-more-quotes">{''.join(review_card(*review) for review in reviews[1:])}</div>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- Signature scene 1: IMAGINE becomes a doorway -->''')
+{leap_marker}''')
 swap('          <li><a href="#person">About Christa</a></li>', '          <li><a href="#person">About Christa</a></li>\n          <li><a href="#reviews">Google reviews</a></li>')
 swap('Imported separately for design review. Service scope and fees are discussed personally. Supplied imagery credits are retained.',
      'Warm-colour revision for Christa Brokke.')
