@@ -211,7 +211,7 @@ swap(leap_marker, f'''  <section class="christa-reviews" id="reviews" aria-label
         <p class="chapter-tag">Google reviews</p>
         <h2 id="reviews-h">What clients say</h2>
         <p>See what people wrote about working with Christa on their move to Valencia.</p>
-        <a class="btn btn-terra" href="{GOOGLE}">Read the full reviews on Google <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-terra" href="{GOOGLE}" target="_blank" rel="noopener">Read the full reviews on Google <span aria-hidden="true">↗</span></a>
       </div>
       <div>
         {review_card(*reviews[0])}
