@@ -53,8 +53,47 @@ h2 { font-size: clamp(2.4rem, 4.5vw, 4.15rem); }
 .preview-image:focus-visible { outline-offset: -5px; }
 .preview-image img { width: 100%; }
 .preview-stage { display: grid; justify-items: center; background: #e9d4c3; }
+.device-shell { width: 100%; }
 .preview-stage iframe { display: block; width: 100%; height: clamp(560px, 76vh, 850px); border: 0; background: var(--paper); }
-.preview-stage[data-width='phone'] iframe { width: min(100%, 390px); }
+.preview-stage[data-width='phone'] {
+  padding: clamp(1rem, 4vw, 2.5rem) clamp(.65rem, 3vw, 1.5rem);
+  background: radial-gradient(ellipse at 50% 22%, #f8ede3, #e3cbb9);
+}
+.preview-stage[data-width='phone'] .device-shell {
+  position: relative;
+  width: min(100%, 408px);
+  padding: 8px;
+  border: 1px solid #676360;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #55514e, #171615 20%, #262422 80%, #55514e);
+  box-shadow: 0 17px 35px #3d29282b, 0 3px 8px #3d292836, inset 0 0 0 1px #aaa29a80;
+}
+.preview-stage[data-width='phone'] .device-shell::before {
+  content: '';
+  position: absolute;
+  top: 19%;
+  right: -3px;
+  width: 3px;
+  height: 34px;
+  border-radius: 0 2px 2px 0;
+  background: #56514c;
+  box-shadow: 0 47px 0 #56514c;
+  pointer-events: none;
+}
+.preview-stage[data-width='phone'] .device-shell::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #343449, #111015 66%);
+  box-shadow: 0 0 0 1px #0006;
+  pointer-events: none;
+}
+.preview-stage[data-width='phone'] iframe { height: auto; aspect-ratio: 390 / 844; border-radius: 17px; }
 .changes, .feedback { padding-block: clamp(3.5rem, 8vw, 7.5rem); }
 .section-intro h2 { margin-top: .35rem; }
 .section-intro > p:not(.eyebrow) { margin-top: .8rem; color: var(--muted); max-width: 43ch; }
@@ -108,6 +147,7 @@ h2 { font-size: clamp(2.4rem, 4.5vw, 4.15rem); }
   .preview-tools { font-size: .86rem; }
   .preview-image img { aspect-ratio: 390 / 675; object-fit: cover; object-position: top; }
   .preview-stage iframe { height: 660px; }
+  .preview-stage[data-width='phone'] iframe { height: auto; }
   .proofs { gap: .55rem; }
   .footer { flex-wrap: wrap; }
 }

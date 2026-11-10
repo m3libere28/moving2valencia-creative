@@ -30,7 +30,7 @@ def cut(pattern):
 
 swap('A New Horizon II · Client archive edition', 'A New Horizon II · Christa’s review')
 swap('data-client-edition="new-horizon-ii"', 'data-client-edition="new-horizon-ii" data-christa-preview')
-swap('</head>', '<link rel="stylesheet" href="christa.css?v=verified-reviews"></head>')
+swap('</head>', '<link rel="stylesheet" href="christa.css?v=transparent-brand"></head>')
 swap('plays once per session in front of the hero', 'replays on refresh in front of the hero')
 swap('   plays once per session and never under reduced motion.', '   replays on refresh and respects reduced motion.')
 swap('  var play = false;\n  try {\n    play = !sessionStorage.getItem("m2v-intro-seen") &&\n      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;\n  } catch (e) { play = false; }\n  if (play){', '''  var navigation = performance.getEntriesByType("navigation")[0];

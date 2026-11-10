@@ -1,5 +1,6 @@
 .christa-brand{width:132px;height:auto}
-.topbar .brand{flex:none;margin-right:auto;padding:6px 9px;background:#fff4e8;border-radius:8px}
+.topbar .brand{flex:none;margin-right:auto;padding:6px 9px}
+.topbar:not(.scrolled) .christa-brand{filter:brightness(0) invert(1) drop-shadow(0 1px 3px #30211a70)}
 .sp-top .christa-brand{width:clamp(96px,14vw,158px)}
 .mobile-services,.motion-glyph{display:none}
 .hero-reviews{display:inline-flex;align-items:center;gap:.5em;min-height:44px;padding:0 5px;color:#fff4e8;font-size:15px;font-weight:600;text-underline-offset:.22em}
