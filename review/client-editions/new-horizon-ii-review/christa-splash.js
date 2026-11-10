@@ -256,6 +256,7 @@
 
   /* enter: the doorway opens onto the real city */
   function enterSite(){
+    if (state === "intro") toRest();
     if (state !== "rest") return;
     state = "exit";
     if (!G || RM){ leave(true); return; }
