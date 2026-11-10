@@ -53,12 +53,10 @@
   var introEl = document.getElementById("intro");
   var introState = { playing: false, done: true };
   window.__m2vIntroTiming = { played: false, durationMs: 0, skipped: false };
-  function introSeen(){ try { sessionStorage.setItem("m2v-horizon-ii-review-seen", "1"); } catch (e) {} }
   var INTRO_EVENTS = ["pointerdown", "wheel", "touchmove", "keydown"];
   function finishIntro(skipped){
     if (!introState.playing){ introState.done = true; return; }
     introState.playing = false; introState.done = true;
-    introSeen();
     window.__m2vIntroTiming = { played: true, durationMs: Math.round(performance.now() - (window.__m2vIntroT0 || 0)), skipped: !!skipped };
     INTRO_EVENTS.forEach(function(ev){ window.removeEventListener(ev, introSkip, true); });
     var root = document.documentElement;
@@ -99,7 +97,6 @@
     if (!introEl || !heroEl) return;
     window.__m2vIntroClaimed = true;
     introState.playing = true; introState.done = false;
-    introSeen(); /* marked at start: a mid-intro reload never replays it */
     INTRO_EVENTS.forEach(function(ev){ window.addEventListener(ev, introSkip, true); });
     window.__m2vIntroActive = true;
     var FLIP_AT = 1700, END_AT = 2600;

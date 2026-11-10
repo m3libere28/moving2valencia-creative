@@ -1,12 +1,11 @@
 
 (function(){
   "use strict";
-  /* In the site: runs only when the head gate chose to play it (once per session, never under reduced motion) */
+  /* In the site: runs only when the head gate chose to play it (replays on refresh and respects reduced motion) */
   var root = document.documentElement, host = document.getElementById("m2vSplash");
   if (!host) return;
   if (!root.classList.contains("splash-on")) { host.parentNode.removeChild(host); return; }
   window.__m2vSplashClaimed = true;
-  try { sessionStorage.setItem("m2v-horizon-ii-review-seen", "1"); } catch (e) {}
   var alive = true;
   /* the page underneath cannot take focus or clicks while the splash is up */
   var inertEls = Array.prototype.filter.call(document.body.children, function(el){ return el !== host && el.tagName !== "SCRIPT"; });
@@ -276,7 +275,7 @@
     if (state === "gone") return;
     state = "gone"; runId++;
     if (tl) { tl.kill(); tl = null; }
-    try { window.scrollTo(0, 0); } catch (e) {}
+    try { window.scrollTo({top:0, left:0, behavior:"instant"}); } catch (e) {}
     host.style.transition = "opacity " + (fast ? ".45s" : ".8s") + " ease";
     host.classList.add("sp-leaving");
     setTimeout(finish, fast ? 470 : 830);

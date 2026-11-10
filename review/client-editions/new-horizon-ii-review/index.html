@@ -997,7 +997,7 @@
   .day-controls input[type="range"]:active::-webkit-slider-thumb, .compare input[type="range"]:active::-webkit-slider-thumb{ transform:scale(1.15); }
   .day-controls input[type="range"]:focus-visible::-webkit-slider-thumb, .compare input[type="range"]:focus-visible::-webkit-slider-thumb{ box-shadow:0 0 0 5px rgba(168,74,48,.28), 0 3px 12px rgba(44,36,32,.28); }
 
-/* ===== SPLASH · "Valencia Arrivals" — plays once per session in front of the hero ===== */
+/* ===== SPLASH · "Valencia Arrivals" — replays on refresh in front of the hero ===== */
 #m2vSplash{display:none}
 html.splash-on body > :not(#m2vSplash){display:none !important}
 html.splash-on .marquee-track, html.splash-on .kenburns img{animation-play-state:paused !important}
@@ -1130,16 +1130,31 @@ html.splash-on #m2vSplash{display:block}
 </style>
 <script>
 /* Splash gate — decided before first paint: the "Valencia Arrivals" splash
-   plays once per session and never under reduced motion. While it is up the
+   replays on refresh and respects reduced motion. While it is up the
    hero's WebGL start is deferred (__m2vIntroActive). If the splash script
    never claims the screen (script failure), this timer uncovers the page. */
 (function(){
-  var play = false;
-  try {
-    play = !location.hash && !sessionStorage.getItem("m2v-horizon-ii-review-seen") &&
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  } catch (e) { play = false; }
+  var navigation = performance.getEntriesByType("navigation")[0];
+  var reload = navigation ? navigation.type === "reload" : performance.navigation && performance.navigation.type === 1;
+  var play = (reload || !location.hash) && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!play && !reload && location.hash){
+    document.addEventListener("DOMContentLoaded", function(){
+      var target = document.getElementById(location.hash.slice(1));
+      if (target) target.scrollIntoView({behavior:"instant"});
+    }, {once:true});
+  }
   if (play){
+    if (reload){
+      // Refresh means start from the beginning. Shared section links still land directly.
+      if (location.hash) history.replaceState(history.state, "", location.pathname + location.search);
+      if ("scrollRestoration" in history){
+        var previousMode = history.scrollRestoration;
+        history.scrollRestoration = "manual";
+        window.addEventListener("pageshow", function(){
+          setTimeout(function(){ history.scrollRestoration = previousMode; }, 0);
+        }, { once:true });
+      }
+    }
     var d = document.documentElement;
     d.classList.add("splash-on");
     window.__m2vIntroActive = true;
@@ -1871,7 +1886,7 @@ html.splash-on #m2vSplash{display:block}
 </footer>
 
 <script src="../new-horizon-ii/js/gsap.min.js" defer data-inline></script>
-<script src="christa-splash.js" defer data-inline></script>
+<script src="christa-splash.js?v=replay" defer data-inline></script>
 <script>
 /* page scripts: straight away normally; while the opening plays they follow once it has started, so its fonts load first */
 (function(){

@@ -31,7 +31,29 @@ def cut(pattern):
 swap('A New Horizon II · Client archive edition', 'A New Horizon II · Christa’s review')
 swap('data-client-edition="new-horizon-ii"', 'data-client-edition="new-horizon-ii" data-christa-preview')
 swap('</head>', '<link rel="stylesheet" href="christa.css"></head>')
-swap('play = !sessionStorage.getItem("m2v-intro-seen") &&', 'play = !location.hash && !sessionStorage.getItem("m2v-horizon-ii-review-seen") &&')
+swap('plays once per session in front of the hero', 'replays on refresh in front of the hero')
+swap('   plays once per session and never under reduced motion.', '   replays on refresh and respects reduced motion.')
+swap('  var play = false;\n  try {\n    play = !sessionStorage.getItem("m2v-intro-seen") &&\n      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;\n  } catch (e) { play = false; }\n  if (play){', '''  var navigation = performance.getEntriesByType("navigation")[0];
+  var reload = navigation ? navigation.type === "reload" : performance.navigation && performance.navigation.type === 1;
+  var play = (reload || !location.hash) && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!play && !reload && location.hash){
+    document.addEventListener("DOMContentLoaded", function(){
+      var target = document.getElementById(location.hash.slice(1));
+      if (target) target.scrollIntoView({behavior:"instant"});
+    }, {once:true});
+  }
+  if (play){
+    if (reload){
+      // Refresh means start from the beginning. Shared section links still land directly.
+      if (location.hash) history.replaceState(history.state, "", location.pathname + location.search);
+      if ("scrollRestoration" in history){
+        var previousMode = history.scrollRestoration;
+        history.scrollRestoration = "manual";
+        window.addEventListener("pageshow", function(){
+          setTimeout(function(){ history.scrollRestoration = previousMode; }, 0);
+        }, { once:true });
+      }
+    }''')
 swap('International relocation services</span>', 'Relocation Support</span>')
 swap('International Relocation Services — personal support', 'Relocation Support — personal support')
 swap('    <span class="bname">Moving2Valencia</span>\n    <span class="bsub">International Relocation Services</span>',
@@ -159,11 +181,11 @@ swap('<a href="media-credits.html">Supplied photography credits ↗</a><a href="
 # Reuse the archive’s media and motion libraries from the sibling directory.
 html = re.sub(r'(?<![\w./-])(img|fonts|js)/', r'../new-horizon-ii/\1/', html)
 swap('"../new-horizon-ii/js/site.js"', '"christa-site.js"')
-swap('src="../new-horizon-ii/js/splash.js"', 'src="christa-splash.js"')
+swap('src="../new-horizon-ii/js/splash.js"', 'src="christa-splash.js?v=replay"')
 for asset in ('icon.svg', 'favicon.ico', 'apple-touch-icon.png', 'site.webmanifest', 'og.jpg'):
     html = html.replace(f'href="{asset}"', f'href="../new-horizon-ii/{asset}"')
 site = (SOURCE / 'js/site.js').read_text(encoding='utf-8')
-site = site.replace('m2v-intro-seen', 'm2v-horizon-ii-review-seen')
+site = re.sub(r'^  function introSeen\(\).*\n|^ +introSeen\(\);[^\n]*\n', '', site, flags=re.M)
 site = re.sub(r'(?<![\w./-])img/', '../new-horizon-ii/img/', site)
 site = site.replace('pieces chosen — in route order', 'services selected').replace('1 piece chosen — a focused start', '1 service selected')
 site = site.replace('rgba(30,60,70,.06)', 'rgba(87,46,25,.06)').replace('rgba(150,200,230,.12), rgba(30,70,90,.08)', 'rgba(255,194,141,.12), rgba(106,57,35,.08)')
@@ -205,7 +227,9 @@ site += '''\n// Keep the comparison usable with a mouse, touch or the native ran
 '''
 splash = (SOURCE / 'js/splash.js').read_text(encoding='utf-8')
 splash = re.sub(r'(?<![\w./-])img/', '../new-horizon-ii/img/', splash)
-splash = splash.replace('m2v-intro-seen', 'm2v-horizon-ii-review-seen')
+splash = splash.replace('once per session, never under reduced motion', 'replays on refresh and respects reduced motion')
+splash = re.sub(r'^  try \{ sessionStorage\.setItem\("m2v-intro-seen", "1"\); \} catch \(e\) \{\}\n', '', splash, flags=re.M)
+splash = splash.replace('window.scrollTo(0, 0)', 'window.scrollTo({top:0, left:0, behavior:"instant"})')
 splash = splash.replace('INTERCULTURAL WORKSHOPS', 'SETTLING IN')
 splash = splash.replace('function enterSite(){\n    if (state !== "rest") return;', 'function enterSite(){\n    if (state === "intro") toRest();\n    if (state !== "rest") return;')
 OUTPUT.mkdir(parents=True, exist_ok=True)
