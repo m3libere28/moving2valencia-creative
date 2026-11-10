@@ -181,17 +181,26 @@ swap(planner_marker, '''  <section class="christa-packages" id="packages" aria-l
 ''' + planner_marker)
 
 reviews = (
+    (
+        'Boombap Conissour',
+        'It felt like concierge service. She guided us through each step, and her local connections gave us confidence that we were in experienced hands.',
+        'https://maps.app.goo.gl/wuR94andqYxRHjN47',
+    ),
     ('Anna Madarasz', 'She gave us confidence'),
     ('Elly Johnson', 'will save you so much stress'),
     ('Bee Avila', 'she really did make us feel welcomed'),
 )
 
 
-def review_card(person, excerpt):
+def review_card(person, excerpt, url=None):
+    source = (
+        f'<a href="{url}" target="_blank" rel="noopener">Read this review on Google</a>'
+        if url else '<span>Google review excerpt</span>'
+    )
     return f'''<figure class="christa-quote">
       <span class="christa-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
       <blockquote>“{excerpt}”</blockquote>
-      <figcaption><strong>{person}</strong><span>Google review excerpt</span></figcaption>
+      <figcaption><strong>{person}</strong>{source}</figcaption>
     </figure>'''
 
 
