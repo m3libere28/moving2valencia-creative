@@ -54,9 +54,8 @@ const email = document.querySelector('#feedback a[href^="mailto:"]');
 form.hidden = false;
 
 function feedbackText() {
-  const logo = form.elements.logo.value || 'Still deciding';
   const notes = form.elements.notes.value.trim();
-  return ['Hi Helbert,', '', 'My feedback on A New Horizon II', '', `Logo preference: ${logo}`, '', notes, '', 'Christa'].join('\r\n');
+  return ['Hi Helbert,', '', 'My feedback on A New Horizon II', '', notes, '', 'Christa'].join('\r\n');
 }
 
 form.addEventListener('submit', event => {

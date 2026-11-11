@@ -17,7 +17,7 @@ body, h1, h2, p, dl, dd, figure { margin: 0; }
 a { color: var(--rust); text-underline-offset: .2em; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 3px solid #aa5339; outline-offset: 4px; }
-button, select, textarea { font: inherit; }
+button, textarea { font: inherit; }
 button { cursor: pointer; }
 img { display: block; max-width: 100%; height: auto; }
 section { scroll-margin-top: 1.5rem; }
@@ -206,9 +206,7 @@ h2 { font-size: clamp(2.4rem, 4.5vw, 4.15rem); }
 .proofs figcaption { margin-top: .7rem; text-align: center; font-weight: 650; font-size: .92rem; }
 .feedback { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 6vw, 5.5rem); align-items: start; }
 .feedback form label { display: block; margin-bottom: .25rem; font-weight: 650; }
-.feedback form select, .feedback form textarea { display: block; width: 100%; margin-bottom: .9rem; border: 1px solid #b28e79; border-radius: 6px; padding: .55rem .65rem; background: #fffdfa; color: var(--ink); }
-.feedback form select { min-height: 44px; }
-.feedback form textarea { resize: vertical; }
+.feedback form textarea { display: block; width: 100%; margin-bottom: .9rem; border: 1px solid #b28e79; border-radius: 6px; padding: .55rem .65rem; background: #fffdfa; color: var(--ink); resize: vertical; }
 .form-note { color: var(--muted); font-size: .9rem; margin-top: .55rem; }
 .form-note:empty { display: none; }
 .footer { display: flex; justify-content: space-between; gap: .5rem 1rem; padding-block: 1.1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
