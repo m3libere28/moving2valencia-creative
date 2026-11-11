@@ -65,13 +65,35 @@ body[data-christa-preview] {
 .city-sea img { position: absolute; inset: 0; }
 .city-sea-coast { visibility: hidden; }
 .city-sea.has-revealed .city-sea-coast { visibility: visible; }
-.city-sea .city-sea-city { clip-path: inset(0 0 0 0); }
-.city-sea[data-scene="sea"] .city-sea-city { clip-path: inset(0 100% 0 0); }
+.city-sea .city-sea-city { opacity: 1; }
+.city-sea[data-scene="sea"] .city-sea-city { opacity: 0; }
 .fl-arch .city-sea-controls { margin: 12px 0 0; letter-spacing: normal; text-transform: none; }
 .city-sea-controls .btn { min-width: 10rem; justify-content: center; color: var(--sun-orange-deep); background: #fff; }
 .city-sea-controls .btn:hover { background: var(--sun-tint); }
 @media (prefers-reduced-motion: no-preference) {
-  body:not(.motion-off) .city-sea .city-sea-city { transition: clip-path 1.45s cubic-bezier(.65, 0, .23, 1); }
+  body:not(.motion-off) .city-sea .city-sea-city {
+    transition: opacity 1.5s cubic-bezier(.54, 0, .24, 1), transform 1.9s ease-out;
+  }
+  body:not(.motion-off) .city-sea .city-sea-coast {
+    transform: scale(1.065) translateX(1%);
+    transition: transform 2.1s cubic-bezier(.18, .68, .32, 1);
+  }
+  body:not(.motion-off) .city-sea[data-scene="sea"] .city-sea-city { transform: scale(1.045) translateX(-1%); }
+  body:not(.motion-off) .city-sea[data-scene="sea"] .city-sea-coast { transform: none; }
+  body:not(.motion-off) .city-sea[data-scene="sea"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(112deg, transparent 20%, #fff3d2b8 49%, transparent 76%);
+    animation: coastal-light 1.65s ease-in-out both;
+  }
+}
+@keyframes coastal-light {
+  0% { opacity: 0; transform: translateX(-45%); }
+  32% { opacity: .34; }
+  62% { opacity: .18; }
+  100% { opacity: 0; transform: translateX(52%); }
 }
 .compare-page{padding:clamp(22px,5vw,64px);background:var(--sun-tint);color:var(--sun-ink);font:17px/1.6 system-ui,sans-serif;margin:0}
 .compare-page main{max-width:1030px;margin:auto}
