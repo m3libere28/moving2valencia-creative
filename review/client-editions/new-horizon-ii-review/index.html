@@ -1168,7 +1168,7 @@ html.splash-on #m2vSplash{display:block}
 })();
 </script>
 <!-- ============ SPLASH · Valencia Arrivals (see <head> gate) ============ -->
-<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="../client-import.css"><script src="../../jury-shell.js" defer></script><script src="../client-import.js" defer></script><script src="../../jury-audit.js" defer></script><link rel="stylesheet" href="christa.css?v=sunny-services"></head><body data-client-edition="new-horizon-ii" data-christa-preview><div id="m2vSplash"><div class="sp-stage" id="spStage" role="region" aria-label="Welcome to Moving2Valencia">
+<meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="../client-import.css"><script src="../../jury-shell.js" defer></script><script src="../client-import.js" defer></script><script src="../../jury-audit.js" defer></script><link rel="stylesheet" href="christa.css?v=city-to-sea"></head><body data-client-edition="new-horizon-ii" data-christa-preview><div id="m2vSplash"><div class="sp-stage" id="spStage" role="region" aria-label="Welcome to Moving2Valencia">
   <div class="sp-world" id="spWorld">
     <div class="sp-sky" id="spSky">
       <div class="sp-glow" id="spGlow"></div>
@@ -1272,6 +1272,7 @@ html.splash-on #m2vSplash{display:block}
         <div class="hero-cta">
           <a class="btn btn-terra" href="#start">Send an enquiry</a>
           <a class="btn btn-ghost" href="services/index.html">Explore services</a>
+          <a class="hero-about" href="#person">About Christa <span aria-hidden="true">↓</span></a>
           <a class="hero-reviews" href="#reviews">Google reviews <span aria-hidden="true">↓</span></a>
         </div>
         <p class="hero-meta">
@@ -1281,9 +1282,18 @@ html.splash-on #m2vSplash{display:block}
         </p>
       </div>
       <div class="fl-arch-col">
-        <figure class="fl-arch" id="flArch" data-plx data-depth="10">
-          <div class="frame kenburns" data-kb><span class="kb-sweep" aria-hidden="true"></span><img id="flArchImg" src="../new-horizon-ii/img/3518bc6f.webp" srcset="../new-horizon-ii/img/1d4a9e35.webp 640w, ../new-horizon-ii/img/3518bc6f.webp 1280w" sizes="(max-width:960px) 84vw, 400px" alt="People at the Turia fountain in Valencia’s Plaza de la Virgen" fetchpriority="high" decoding="async"></div>
-          <figcaption>Plaça de la Mare de Déu, Valencia</figcaption>
+        <figure class="fl-arch" id="flArch">
+          <div class="frame city-sea" id="city-sea">
+            <img src="valencia-coast-960.webp" srcset="valencia-coast-960.webp 960w, ../../assets/valencia-coast-hd.webp 1672w" sizes="(max-width:760px) 90vw, 800px" width="1672" height="941" alt="A sunny Mediterranean beach and seafront promenade" decoding="async">
+            <img class="city-sea-city" src="valencia-city-960.webp" srcset="valencia-city-960.webp 960w, ../../assets/valencia-morning-hd.webp 1672w" sizes="(max-width:760px) 90vw, 800px" width="1672" height="941" alt="People walking past a café and orange trees on a sunlit street" fetchpriority="high" decoding="async">
+            <div class="city-sea-divider" aria-hidden="true"><span>‹ ›</span></div>
+            <span class="city-sea-label city-sea-label-city" aria-hidden="true">City</span>
+            <span class="city-sea-label city-sea-label-sea" aria-hidden="true">Sea</span>
+          </div>
+          <figcaption class="city-sea-controls" hidden>
+            <label for="city-sea-slider">Slide between city life and sea air</label>
+            <input id="city-sea-slider" type="range" min="0" max="100" value="70" aria-valuetext="70% city, 30% sea">
+          </figcaption>
         </figure>
         <div class="fl-route-cue" aria-hidden="true">
           <svg viewBox="0 0 26 64" focusable="false"><path id="cuePath" d="M13,2 C20,20 6,38 13,62" /></svg>
@@ -1414,7 +1424,7 @@ html.splash-on #m2vSplash{display:block}
         </div>
         <input type="range" id="compareRange" min="0" max="100" step="0.1" value="55" aria-label="Reveal the everyday scene" aria-valuetext="55% postcard" />
         <p class="cap">Left: the Valencia of the postcards — the Torres de Serranos, the medieval city gate, in golden evening light. Right: the Valencia of routines — a neighbourhood street in Benimaclet, painted shutters and all. The move is the journey between the two.</p>
-        <a class="city-sea-jump" href="#belong">Explore the city and the coast <span aria-hidden="true">↓</span></a>
+        <a class="city-sea-jump" href="#flArch">Try the city-to-sea slider <span aria-hidden="true">↑</span></a>
       </div>
 
     </div>
@@ -1705,19 +1715,7 @@ html.splash-on #m2vSplash{display:block}
       </div>
 
       <div class="atlas-panel" role="tabpanel" id="panel-city" aria-labelledby="tab-city">
-        <figure class="ph christa-city">
-          <div class="city-sea" id="city-sea">
-            <img src="../../assets/valencia-coast-hd.webp" width="1672" height="941" alt="A sunny Mediterranean beach and seafront promenade" loading="lazy" decoding="async">
-            <img class="city-sea-city" src="../../assets/valencia-morning-hd.webp" width="1672" height="941" alt="People walking past a café and orange trees on a sunlit street" loading="lazy" decoding="async">
-            <div class="city-sea-divider" aria-hidden="true"><span>‹ ›</span></div>
-            <span class="city-sea-label city-sea-label-city" aria-hidden="true">City</span><span class="city-sea-label city-sea-label-sea" aria-hidden="true">Sea</span>
-          </div>
-          <div class="city-sea-controls" hidden>
-            <label for="city-sea-slider">Slide between city life and sea air</label>
-            <input id="city-sea-slider" type="range" min="0" max="100" value="70" aria-valuetext="70% city, 30% sea">
-          </div>
-          <figcaption>City and coast · illustrations from proposal 11</figcaption>
-        </figure>
+        <div class="ph"><img src="../new-horizon-ii/img/3518bc6f.webp" srcset="../new-horizon-ii/img/1d4a9e35.webp 640w, ../new-horizon-ii/img/3518bc6f.webp 1280w" sizes="(max-width:880px) 90vw, 55vw" alt="People at the Turia fountain in Valencia’s Plaza de la Virgen" loading="lazy" decoding="async"></div>
         <div>
           <h3>The city at walking pace</h3>
           <p>Valencia is a city you cross on foot or by bike: plazas for the morning coffee, the old town for evenings, the Turia Gardens as the green thread between them. Errands, friends and work all sit within the same unhurried radius.</p>
