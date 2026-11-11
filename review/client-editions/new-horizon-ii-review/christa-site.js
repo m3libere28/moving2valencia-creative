@@ -1000,33 +1000,39 @@
     if (!r.classList.contains("splash-on")) { fn(); return; }
     var iv = setInterval(function(){ if (!r.classList.contains("splash-on")) { clearInterval(iv); requestAnimationFrame(fn); } }, 100);
   }
-})();
 
-// Keep the comparison usable with a mouse, touch or the native range keys.
-(function(){
-  var slider = document.getElementById("city-sea-slider");
-  var stage = document.getElementById("city-sea");
-  if (!slider || !stage) return;
-  function update(){
-    var city = Number(slider.value);
-    stage.style.setProperty("--city", city + "%");
-    slider.setAttribute("aria-valuetext", city + "% city, " + (100 - city) + "% sea");
+  function initCitySea(){
+    const stage = document.getElementById("city-sea");
+    const button = document.getElementById("city-sea-toggle");
+    if (!stage || !button) return;
+    const city = stage.querySelector(".city-sea-city");
+    const coast = stage.querySelector(".city-sea-coast");
+    let observer;
+    let timer;
+
+    function showScene(showSea){
+      clearTimeout(timer);
+      observer?.disconnect();
+      stage.classList.add("has-revealed");
+      stage.dataset.scene = showSea ? "sea" : "city";
+      city.setAttribute("aria-hidden", String(showSea));
+      coast.setAttribute("aria-hidden", String(!showSea));
+      button.textContent = showSea ? "Back to the city" : "Reveal the sea";
+    }
+
+    Promise.all([city.decode(), coast.decode()]).then(function(){
+      button.parentElement.hidden = false;
+      button.addEventListener("click", function(){ showScene(stage.dataset.scene !== "sea"); });
+      if (motionOff || !("IntersectionObserver" in window)) return;
+      observer = new IntersectionObserver(function(entries){
+        clearTimeout(timer);
+        if (entries[0].intersectionRatio < .55) return;
+        timer = setTimeout(function(){
+          if (!motionOff && !document.hidden) showScene(true);
+        }, 1700);
+      }, { threshold: .55 });
+      observer.observe(stage);
+    }, function(){ /* The city image remains available if the coast fails to load. */ });
   }
-  stage.classList.add("city-sea-ready");
-  slider.parentElement.hidden = false;
-  slider.addEventListener("input", update);
-  function scrub(event){
-    var rect = stage.getBoundingClientRect();
-    slider.value = Math.max(0, Math.min(100, Math.round(100 * (event.clientX - rect.left) / rect.width)));
-    update();
-  }
-  stage.addEventListener("pointerdown", function(event){
-    if (!event.isPrimary || event.button !== 0) return;
-    stage.setPointerCapture(event.pointerId);
-    scrub(event);
-  });
-  stage.addEventListener("pointermove", function(event){
-    if (stage.hasPointerCapture(event.pointerId)) scrub(event);
-  });
-  update();
+  whenSplashGone(initCitySea);
 })();
